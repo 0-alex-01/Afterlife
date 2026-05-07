@@ -472,18 +472,18 @@ MonoBehaviour:
   features:
   - {fileID: 8736661028334727731}
   - {fileID: 3598254934845347770}
-  - {fileID: -5427859153923265629}
-  - {fileID: -8430543484585426504}
-  - {fileID: -2606422085884626778}
-  - {fileID: 3814112773832804056}
-  - {fileID: -937622256595954645}
-  - {fileID: 4970693507297578065}
-  - {fileID: -103501144260981949}
-  - {fileID: 5301051175082872791}
   - {fileID: 9100830298071316170}
-  - {fileID: 5262574361856944975}
+  - {fileID: -2606422085884626778}
   - {fileID: 1170704673688743257}
+  - {fileID: 5262574361856944975}
+  - {fileID: -103501144260981949}
+  - {fileID: 3814112773832804056}
   - {fileID: 5153017048313567732}
+  - {fileID: -8430543484585426504}
+  - {fileID: 5301051175082872791}
+  - {fileID: 4970693507297578065}
+  - {fileID: -937622256595954645}
+  - {fileID: -5427859153923265629}
   - {fileID: 6481653220666705815}
   - {fileID: 7393116930172532905}
   - {fileID: 744375598501864353}
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &-4363231183632145407
@@ -1097,8 +1097,6 @@ MonoBehaviour:
   features:
   - {fileID: 7011443450567333355}
   - {fileID: -671281728444007487}
-  - {fileID: -777024727815483781}
-  - {fileID: 5229939491081383341}
   - {fileID: -901939997048047619}
   - {fileID: -1734471456787174204}
   - {fileID: 8980318060753866109}
@@ -1112,6 +1110,8 @@ MonoBehaviour:
   - {fileID: -7499073031166464939}
   - {fileID: 7666556398442971420}
   - {fileID: -7343570946846779558}
+  - {fileID: -777024727815483781}
+  - {fileID: 5229939491081383341}
   - {fileID: -4363231183632145407}
   - {fileID: -1214223305509136874}
   - {fileID: 7024391430695218602}
