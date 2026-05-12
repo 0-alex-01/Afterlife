@@ -1,0 +1,10 @@
+{
+    "name": "Bao10nam.Oculusxrplugin.Editor",
+    "references": [
+      "Bao10nam.Oculusxrplugin"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

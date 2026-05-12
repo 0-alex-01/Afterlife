@@ -41,6 +41,7 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
+  m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
@@ -151,10 +152,12 @@ PlayerSettings:
   - {fileID: 11400000, guid: 908d62378b8205449861e5838a18a596, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
+  m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 1
   xboxOneEnable7thCore: 1
   vrSettings:
     enable360StereoCapture: 0
+  isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
   allowHDRDisplaySupport: 0
@@ -902,7 +905,7 @@ PlayerSettings:
     PS4: UNITY_POST_PROCESSING_STACK_V2
     PS5: UNITY_POST_PROCESSING_STACK_V2
     Stadia: UNITY_POST_PROCESSING_STACK_V2
-    Standalone: USE_INPUT_SYSTEM_POSE_CONTROL;UNITY_POST_PROCESSING_STACK_V2;USE_STICK_CONTROL_THUMBSTICKS
+    Standalone: USE_INPUT_SYSTEM_POSE_CONTROL;UNITY_POST_PROCESSING_STACK_V2;USE_STICK_CONTROL_THUMBSTICKS;SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY
     WebGL: UNITY_POST_PROCESSING_STACK_V2
     Windows Store Apps: USE_INPUT_SYSTEM_POSE_CONTROL;UNITY_POST_PROCESSING_STACK_V2;USE_STICK_CONTROL_THUMBSTICKS
     XboxOne: UNITY_POST_PROCESSING_STACK_V2
@@ -1007,12 +1010,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  enableDirectStorage: 0
-  cloudProjectId: 7e15f9cd-355a-4e3a-97d0-ee641c26e607
+  cloudProjectId: de7fcc7d-b1b2-4fbb-b6a3-c3ada2d53a4a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Afterlife
-  organizationId: unity_0ad223711d01ccc064e0
+  organizationId: rush-fight
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

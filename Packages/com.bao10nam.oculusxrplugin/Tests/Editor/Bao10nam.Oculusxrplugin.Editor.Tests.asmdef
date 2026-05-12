@@ -1,0 +1,14 @@
+{
+    "name": "Bao10nam.Oculusxrplugin.Editor.Tests",
+    "references": [
+        "Bao10nam.Oculusxrplugin.Editor",
+        "Bao10nam.Oculusxrplugin"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
