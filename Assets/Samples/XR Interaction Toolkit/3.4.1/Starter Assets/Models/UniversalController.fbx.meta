@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 147ae308eec018b40a7b312ae58f44c7
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 21300
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -50,7 +50,6 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -78,7 +77,6 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -111,9 +109,15 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 170222
+  packageName: XR Interaction ToolKit Starter Kit
+  packageVersion: 1.6.250208
+  assetPath: Assets/Samples/XR Interaction Toolkit/3.4.1/Starter Assets/Models/UniversalController.fbx
+  uploadId: 731461
