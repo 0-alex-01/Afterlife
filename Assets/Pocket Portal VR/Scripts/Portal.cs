@@ -5,7 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VR;
+//using UnityEngine.VR;
 using UnityEngine.Assertions;
 
 #if USES_AR_KIT
