@@ -4093,6 +4093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poke Interactions Sample
       objectReference: {fileID: 0}
+    - target: {fileID: 670559718997833774, guid: 88246f8e9c3765d49be8da34eca3c630, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 670559718997833775, guid: 88246f8e9c3765d49be8da34eca3c630, type: 3}
       propertyPath: m_RootOrder
       value: 7
