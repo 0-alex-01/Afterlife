@@ -8,14 +8,25 @@ public class IntroSceneLoader : MonoBehaviour
     [Header("Audio")]
     public AudioSource introAudio;
 
-    [Header("Black Screen")]
-    public Image blackScreen;
+    [Header("Fade Image - für Fade-In am Anfang und Fade-Out am Ende")]
+    public Image fadeImage;
+
+    [Header("Flatline Flicker (optional) - flackert beim Herzstillstand")]
+    public FlatlineFlicker flatlineFlicker;
 
     [Header("Next Scene")]
-    public string nextSceneName = "Level1";
+    public string nextSceneName = "Environment_Free";
 
     [Header("Transition")]
+    public float fadeInDuration = 1.5f;
     public float fadeDuration = 2f;
+
+    [Header("Herzschlag-Verlangsamung")]
+    public bool slowDownHeartbeat = true;
+    public float startPitch = 1f;            // Tempo am Anfang (1 = normal)
+    public float endPitch = 0.5f;            // Tempo am Ende (0.5 = halb so schnell, tiefer)
+    public float slowdownCurve = 1.5f;       // >1 = bleibt länger schnell, fällt gegen Ende stärker ab
+    public float audioLengthFallback = 42f;  // Clip-Länge in Sek., falls nicht auslesbar
 
     private void Start()
     {
@@ -24,42 +35,73 @@ public class IntroSceneLoader : MonoBehaviour
 
     private IEnumerator IntroRoutine()
     {
-        SetBlackAlpha(1f);
+        // Schwarz starten und sanft einblenden
+        if (fadeImage != null)
+        {
+            SetFadeAlpha(1f);
+            yield return StartCoroutine(Fade(1f, 0f, fadeInDuration));
+        }
 
-        introAudio.Play();
+        if (introAudio != null)
+        {
+            introAudio.pitch = slowDownHeartbeat ? startPitch : 1f;
+            introAudio.Play();
 
-        yield return new WaitWhile(() => introAudio.isPlaying);
+            float length = introAudio.clip != null ? introAudio.clip.length : audioLengthFallback;
 
-        AsyncOperation load = SceneManager.LoadSceneAsync(nextSceneName);
-        load.allowSceneActivation = false;
+            // warten, bis der Herzschlag vorbei ist - dabei das Tempo langsam herunterregeln
+            while (introAudio.isPlaying)
+            {
+                if (slowDownHeartbeat && length > 0f)
+                {
+                    float progress = Mathf.Clamp01(introAudio.time / length);
+                    float eased = Mathf.Pow(progress, Mathf.Max(0.01f, slowdownCurve));
+                    introAudio.pitch = Mathf.Lerp(startPitch, endPitch, eased);
+                }
+                yield return null;
+            }
+        }
 
-        yield return StartCoroutine(FadeToClear());
+        // Moment des Todes: kurzer Bildschirm-Flicker
+        if (flatlineFlicker != null)
+            yield return StartCoroutine(flatlineFlicker.FlickerRoutine());
 
-        load.allowSceneActivation = true;
+        // auf Schwarz ausblenden und nächste Szene laden
+        if (fadeImage != null)
+            yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
+
+        SceneManager.LoadScene(nextSceneName);
     }
 
-    private IEnumerator FadeToClear()
+    private IEnumerator Fade(float from, float to, float duration)
     {
-        float timer = 0f;
+        if (fadeImage == null)
+            yield break;
 
-        while (timer < fadeDuration)
+        if (duration <= 0f)
+        {
+            SetFadeAlpha(to);
+            yield break;
+        }
+
+        float timer = 0f;
+        while (timer < duration)
         {
             timer += Time.deltaTime;
-            float alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-            SetBlackAlpha(alpha);
+            SetFadeAlpha(Mathf.Lerp(from, to, timer / duration));
             yield return null;
         }
 
-        SetBlackAlpha(0f);
+        SetFadeAlpha(to);
     }
 
-    private void SetBlackAlpha(float alpha)
+    private void SetFadeAlpha(float alpha)
     {
-        if (blackScreen == null)
+        if (fadeImage == null)
             return;
 
-        Color c = blackScreen.color;
+        Color c = fadeImage.color;
         c.a = alpha;
-        blackScreen.color = c;
+        fadeImage.color = c;
     }
 }
