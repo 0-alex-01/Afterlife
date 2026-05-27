@@ -49,7 +49,7 @@ public class PlanarMirror : MonoBehaviour
 
     private void OnBeginCamera(ScriptableRenderContext ctx, Camera cam)
     {
-        if (!Application.isPlaying)
+        if (!Application.isPlaying || !isActiveAndEnabled)
             return;
 
         // Die Reflexions-Kamera selbst: nur Matrizen aktualisieren und Winding umdrehen
@@ -104,8 +104,11 @@ public class PlanarMirror : MonoBehaviour
 
         if (reflectionCamera == null)
         {
+            // Als verstecktes Kind-Objekt (ohne DontSave!), damit es beim Stoppen
+            // automatisch mit der Szene aufgeräumt wird.
             var go = new GameObject("PlanarMirror Reflection Cam");
-            go.hideFlags = HideFlags.HideAndDontSave;
+            go.hideFlags = HideFlags.HideInHierarchy;
+            go.transform.SetParent(transform, false);
             reflectionCamera = go.AddComponent<Camera>();
             reflectionCamera.enabled = true;            // wird automatisch von URP gerendert
             reflectionCamera.depth = viewer.depth - 10; // vor der Hauptkamera rendern
