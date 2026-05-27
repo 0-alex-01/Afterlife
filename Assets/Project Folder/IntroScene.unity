@@ -292,6 +292,11 @@ MonoBehaviour:
   nextSceneName: Environment_Free
   fadeInDuration: 1.5
   fadeDuration: 2
+  slowDownHeartbeat: 1
+  startPitch: 1
+  endPitch: 0.5
+  slowdownCurve: 1.5
+  audioLengthFallback: 42
 --- !u!82 &281302717
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1022,9 +1027,11 @@ MonoBehaviour:
   amplitude: 20
   lineThickness: 1.5
   samples: 220
-  audioSource: {fileID: 0}
-  beatThreshold: 0.12
+  audioSource: {fileID: 281302717}
+  sensitivity: 1.4
   minBeatGap: 0.3
+  bassBins: 8
+  minLevel: 0.0005
   startInterval: 0.8
   endInterval: 2.5
   flatlineTime: 42
