@@ -1,13 +1,21 @@
 ﻿<Solution>
-  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="AutoHandAssembly.csproj" />
+  <Project Path="NaughtyAttributes.Core.csproj" />
   <Project Path="MikeNspiredXRIStarterKit.Runtime.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Bao10nam.Oculusxrplugin.Editor.csproj" />
+  <Project Path="Autohand.Editor.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+  <Project Path="NaughtyAttributes.Editor.csproj" />
+  <Project Path="Autohand.OpenXR.csproj" />
   <Project Path="Bao10nam.Oculusxrplugin.Tests.csproj" />
+  <Project Path="Autohand.OpenXR.Editor.csproj" />
   <Project Path="MikeNspired XR HandPoser Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.Hands.csproj" />
   <Project Path="Bao10nam.Oculusxrplugin.csproj" />
+  <Project Path="Autohand.XR.csproj" />
+  <Project Path="Autohand.XR.Editor.csproj" />
   <Project Path="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />

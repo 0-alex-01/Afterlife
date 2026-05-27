@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 55daccc09a3b69647bbab145b54a3ab3
+    path: Assets/Project Folder/IntroScene.unity
+    guid: a33b178da077bcb4d97057123419dbc0
+  - enabled: 1
+    path: Assets/Project Folder/Environment_Free.unity
+    guid: c732593fe76e5a84197f9cd13963f706
+  - enabled: 1
+    path: Assets/Project Folder/DayNightCycleDemo.unity
+    guid: 294e2b99c3434641abb77a3f8ea8d340
+  - enabled: 1
+    path: Assets/Project Folder/DemoScene.unity
+    guid: 319dafa5c80f29f428dc1e0d03f04177
+  - enabled: 1
+    path: Assets/AutoHand/Examples/Scenes/OpenXR/Demo.unity
+    guid: 1551acbe06158c74e8ab2f58f9b373dc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0ae8438a2a7d40e4c9596412264c6357, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

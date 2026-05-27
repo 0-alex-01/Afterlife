@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Hand Tracking
       objectReference: {fileID: 0}
+    - target: {fileID: 4849393385929907967, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
+      propertyPath: m_Name
+      value: Left Hand Tracking Visual
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -108,7 +112,16 @@ PrefabInstance:
       addedObject: {fileID: 5828388934748857539}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6627571522594998540}
+      addedObject: {fileID: 2634339064970906711}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 707735178965256994}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2160894439377394135}
+    - targetCorrespondingSourceObject: {fileID: 4849393385929907967, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3060002423205977354}
   m_SourcePrefab: {fileID: 100100000, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
 --- !u!4 &330500789068740710 stripped
 Transform:
@@ -231,7 +244,7 @@ MonoBehaviour:
     m_JointTransform: {fileID: 3133028404922549142}
   - m_XRHandJointID: 2
     m_JointTransform: {fileID: 2733093729761800249}
---- !u!114 &6627571522594998540
+--- !u!114 &2634339064970906711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,13 +253,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 773853689519989575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21096d6d8059a5343a1f2b4d050e4789, type: 3}
+  m_Script: {fileID: 11500000, guid: e9d4e856f5462c441b3f79b930e89638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_XRHandTrackingEvents: {fileID: 639686448}
-  m_HandMeshRenderer: {fileID: 1785337192100647894}
-  m_ShowMeshWhenTrackingIsAcquired: 1
-  m_HideMeshWhenTrackingIsLost: 1
+  hand: {fileID: 0}
+  controllerLink: {fileID: 0}
+  upAxis: 3
+  forwardAxis: 1
+  handOffset: {x: -0.01, y: 0, z: 0.1}
+  handRotationOffset: {x: 0, y: 0, z: -90}
+  handPoseSmoothingSpeed: 0.03
+  followPositionSmoothing: 0.333333
+  followRotationSmoothing: 0.5
+  drawGizmos: 1
+  gizmoColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &707735178965256994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773853689519989575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fbd61cbe0704849869518b8d6f40b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handTracker: {fileID: 2634339064970906711}
+  allowHeldFingerMovement: 1
+  releaseGrabDelay: 0.35
+  fingerTipRadiusMultiplier: 2
+  useFingerTouchGrabbing: 1
+  useFingerTouchReleasing: 1
+  useTouchHoldingWithHeldPose: 1
+  usePoseGrabbing: 1
+  minPoseGrabCloseness: 0.25
+  maxPoseGrabCloseness: 0.9
+  minDeltaPoseActivation: 0.01
+  maxDeltaPoseActivation: 0.035
+  usePoseRelease: 1
+  minPoseReleaseOpenness: 0
+  maxPoseReleaseOpenness: 0.4
+  requiredDeltaPoseReleaseOpenness: 0.15
+  usePoseSqueezing: 1
+  squeezeUnsqueezeDelay: 0.5
+  squeezePoseSensitvityMultiplier: 1.6
+  fingerTouchs: 0000000000
+--- !u!114 &2160894439377394135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773853689519989575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611bae9934a88e64f963d2d0a46d97b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handTracking: {fileID: 2634339064970906711}
+  fingerTipScale: 2
+  fingerTouchEventDelay: 0.05
 --- !u!4 &1448281546621806375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1325600225764489521, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
@@ -307,6 +374,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4929893224545990434, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
   m_PrefabInstance: {fileID: 467299062429507094}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4985677829560647913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4849393385929907967, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
+  m_PrefabInstance: {fileID: 467299062429507094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3060002423205977354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985677829560647913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21096d6d8059a5343a1f2b4d050e4789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_XRHandTrackingEvents: {fileID: 639686448}
+  m_HandMeshRenderer: {fileID: 1785337192100647894}
+  m_ShowMeshWhenTrackingIsAcquired: 1
+  m_HideMeshWhenTrackingIsLost: 1
 --- !u!4 &5200181528285594001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3578409481622970489, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
