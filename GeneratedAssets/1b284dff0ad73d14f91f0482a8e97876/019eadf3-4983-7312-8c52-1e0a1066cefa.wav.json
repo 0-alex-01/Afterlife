@@ -1,0 +1,15 @@
+{
+    "asset": "1b284dff0ad73d14f91f0482a8e97876",
+    "fileName": "019eadf3-4983-7312-8c52-1e0a1066cefa.wav",
+    "prompt": "Soft rustling wood touch, fingers brushing against rough tree bark, subtle organic contact sound, dry and light.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 1.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

@@ -1,0 +1,15 @@
+{
+    "asset": "20839f2c6284e7d4e9fc5cc0446af6b8",
+    "fileName": "019ead71-f424-7912-9fcb-d7ecb97de59e.wav",
+    "prompt": "A serene harmonious transcendent ambient soundscape: soft ethereal angelic choir pads, gentle shimmering celestial tones, warm glowing harmonic drone, peaceful meditative resonance, deeply tranquil uplifting and spiritual, a feeling of arrival and inner peace, seamless loop",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

@@ -5,28 +5,50 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasRenderer))]
 public class ECGLineUI : MaskableGraphic
 {
+    public enum BeatMode
+    {
+        AudioBeatTimes, // Spikes exakt an vorgegebenen Schlag-Zeitpunkten des Clips (empfohlen)
+        AudioSpectrum,  // Schläge aus dem Frequenzspektrum erkennen (unzuverlässig)
+        Timed           // ohne Audio, rein zeitgesteuert
+    }
+
     [Header("Trace")]
     public float speed = 180f;          // Pixel/Sekunde, mit der die Kurve nach links läuft
     public float amplitude = 20f;       // Höhe des R-Zackens
     public float lineThickness = 1.5f;
     public int samples = 220;
 
-    [Header("Audio-Sync (empfohlen)")]
-    public AudioSource audioSource;     // wenn gesetzt: Schläge werden aus dem Audio erkannt
+    [Header("Schlag-Quelle")]
+    public BeatMode beatMode = BeatMode.AudioBeatTimes;
+    public AudioSource audioSource;     // Herzschlag-Quelle (für AudioBeatTimes & AudioSpectrum)
+
+    [Header("AudioBeatTimes - exakte Synchronisation")]
+    [Tooltip("Zeitpunkte der echten Herzschläge in Clip-Sekunden. Ein Spike erscheint, sobald die Abspielposition den Wert erreicht - dadurch automatisch synchron, auch wenn der Clip langsamer abgespielt wird.")]
+    public float[] beatClipTimes;
+
+    [Header("Piep pro Spike")]
+    public AudioSource beepSource;      // separate Quelle für den Monitor-Piep
+    public AudioClip beepClip;          // kurzer Piep, der bei jedem Spike abgespielt wird
+    [Range(0f, 1f)] public float beepVolume = 1f;
+
+    [Header("AudioSpectrum (Fallback)")]
     public float sensitivity = 1.4f;    // wie stark der Bass über dem Schnitt liegen muss (kleiner = empfindlicher)
     public float minBeatGap = 0.3f;     // Mindestabstand zwischen erkannten Schlägen (Sek.)
     public int bassBins = 8;            // wie viele tiefe Frequenzbänder ausgewertet werden
     public float minLevel = 0.0005f;    // Grundrauschen ignorieren (verhindert Schläge in der Stille)
 
-    [Header("Fallback ohne Audio (Zeit-gesteuert)")]
+    [Header("Timed (Fallback ohne Audio)")]
     public float startInterval = 0.8f;
     public float endInterval = 2.5f;
     public float flatlineTime = 42f;
 
+    public System.Action OnBeat; // Event für Synchronisation
+
     private float timer;
-    private readonly List<float> beatTimes = new List<float>();
+private readonly List<float> beatTimes = new List<float>();
     private float nextBeatTime;
     private float lastBeatTime;
+    private int nextBeatIndex;
 
     private float[] spectrum;
     private float[] energyHistory;
@@ -39,6 +61,7 @@ public class ECGLineUI : MaskableGraphic
         beatTimes.Clear();
         nextBeatTime = startInterval;
         lastBeatTime = -minBeatGap;
+        nextBeatIndex = 0;
         historyIndex = 0;
         if (spectrum == null) spectrum = new float[512];
         if (energyHistory == null) energyHistory = new float[43]; // ~1 Sekunde Verlauf
@@ -49,16 +72,55 @@ public class ECGLineUI : MaskableGraphic
     {
         timer += Time.deltaTime;
 
-        if (audioSource != null)
-            DetectBeatsFromAudio();
-        else
-            ScheduleBeatsByTime();
+        switch (beatMode)
+        {
+            case BeatMode.AudioBeatTimes:
+                DetectBeatsFromBeatTimes();
+                break;
+            case BeatMode.AudioSpectrum:
+                if (audioSource != null) DetectBeatsFromAudio();
+                else ScheduleBeatsByTime();
+                break;
+            default:
+                ScheduleBeatsByTime();
+                break;
+        }
 
         float oldestVisible = timer - (rectTransform.rect.width / Mathf.Max(speed, 1f)) - 1f;
         while (beatTimes.Count > 0 && beatTimes[0] < oldestVisible)
             beatTimes.RemoveAt(0);
 
         SetVerticesDirty();
+    }
+
+    // Exakte Synchronisation: ein Spike erscheint, sobald die Abspielposition einen vorgegebenen
+    // Schlag-Zeitpunkt erreicht. Da wir die Clip-Zeit (audioSource.time) abfragen, bleiben die Spikes
+    // automatisch synchron - auch wenn der Herzschlag langsamer (pitch < 1) abgespielt wird.
+    private void DetectBeatsFromBeatTimes()
+    {
+        if (audioSource == null || beatClipTimes == null || beatClipTimes.Length == 0)
+            return;
+        if (!audioSource.isPlaying)
+            return;
+
+        float clipTime = audioSource.time;
+        while (nextBeatIndex < beatClipTimes.Length && beatClipTimes[nextBeatIndex] <= clipTime)
+        {
+            RegisterBeat();
+            nextBeatIndex++;
+        }
+    }
+
+    // Registriert einen Schlag zum aktuellen Zeitpunkt und spielt den Monitor-Piep ab
+    private void RegisterBeat()
+    {
+        beatTimes.Add(timer);
+        lastBeatTime = timer;
+
+        if (beepSource != null && beepClip != null)
+            beepSource.PlayOneShot(beepClip, beepVolume);
+
+        OnBeat?.Invoke(); // Event feuern
     }
 
     // Erkennt Herzschläge an Bass-Energie, die über dem gleitenden Durchschnitt liegt
@@ -86,10 +148,7 @@ public class ECGLineUI : MaskableGraphic
                       && (timer - lastBeatTime) > minBeatGap;
 
         if (isBeat)
-        {
-            beatTimes.Add(timer);
-            lastBeatTime = timer;
-        }
+            RegisterBeat();
 
         energyHistory[historyIndex] = bass;
         historyIndex = (historyIndex + 1) % energyHistory.Length;

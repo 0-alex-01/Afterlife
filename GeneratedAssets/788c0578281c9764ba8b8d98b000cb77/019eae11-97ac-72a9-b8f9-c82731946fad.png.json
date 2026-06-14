@@ -1,0 +1,28 @@
+{
+    "asset": "788c0578281c9764ba8b8d98b000cb77",
+    "fileName": "019eae11-97ac-72a9-b8f9-c82731946fad.png",
+    "prompt": "A mystical ethereal portal archway, made of glowing twisted ancient wood and roots forming an oval gateway, soft blue-white otherworldly light glowing inside, melancholic afterlife fantasy style, low-poly stylized 3D game asset, centered single object, plain neutral grey background, full view, front facing",
+    "negativePrompt": "",
+    "model": "gpt-image-1",
+    "modelName": "GPT Image 1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

@@ -1,0 +1,23 @@
+{
+    "asset": "518529014919365489152c7e5223d964",
+    "fileName": "019eae14-8cde-796b-a2eb-f4c51bae0538.glb",
+    "prompt": "A mystical ethereal portal archway made of glowing twisted ancient wood and roots forming an oval gateway, low-poly stylized fantasy game asset",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "788c0578281c9764ba8b8d98b000cb77",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

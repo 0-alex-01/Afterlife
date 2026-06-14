@@ -1,0 +1,15 @@
+{
+    "asset": "646901023ba2a4f47bfdbffc3f3d0768",
+    "fileName": "019eadf6-8537-7b1f-a96c-608a4a88fabd.wav",
+    "prompt": "Glass shattering softly, crystalline tinkling, ethereal dissolve sound, magical and light.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 1.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

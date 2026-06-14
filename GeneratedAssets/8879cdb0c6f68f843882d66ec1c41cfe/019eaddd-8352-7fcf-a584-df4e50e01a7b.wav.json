@@ -1,0 +1,15 @@
+{
+    "asset": "8879cdb0c6f68f843882d66ec1c41cfe",
+    "fileName": "019eaddd-8352-7fcf-a584-df4e50e01a7b.wav",
+    "prompt": "Ethereal afterlife ambient drone, soft melancholic wind, distant choir-like pads, dreamy reverberant atmosphere, weightless and otherworldly, no rhythm, gentle and continuous, hauntingly peaceful",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

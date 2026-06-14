@@ -1,0 +1,15 @@
+{
+    "asset": "51c86cb734a37fa418146e9f3b3030c5",
+    "fileName": "019ead71-f1c3-7eb9-a990-86dfbf25c87b.wav",
+    "prompt": "A warm nostalgic dreamlike ambient memory soundscape of mixed indistinct human conversation and joyful laughter: many overlapping muffled voices chatting, friends and family talking and laughing together as if at a lively gathering, cheerful chatter, bursts of warm laughter, soft dreamy reverb like a fading memory, seamless loop",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

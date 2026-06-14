@@ -1,0 +1,15 @@
+{
+    "asset": "408764d1b84566d4295ef6a6892bf187",
+    "fileName": "019ead71-f233-75e9-95c5-dbed5cb81eeb.wav",
+    "prompt": "A peaceful serene ambient nature soundscape: gentle wind rustling through green leaves, soft birdsong, a calm flowing stream, distant forest ambience, leaves rustling, tranquil and immersive, dreamy natural memory atmosphere, seamless loop",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

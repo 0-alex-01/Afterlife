@@ -4,6 +4,8 @@ Shader "Custom/PlanarMirror"
     {
         _ReflectionTex ("Reflection", 2D) = "black" {}
         _Tint ("Tint", Color) = (1, 1, 1, 1)
+        _BackColor ("Back Color", Color) = (1, 1, 1, 1)
+        _FlipFace ("Flip Face", Float) = 0
     }
 
     SubShader
@@ -35,6 +37,8 @@ Shader "Custom/PlanarMirror"
             TEXTURE2D(_ReflectionTex);
             SAMPLER(sampler_ReflectionTex);
             float4 _Tint;
+            float4 _BackColor;
+            float  _FlipFace;
 
             Varyings vert (Attributes IN)
             {
@@ -45,11 +49,20 @@ Shader "Custom/PlanarMirror"
                 return OUT;
             }
 
-            half4 frag (Varyings IN) : SV_Target
+            half4 frag (Varyings IN, FRONT_FACE_TYPE facing : FRONT_FACE_SEMANTIC) : SV_Target
             {
-                float2 uv = IN.screenPos.xy / IN.screenPos.w;
-                half4 col = SAMPLE_TEXTURE2D(_ReflectionTex, sampler_ReflectionTex, uv);
-                return col * _Tint;
+                bool isFront = IS_FRONT_VFACE(facing, true, false);
+                if (_FlipFace > 0.5) isFront = !isFront;
+
+                if (isFront)
+                {
+                    float2 uv = IN.screenPos.xy / IN.screenPos.w;
+                    half4 col = SAMPLE_TEXTURE2D(_ReflectionTex, sampler_ReflectionTex, uv);
+                    return col * _Tint;
+                }
+
+                // Rueckseite: einfach weiss
+                return _BackColor;
             }
             ENDHLSL
         }

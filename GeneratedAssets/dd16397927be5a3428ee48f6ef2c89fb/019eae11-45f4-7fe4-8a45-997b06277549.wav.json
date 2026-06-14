@@ -1,0 +1,15 @@
+{
+    "asset": "dd16397927be5a3428ee48f6ef2c89fb",
+    "fileName": "019eae11-45f4-7fe4-8a45-997b06277549.wav",
+    "prompt": "Soft ethereal baby presence, gentle infant cooing and quiet babbling, warm muffled womb heartbeat, soft breathing, dreamy reverberant afterlife atmosphere. No music, no bells, no chimes, no music box.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}
