@@ -1,0 +1,28 @@
+{
+    "asset": "15aaae9e7051ec84883bd91137b246b2",
+    "fileName": "019ec7f8-fcf5-712a-a388-7dceb196cbf3.png",
+    "prompt": "A twisted burnt broken fragment of fractured metal and stone, violently shattered, ashen grey charred cracked surface with embers, chaotic ruin art object, single object centered, isolated on plain solid white background, even studio lighting, realistic stylized 3D render",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

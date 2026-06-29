@@ -1,0 +1,28 @@
+{
+    "asset": "877a340a4b5cf464fb4e6f89bbe29df1",
+    "fileName": "019ed603-1b16-7412-956b-c5ec042aa50b.png",
+    "prompt": "Full body front view of an ethereal translucent ghost soul figure, centered, serene featureless humanoid with head and arms gently lowered at the sides, the lower body dissolving into smooth flowing wisps of smoke instead of legs, soft glowing otherworldly spirit, simple smooth symmetrical silhouette, soft volumetric light, plain solid light grey studio background, clean clear subject for 3D capture, no text",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

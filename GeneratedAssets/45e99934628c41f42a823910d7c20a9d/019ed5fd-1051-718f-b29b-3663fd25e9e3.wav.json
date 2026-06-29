@@ -1,0 +1,15 @@
+{
+    "asset": "45e99934628c41f42a823910d7c20a9d",
+    "fileName": "019ed5fd-1051-718f-b29b-3663fd25e9e3.wav",
+    "prompt": "Hollow melancholic ambient drone, thin cold cavernous pad, sparse distant fading tones, empty echoing space, sense of loss",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

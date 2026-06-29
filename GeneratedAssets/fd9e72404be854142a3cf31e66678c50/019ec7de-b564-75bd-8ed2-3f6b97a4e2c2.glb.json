@@ -1,0 +1,23 @@
+{
+    "asset": "fd9e72404be854142a3cf31e66678c50",
+    "fileName": "019ec7de-b564-75bd-8ed2-3f6b97a4e2c2.glb",
+    "prompt": "A lush rounded green leafy garden shrub bush, dense foliage, healthy natural green, game-ready 3D nature asset",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "bf053a5a8a3da004d9e78dfe21c3b017",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

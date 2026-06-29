@@ -1,0 +1,23 @@
+{
+    "asset": "7c6c51a9ae6da8746b5746e9898cebad",
+    "fileName": "019ec806-1f4c-7d68-b502-7f6a79834050.glb",
+    "prompt": "A lush green fern plant with arching detailed fronds, healthy natural green, game-ready 3D nature asset",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "2833e863850a3844eb6fd38afa86f9bd",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

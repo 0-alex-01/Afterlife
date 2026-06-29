@@ -1,0 +1,23 @@
+{
+    "asset": "5b0d40076d62a4c40b38d7b18c5691dc",
+    "fileName": "019ec7fd-724e-7606-a0b9-5d14dde47b20.glb",
+    "prompt": "A twisted burnt broken fragment of fractured metal and stone, violently shattered charred surface, chaotic ruin art object",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "15aaae9e7051ec84883bd91137b246b2",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

@@ -1,0 +1,23 @@
+{
+    "asset": "5b9a6a67437dd594b80deb73dc5e7fb1",
+    "fileName": "019ec7fc-2d5c-78a7-80db-e712b6fd3d79.glb",
+    "prompt": "A blooming sacred-geometry flower orb of golden petals and soft light, ethereal floating art sculpture",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "0fa6dfeca4e01f442a20322b8cc5d0c2",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

@@ -40,6 +40,7 @@ namespace Autohand {
 
         [UnityEditor.InitializeOnLoadMethod]
         public static void CheckSceneForOldPoses() {
+            /* Disable auto-opening to prevent potential loops or flickering on domain reloads
             if(!loaded) {
                 if(window != null)
                     window.Close();
@@ -57,6 +58,7 @@ namespace Autohand {
                 // Mark as loaded so this auto-initialization only happens once.
                 loaded = true;
             }
+            */
         }
 
         [MenuItem("Window/Autohand/Pose Data Updater")]

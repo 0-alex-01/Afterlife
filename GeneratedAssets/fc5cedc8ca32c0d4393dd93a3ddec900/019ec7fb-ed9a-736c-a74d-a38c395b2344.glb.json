@@ -1,0 +1,23 @@
+{
+    "asset": "fc5cedc8ca32c0d4393dd93a3ddec900",
+    "fileName": "019ec7fb-ed9a-736c-a74d-a38c395b2344.glb",
+    "prompt": "A glowing translucent crystal shard sculpture wrapped with green vines and leaves, ethereal serene art object",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "84a81a6edb30fc246a5770fa78b375ec",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

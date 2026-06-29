@@ -1,0 +1,15 @@
+{
+    "asset": "a40a75ebf63f6134380fdf7bcb62ff40",
+    "fileName": "019ed5fd-2786-722c-9248-600d62535fef.wav",
+    "prompt": "Resolved harmonic ambient chord, clean consonant bright pad opening upward, serene blooming reverb, transcendent weightless light, peaceful ascension",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

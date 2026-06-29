@@ -1,0 +1,15 @@
+{
+    "asset": "9bdbe2d688d1ab841807860d9e4cfd44",
+    "fileName": "019ed5fd-235e-7bf8-a7fc-1d91bc3e75fb.wav",
+    "prompt": "Warm alive ambient pad, gentle glowing organic tones, hopeful soft rising harmonic shimmer, comforting sustained drone, cave reverb",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

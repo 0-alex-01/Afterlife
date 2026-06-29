@@ -1,0 +1,23 @@
+{
+    "asset": "74cf4f450879919459b1d9ffe0576512",
+    "fileName": "019ec7fc-01c1-73b9-8a9b-1ba7ef181b9a.glb",
+    "prompt": "A gnarled dead tree branch fragment with peeling bark and withered curled leaves, autumnal decay",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "0df3dffc518740443b8d85661a79bc2a",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

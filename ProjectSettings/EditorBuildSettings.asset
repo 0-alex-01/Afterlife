@@ -20,6 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AutoHand/Examples/Scenes/OpenXR/Demo.unity
     guid: 1551acbe06158c74e8ab2f58f9b373dc
+  - enabled: 1
+    path: Assets/Project Folder/Mirrorroom.unity
+    guid: f8d1d7182fdd68641a0d49da60365ef0
+  - enabled: 1
+    path: Assets/Project Folder/Leere.unity
+    guid: 694f5577bdca87a4fa23df7d1eeac2c3
+  - enabled: 1
+    path: Assets/Project Folder/Wiedergeburt.unity
+    guid: 95ccaf3d9ff89b54e999eb02ec31f874
+  - enabled: 1
+    path: Assets/Project Folder/HimmelHoelle.unity
+    guid: 0aa9040739c16514faf815a8c940e59d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0ae8438a2a7d40e4c9596412264c6357, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

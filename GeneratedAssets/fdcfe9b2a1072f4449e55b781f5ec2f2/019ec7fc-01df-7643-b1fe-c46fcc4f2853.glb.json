@@ -1,0 +1,23 @@
+{
+    "asset": "fdcfe9b2a1072f4449e55b781f5ec2f2",
+    "fileName": "019ec7fc-01df-7643-b1fe-c46fcc4f2853.glb",
+    "prompt": "A cracked weathered ancient stone relic fragment with moss and rust, broken crumbling edges, decaying art object",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "c954d441cf2bc3248862d99f29b04c7a",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

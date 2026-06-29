@@ -1,0 +1,23 @@
+{
+    "asset": "c20b09708d142bb4cb4b46fc6f48bb90",
+    "fileName": "019ec806-16f0-7115-a0dd-7f8494b39d75.glb",
+    "prompt": "A tuft of tall ornamental grass, slender upright green blades, healthy natural green, game-ready 3D nature asset",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "54c8f95948738f740934b97e9ba755ed",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

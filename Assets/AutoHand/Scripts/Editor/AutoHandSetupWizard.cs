@@ -33,15 +33,15 @@ namespace AutoHand {
 
 
         static void Start() {
-            SetRequiredSettings();
+            EditorApplication.update -= Start;
 
+            // Only run if layers are missing or quality is not set, but don't open URL automatically
             if(ShowSetupWindow()) {
-                OpenWindow();
-                Application.OpenURL("https://earnest-robot.gitbook.io/auto-hand-docs/");
+                SetRequiredSettings();
+                // OpenWindow();
+                // Application.OpenURL("https://earnest-robot.gitbook.io/auto-hand-docs/");
                 assetPath = Application.dataPath;
             }
-
-            EditorApplication.update -= Start;
         }
 
         [MenuItem("Window/Autohand/Setup Window")]

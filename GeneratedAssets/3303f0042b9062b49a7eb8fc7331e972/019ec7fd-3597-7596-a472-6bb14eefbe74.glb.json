@@ -1,0 +1,23 @@
+{
+    "asset": "3303f0042b9062b49a7eb8fc7331e972",
+    "fileName": "019ec7fd-3597-7596-a472-6bb14eefbe74.glb",
+    "prompt": "A jagged shattered dark obsidian shard cluster, sharp broken angular fragments, chaotic destroyed art object",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "5925e070b3463eb4388a09745e0dd3f1",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

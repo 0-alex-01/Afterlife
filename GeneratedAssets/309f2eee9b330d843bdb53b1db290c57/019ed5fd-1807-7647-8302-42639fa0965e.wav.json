@@ -1,0 +1,15 @@
+{
+    "asset": "309f2eee9b330d843bdb53b1db290c57",
+    "fileName": "019ed5fd-1807-7647-8302-42639fa0965e.wav",
+    "prompt": "Soft resonant crystal bell chime, single gentle strike with long ethereal shimmering reverb tail, calm magical touch sound",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 3.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

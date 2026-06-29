@@ -1,0 +1,28 @@
+{
+    "asset": "0fa6dfeca4e01f442a20322b8cc5d0c2",
+    "fileName": "019ec7f8-849b-70d3-aab8-a903d07dd853.png",
+    "prompt": "A blooming sacred-geometry flower orb made of luminous golden petals and soft glowing light, ethereal serene floating art sculpture, single object centered, isolated on plain solid white background, even studio lighting, realistic stylized 3D render",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

@@ -1,0 +1,15 @@
+{
+    "asset": "eabeda40624c2644cb09ee1a5e1cda63",
+    "fileName": "019ed5fd-1046-7728-bc2d-fedb027df212.wav",
+    "prompt": "Ethereal weightless ambient drone, soft sustained airy pad, calm meditative, distant shimmer tones, spacious cave reverb, cyan-cool atmosphere",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

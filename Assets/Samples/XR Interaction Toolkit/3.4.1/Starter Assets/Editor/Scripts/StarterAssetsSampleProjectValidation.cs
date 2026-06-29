@@ -170,6 +170,7 @@ namespace UnityEditor.XR.Interaction.Toolkit.Samples
 
         static void ShowWindowIfIssuesExist()
         {
+            /* Disable auto-opening to prevent multiple tabs/windows
             foreach (var validation in s_BuildValidationRules)
             {
                 if (validation.CheckPredicate == null || !validation.CheckPredicate.Invoke())
@@ -178,6 +179,7 @@ namespace UnityEditor.XR.Interaction.Toolkit.Samples
                     return;
                 }
             }
+            */
         }
 
         internal static void ShowWindow()

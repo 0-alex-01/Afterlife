@@ -48,6 +48,7 @@ public class PT_PackageWelcomeWindow : EditorWindow
     {
         static PT_StartupChecker()
         {
+            /* Disable auto-opening to prevent loop/flickering
             if (Application.isBatchMode) return;
 
             if (SessionState.GetBool(ShouldShowKey, false))
@@ -55,6 +56,7 @@ public class PT_PackageWelcomeWindow : EditorWindow
                 SessionState.SetBool(ShouldShowKey, false); // consume immediately
                 EditorApplication.update += ShowOnLoad;
             }
+            */
         }
     }
     // -------------------------------------------------------------------------

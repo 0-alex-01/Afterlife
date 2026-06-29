@@ -1,0 +1,15 @@
+{
+    "asset": "199b7775b2da82240a18c82e598eaaba",
+    "fileName": "019ed6c2-3c58-7d30-ac26-706a2eea3eb3.wav",
+    "prompt": "A deep, soft low rumble swelling upward into an ethereal sacred rising tone, heavy stone slowly emerging from the ground, airy reverberant whoosh, otherworldly and calm, no music, no melody",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 4.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

@@ -1,0 +1,23 @@
+{
+    "asset": "8cab90794eaffb34b8b8264a870d1658",
+    "fileName": "019ed60a-f8c9-74fb-8c36-ff3db9d3ab32.glb",
+    "prompt": "Ethereal translucent gender-neutral androgynous ghost soul figure, smooth featureless body, blank serene face, arms gently lowered, lower body dissolving into smooth flowing wisps of smoke with no legs, simple smooth otherworldly spirit form, symmetrical",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "9cfd484524162ae4ab303bc10aac4771",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

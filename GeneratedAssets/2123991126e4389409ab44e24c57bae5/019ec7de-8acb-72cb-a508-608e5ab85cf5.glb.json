@@ -1,0 +1,23 @@
+{
+    "asset": "2123991126e4389409ab44e24c57bae5",
+    "fileName": "019ec7de-8acb-72cb-a508-608e5ab85cf5.glb",
+    "prompt": "A small clump of wildflowers, green stems and leaves with white daisies and yellow buttercup blossoms, game-ready 3D nature asset",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "ebce06a88b182fc42975af2bf1d1ed3c",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

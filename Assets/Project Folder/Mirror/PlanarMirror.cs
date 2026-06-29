@@ -13,6 +13,9 @@ public class PlanarMirror : MonoBehaviour
     [Tooltip("Welche Layer im Spiegel reflektiert werden")]
     public LayerMask reflectLayers = ~0;
 
+    [Tooltip("Zusaetzliche Layer, die NUR im Spiegel sichtbar sind (z.B. der morphende Seelen-Zwilling), auch wenn sie von der Hauptkamera ausgeblendet werden")]
+    public LayerMask extraReflectionLayers = 0;
+
     [Tooltip("Aufloesung des Spiegelbilds relativ zum Bildschirm (kleiner = schneller)")]
     [Range(0.1f, 1f)] public float resolutionMultiplier = 0.75f;
 
@@ -125,7 +128,7 @@ public class PlanarMirror : MonoBehaviour
         reflectionCamera.farClipPlane = viewer.farClipPlane;
         reflectionCamera.orthographic = viewer.orthographic;
         reflectionCamera.orthographicSize = viewer.orthographicSize;
-        reflectionCamera.cullingMask = reflectLayers & viewer.cullingMask;
+        reflectionCamera.cullingMask = (reflectLayers & viewer.cullingMask) | extraReflectionLayers;
 
         Vector3 pos = transform.position;
         Vector3 normal = flipNormal ? -transform.forward : transform.forward;
