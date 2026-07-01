@@ -26,13 +26,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _RimPower: 4
-    - _RimStrength: 1
+    - _RimStrength: 0.5
     - _RippleProgress: 0
     - _RippleWidth: 0.08
+    - _SplitProgress: 0
     m_Colors:
     - _BaseColor: {r: 0.02, g: 0.02, b: 0.025, a: 0.1}
-    - _RimColor: {r: 0.25, g: 0.69, b: 0.8, a: 1}
+    - _RimColor: {r: 0.2, g: 0.4, b: 0.6, a: 1}
     - _RippleCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _RippleColor: {r: 0.25, g: 0.69, b: 0.8, a: 1}
+    - _SplitColorA: {r: 1, g: 0.72, b: 0.28, a: 1}
+    - _SplitColorB: {r: 1, g: 0.12, b: 0.14, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

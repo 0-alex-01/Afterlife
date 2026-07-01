@@ -1,0 +1,12 @@
+{
+    "asset": "b0e87343478cf2446b8bd485c99d11d5",
+    "fileName": "019f190a-89e8-756b-8e7a-668a60c8d8e3_Preview.png",
+    "prompt": "Seamless tileable top-down texture of an ancient dark stone floor walkway, a single straight glowing cyan-teal rune line running vertically through the exact center, faint ethereal mystical runes and cracks, weathered dark basalt stone, very dark near-black edges, soft ghostly glow, atmospheric and moody, orthographic top-down view, high detail",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 572722614,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

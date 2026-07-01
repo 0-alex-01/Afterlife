@@ -31,7 +31,7 @@ Material:
     m_Floats:
     - _FlipFace: 0
     m_Colors:
-    - _BackColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BackColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

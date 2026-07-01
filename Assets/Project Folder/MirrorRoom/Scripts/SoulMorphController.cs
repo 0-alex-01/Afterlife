@@ -526,7 +526,7 @@ public class SoulMorphController : MonoBehaviour
             soulTwinBodyRenderer.GetPropertyBlock(_mpb);
             _mpb.SetColor(ID_BaseColor, _blended.soulBase);
             _mpb.SetColor(ID_RimColor, _blended.soulRim);
-            float rimStrength = Mathf.Lerp(0.6f, 3.5f, _proximity) + _pulseValue * 3f;
+            float rimStrength = Mathf.Lerp(1.6f, 3.8f, _proximity) + _pulseValue * 3f;
             _mpb.SetFloat(ID_RimStrength, rimStrength);
             _mpb.SetFloat(ID_DissolveAmount, _blended.dissolve);
             _mpb.SetFloat(ID_GlitchAmount, _blended.glitch);

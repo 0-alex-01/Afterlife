@@ -1,0 +1,15 @@
+{
+    "asset": "76285d58975165f43af990bcf78a693f",
+    "fileName": "019f18fc-e4cd-7797-808a-f200ffa5386d.wav",
+    "prompt": "Eerie dissonant ambient drone for a haunted mirror, otherworldly and unsettling, detuned shifting tones with a faint ghostly shimmer and subtle glitchy crackle, cold and atmospheric, slow evolving texture with no rhythm, no beat, no mechanical, machine, engine or drilling sounds, soft and spectral, seamless loop",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

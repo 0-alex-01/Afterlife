@@ -31,6 +31,15 @@ public class PlanarMirror : MonoBehaviour
     [Tooltip("Reflektion auch im Editor (Scene View) anzeigen?")]
     public bool showInEditor = true;
 
+    [Header("Debug")]
+    [Tooltip("Loggt die gewaehlte Viewer-Kamera und ob SubmitRenderRequest unterstuetzt wird.")]
+    public bool debugLog = false;
+    [Tooltip("Im Play-Mode: speichert die Reflexionstextur als PNG (persistentDataPath).")]
+    public KeyCode dumpKey = KeyCode.F8;
+    [Tooltip("Zeigt die Reflexionstextur LIVE in der Bildschirmecke (nur Play-Mode). Bestes Test-Werkzeug: zeigt direkt, was die Spiegelkamera sieht - unabhaengig von Raumlicht und Spiegel-Oberflaeche.")]
+    public bool debugOverlay = false;
+
+    private Camera _lastLoggedViewer;
     private Camera reflectionCamera;
     private RenderTexture reflectionTexture;
     private int rtWidth, rtHeight;
@@ -41,40 +50,58 @@ public class PlanarMirror : MonoBehaviour
     private static readonly int FlipFaceID = Shader.PropertyToID("_FlipFace");
     private static readonly HashSet<Camera> reflectionCameras = new HashSet<Camera>();
 
-    private void OnEnable()
-    {
-        RenderPipelineManager.beginCameraRendering += OnBeginCamera;
-    }
-
     private void OnDisable()
     {
-        RenderPipelineManager.beginCameraRendering -= OnBeginCamera;
         Cleanup();
     }
 
-    private void OnBeginCamera(ScriptableRenderContext ctx, Camera cam)
+    // Unity 6 / URP 17: Die alte UniversalRenderPipeline.RenderSingleCamera ist veraltet und
+    // liefert im Play-Mode ohne Fehlermeldung kein Bild mehr (der Spiegel bleibt weiss).
+    // Stattdessen rendern wir das Spiegelbild in LateUpdate ueber RenderPipeline.SubmitRenderRequest.
+    // Das laeuft AUSSERHALB der SRP-Render-Schleife und vermeidet so den
+    // "Recursive rendering is not supported"-Fehler.
+    private void LateUpdate()
+    {
+        if (Application.isPlaying && Input.GetKeyDown(dumpKey)) DumpReflectionTexture();
+        RenderReflection();
+    }
+
+    private void RenderReflection()
     {
         if (!isActiveAndEnabled) return;
         if (!Application.isPlaying && !showInEditor) return;
 
-        // Rekursion vermeiden: nicht fuer unsere eigenen Reflexions-Kameras rendern
-        if (reflectionCameras.Contains(cam)) return;
-        if (cam.cameraType != CameraType.Game && cam.cameraType != CameraType.SceneView) return;
+        Camera viewer = GetViewerCamera();
+        if (viewer == null)
+        {
+            if (debugLog) Debug.LogWarning("[PlanarMirror] Keine Viewer-Kamera gefunden -> Reflexion uebersprungen.", this);
+            return;
+        }
+
+        if (viewer != _lastLoggedViewer)
+        {
+            _lastLoggedViewer = viewer;
+            if (debugLog) Debug.Log($"[PlanarMirror] Viewer = '{viewer.name}' (enabled={viewer.enabled}, mask=0x{viewer.cullingMask:X})", this);
+        }
 
         EnsureResources();
-        UpdateReflectionCamera(cam);
+        UpdateReflectionCamera(viewer);
 
-        // Spiegelbild jetzt in die RenderTexture rendern (umgekehrtes Culling fuer Spiegel)
-        // RenderSingleCamera ist als veraltet markiert, ist aber fuer rekursives
-        // Spiegel-Rendering der einzig gangbare Weg (SubmitRenderRequest ist waehrend
-        // des Renderns nicht erlaubt).
+        // Spiegelbild in die RenderTexture rendern (umgekehrtes Culling fuer den Spiegel).
         GL.invertCulling = true;
-#pragma warning disable 618
-        UniversalRenderPipeline.RenderSingleCamera(ctx, reflectionCamera);
-#pragma warning restore 618
+        var request = new UniversalRenderPipeline.SingleCameraRequest { destination = reflectionTexture };
+        bool supported = RenderPipeline.SupportsRenderRequest(reflectionCamera, request);
+        if (supported)
+        {
+            RenderPipeline.SubmitRenderRequest(reflectionCamera, request);
+        }
+        else if (debugLog)
+        {
+            Debug.LogError("[PlanarMirror] SubmitRenderRequest wird NICHT unterstuetzt (aktive Pipeline ist evtl. nicht URP).", this);
+        }
         GL.invertCulling = false;
 
-        // Textur + Eigenschaften an den Spiegel binden
+        // Textur + Eigenschaften an den Spiegel binden.
         Renderer r = GetComponent<Renderer>();
         if (propBlock == null) propBlock = new MaterialPropertyBlock();
         r.GetPropertyBlock(propBlock);
@@ -82,6 +109,27 @@ public class PlanarMirror : MonoBehaviour
         propBlock.SetColor(TintID, tint);
         propBlock.SetFloat(FlipFaceID, flipNormal ? 1f : 0f);
         r.SetPropertyBlock(propBlock);
+    }
+
+    private Camera GetViewerCamera()
+    {
+        if (Application.isPlaying)
+        {
+            var main = Camera.main;
+            if (main != null && main.enabled && main.gameObject.activeInHierarchy) return main;
+            
+            var all = Object.FindObjectsByType<Camera>(FindObjectsSortMode.None);
+            foreach (var c in all)
+            {
+                if (c.enabled && c.gameObject.activeInHierarchy && c != reflectionCamera)
+                    return c;
+            }
+        }
+#if UNITY_EDITOR
+        var sv = UnityEditor.SceneView.lastActiveSceneView;
+        if (sv != null) return sv.camera;
+#endif
+        return null;
     }
 
     private void EnsureResources()
@@ -120,14 +168,18 @@ public class PlanarMirror : MonoBehaviour
 
     private void UpdateReflectionCamera(Camera viewer)
     {
-        reflectionCamera.clearFlags = viewer.clearFlags;
-        reflectionCamera.backgroundColor = viewer.backgroundColor;
+        // Always clear to black to avoid skybox/background leakage in the reflection.
+        reflectionCamera.clearFlags = CameraClearFlags.SolidColor;
+        reflectionCamera.backgroundColor = Color.black;
+        
         reflectionCamera.fieldOfView = viewer.fieldOfView;
         reflectionCamera.aspect = viewer.aspect;
         reflectionCamera.nearClipPlane = viewer.nearClipPlane;
         reflectionCamera.farClipPlane = viewer.farClipPlane;
         reflectionCamera.orthographic = viewer.orthographic;
         reflectionCamera.orthographicSize = viewer.orthographicSize;
+        
+        // Ensure the mirror sees what the viewer sees, plus the special SoulMirror layer.
         reflectionCamera.cullingMask = (reflectLayers & viewer.cullingMask) | extraReflectionLayers;
 
         Vector3 pos = transform.position;
@@ -141,10 +193,64 @@ public class PlanarMirror : MonoBehaviour
         Matrix4x4 reflection = Matrix4x4.identity;
         CalculateReflectionMatrix(ref reflection, worldPlane);
 
+        // Set the transform (position AND mirrored orientation) FIRST
+        reflectionCamera.transform.position = reflection.MultiplyPoint(viewer.transform.position);
+        Vector3 reflectedForward = reflection.MultiplyVector(viewer.transform.forward);
+        Vector3 reflectedUp = reflection.MultiplyVector(viewer.transform.up);
+        if (reflectedForward.sqrMagnitude > 1e-6f && reflectedUp.sqrMagnitude > 1e-6f)
+        {
+            reflectionCamera.transform.rotation = Quaternion.LookRotation(reflectedForward, reflectedUp);
+        }
+
         reflectionCamera.worldToCameraMatrix = viewer.worldToCameraMatrix * reflection;
+        
+        // Calculate oblique projection matrix for clipping
+        // We use a slightly more robust calculation for the side sign
         Vector4 clipPlane = CameraSpacePlane(reflectionCamera, pos, normal, 1.0f);
         reflectionCamera.projectionMatrix = viewer.CalculateObliqueMatrix(clipPlane);
-        reflectionCamera.transform.position = reflection.MultiplyPoint(viewer.transform.position);
+    }
+
+    private Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
+    {
+        // Add a small offset to the clip plane to avoid precision artifacts at the mirror edge
+        Vector3 offsetPos = pos + normal * clipPlaneOffset;
+        Matrix4x4 m = cam.worldToCameraMatrix;
+        Vector3 cpos = m.MultiplyPoint(offsetPos);
+        Vector3 cnormal = m.MultiplyVector(normal).normalized * sideSign;
+        return new Vector4(cnormal.x, cnormal.y, cnormal.z, -Vector3.Dot(cpos, cnormal));
+    }
+
+    // Speichert die aktuelle Reflexionstextur als PNG, um zu pruefen, ob ueberhaupt etwas
+    // gerendert wird (To-Do #3). Schwarz = nichts gerendert; Raum sichtbar = Renderpfad ok.
+    private void DumpReflectionTexture()
+    {
+        if (reflectionTexture == null) { Debug.LogWarning("[PlanarMirror] Keine Reflexionstextur vorhanden.", this); return; }
+        RenderTexture prev = RenderTexture.active;
+        RenderTexture.active = reflectionTexture;
+        var tex = new Texture2D(reflectionTexture.width, reflectionTexture.height, TextureFormat.RGB24, false);
+        tex.ReadPixels(new Rect(0, 0, reflectionTexture.width, reflectionTexture.height), 0, 0);
+        tex.Apply();
+        RenderTexture.active = prev;
+        string path = System.IO.Path.Combine(Application.persistentDataPath, "PlanarMirror_RT.png");
+        System.IO.File.WriteAllBytes(path, tex.EncodeToPNG());
+        Destroy(tex);
+        Debug.Log($"[PlanarMirror] RT gespeichert: {path} ({reflectionTexture.width}x{reflectionTexture.height})", this);
+    }
+
+    // Live-Vorschau der Reflexionstextur in der Bildschirmecke. Damit kannst du beim Fliegen
+    // sofort sehen, was die Spiegelkamera rendert - ohne auf das Raumlicht oder die
+    // Spiegel-Oberflaeche angewiesen zu sein.
+    private void OnGUI()
+    {
+        if (!debugOverlay || !Application.isPlaying || reflectionTexture == null) return;
+        const float w = 320f;
+        float h = w * (reflectionTexture.height / Mathf.Max(1f, (float)reflectionTexture.width));
+        var rect = new Rect(Screen.width - w - 12f, 12f, w, h);
+        GUI.color = Color.white;
+        GUI.DrawTexture(rect, reflectionTexture, ScaleMode.ScaleToFit, false);
+        GUI.Box(rect, GUIContent.none);
+        GUI.Label(new Rect(rect.x, rect.yMax + 2f, w, 20f),
+            $"Mirror RT {reflectionTexture.width}x{reflectionTexture.height}  Viewer: {(_lastLoggedViewer ? _lastLoggedViewer.name : "?")}");
     }
 
     private void Cleanup()
@@ -157,25 +263,6 @@ public class PlanarMirror : MonoBehaviour
             reflectionCamera = null;
         }
         if (reflectionTexture != null) { reflectionTexture.Release(); reflectionTexture = null; }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Vector3 normal = flipNormal ? -transform.forward : transform.forward;
-        Gizmos.color = Color.yellow;
-        Vector3 start = transform.position;
-        Vector3 end = start + normal * 1.5f;
-        Gizmos.DrawLine(start, end);
-        Gizmos.DrawSphere(end, 0.1f);
-    }
-
-    private Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
-    {
-        Vector3 offsetPos = pos + normal * clipPlaneOffset;
-        Matrix4x4 m = cam.worldToCameraMatrix;
-        Vector3 cpos = m.MultiplyPoint(offsetPos);
-        Vector3 cnormal = m.MultiplyVector(normal).normalized * sideSign;
-        return new Vector4(cnormal.x, cnormal.y, cnormal.z, -Vector3.Dot(cpos, cnormal));
     }
 
     private static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMat, Vector4 plane)

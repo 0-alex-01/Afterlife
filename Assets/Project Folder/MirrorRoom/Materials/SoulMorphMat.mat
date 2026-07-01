@@ -33,11 +33,11 @@ Material:
     - _EmissionStrength: 2.4
     - _GlitchAmount: 0
     - _GlitchBands: 18
-    - _RimPower: 3
-    - _RimStrength: 2.6
+    - _RimPower: 2.5
+    - _RimStrength: 2
     m_Colors:
     - _BaseColor: {r: 0.04, g: 0.14, b: 0.17, a: 1}
     - _DissolveEdgeColor: {r: 1, g: 0.6, b: 0.19999996, a: 1}
-    - _RimColor: {r: 0.25, g: 0.69, b: 0.8, a: 1}
+    - _RimColor: {r: 0.25, g: 0.7, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -16,6 +16,9 @@ Shader "Custom/PlanarMirror"
         Pass
         {
             Name "PlanarMirror"
+            // URP rendert nur Pässe mit bekanntem LightMode-Tag im Forward-Pfad.
+            // Ohne dieses Tag wurde der Pass uebersprungen -> Fallback-Unlit = "weisse Saeule".
+            Tags { "LightMode" = "UniversalForward" }
 
             HLSLPROGRAM
             #pragma vertex vert
@@ -49,20 +52,16 @@ Shader "Custom/PlanarMirror"
                 return OUT;
             }
 
-            half4 frag (Varyings IN, FRONT_FACE_TYPE facing : FRONT_FACE_SEMANTIC) : SV_Target
+            half4 frag (Varyings IN) : SV_Target
             {
-                bool isFront = IS_FRONT_VFACE(facing, true, false);
-                if (_FlipFace > 0.5) isFront = !isFront;
-
-                if (isFront)
-                {
-                    float2 uv = IN.screenPos.xy / IN.screenPos.w;
-                    half4 col = SAMPLE_TEXTURE2D(_ReflectionTex, sampler_ReflectionTex, uv);
-                    return col * _Tint;
-                }
-
-                // Rueckseite: einfach weiss
-                return _BackColor;
+                float2 uv = IN.screenPos.xy / IN.screenPos.w;
+                half4 col = SAMPLE_TEXTURE2D(_ReflectionTex, sampler_ReflectionTex, uv);
+                
+                // If the reflection is pure white (likely an error or fallback), return black
+                // or if the color is precisely (0,0,0,0) (empty).
+                if (col.r > 0.99 && col.g > 0.99 && col.b > 0.99) return half4(0, 0, 0, 1);
+                
+                return col * _Tint;
             }
             ENDHLSL
         }
