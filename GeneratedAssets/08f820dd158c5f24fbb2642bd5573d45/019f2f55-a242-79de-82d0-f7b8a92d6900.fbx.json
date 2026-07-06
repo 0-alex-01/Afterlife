@@ -1,0 +1,12 @@
+{
+    "asset": "08f820dd158c5f24fbb2642bd5573d45",
+    "fileName": "019f2f55-a242-79de-82d0-f7b8a92d6900.fbx",
+    "prompt": "Grieving person standing, one hand slowly rising to cover the face and wipe tears, head lowered, quiet sorrow, slow gentle movement. Mourning idle loop.",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 1076932946,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

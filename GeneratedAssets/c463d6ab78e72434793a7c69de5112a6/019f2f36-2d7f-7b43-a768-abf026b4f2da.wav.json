@@ -1,0 +1,15 @@
+{
+    "asset": "c463d6ab78e72434793a7c69de5112a6",
+    "fileName": "019f2f36-2d7f-7b43-a768-abf026b4f2da.wav",
+    "prompt": "Soft melancholic cemetery wind ambience, distant low bell tones, faint muffled whispers, atmospheric drone.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

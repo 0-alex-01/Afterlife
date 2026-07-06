@@ -10,13 +10,13 @@ public class MemoryFragmentDissolve : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float delayBeforeDissolve = 0.5f;
     [SerializeField] private float dissolveDuration = 2.5f;
-    [SerializeField] private float pulseStrength = 0.08f;
-    [SerializeField] private float pulseSpeed = 2.0f;
+    public float pulseStrength = 0.0f;
+    public float pulseSpeed = 2.0f;
 
     [Header("Effects")]
-    [SerializeField] private ParticleSystem dissolveParticles;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private float audioFadeSpeed = 1.5f;
+    public ParticleSystem dissolveParticles;
+    public AudioSource audioSource;
+    public float audioFadeSpeed = 1.5f;
 
     [Header("Scale")]
     [SerializeField] private bool shrinkWhileDissolving = true;

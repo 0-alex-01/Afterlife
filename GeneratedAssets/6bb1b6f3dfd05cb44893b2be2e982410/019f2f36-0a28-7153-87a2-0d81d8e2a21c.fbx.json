@@ -1,0 +1,12 @@
+{
+    "asset": "6bb1b6f3dfd05cb44893b2be2e982410",
+    "fileName": "019f2f36-0a28-7153-87a2-0d81d8e2a21c.fbx",
+    "prompt": "Sorrowful standing idle, slight trembling, head lowered, shoulders slumped. Melancholic pose.",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 565927265,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

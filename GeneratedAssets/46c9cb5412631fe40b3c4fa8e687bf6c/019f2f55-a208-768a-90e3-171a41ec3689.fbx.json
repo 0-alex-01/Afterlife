@@ -1,0 +1,12 @@
+{
+    "asset": "46c9cb5412631fe40b3c4fa8e687bf6c",
+    "fileName": "019f2f55-a208-768a-90e3-171a41ec3689.fbx",
+    "prompt": "Standing at a funeral in grief, head bowed low, hands clasped together in front, shoulders slumped, slow subtle swaying and breathing. Solemn mourning idle loop.",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 1376341823,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

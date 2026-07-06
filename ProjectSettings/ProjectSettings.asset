@@ -988,7 +988,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -1010,11 +1016,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: de7fcc7d-b1b2-4fbb-b6a3-c3ada2d53a4a
+  cloudProjectId: 98371b27-7504-4e65-a658-849ad7baf99d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Afterlife
-  organizationId: bao10nam
+  organizationId: afterliferer
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

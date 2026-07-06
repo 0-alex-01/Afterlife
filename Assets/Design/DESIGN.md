@@ -240,3 +240,68 @@ Each portal is a **doorway the soul walks through**; on passing through, the vie
 - **Choice particle sets (core: object glow motes; optional: portal-edge particles)** — additive-glow, per-theme colors above, sparse and slow. *Match:* existing particle discipline (fewer/softer/longer-lived). *Usage:* around objects, mirror states, portal edges.
 - **Confirm chime + 3 theme ambient beds (core: chime + beds; optional: low theme rumble/haptic)** — pitch-varied (±10–15%) grab confirm + cave-reverb beds crossfading to chosen theme. *Match:* existing Afterlife ambient-bed crossfade approach. *Usage:* commit + theme mood.
 - **Screen fade-to-color (core)** — slow eased full-view fade per theme on walk-through (`#050506` Void / `#1A4A2C` Rebirth / `#6E561E` Judgement). *Match:* VR-comfort transition discipline — slow `SmoothStep`, never a flash. *Usage:* hand-off to Level 3 scene load.
+
+---
+
+## Level 2: Cemetery of Unfinished Goodbyes
+
+A desolate landscape of frozen sorrow. Rows of monolithic stones stretch into a thick, low-clinging fog. Humanoid figures of grey ash and stone stand frozen in poses of grief—some reaching out, some curled inward, some bowed in prayer. The air is heavy, quiet, and desaturated.
+
+- **Scene mood:** Melancholic, quiet, heavy, and still.
+- **Render pipeline:** URP (Volumetric Fog, Bloom, Post-exposure).
+- **Environment:** Low-poly ashen trees (matching `Tree_Scene` silhouette but charcoal grey), minimalist stone monoliths, thick grey/blue volumetric fog.
+- **Light budget:** Low ambient light; only the player's soul glow, the figures' faint grey cracks, and the warm lights (post-comfort) provide illumination.
+
+### UI Design (VR / UX)
+
+Diegetic VR presence continues. The world responds to the player's movement and intent.
+
+- **Ghost Hands (core):** The player's hands appear as translucent, ethereal forms with the signature **cyan fresnel rim** (`#40B0CC`). They hum with a faint internal cyan light, casting a soft glow on nearby surfaces.
+- **Joystick Movement Feedback (optional):**
+  - **Haptic:** Very low-frequency, subtle rumble that increases slightly with speed—a "weighty glide" feel.
+  - **Visual:** Faint, short-lived cyan particle trails (motes) drift from the hands during sustained movement, emphasizing the soul's motion through the heavy air.
+  - **Comfort:** Smooth locomotion (floating); no head-bob; vignette-on-move enabled by default for comfort in the large space.
+
+### Asset Design
+
+A strict desaturated palette defines the space, emphasizing the absence of life before the player interacts.
+
+- **Color Palette (core):**
+  - **Dominant:** Charcoal Grey (`#1A1A1A`) and Ash Grey (`#5A5A5A`).
+  - **Secondary:** Muted Blue-Grey (`#2E3A4E`) for fog and shadows.
+  - **Accent (Interactive):** Soul Cyan (`#40B0CC`) for interaction/hands; Warm Amber (`#E8B65A`) for post-comfort life.
+
+- **Ashen Figures (core):**
+  - **Visual Identity:** Humanoid silhouettes made of cracked, porous grey stone/ash.
+  - **Detail Level:** Minimalist faces (no eyes/mouth), focus on sorrowful posture. Visible "cracks" in the stone that emit a barely-perceptible, cold grey-white light (`#B0B0B0`).
+  - **Scale:** 1:1 human scale, varying slightly in height.
+
+- **Environment & Gravestones (core):**
+  - **Monoliths:** Smooth, cracked stone slabs. No text; the cracks and erosion are the only detail.
+  - **Trees:** Skeletal, low-poly silhouettes from `Tree_Scene`, stripped of leaves and colored charcoal-black.
+  - **Ground:** Dark, matte ash-like terrain with subtle mirror-like sheens in small "puddles" of sorrow.
+
+### Game Feedback (The "Comfort" Interaction)
+
+The core mechanic is comforting the ashen figures, releasing them from their frozen grief.
+
+| Interaction | Tier | Importance | Camera | Time | Transform | Visual | Audio | Input | Rationale |
+|------------|------|-----------|--------|------|-----------|--------|-------|-------|-----------|
+| Reach/Dwell on Figure | core | Light | — | — | — | Cracks in figure brighten (Grey → White/Cyan) | Faint spatialized low hum (reverb) | Distance < 0.5m | Anticipation: figure "notices" the soul. |
+| Touch Figure (Comfort) | core | Medium | — | 0.05s hitstop | Subtle "pulse" in hand glow | Intense cyan flash at contact; particles shed from hand | Soft choral exhale + resonant chime | Hand-figure contact | Action: The moment of release. |
+| Dissolution Effect | core | Heavy | Subtle slow zoom | — | Figure crumbles/sinks | Glowing cracks shatter; figure dissolves into rising ash & cyan light motes | Fading whispers (spatialized) | Success condition | Reaction: The sorrow is released. |
+| Post-Comfort World | core | Medium | — | — | Fog thins in 5m radius | Ground lanterns/monolith cracks glow **Warm Amber** (`#E8B65A`) | Ambience shifts to "Bloom" harmonic pad | Triggered after dissolution | Consequence: The environment reflects the healing. |
+
+#### Sequences
+
+- **Dissolution (core):** Contact (0ms) → Hitstop + Hand Pulse (50ms) → Figure cracks brighten to blinding Cyan-White (200ms) → Figure begins to crumble into particles (400ms) → Ash and light motes drift upward (1.5s) → Figure is gone; nearby fog thins and amber lights activate (3s).
+
+### Assets Needed
+
+- **Ashen Figure (core):** 3D model, humanoid, sorrowful poses (3-5 variants), cracked stone material.
+- **Monoliths (core):** 3D model, stone slabs, eroded/cracked.
+- **Comfort Particle System (core):** Ash fragments (grey) + Light motes (cyan/white), rising, additive blend.
+- **Ground Lantern / Monolith Glow (core):** Small point light + emissive surface, Warm Amber (`#E8B65A`).
+- **Comfort Audio (core):** Choral exhale + resonant chime + fading whispers.
+- **Dissolution Shader (core):** Simple fragment-kill or dissolve shader for the ashen figures.
+

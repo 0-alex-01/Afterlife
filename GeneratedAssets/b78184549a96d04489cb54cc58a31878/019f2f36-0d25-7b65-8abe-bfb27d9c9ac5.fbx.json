@@ -1,0 +1,12 @@
+{
+    "asset": "b78184549a96d04489cb54cc58a31878",
+    "fileName": "019f2f36-0d25-7b65-8abe-bfb27d9c9ac5.fbx",
+    "prompt": "Sorrowful kneeling idle, slow breathing, head lowered, hands resting on thighs. Melancholic pose.",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 116706623,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

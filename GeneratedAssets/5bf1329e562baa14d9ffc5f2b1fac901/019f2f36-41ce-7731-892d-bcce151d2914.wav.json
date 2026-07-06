@@ -1,0 +1,15 @@
+{
+    "asset": "5bf1329e562baa14d9ffc5f2b1fac901",
+    "fileName": "019f2f36-41ce-7731-892d-bcce151d2914.wav",
+    "prompt": "Soft choral exhale with a resonant chime, spiritual release, gentle harmonic chord.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}
