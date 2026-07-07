@@ -105,3 +105,37 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# =====================================================================
+# Custom additions (project-specific)
+# =====================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+Desktop.ini
+
+# JetBrains Rider / IntelliJ
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Unity crash / backup artifacts
+*.stackdump
+/[Bb]ackup*/
+sysinfo.txt.meta
+
+# MCP config (contains machine-local auth token)
+.mcp.json
+
+# Unity AI Assistant temp/cache files
+/[Aa]ssets/AI Toolkit/Temp*
+
+# Claude Code personal settings
+.claude/settings.local.json
