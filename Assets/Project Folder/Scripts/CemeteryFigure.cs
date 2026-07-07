@@ -5,6 +5,8 @@ using Autohand;
 public class CemeteryFigure : MonoBehaviour
 {
     [Header("Interaction Settings")]
+    [Tooltip("Zählt diese Figur für die Pfad-Freischaltung? Zentrale Figuren ohne eigenes Grab: aus.")]
+    public bool countsTowardProgression = true;
     public float requiredTouchDuration = 1.5f;
     public Color glowColor = new Color(0.25f, 0.69f, 0.8f); // Cyan/Teal
     public float glowIntensityMultiplier = 2.0f;

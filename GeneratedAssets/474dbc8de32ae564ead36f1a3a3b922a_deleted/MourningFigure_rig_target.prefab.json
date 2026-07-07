@@ -1,0 +1,23 @@
+{
+    "asset": "474dbc8de32ae564ead36f1a3a3b922a",
+    "fileName": "MourningFigure_rig_target.prefab",
+    "prompt": "",
+    "negativePrompt": "",
+    "model": "",
+    "modelName": "",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

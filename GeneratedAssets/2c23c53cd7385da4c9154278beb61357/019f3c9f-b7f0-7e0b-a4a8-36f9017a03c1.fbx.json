@@ -1,0 +1,12 @@
+{
+    "asset": "2c23c53cd7385da4c9154278beb61357",
+    "fileName": "019f3c9f-b7f0-7e0b-a4a8-36f9017a03c1.fbx",
+    "prompt": "A person kneels beside a gravestone, one arm reached forward as if resting on the stone, head hanging low, other hand pressed to chest, slow rocking motion of grief, very slow, seamless loop",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 421140891,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

@@ -1,0 +1,41 @@
+{
+    "asset": "a532d1e5c66fa58428833b2f63497df7",
+    "fileName": "019f3c4a-ae7c-709c-b6bd-191ad5d5d03c.png",
+    "prompt": "Full body back view of a gender-neutral humanoid spirit figure, androgynous body with no gendered features, completely faceless smooth back of head, made of matte grey ash and cracked dried clay, slender neutral silhouette, simple smooth surfaces, no hair, no clothing details, no muscles, no chest or hip definition, no weapons, no wounds, no armor — a quiet grieving statue. Full body, head to toe in frame, strict back-facing neutral T-pose, both arms perfectly straight and horizontal at shoulder height forming a 90-degree angle from the torso, hands, elbows, shoulders, legs, and feet visible, plain flat white background, even studio lighting, neutral grey color, matching the style and proportions of the provided reference image.",
+    "negativePrompt": "",
+    "model": "gpt-image-1-5",
+    "modelName": "GPT Image 1.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "a1ee9154cfcc8de48bed331dc199dc83",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

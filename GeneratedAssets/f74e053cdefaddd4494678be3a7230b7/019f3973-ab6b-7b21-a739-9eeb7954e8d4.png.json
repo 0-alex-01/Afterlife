@@ -1,0 +1,31 @@
+{
+    "asset": "f74e053cdefaddd4494678be3a7230b7",
+    "fileName": "019f3973-ab6b-7b21-a739-9eeb7954e8d4.png",
+    "prompt": "Full body abstract gender-neutral mourning spirit figure, head to toe in frame, strict front-facing neutral T-pose, both arms perfectly straight and horizontal at shoulder height forming a 90-degree angle from the torso, hands elbows shoulders legs and feet visible, not crossed, not angled downward, not A-pose, no bent elbows, no side view, no three-quarter view, no action pose, no cropped limbs. Completely smooth featureless androgynous body, flat chest with NO pectoral muscles and NO breasts, no nipples, no abdominal muscles, no visible ribs, no gender markers, simplified mannequin-like anatomy, smooth rounded minimalist torso. Faceless smooth head with no facial features. Body made of matte grey ash and dried clay with subtle cracks, neutral grey stone-dust surface. Sorrowful abstract spirit statue, simple isolated plain white background, even studio lighting, clean silhouette, game character concept.",
+    "negativePrompt": "",
+    "model": "gpt-image-1-5",
+    "modelName": "GPT Image 1.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

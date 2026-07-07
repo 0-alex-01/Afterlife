@@ -1,0 +1,23 @@
+{
+    "asset": "08199f8e9d63dd041afe3869c7867839",
+    "fileName": "019f395f-3706-7a7c-a9f6-60b1ec25fb7f.glb",
+    "prompt": "A grieving humanoid figure, faceless and smooth, made of grey ash and dried clay, standing A-pose, no weapons, no wounds, no armor — a sorrowful spirit statue. Full body, game-ready, humanoid proportions, matte grey cracked stone surface.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "7e41815123200da43b02ab93176447dd",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

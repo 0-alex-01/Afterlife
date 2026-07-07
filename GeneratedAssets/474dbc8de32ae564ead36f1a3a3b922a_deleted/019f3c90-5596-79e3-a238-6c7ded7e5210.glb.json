@@ -1,0 +1,23 @@
+{
+    "asset": "474dbc8de32ae564ead36f1a3a3b922a",
+    "fileName": "019f3c90-5596-79e3-a238-6c7ded7e5210.glb",
+    "prompt": "",
+    "negativePrompt": "",
+    "model": "model3d-tripo-rigging-v1",
+    "modelName": "Tripo Rigging v1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Rigging",
+    "promptImageReferenceGuid": "",
+    "modelReferenceGuid": "474dbc8de32ae564ead36f1a3a3b922a",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

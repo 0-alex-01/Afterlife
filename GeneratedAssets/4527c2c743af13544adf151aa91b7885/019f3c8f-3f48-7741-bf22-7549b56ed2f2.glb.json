@@ -1,0 +1,23 @@
+{
+    "asset": "4527c2c743af13544adf151aa91b7885",
+    "fileName": "019f3c8f-3f48-7741-bf22-7549b56ed2f2.glb",
+    "prompt": "A simple stone statue of a stylized abstract figure. Grey clay texture, symmetrical T-pose, low poly.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "a1ee9154cfcc8de48bed331dc199dc83",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

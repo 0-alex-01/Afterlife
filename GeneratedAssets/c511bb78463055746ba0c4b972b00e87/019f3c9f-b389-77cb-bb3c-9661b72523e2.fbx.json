@@ -1,0 +1,12 @@
+{
+    "asset": "c511bb78463055746ba0c4b972b00e87",
+    "fileName": "019f3c9f-b389-77cb-bb3c-9661b72523e2.fbx",
+    "prompt": "A person stands grieving at a grave, head bowed deeply, shoulders slumped, arms hanging heavy, breathing slowly, occasionally raises one hand to cover the face then lets it sink back down, subtle weight shifting, very slow, sorrowful, seamless loop",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 937145447,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

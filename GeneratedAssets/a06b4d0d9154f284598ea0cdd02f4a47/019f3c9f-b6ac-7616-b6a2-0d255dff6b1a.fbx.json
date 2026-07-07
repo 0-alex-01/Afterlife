@@ -1,0 +1,12 @@
+{
+    "asset": "a06b4d0d9154f284598ea0cdd02f4a47",
+    "fileName": "019f3c9f-b6ac-7616-b6a2-0d255dff6b1a.fbx",
+    "prompt": "A person kneels on the ground sitting on their heels, head bowed low, hands resting limply on thighs, slow heavy breathing, occasionally bends forward slightly in grief and straightens back up, trembling softly, very slow, seamless loop",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion",
+    "modelName": "Uthana Text to Motion",
+    "customSeed": 234366757,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

@@ -1,0 +1,31 @@
+{
+    "asset": "7e41815123200da43b02ab93176447dd",
+    "fileName": "019f395d-3994-7859-a8f4-3e8b17261fa4.png",
+    "prompt": "Full body front view of a grieving humanoid figure standing in a symmetrical A-pose, faceless smooth head, no facial features, body made of matte grey ash and dried clay, cracked stone-dust surface, sorrowful empty posture, no weapons, no wounds, no armor, no clothing details — a simple sorrowful spirit statue. Centered, full body from head to feet visible, plain flat white background, even studio lighting, neutral grey color, clean silhouette, concept art turnaround reference for 3D modeling.",
+    "negativePrompt": "",
+    "model": "gpt-image-1-5",
+    "modelName": "GPT Image 1.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
