@@ -1,0 +1,12 @@
+{
+    "asset": "694bca8edbff7414da76c0d08d995b59",
+    "fileName": "019f3e99-9d4b-7f10-bf93-99ce0ff7d983_Preview.png",
+    "prompt": "Liquid mirror surface texture, dark silver reflective ripples with faint ghostly face barely visible, cold moonlight sheen, seamless tileable, smooth flowing liquid metal, ethereal, dark fantasy portal membrane",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 202460546,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

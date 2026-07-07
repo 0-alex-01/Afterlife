@@ -1,0 +1,23 @@
+{
+    "asset": "8f194ad38ecb50249ba64357aaa3b48b",
+    "fileName": "019f3e9c-7be1-7248-b28e-04e184860551.glb",
+    "prompt": "Ancient weathered stone cemetery archway, gothic mausoleum gate with two mourning angel statues on the sides, cracked moss-covered granite, empty oval opening in the center, somber and elegant, game-ready",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "a917000fe5923d441a1fd8667a652903",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

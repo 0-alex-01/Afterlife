@@ -81,6 +81,13 @@ public class CemeteryFigure : MonoBehaviour
     public float releaseLightIntensity = 2.2f;
     public Color releaseLightColor = new Color(1f, 0.72f, 0.35f);
 
+    /// <summary>Bereits erlöst? (für Debug-Tasten und Tests)</summary>
+    public bool IsComforted => isComforted;
+
+    /// <summary>Erlösung sofort auslösen (Debug/Tests) — durchläuft die echte Kette
+    /// inkl. Dissolve, Grab-Kerze und Manager-Fortschritt.</summary>
+    public void ForceComfort() => ComfortFigure();
+
     private void ComfortFigure()
     {
         isComforted = true;

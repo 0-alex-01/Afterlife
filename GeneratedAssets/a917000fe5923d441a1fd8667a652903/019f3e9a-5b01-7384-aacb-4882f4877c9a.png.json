@@ -1,0 +1,31 @@
+{
+    "asset": "a917000fe5923d441a1fd8667a652903",
+    "fileName": "019f3e9a-5b01-7384-aacb-4882f4877c9a.png",
+    "prompt": "Ancient weathered stone cemetery archway, gothic mausoleum gate with two mourning angel statues on the sides, cracked moss-covered granite, empty oval opening in the center, somber and elegant, game-ready low poly. Full object centered in frame, front orthographic view, entire archway visible, plain flat white background, even studio lighting, no shadows, product concept shot for 3D reconstruction.",
+    "negativePrompt": "",
+    "model": "gpt-image-1-5",
+    "modelName": "GPT Image 1.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
