@@ -1,0 +1,23 @@
+{
+    "asset": "b0095b2bbc9a597459e02cfcd92b60cf",
+    "fileName": "019f42c3-d845-7b94-a601-a3e09eaa8fe6.glb",
+    "prompt": "Large gothic gravestone, tall weathered granite tombstone with a big completely blank flat polished inscription panel covering most of the front face, plain empty surface with no cross, no text, no symbols, no engravings on the panel, ornate carved border frame around the panel edges, moss on the base, rounded top, game-ready",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "ba508d73e6f284149a490baf88ca1777",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

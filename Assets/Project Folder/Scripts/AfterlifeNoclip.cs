@@ -18,9 +18,13 @@ public class AfterlifeNoclip : MonoBehaviour
 
     private SoulMorphController morphController;
     private PedestalChoiceController choiceController;
-    private Behaviour trackedPoseDriver; 
+    private Behaviour trackedPoseDriver;
     private float yaw;
     private float pitch;
+
+    // Renderer der Geisterhände, die im Noclip ausgeblendet wurden (zum exakten Wiederherstellen).
+    private readonly System.Collections.Generic.List<Renderer> _hiddenHandRenderers
+        = new System.Collections.Generic.List<Renderer>();
 
     private void Start()
     {
@@ -192,6 +196,10 @@ public class AfterlifeNoclip : MonoBehaviour
 
         if (trackedPoseDriver != null) trackedPoseDriver.enabled = !isNoclip;
 
+        // Geisterhände im Noclip ausblenden (Kamera schwebt frei, Hände wirken sonst
+        // abgekoppelt / verdecken die Sicht). Beim Verlassen wieder einblenden.
+        SetGhostHandsVisible(!isNoclip);
+
         if (isNoclip)
         {
             Transform lookSource = (isDesktopMode && desktopCamera != null) ? desktopCamera.transform : (player != null && player.headCamera != null ? player.headCamera.transform : transform);
@@ -207,6 +215,35 @@ public class AfterlifeNoclip : MonoBehaviour
         }
         
         Debug.Log("Noclip: " + (isNoclip ? "ENABLED" : "DISABLED"));
+    }
+
+    /// <summary>
+    /// Blendet die Geisterhände (alle Autohand-<see cref="Hand"/>-Renderer) aus/ein.
+    /// Beim Ausblenden werden nur aktuell sichtbare Renderer gemerkt, sodass das
+    /// Wiedereinblenden exakt den vorherigen Zustand herstellt (kein Konflikt mit
+    /// dem Desktop-Modus, der ebenfalls Renderer verstecken kann).
+    /// </summary>
+    private void SetGhostHandsVisible(bool visible)
+    {
+        if (!visible)
+        {
+            foreach (var hand in Object.FindObjectsByType<Hand>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                if (hand == null) continue;
+                foreach (var rend in hand.GetComponentsInChildren<Renderer>(true))
+                {
+                    if (rend == null || !rend.enabled) continue;
+                    rend.enabled = false;
+                    _hiddenHandRenderers.Add(rend);
+                }
+            }
+        }
+        else
+        {
+            foreach (var rend in _hiddenHandRenderers)
+                if (rend != null) rend.enabled = true;
+            _hiddenHandRenderers.Clear();
+        }
     }
 
     private void HandleMouseLook()

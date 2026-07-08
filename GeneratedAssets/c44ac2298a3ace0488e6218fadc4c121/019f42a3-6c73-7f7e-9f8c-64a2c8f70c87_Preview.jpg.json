@@ -1,0 +1,12 @@
+{
+    "asset": "c44ac2298a3ace0488e6218fadc4c121",
+    "fileName": "019f42a3-6c73-7f7e-9f8c-64a2c8f70c87_Preview.jpg",
+    "prompt": "Ancient tombstone surface, rough eroded stone frame surrounding a flat recessed engraving plate, subtle carved border ornament, desaturated cold grey, tileable",
+    "negativePrompt": "",
+    "model": "realistic-textures-3-0",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": 319715051,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

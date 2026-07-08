@@ -1,0 +1,31 @@
+{
+    "asset": "ba508d73e6f284149a490baf88ca1777",
+    "fileName": "019f42c2-20f7-7d68-9f28-593addb6ac39.png",
+    "prompt": "Large gothic gravestone, tall weathered granite tombstone with a big completely blank flat polished inscription panel covering most of the front face, plain empty surface with no cross, no text, no symbols, no engravings on the panel, ornate carved border frame around the panel edges, moss on the base, rounded top, game-ready. Front view, isolated centered, white background. The front panel must be completely empty and smooth.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

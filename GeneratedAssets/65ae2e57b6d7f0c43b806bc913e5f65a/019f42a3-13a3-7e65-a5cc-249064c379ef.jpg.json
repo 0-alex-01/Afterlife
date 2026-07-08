@@ -1,0 +1,31 @@
+{
+    "asset": "65ae2e57b6d7f0c43b806bc913e5f65a",
+    "fileName": "019f42a3-13a3-7e65-a5cc-249064c379ef.jpg",
+    "prompt": "Weathered gravestone texture, old moss-covered granite with a large flat smooth polished blank inscription panel in the center providing plenty of space for text engraving, cracked stone edges, somber grey tones, slight lichen growth, seamless, tileable, game-ready albedo",
+    "negativePrompt": "",
+    "model": "realistic-textures-3-0",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

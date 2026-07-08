@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e42b643dc86b74e95b433dd3290285, type: 3}
+  m_Name: EpitaphDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::EpitaphDatabase
+  epitaphs:
+  - "Hier ruht Elara Voss, die dem Meer seine St\xFCrme nahm und sie als Lieder zur\xFCckgab."
+  - "Kapit\xE4n Aurelius Brand \u2014 er segelte hinter den Horizont und fand dort
+    keinen Feind, nur Sterne."
+  - "Mirella von Hagen, Heilerin dreier D\xF6rfer. Der Tod holte sie als Freund,
+    nicht als Sieger."
+  - "Unter diesem Stein schl\xE4ft Jorun der Stille, der mit B\xE4umen sprach \u2014
+    und der Wald lauscht noch heute."
+  - "Isolde Fenn \u2014 sie z\xE4hmte den Blitz in Gl\xE4sern und schenkte hundert
+    H\xE4usern Licht."
+  - Hier liegt Theobald Grau, Uhrmacher. Seine letzte Uhr blieb stehen, als sein
+    Herz es tat.
+  - Seraphina Nacht, Wanderin zwischen den Welten. Sie ging voraus, um den Weg zu
+    kennen.
+  - "General Corvin Aschenfeld \u2014 tausend Schlachten, ein Versprechen: Er starb
+    mit leeren H\xE4nden und reinem Gewissen."
+  - "Hier ruht Ottilie Morgenstern, die jeden Sonnenaufgang z\xE4hlte. Es wurden
+    29.517."
+  - "Balthasar Kr\xE4he, Kartograf des Unbekannten. Diese letzte Grenze zeichnete
+    er nicht mehr selbst."
+  - "Lysandra Thorn \u2014 K\xF6nigin ohne Krone, Mutter ohne Grenzen, Legende ohne
+    Ende."
+  - "Der Gl\xF6ckner Emmerich Halm. Sechzig Jahre rief er die Lebenden; nun l\xE4utet
+    man f\xFCr ihn."
+  - "Hier schl\xE4ft Rosalind Ferner, die tausend Briefe schrieb und nie einen Abschied."
+  - "Magnus Eichwald, Schmied der sieben Br\xFCcken. Was er verband, h\xE4lt l\xE4nger
+    als sein Name."
+  - "Cassia Windrose \u2014 sie tanzte gegen jeden Sturm und verlor nur diesen einen."
+  - "Hier ruht Alarich Nebelgang, W\xE4chter des Nordtors. Keiner kam vorbei, bis
+    der Schlaf es tat."
