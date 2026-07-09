@@ -1,0 +1,23 @@
+{
+    "asset": "509c9607f7ff3b04a8d51e70385d355d",
+    "fileName": "019f48aa-b026-7702-9b7a-797e26c13bf7.glb",
+    "prompt": "monolithic stone archway, tall obsidian-black gateway dissolving into ash at top edges, engraved concentric rings, fragments floating upward, stylized dark fantasy VR art installation, elegant and minimal, ethereal glow, single object centered, neutral dark background, clean silhouette, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "ccbd948eec201ca4792f35e6803b14f6",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

@@ -1,0 +1,23 @@
+{
+    "asset": "34224f69914ffd24db5bfc5aae1a91f5",
+    "fileName": "019f48ac-eaa7-749d-9c54-c6648d0f8422.glb",
+    "prompt": "majestic gateway split in half: left gold with feather motifs, right iron/basalt with chain/thorn motifs, balance scale at apex, stylized dark fantasy, elegant and minimal, ethereal glow, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "8c0e0a583a447bb4ab2c59aa82344e3d",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

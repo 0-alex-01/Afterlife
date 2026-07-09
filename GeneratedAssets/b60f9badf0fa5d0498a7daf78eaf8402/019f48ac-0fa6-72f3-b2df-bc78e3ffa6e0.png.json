@@ -1,0 +1,31 @@
+{
+    "asset": "b60f9badf0fa5d0498a7daf78eaf8402",
+    "fileName": "019f48ac-0fa6-72f3-b2df-bc78e3ffa6e0.png",
+    "prompt": "seamless texture of soft green-golden light seen through young leaves, gentle bokeh of drifting petals and seeds, spring dawn glow, airy and warm, painterly gradient from emerald edges to warm ivory center, tileable",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

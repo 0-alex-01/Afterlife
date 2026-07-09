@@ -1,0 +1,23 @@
+{
+    "asset": "d8804785c09b7c9448c889c0a5214681",
+    "fileName": "019f48aa-5d7c-7c0b-b152-7b34d23598e8.glb",
+    "prompt": "majestic gateway split in half, left half polished gold with feather/halo motifs, right half charred iron and basalt with chains/thorns, balance scale at apex, stylized dark fantasy VR art installation, elegant and minimal, ethereal glow, single object centered, neutral dark background, clean silhouette, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "c01dcaebe9b34d545b8c114eb9af7c2e",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

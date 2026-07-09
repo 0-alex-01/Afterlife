@@ -1,0 +1,31 @@
+{
+    "asset": "8c0e0a583a447bb4ab2c59aa82344e3d",
+    "fileName": "019f48aa-c40f-7e09-a670-aaeae5869541.png",
+    "prompt": "majestic gateway split perfectly down the middle: left half radiant polished gold with feather/halo motifs, right half charred iron and basalt with chain/thorn motifs, a balance scale at the apex, single object centered, neutral background, clean silhouette, stylized dark fantasy, elegant and minimal, ethereal glow, no people, no text",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

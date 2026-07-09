@@ -1,0 +1,23 @@
+{
+    "asset": "105fd452618541e47abe040441f8d2ad",
+    "fileName": "019f48ac-9958-75da-8ed6-f7108e2a3d67.glb",
+    "prompt": "tall monolithic stone gateway dissolving into ash at top edges, smooth obsidian-black arch with engraved concentric rings, fragments floating upward, stylized dark fantasy, elegant and minimal, ethereal glow, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "2acf6fd50d720e24f96f3b683a0a4ce5",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

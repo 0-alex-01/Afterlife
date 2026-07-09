@@ -1,0 +1,31 @@
+{
+    "asset": "c01dcaebe9b34d545b8c114eb9af7c2e",
+    "fileName": "019f48a8-96c4-7a35-a140-2f92a3e6e253.png",
+    "prompt": "majestic gateway split in half, left half polished gold with feather/halo motifs, right half charred iron and basalt with chains/thorns, balance scale at apex, stylized dark fantasy VR art installation, elegant and minimal, ethereal glow, single object centered, neutral dark background, clean silhouette, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

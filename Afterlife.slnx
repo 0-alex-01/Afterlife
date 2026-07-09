@@ -1,8 +1,8 @@
 ﻿<Solution>
   <Project Path="AutoHandAssembly.csproj" />
   <Project Path="NaughtyAttributes.Core.csproj" />
-  <Project Path="MikeNspiredXRIStarterKit.Runtime.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="MikeNspiredXRIStarterKit.Runtime.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Bao10nam.Oculusxrplugin.Editor.csproj" />
   <Project Path="Autohand.Editor.csproj" />

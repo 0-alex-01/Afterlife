@@ -1,0 +1,31 @@
+{
+    "asset": "ccbd948eec201ca4792f35e6803b14f6",
+    "fileName": "019f48a8-9279-753a-9238-e85d507963b4.png",
+    "prompt": "monolithic stone archway, tall obsidian-black gateway dissolving into ash at top edges, engraved concentric rings, fragments floating upward, stylized dark fantasy VR art installation, elegant and minimal, ethereal glow, single object centered, neutral dark background, clean silhouette, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

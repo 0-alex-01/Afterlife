@@ -1,0 +1,31 @@
+{
+    "asset": "06edc2535f646944a9fe4dde88284305",
+    "fileName": "019f48a8-a648-7cf6-8023-986a077e730c.png",
+    "prompt": "living archway of intertwined young trees, fresh green sprouts and leaves, glowing seed pods, moss and flowers at base, gentle spiral motif, stylized dark fantasy VR art installation, elegant and minimal, ethereal glow, single object centered, neutral dark background, clean silhouette, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

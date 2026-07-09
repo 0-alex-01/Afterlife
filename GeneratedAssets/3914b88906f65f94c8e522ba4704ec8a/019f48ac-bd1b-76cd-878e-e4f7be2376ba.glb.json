@@ -1,0 +1,23 @@
+{
+    "asset": "3914b88906f65f94c8e522ba4704ec8a",
+    "fileName": "019f48ac-bd1b-76cd-878e-e4f7be2376ba.glb",
+    "prompt": "living archway grown from intertwined trees, fresh green sprouts and leaves, glowing seed pods, gentle spiral motif, stylized dark fantasy, elegant and minimal, ethereal glow, game-ready, low-poly friendly, PBR, no text, no people",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "b6807385fad4e7a42b8750ce7d279856",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}
