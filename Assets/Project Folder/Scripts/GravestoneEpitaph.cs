@@ -2,14 +2,20 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Schreibt beim Spielstart eine zufällige epische Grabinschrift aus der
-/// <see cref="EpitaphDatabase"/> flach auf die Vorderseite dieses Grabsteins.
-/// Standard: deterministisch pro Stein (Name als Seed), damit jedes Grab
-/// seine eigene, wiedererkennbare Geschichte behält.
+/// Baut im Editor einmalig eine Grabinschrift als ECHTES Szenen-Objekt
+/// ("Epitaph_Label" als Kind des Steins), angeschmiegt an die Steinfläche.
+/// Danach ist das Label in der Scene View frei verschieb-/drehbar — das
+/// Skript fasst ein vorhandenes Label NIE wieder an. Neu ausrichten geht
+/// über das Kontextmenü des Components ("Inschrift neu aufbauen").
+/// Im Spiel bleibt die Inschrift unsichtbar, bis die Figur an diesem Grab
+/// getröstet wurde; Gräber ohne Figur zeigen sie von Anfang an.
 /// </summary>
+[ExecuteAlways]
 public class GravestoneEpitaph : MonoBehaviour
 {
-    // Verhindert doppelte Inschriften innerhalb einer Spielsitzung.
+    private const string LabelName = "Epitaph_Label";
+
+    // Verhindert doppelte Inschriften innerhalb einer Session (Editor & Spiel).
     private static readonly System.Collections.Generic.HashSet<int> _usedIndices
         = new System.Collections.Generic.HashSet<int>();
 
@@ -59,12 +65,25 @@ public class GravestoneEpitaph : MonoBehaviour
     [Tooltip("Datenbank mit den Inschriften.")]
     public EpitaphDatabase database;
 
-    [Tooltip("Deterministisch pro Stein (Name als Seed). Aus = bei jedem Start neu gewürfelt.")]
+    [Tooltip("Deterministisch pro Stein (Name als Seed). Aus = bei jedem Aufbau neu gewürfelt.")]
     public bool seedFromName = true;
 
-    [Header("Platzierung auf der Steinfläche")]
-    [Tooltip("Abstand über der Steinoberfläche in Metern.")]
-    public float surfaceOffset = 0.008f;
+    [Header("Platzierung beim (Neu-)Aufbau")]
+    [Tooltip("Abstand über der Steinoberfläche in Metern (hauchdünn = Gravur-Look).")]
+    public float engraveOffset = 0.002f;
+    [Tooltip("Verschiebt den Text beim Aufbau nach oben (+) / unten (−), in Metern. " +
+             "Feintuning danach: einfach das Epitaph_Label-Objekt in der Scene View verschieben.")]
+    public float offsetUp = 0f;
+    [Tooltip("Verschiebt den Text beim Aufbau nach rechts (+) / links (−) aus Lesersicht, in Metern.")]
+    public float offsetSide = 0f;
+
+    [Header("Freischaltung im Spiel")]
+    [Tooltip("Inschrift erst zeigen, wenn die Figur an diesem Grab getröstet wurde. Gräber ohne Figur zeigen sie sofort.")]
+    public bool revealOnComfort = true;
+    [Tooltip("Wartezeit nach dem Trösten, bis die Gravur erscheint (Zerfall zuerst).")]
+    public float revealDelay = 2.2f;
+    [Tooltip("Dauer des Einblendens.")]
+    public float revealFadeDuration = 2.5f;
 
     [Header("Schrift")]
     [Tooltip("Eigener TMP-Font. Leer = Cinzel Decorative aus den Projekt-Resources (Gravur-Look).")]
@@ -75,14 +94,17 @@ public class GravestoneEpitaph : MonoBehaviour
     public Color outlineColor = new Color(0.75f, 0.73f, 0.66f, 0.6f);
     [Range(0f, 0.4f)] public float outlineWidth = 0.06f;
 
-    // Einmal pro Sitzung aus der TTF erzeugt und von allen Steinen geteilt.
     private static TMP_FontAsset _engravedFont;
+    private static Material _engravedMaterial;
 
     private static TMP_FontAsset GetEngravedFont()
     {
+        // Persistenter Projekt-Font zuerst — nur ein echtes Asset übersteht
+        // das Speichern der Szene (Labels sind jetzt Szenen-Objekte).
+        if (_engravedFont == null)
+            _engravedFont = Resources.Load<TMP_FontAsset>("Fonts/CinzelDecorativeSDF");
         if (_engravedFont == null)
         {
-            // Cinzel Decorative: klassischer Gravur-Stil roemischer Steininschriften.
             var ttf = Resources.Load<Font>("Fonts/CinzelDecorative-Regular");
             if (ttf == null) ttf = Resources.Load<Font>("Righteous-Regular");
             if (ttf != null) _engravedFont = TMP_FontAsset.CreateFontAsset(ttf);
@@ -90,7 +112,96 @@ public class GravestoneEpitaph : MonoBehaviour
         return _engravedFont;
     }
 
+    private static Material GetEngravedMaterial()
+    {
+        if (_engravedMaterial == null)
+            _engravedMaterial = Resources.Load<Material>("Fonts/CinzelEngraved");
+        return _engravedMaterial;
+    }
+
+    private TextMeshPro _label;
+    private CemeteryFigure _watchedFigure;
+    private Color _fullFace, _fullOutline;
+    private float _timer;
+    private bool _triggered;
+
+    private void OnEnable()
+    {
+        // Editor: Label als Szenen-Objekt anlegen, falls es noch fehlt.
+        // Ein vorhandenes Label wird NIE angefasst — manuelle Verschiebungen
+        // in der Scene View bleiben dauerhaft erhalten.
+        if (!Application.isPlaying && FindLabel() == null)
+            BuildLabel();
+    }
+
     private void Start()
+    {
+        if (!Application.isPlaying) return;
+
+        _label = FindLabel();
+        if (_label == null) _label = BuildLabel(); // Fallback: Szene ohne gebautes Label
+        if (_label == null || !revealOnComfort) return;
+
+        _watchedFigure = FindNearestFigure(2.8f);
+        if (_watchedFigure != null && !_watchedFigure.IsComforted)
+        {
+            _fullFace = _label.color;
+            var mat = _label.fontSharedMaterial;
+            _fullOutline = mat != null && mat.HasProperty("_OutlineColor")
+                ? mat.GetColor("_OutlineColor")
+                : outlineColor;
+            SetLabelAlpha(0f);
+        }
+        else
+        {
+            _watchedFigure = null; // kein Trauernder hier -> Inschrift sofort sichtbar
+        }
+    }
+
+    private void Update()
+    {
+        if (!Application.isPlaying || _watchedFigure == null || _label == null) return;
+
+        if (!_triggered)
+        {
+            if (_watchedFigure.IsComforted) _triggered = true;
+            return;
+        }
+
+        _timer += Time.deltaTime;
+        float a = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01((_timer - revealDelay) / revealFadeDuration));
+        SetLabelAlpha(a);
+        if (a >= 1f) _watchedFigure = null; // Einblendung abgeschlossen
+    }
+
+    private void SetLabelAlpha(float a)
+    {
+        var f = _fullFace; f.a *= a;
+        var o = _fullOutline; o.a *= a;
+        _label.color = f;
+        _label.outlineColor = o;
+    }
+
+    private TextMeshPro FindLabel()
+    {
+        foreach (var tmp in GetComponentsInChildren<TextMeshPro>(true))
+            if (tmp.gameObject.name == LabelName) return tmp;
+        return null;
+    }
+
+    [ContextMenu("Inschrift neu aufbauen (auto anschmiegen)")]
+    private void RebuildLabel()
+    {
+        var old = FindLabel();
+        if (old != null)
+        {
+            if (Application.isPlaying) Destroy(old.gameObject);
+            else DestroyImmediate(old.gameObject);
+        }
+        _label = BuildLabel();
+    }
+
+    private TextMeshPro BuildLabel()
     {
         // Quelle: Persönlichkeiten-Datei aus Resources; Fallback: die alte Datenbank.
         string[] entries = GetSourceEntries();
@@ -98,7 +209,7 @@ public class GravestoneEpitaph : MonoBehaviour
             entries = database.epitaphs;
 
         int count = entries.Length;
-        if (count == 0) return;
+        if (count == 0) return null;
 
         // Startindex per Seed, dann zum nächsten freien Eintrag weiterrücken,
         // damit keine zwei Steine dieselbe Inschrift tragen.
@@ -112,13 +223,13 @@ public class GravestoneEpitaph : MonoBehaviour
         // Sicherheitsklammer gegen jede Index-Drift (z. B. geänderte Quelle).
         idx = ((idx % count) + count) % count;
         string text = entries[idx];
-        if (string.IsNullOrEmpty(text)) return;
+        if (string.IsNullOrEmpty(text)) return null;
 
         var rend = GetComponentInChildren<Renderer>();
-        if (rend == null) return;
+        if (rend == null) return null;
         var b = rend.bounds;
 
-        var go = new GameObject("Epitaph_Label");
+        var go = new GameObject(LabelName);
         go.transform.SetParent(transform, false);
 
         // Blickrichtung: zur trauernden Figur am Grab (dort steht auch der
@@ -139,24 +250,65 @@ public class GravestoneEpitaph : MonoBehaviour
             ? Vector3.Scale(mf.sharedMesh.bounds.size, mf.transform.lossyScale)
             : b.size;
 
-        // VOR den vordersten Punkt der SCHRIFTTAFEL legen (nur das Höhenband um
-        // die Steinmitte — Sockel und Bogenspitze ragen weiter vor und würden
-        // den Text sonst zu weit abheben lassen). So sitzt der Text knapp vor
-        // dem Zierrahmen und wird nie vom Stein verdeckt (auch aus 1 m / schräg).
-        float frontMost = Mathf.Min(localSize.x, localSize.z) * 0.5f;
+        // Auf die Steinachse einrasten: Der Text muss PARALLEL zur Steinfläche
+        // liegen, sonst schwebt eine Textkante sichtbar ab. Die Richtung zur
+        // Figur wählt dabei nur aus, WELCHE Seite des Steins beschriftet wird.
+        fwd = SnapToStoneAxis(fwd);
+        var right = Vector3.Cross(Vector3.up, fwd).normalized;
+
+        float faceW = Mathf.Max(localSize.x, localSize.z);
+        float textHalfW = faceW * 0.25f;        // halbe Breite des Textfelds
+        float textHalfH = localSize.y * 0.22f;  // halbe Höhe des Textfelds
+
+        // Die Steinfläche NUR unter dem Textfeld vermessen — Zierrahmen, Sockel
+        // und Bogenspitze ragen weiter vor und würden den Text von der Tafel
+        // abheben. Oben/unten getrennt, um die Neigung der Fläche mitzunehmen,
+        // damit sich der Text wie eine Gravur an den Stein schmiegt.
+        float planeD = Mathf.Min(localSize.x, localSize.z) * 0.5f;
+        float slope = 0f;
         if (mf != null && mf.sharedMesh != null)
         {
             var l2w = mf.transform.localToWorldMatrix;
-            float bandHalf = localSize.y * 0.3f;   // Panel-Band um die Mitte
+            var verts = mf.sharedMesh.vertices;
             float maxD = float.NegativeInfinity;
-            foreach (var v in mf.sharedMesh.vertices)
+            float dTop = float.NegativeInfinity, dBottom = float.NegativeInfinity;
+            float yTop = 0f, yBottom = 0f;
+            foreach (var v in verts)
             {
                 var w = l2w.MultiplyPoint3x4(v);
-                if (Mathf.Abs(w.y - b.center.y) > bandHalf) continue; // Sockel/Spitze aus
+                float dy = w.y - b.center.y;
+                if (Mathf.Abs(dy) > textHalfH) continue;
+                if (Mathf.Abs(Vector3.Dot(w - b.center, right)) > textHalfW) continue;
                 float d = Vector3.Dot(w - b.center, fwd);
                 if (d > maxD) maxD = d;
+                if (dy >= 0f) { if (d > dTop) { dTop = d; yTop = dy; } }
+                else if (d > dBottom) { dBottom = d; yBottom = dy; }
             }
-            if (maxD > float.NegativeInfinity) frontMost = maxD;
+            if (maxD > float.NegativeInfinity)
+            {
+                planeD = maxD;
+                if (dTop > float.NegativeInfinity && dBottom > float.NegativeInfinity
+                    && yTop - yBottom > 0.01f)
+                {
+                    // Ausreißer (Ornamente) sollen den Text nicht wegkippen.
+                    slope = Mathf.Clamp((dTop - dBottom) / (yTop - yBottom), -0.45f, 0.45f);
+
+                    // Geneigte Textebene durch die Textmitte legen und gerade so
+                    // weit vorschieben, dass kein Flächenpunkt hindurchsticht.
+                    float d0 = dBottom + (0f - yBottom) * slope;
+                    float shift = 0f;
+                    foreach (var v in verts)
+                    {
+                        var w = l2w.MultiplyPoint3x4(v);
+                        float dy = w.y - b.center.y;
+                        if (Mathf.Abs(dy) > textHalfH) continue;
+                        if (Mathf.Abs(Vector3.Dot(w - b.center, right)) > textHalfW) continue;
+                        float over = Vector3.Dot(w - b.center, fwd) - (d0 + slope * dy);
+                        if (over > shift) shift = over;
+                    }
+                    planeD = d0 + shift;
+                }
+            }
         }
 
         // WICHTIG: Skalierung des Steins (z. B. 2.1) NICHT erben — sonst wird der
@@ -167,13 +319,18 @@ public class GravestoneEpitaph : MonoBehaviour
             ls.y != 0 ? 1f / ls.y : 1f,
             ls.z != 0 ? 1f / ls.z : 1f);
 
-        go.transform.position = b.center + fwd * (frontMost + surfaceOffset);
+        go.transform.position = b.center + fwd * (planeD + engraveOffset);
         // TMP ist von seiner -Z-Seite lesbar: +Z vom Betrachter WEG drehen, damit
-        // die Schrift zur Figur/zum Spieler hin korrekt (nicht spiegelverkehrt) steht.
-        go.transform.rotation = Quaternion.LookRotation(-fwd);
+        // die Schrift zur Figur/zum Spieler hin korrekt (nicht spiegelverkehrt)
+        // steht. Danach um die Querachse mitkippen, damit die Textebene der
+        // geneigten Steinfläche folgt (Gravur statt schwebender Tafel).
+        float tiltDeg = Mathf.Atan(slope) * Mathf.Rad2Deg;
+        go.transform.rotation = Quaternion.AngleAxis(tiltDeg, right) * Quaternion.LookRotation(-fwd);
+        // Feinjustierung ENTLANG der (ggf. geneigten) Textebene, damit der Text
+        // beim Verschieben auf der Steinfläche bleibt.
+        go.transform.position += go.transform.up * offsetUp + go.transform.right * offsetSide;
 
         var label = go.AddComponent<TextMeshPro>();
-        float faceW = Mathf.Max(localSize.x, localSize.z);
         // Schmaler als die Frontfläche: der Text bleibt innerhalb des Zierrahmens.
         label.rectTransform.sizeDelta = new Vector2(faceW * 0.5f, localSize.y * 0.44f);
         label.alignment = TextAlignmentOptions.Center;
@@ -185,19 +342,59 @@ public class GravestoneEpitaph : MonoBehaviour
         var engraved = fontOverride != null ? fontOverride : GetEngravedFont();
         if (engraved != null) label.font = engraved;
         label.color = textColor;
-        label.outlineWidth = outlineWidth;
-        label.outlineColor = outlineColor;
+        // Outline über ein GETEILTES Material-Asset: Die outlineWidth/-Color-
+        // Setter würden pro Label eine Material-Instanz erzeugen, die beim
+        // Speichern der Szene verloren ginge (Editor loggt Material-Leaks).
+        var engravedMat = GetEngravedMaterial();
+        if (engravedMat != null && fontOverride == null)
+        {
+            label.fontSharedMaterial = engravedMat;
+        }
+        else if (Application.isPlaying)
+        {
+            label.outlineWidth = outlineWidth;
+            label.outlineColor = outlineColor;
+        }
         label.text = text;
-        // Doppelseitig (Cull Off): Der Text schwebt vor der Tafel, der opake Stein
-        // verdeckt die Rückseite — so ist er aus dem ganzen Frontbereich sichtbar,
-        // unabhängig davon, aus welchem Winkel der Spieler herantritt.
+        // Doppelseitig (Cull Off): Der Text schwebt hauchdünn vor der Tafel, der
+        // opake Stein verdeckt die Rückseite — so ist er aus dem ganzen
+        // Frontbereich sichtbar, egal aus welchem Winkel der Spieler herantritt.
+
+#if UNITY_EDITOR
+        // Neues Szenen-Objekt -> Szene als geändert markieren, damit das Label
+        // beim Speichern dauerhaft in der Szene landet.
+        if (!Application.isPlaying)
+            UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+#endif
+        return label;
+    }
+
+    /// <summary>Rastet die Blickrichtung auf die nächstliegende horizontale
+    /// Steinachse ein (±forward/±right), damit der Text plan auf der
+    /// Steinfläche liegt statt schräg zur Figur gedreht abzustehen.</summary>
+    private Vector3 SnapToStoneAxis(Vector3 toward)
+    {
+        Vector3 best = transform.forward;
+        float bestDot = float.NegativeInfinity;
+        Vector3[] axes = { transform.forward, -transform.forward, transform.right, -transform.right };
+        foreach (var a in axes)
+        {
+            var flat = new Vector3(a.x, 0f, a.z);
+            if (flat.sqrMagnitude < 1e-4f) continue;
+            flat.Normalize();
+            float dot = Vector3.Dot(flat, toward);
+            if (dot > bestDot) { bestDot = dot; best = flat; }
+        }
+        return best;
     }
 
     private CemeteryFigure FindNearestFigure(float maxDistance)
     {
         CemeteryFigure best = null;
         float bestSqr = maxDistance * maxDistance;
-        foreach (var fig in FindObjectsOfType<CemeteryFigure>())
+        // Inaktive einschließen: Die Trauernden starten deaktiviert und werden
+        // erst im Spielverlauf eingeblendet — sie gehören trotzdem zu ihrem Grab.
+        foreach (var fig in FindObjectsByType<CemeteryFigure>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             float sqr = (fig.transform.position - transform.position).sqrMagnitude;
             if (sqr < bestSqr) { bestSqr = sqr; best = fig; }

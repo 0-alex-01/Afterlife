@@ -1,10 +1,14 @@
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
-/// Einfaches, immer sichtbares Szenen-Portal: Betritt der Spieler den Trigger,
-/// blendet der ScreenFader sanft aus und lädt die Zielszene.
-/// Mit <see cref="locked"/> kann es gesperrt starten (z. B. bis der Friedhofs-Pfad
-/// freigeschaltet ist) und später per <see cref="Unlock"/> geöffnet werden.
+/// Einfaches Szenen-Portal: Betritt der Spieler den Trigger, blendet der
+/// ScreenFader sanft aus und lädt die Zielszene.
+/// Mit <see cref="locked"/> startet es gesperrt (z. B. bis der Friedhofs-Pfad
+/// freigeschaltet ist) und wird später per <see cref="Unlock"/> geöffnet.
+/// Solange es gesperrt ist, bleibt die „Füllung" des Portals (die blaue Membran /
+/// der Void) unsichtbar — der Steinbogen steht dann leer da; beim Freischalten
+/// erscheint die Füllung mit einer kurzen Öffnungs-Animation.
 /// </summary>
 [RequireComponent(typeof(Collider))]
 public class ScenePortal : MonoBehaviour
@@ -20,10 +24,18 @@ public class ScenePortal : MonoBehaviour
     public float fadeDuration = 1.5f;
 
     [Header("Zustand")]
-    [Tooltip("Gesperrt = Betreten löst nichts aus (bis Unlock() aufgerufen wird).")]
+    [Tooltip("Gesperrt = Betreten löst nichts aus und die Portalfüllung ist unsichtbar (bis Unlock() aufgerufen wird).")]
     public bool locked = false;
 
+    [Header("Portalfüllung (blaue Membran / Void)")]
+    [Tooltip("Das Objekt mit der Portal-Füllung (Membran, Void-Motes, Void-Licht). Leer = automatisch das Kind 'Visual'. Wird nur sichtbar, wenn das Portal freigeschaltet ist.")]
+    public GameObject portalFillVisual;
+    [Tooltip("Dauer der Öffnungs-Animation beim Freischalten (Sekunden). 0 = sofort einblenden.")]
+    public float activateDuration = 1.3f;
+
     private bool _entered;
+    private Vector3 _fillBaseScale = Vector3.one;
+    private Coroutine _activateRoutine;
 
     private void Reset()
     {
@@ -35,10 +47,60 @@ public class ScenePortal : MonoBehaviour
     {
         var col = GetComponent<Collider>();
         if (col != null) col.isTrigger = true;
+
+        if (portalFillVisual == null)
+        {
+            var vis = transform.Find("Visual");
+            if (vis != null) portalFillVisual = vis.gameObject;
+        }
+        if (portalFillVisual != null)
+        {
+            _fillBaseScale = portalFillVisual.transform.localScale;
+            // Gesperrt starten => Füllung unsichtbar (leerer Steinbogen).
+            portalFillVisual.SetActive(!locked);
+        }
     }
 
-    /// <summary>Portal freischalten (z. B. vom CemeteryAtmosphereManager nach der letzten Erlösung).</summary>
-    public void Unlock() => locked = false;
+    /// <summary>Portal freischalten (z. B. vom CemeteryAtmosphereManager nach der letzten Erlösung).
+    /// Öffnet zugleich die Portalfüllung mit einer kurzen Animation.</summary>
+    public void Unlock()
+    {
+        bool wasLocked = locked;
+        locked = false;
+        if (wasLocked) RevealFill();
+    }
+
+    /// <summary>Blendet die Portalfüllung (blaue Membran / Void) mit einer
+    /// Öffnungs-Animation ein.</summary>
+    private void RevealFill()
+    {
+        if (portalFillVisual == null) return;
+        if (!isActiveAndEnabled || activateDuration <= 0f)
+        {
+            portalFillVisual.transform.localScale = _fillBaseScale;
+            portalFillVisual.SetActive(true);
+            return;
+        }
+        if (_activateRoutine != null) StopCoroutine(_activateRoutine);
+        _activateRoutine = StartCoroutine(RevealFillRoutine());
+    }
+
+    private IEnumerator RevealFillRoutine()
+    {
+        portalFillVisual.SetActive(true);
+        // Von einem dünnen Schlitz aufziehen — wirkt wie ein sich öffnendes Portal.
+        Vector3 from = new Vector3(_fillBaseScale.x * 0.02f, _fillBaseScale.y, _fillBaseScale.z * 0.02f);
+        float e = 0f;
+        while (e < activateDuration)
+        {
+            e += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(e / activateDuration));
+            portalFillVisual.transform.localScale = Vector3.Lerp(from, _fillBaseScale, t);
+            yield return null;
+        }
+        portalFillVisual.transform.localScale = _fillBaseScale;
+        _activateRoutine = null;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
