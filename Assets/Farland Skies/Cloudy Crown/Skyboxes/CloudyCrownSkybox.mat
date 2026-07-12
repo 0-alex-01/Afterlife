@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _CloudsTex:
-        m_Texture: {fileID: 8900000, guid: eef65d496c7133349b3223df0850594e, type: 3}
+        m_Texture: {fileID: 8900000, guid: 24a4bac1efd9fb343941c523fb26cf9f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MoonTex:
@@ -42,7 +42,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudsHeight: 0
+    - _CloudsHeight: 0.05
     - _CloudsOffset: 0.2
     - _CloudsRotationSpeed: 0
     - _Exposure: 1
@@ -51,10 +51,10 @@ Material:
     - _StarsTwinklingSpeed: 0
     - _SunSize: 1
     m_Colors:
-    - _BottomColor: {r: 0.0026143792, g: 0.23660132, b: 0.5163399, a: 1}
-    - _MoonTint: {r: 0.4556863, g: 0.52156866, b: 0.5764706, a: 1}
-    - _StarsTint: {r: 0.62745106, g: 0.62745106, b: 0.62745106, a: 1}
-    - _SunTint: {r: 0.7421569, g: 0.4563726, b: 0.5230392, a: 0}
-    - _TopColor: {r: 0.028758172, g: 0.04705883, b: 0.2013072, a: 1}
+    - _BottomColor: {r: 0.8, g: 0.76, b: 0.7, a: 1}
+    - _MoonTint: {r: 0.4901961, g: 0.5372549, b: 1, a: 1}
+    - _StarsTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SunTint: {r: 0.7019608, g: 0.54901963, b: 0.36862746, a: 1}
+    - _TopColor: {r: 0.62, g: 0.76, b: 0.86, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
