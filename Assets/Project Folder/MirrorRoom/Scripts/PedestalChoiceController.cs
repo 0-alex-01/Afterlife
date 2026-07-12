@@ -73,10 +73,20 @@ public class PedestalChoiceController : MonoBehaviour
             if (p.floater != null) p.floater.enabled = false;
 
             bool chosen = p.theme == theme;
-            if (chosen && p.portal != null)
+            if (p.portal != null)
             {
-                p.portal.gameObject.SetActive(true);
-                p.portal.Materialize();
+                if (chosen)
+                {
+                    p.portal.gameObject.SetActive(true);
+                    p.portal.Materialize();
+                }
+                else
+                {
+                    // Nicht gewählte Portale hart ausblenden — sie dürfen nie gleichzeitig
+                    // mit dem gewählten am selben Ort stehen (Overlap/Z-Fighting der Füllungen).
+                    p.portal.Dematerialize();
+                    p.portal.gameObject.SetActive(false);
+                }
             }
             StartCoroutine(FadeOutPedestal(p, chosen));
         }

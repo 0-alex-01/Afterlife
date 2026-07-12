@@ -1,245 +1,245 @@
-﻿# Afterlife — Epitaph-Quelldatei
-# Format: Name|Lebensdaten|Epitaph (1-2 Sätze)
-# Zeilen mit # werden ignoriert. Einfach ergänzen und den Builder erneut ausführen.
-Marie Curie|1867–1934|Sie machte das Unsichtbare sichtbar und schenkte der Welt zwei neue Elemente. Zwei Nobelpreise — und ein Herz, das für die Wissenschaft brannte.
-Albert Einstein|1879–1955|Er bog Raum und Zeit mit der Kraft seiner Gedanken. Und lehrte uns, dass Fantasie wichtiger ist als Wissen.
-Isaac Newton|1643–1727|Er sah einen Apfel fallen und begriff den Himmel. Auf seinen Schultern steht die moderne Welt.
-Charles Darwin|1809–1882|Er las im Buch des Lebens und fand darin die Verwandtschaft aller Wesen. Sein Mut veränderte unser Bild von uns selbst.
-Louis Pasteur|1822–1895|Er besiegte unsichtbare Feinde, die niemand zuvor gesehen hatte. Millionen leben, weil er nicht aufgab.
-Robert Koch|1843–1910|Ein Landarzt, der den Erregern von Tuberkulose und Cholera das Versteck nahm. Er gab der Medizin neue Augen.
-Wilhelm Conrad Röntgen|1845–1923|Er durchleuchtete das Verborgene und verzichtete auf jeden Gewinn daraus. Sein Licht heilt bis heute.
-Max Planck|1858–1947|Er öffnete das Tor zur Quantenwelt und trug schwerstes persönliches Leid mit Würde. Die kleinste Einheit der Natur trägt seinen Namen.
-Lise Meitner|1878–1968|Sie verstand als Erste, wie Atomkerne zerbrechen — und weigerte sich, daraus eine Waffe zu bauen. Gewissen und Genie in einer Person.
-Rosalind Franklin|1920–1958|Ihr Foto Nummer 51 enthüllte die Gestalt des Lebens selbst. Der Ruhm kam spät, die Wahrheit war immer ihre.
-Ada Lovelace|1815–1852|Sie schrieb Programme für eine Maschine, die noch gar nicht existierte. Die erste Programmiererin der Geschichte träumte hundert Jahre voraus.
-Alan Turing|1912–1954|Er knackte den Code des Krieges und erdachte die Seele jeder Maschine. Die Welt verdankt ihm mehr, als sie ihm je zurückgab.
-Grace Hopper|1906–1992|Sie brachte Computern das Sprechen in Menschensprache bei. „Amazing Grace" — Admiralin der Bits und Bytes.
-Emmy Noether|1882–1935|Ihre Theoreme tragen die Physik wie Fundamente einen Dom. Die größten Denker ihrer Zeit nannten sie ein Genie — die Universitäten ließen sie kaum lehren.
-Caroline Herschel|1750–1848|Vom Küchendienst zum Sternenhimmel: Sie entdeckte acht Kometen. Die erste Frau, die als Astronomin bezahlt wurde.
-Hypatia von Alexandria|ca. 355–415|Sie lehrte Mathematik und Sternenkunde, als Frauen schweigen sollten. Ihr Licht überstrahlt die Jahrhunderte.
-Galileo Galilei|1564–1642|Er richtete das Fernrohr zum Himmel und die Wahrheit gegen die Macht. „Und sie bewegt sich doch."
-Johannes Kepler|1571–1630|Er hörte die Musik der Planeten und schrieb ihre Gesetze nieder. Der Himmel folgt bis heute seinen Ellipsen.
-Alexander von Humboldt|1769–1859|Er vermaß die Welt und sah als Erster, dass in der Natur alles mit allem verwoben ist. Der letzte Universalgelehrte.
-Gregor Mendel|1822–1884|Ein Mönch, der in Erbsenblüten das Alphabet der Vererbung las. Sein Garten wurde zur Wiege der Genetik.
-Alexander Fleming|1881–1955|Eine vergessene Petrischale, ein wacher Blick — und die Menschheit erhielt das Penicillin. Der glücklichste Zufall der Medizingeschichte.
-Jonas Salk|1914–1995|Er besiegte die Kinderlähmung und verschenkte sein Patent an die Welt. „Kann man die Sonne patentieren?"
-Edward Jenner|1749–1823|Mit einer Impfung gegen die Pocken begann der Sieg über die tödlichste Seuche der Geschichte. Vater der Immunologie.
-Ignaz Semmelweis|1818–1865|Er rettete Mütter mit der einfachsten Wahrheit: sauberen Händen. Verlacht zu Lebzeiten, verehrt für immer.
-Florence Nightingale|1820–1910|Die Dame mit der Lampe machte aus Pflege eine Wissenschaft und aus Mitgefühl einen Beruf. Ihre Statistiken retteten Armeen.
-Gertrude Elion|1918–1999|Ohne Doktortitel entwickelte sie Medikamente gegen Leukämie und Viren. Nobelpreis für ein Leben im Dienst der Kranken.
-Barbara McClintock|1902–1992|Sie sah Gene springen, Jahrzehnte bevor es jemand glauben wollte. Geduld ist die stillste Form der Genialität.
-Jane Goodall|1934–2025|Sie lebte unter Schimpansen und lehrte uns, in Tieren Persönlichkeiten zu sehen. Botschafterin der Hoffnung bis zum letzten Tag.
-Katherine Johnson|1918–2020|Ihre Rechnungen trugen Menschen zum Mond und sicher wieder nach Hause. Sie zählte — in jeder Bedeutung des Wortes.
-Stephen Hawking|1942–2018|Gefangen im eigenen Körper, bereiste er schwarze Löcher und den Anfang der Zeit. Der Geist kennt keine Grenzen.
-Carl Sagan|1934–1996|Er machte Milliarden Menschen zu Sternguckern. „Wir sind aus Sternenstaub gemacht" — und er bewies es mit Poesie.
-Konrad Zuse|1910–1995|In einem Berliner Wohnzimmer baute er den ersten Computer der Welt. Der Z3 rechnete, bevor es das Wort „Software" gab.
-Paul Ehrlich|1854–1915|Er träumte von Zauberkugeln gegen Krankheiten — und erfand die erste. Begründer der Chemotherapie.
-Emil von Behring|1854–1917|Sein Serum gegen Diphtherie entriss unzählige Kinder dem Tod. Der erste Medizin-Nobelpreis der Geschichte gehörte ihm.
-Dorothea Erxleben|1715–1762|Die erste promovierte Ärztin Deutschlands — gegen den Spott ihrer Zeit. Sie öffnete eine Tür, die nie wieder zufiel.
-Maria Sibylla Merian|1647–1717|Sie malte Raupen, Falter und das Wunder der Verwandlung — und reiste dafür bis nach Surinam. Kunst und Forschung in einer Hand.
-Charles Drew|1904–1950|Er erfand die Blutbank und rettete damit Soldaten und Zivilisten zu Tausenden. Sein Erbe fließt in jeder Transfusion.
-Elizabeth Blackwell|1821–1910|Die erste Ärztin der Neuzeit — abgelehnt von 29 Universitäten, aufgenommen von der Geschichte.
-Virginia Apgar|1909–1974|Jedes Neugeborene der Welt wird nach ihrem Schema begrüßt. Zehn Punkte für ein ganzes Lebenswerk.
-Nikolaus Kopernikus|1473–1543|Er nahm der Erde die Mitte und schenkte ihr die Wahrheit. Das Universum wurde größer durch ihn.
-Archimedes|287–212 v. Chr.|Er hob die Welt mit Hebeln, Spiralen und reinem Denken aus den Angeln. „Heureka!" ruft die Wissenschaft noch heute mit ihm.
-Ibn Sina (Avicenna)|980–1037|Sein Kanon der Medizin heilte ein halbes Jahrtausend lang über Kontinente hinweg. Brückenbauer zwischen den Welten des Wissens.
-Al-Chwarizmi|ca. 780–850|Aus seinem Namen wurde das Wort „Algorithmus". Jede Rechenmaschine der Welt spricht bis heute seine Sprache.
-Hildegard von Bingen|1098–1179|Äbtissin, Heilerin, Komponistin, Visionärin — sie war ihrer Zeit in allem voraus. Die Kräuter des Klostergartens tragen noch ihr Wissen.
-Norman Borlaug|1914–2009|Sein Weizen besiegte den Hunger von Hunderten Millionen. Der Mann, der mehr Leben rettete als jeder andere.
-James Harrison|1936–2025|Sein seltenes Blut schützte über zwei Millionen Babys. Der Mann mit dem goldenen Arm spendete 1173 Mal.
-Hedy Lamarr|1914–2000|Hollywood-Star und Erfinderin des Frequenzsprungs — ohne sie kein WLAN, kein Bluetooth. Schönheit war ihre geringste Gabe.
-George Washington Carver|ca. 1864–1943|Als Sklave geboren, wurde er Amerikas größter Pflanzenforscher. Er schenkte armen Bauern hundert neue Ernten.
-Srinivasa Ramanujan|1887–1920|Formeln kamen zu ihm wie Träume — Tausende, die die Mathematik bis heute entschlüsselt. Ein Genie aus dem Nichts.
-Leonhard Euler|1707–1783|Er füllte die Mathematik mit mehr Ideen als jeder vor ihm — selbst als er erblindete, rechnete er weiter im Kopf.
-Carl Friedrich Gauß|1777–1855|Der Fürst der Mathematik zählte schon als Kind schneller als seine Lehrer. Seine Kurve beschreibt die halbe Welt.
-Sophie Germain|1776–1831|Sie musste sich als Mann ausgeben, um Mathematik zu treiben — und bewies Sätze, an denen Männer scheiterten.
-Dmitri Mendelejew|1834–1907|Er träumte die Ordnung der Elemente und ließ Lücken für das noch Unentdeckte. Das Periodensystem ist sein Denkmal.
-Michael Faraday|1791–1867|Der Buchbinderlehrling, der die Elektrizität zähmte. Jeder Motor der Welt dreht sich in seinem Andenken.
-James Clerk Maxwell|1831–1879|Vier Gleichungen — und Licht, Magnetismus und Elektrizität wurden eins. Das schönste Gedicht der Physik.
-Niels Bohr|1885–1962|Er gab dem Atom sein Gesicht und der Physik ihre Demut. „Wer über die Quantentheorie nicht schockiert ist, hat sie nicht verstanden."
-Richard Feynman|1918–1988|Er jonglierte mit Quanten und erklärte sie mit Bongotrommeln. Wissenschaft war für ihn das größte Abenteuer.
-Rachel Carson|1907–1964|Ihr „Stummer Frühling" weckte das Gewissen der Welt. Die Umweltbewegung begann mit ihrer Feder.
-Wangari Maathai|1940–2011|Sie pflanzte Millionen Bäume und erntete Freiheit. Die erste Afrikanerin mit dem Friedensnobelpreis.
-Mary Anning|1799–1847|Die Fossilienjägerin von Lyme Regis fand Drachen im Fels und schrieb Erdgeschichte — ohne je anerkannt zu werden.
-Antoine Lavoisier|1743–1794|Er gab der Chemie ihre Sprache und dem Sauerstoff seinen Namen. Die Revolution nahm seinen Kopf, nicht seinen Ruhm.
-Blaise Pascal|1623–1662|Mathematiker, Erfinder, Philosoph — sein Herz kannte Gründe, die der Verstand nicht kennt.
-Mahatma Gandhi|1869–1948|Er bewies, dass Gewaltlosigkeit stärker ist als ein Imperium. Sei du selbst die Veränderung, die du dir wünschst.
-Martin Luther King Jr.|1929–1968|Er hatte einen Traum — und ein Land wachte auf. Sein Marsch geht weiter, solange Menschen nach Gerechtigkeit dürsten.
-Nelson Mandela|1918–2013|27 Jahre Gefängnis machten ihn nicht bitter, sondern groß. Er verzieh — und einte ein zerrissenes Land.
-Rosa Parks|1913–2005|Sie blieb sitzen, damit ein Volk aufstehen konnte. Die Mutter der Bürgerrechtsbewegung.
-Harriet Tubman|ca. 1822–1913|Sie floh aus der Sklaverei — und kehrte dreizehnmal zurück, um andere zu befreien. Kein Passagier ihrer Underground Railroad ging je verloren.
-Sophie Scholl|1921–1943|Sie warf Flugblätter gegen die Finsternis und bezahlte mit 21 Jahren. „Es lebe die Freiheit" waren die letzten Worte ihres Bruders — sie lebt in uns.
-Hans Scholl|1918–1943|Mit der Weißen Rose stellte er sein Gewissen gegen die Diktatur. Mut ist, das Richtige zu tun, wenn es alles kostet.
-Dietrich Bonhoeffer|1906–1945|Der Theologe, der dem Bösen nicht auswich. „Wer nicht für die Juden schreit, darf nicht gregorianisch singen."
-Raoul Wallenberg|1912–?|Mit Schutzpässen und Verhandlungsgeschick rettete er Zehntausende vor der Deportation. Ein Held, der im Dunkel verschwand.
-Oskar Schindler|1908–1974|Seine Liste war Leben. 1200 Menschen und ihre Nachkommen tragen sein Andenken durch die Generationen.
-Irena Sendler|1910–2008|Sie schmuggelte 2500 Kinder aus dem Warschauer Ghetto — in Kisten, Säcken und Särgen. Die Namen vergrub sie in Einweckgläsern.
-Henry Dunant|1828–1910|Das Grauen von Solferino ließ ihn nicht los — er gründete das Rote Kreuz. Menschlichkeit wurde seine Fahne.
-Bertha von Suttner|1843–1914|„Die Waffen nieder!" rief sie einer aufrüstenden Welt zu. Die erste Friedensnobelpreisträgerin der Geschichte.
-Jane Addams|1860–1935|Sie öffnete ihr Haus den Ärmsten Chicagos und der Welt die Augen. Sozialarbeit hat mit ihr begonnen.
-Abraham Lincoln|1809–1865|Er hielt eine Nation zusammen und zerbrach die Ketten der Sklaverei. Regierung des Volkes, durch das Volk, für das Volk.
-Frederick Douglass|ca. 1818–1895|Er stahl sich das Lesen und redete Imperien der Unmenschlichkeit nieder. Vom Sklaven zum Gewissen Amerikas.
-Susan B. Anthony|1820–1906|Ein halbes Jahrhundert kämpfte sie für das Frauenwahlrecht — den Sieg erlebte sie nicht, doch er trägt ihren Namen.
-Emmeline Pankhurst|1858–1928|Taten statt Worte: Sie erkämpfte den Frauen Großbritanniens die Stimme. Rebellion im Dienst der Gerechtigkeit.
-Willy Brandt|1913–1992|Sein Kniefall von Warschau sagte mehr als tausend Reden. Er wagte mehr Demokratie — und mehr Versöhnung.
-Eleanor Roosevelt|1884–1962|Sie schrieb die Allgemeine Erklärung der Menschenrechte mit — das Gewissen der Welt in 30 Artikeln.
-Desmond Tutu|1931–2021|Er lachte der Apartheid ins Gesicht und lehrte ein Land das Vergeben. Ohne Vergebung keine Zukunft.
-Albert Schweitzer|1875–1965|Theologe, Organist, Urwaldarzt — Ehrfurcht vor dem Leben war sein einziges Dogma.
-Anne Frank|1929–1945|Ihr Tagebuch gab sechs Millionen Stimmen ein Gesicht. „Trotz allem glaube ich an das Gute im Menschen."
-Janusz Korczak|1878–1942|Der Kinderarzt ging mit seinen Waisenkindern bis zum Ende — er ließ sie nicht allein, nicht einmal im Angesicht des Todes.
-Elizabeth Fry|1780–1845|Der Engel der Gefängnisse: Sie brachte Menschlichkeit hinter Mauern, die keine kannten.
-Clara Barton|1821–1912|Auf den Schlachtfeldern band sie Wunden, im Frieden gründete sie das Amerikanische Rote Kreuz. Furchtlos im Dienst der Verwundeten.
-Mary Seacole|1805–1881|Als man ihre Hilfe ablehnte, reiste sie auf eigene Kosten an die Front der Krim. Heilung kennt keine Hautfarbe.
-Adolph Kolping|1813–1865|Der Schuhmacher, der Gesellen ein Zuhause gab. Sein Werk stützt Wandernde bis heute.
-Friedrich Wilhelm Raiffeisen|1818–1888|Was einer nicht schafft, das schaffen viele: Seine Genossenschaften retteten Bauern vor dem Ruin — und wirken weltweit fort.
-Fridtjof Nansen|1861–1930|Polarforscher und Retter: Sein Pass gab Staatenlosen eine Identität und Hunderttausenden eine Zukunft.
-Dag Hammarskjöld|1905–1961|Der stillste Diplomat der Welt starb auf einer Friedensmission. Sein Tagebuch offenbarte die Seele hinter dem Amt.
-Kofi Annan|1938–2018|Er gab den Vereinten Nationen Würde und den Vergessenen eine Stimme. Frieden war sein Lebenswerk.
-Simon Wiesenthal|1908–2005|Er überlebte die Lager und widmete sein Leben der Gerechtigkeit — nicht der Rache. Erinnerung war seine Waffe.
-Georg Elser|1903–1945|Ein einfacher Schreiner sah das Unheil kommen, als Millionen jubelten. Dreizehn Minuten fehlten, um die Geschichte zu ändern.
-Harvey Milk|1930–1978|Er gab der Hoffnung ein Amt und unzähligen Menschen den Mut, sie selbst zu sein. „Hope will never be silent."
-John Lewis|1940–2020|Auf der Brücke von Selma trug er die Freiheit auf seinen Schultern. „Good trouble" — sein Vermächtnis an alle Mutigen.
-Thurgood Marshall|1908–1993|Als Anwalt besiegte er die Rassentrennung, als Richter bewachte er die Verfassung. Gerechtigkeit war sein Handwerk.
-Ludwig van Beethoven|1770–1827|Taub komponierte er die Ode an die Freude. Sein Trotz gegen das Schicksal wurde zur Hymne der Menschheit.
-Johann Sebastian Bach|1685–1750|Seine Fugen sind Mathematik, die weint und jubelt. Musiker aller Jahrhunderte nennen ihn schlicht: den Anfang.
-Wolfgang Amadeus Mozart|1756–1791|35 Jahre, über 600 Werke, unendliche Leichtigkeit. Als hätte der Himmel selbst kurz auf Erden komponiert.
-Clara Schumann|1819–1896|Die größte Pianistin ihres Jahrhunderts trug acht Kinder, ein Werk und eine Ära auf ihren Schultern.
-Fanny Hensel|1805–1847|Sie komponierte im Schatten ihres Bruders Mendelssohn — die Welt entdeckt ihre Lieder gerade erst. Zu spät ist nicht zu vergebens.
-Vincent van Gogh|1853–1890|Er verkaufte zu Lebzeiten kaum ein Bild und schenkte der Nachwelt Sternennächte. Sein Leiden wurde Farbe, seine Farbe Trost.
-Claude Monet|1840–1926|Er malte das Licht selbst, nicht die Dinge. In seinen Seerosen versinkt die Zeit.
-Michelangelo Buonarroti|1475–1564|Er schlug Engel aus dem Marmor und spannte den Himmel über die Sixtinische Kapelle. Vier Jahre auf dem Rücken — für die Ewigkeit.
-Leonardo da Vinci|1452–1519|Maler, Anatom, Ingenieur, Träumer — das Universalgenie schlechthin. Seine Notizbücher träumen noch heute.
-Rembrandt van Rijn|1606–1669|Er malte das Licht in den Gesichtern einfacher Menschen und machte sie unsterblich. Meister des Helldunkels, Meister der Seele.
-Albrecht Dürer|1471–1528|Der Meister aus Nürnberg machte den Kupferstich zur Weltkunst. Sein betender Hände kennt jedes Kind.
-Käthe Kollwitz|1867–1945|Sie gab den Trauernden, den Armen und den Müttern ein Gesicht. Nie wieder Krieg — in Kohle, Stein und Bronze.
-Frida Kahlo|1907–1954|Zerbrochen vom Schicksal, malte sie sich selbst zusammen. Ihr Schmerz wurde Farbe, ihre Farbe Freiheit.
-Ella Fitzgerald|1917–1996|Die First Lady of Song machte aus Silben Sternschnuppen. Ihre Stimme war das freundlichste Wunder des Jazz.
-Louis Armstrong|1901–1971|Aus den Gassen von New Orleans trug er den Jazz um die ganze Welt. What a Wonderful World — sein Vermächtnis in vier Worten.
-Aretha Franklin|1942–2018|Die Queen of Soul verlangte Respekt — und eine ganze Bewegung sang mit. Ihre Stimme war Bürgerrecht und Gebet zugleich.
-Edith Piaf|1915–1963|Der Spatz von Paris sang vom Straßenrand bis in die Weltgeschichte. Non, je ne regrette rien.
-Maria Callas|1923–1977|La Divina — ihre Stimme konnte brechen und heilen im selben Ton. Die Oper hat zwei Zeitalter: vor ihr und nach ihr.
-Johann Wolfgang von Goethe|1749–1832|Dichter, Forscher, Minister, Weltbürger. Über allen Gipfeln ist Ruh — und in allen Bibliotheken sein Name.
-Friedrich Schiller|1759–1805|Er schrieb der Freiheit ihre schönsten Verse. Alle Menschen werden Brüder — sein Traum klingt in jeder Europahymne.
-William Shakespeare|1564–1616|Er kannte jede Regung des menschlichen Herzens und gab ihr Worte für die Ewigkeit. Die ganze Welt ist seine Bühne geblieben.
-Jane Austen|1775–1817|Mit spitzer Feder und warmem Herzen sezierte sie ihre Gesellschaft. Ihre Heldinnen sind unsere Zeitgenossinnen geblieben.
-Charles Dickens|1812–1870|Er schrieb die Armen Londons ins Gewissen der Welt. Weihnachten trägt bis heute seine Handschrift.
-Mark Twain|1835–1910|Mit Huck Finn auf dem Floß lehrte er Amerika das Lachen — und das Hinsehen. Humor war seine Form der Wahrheit.
-Leo Tolstoi|1828–1910|Krieg und Frieden, Anna Karenina — und am Ende die einfache Frage: Wovon leben die Menschen? Von der Liebe.
-Astrid Lindgren|1907–2002|Sie schenkte den Kindern Pippi, Michel und die Gewissheit, stark sein zu dürfen. Kindheit hat ihr ein Denkmal gebaut.
-Michael Ende|1929–1995|Momo lehrte uns, dass Zeit Leben ist — und die Unendliche Geschichte, dass Fantasie uns rettet. Phantásien dankt ihm.
-Erich Kästner|1899–1974|Seine Bücher brannten auf den Scheiterhaufen — er blieb und schrieb weiter. Emil, Pünktchen und das doppelte Lottchen halten die Wacht.
-Antoine de Saint-Exupéry|1900–1944|Pilot und Poet — verschollen über dem Meer. Man sieht nur mit dem Herzen gut; der kleine Prinz wartet noch auf ihn.
-Hans Christian Andersen|1805–1875|Das hässliche Entlein aus Odense wurde zum größten Märchenerzähler der Welt. Jedes Kind kennt seine Träume.
-Jacob und Wilhelm Grimm|1785/86–1863/59|Sie sammelten die Märchen eines ganzen Volkes und bauten der deutschen Sprache ihr Wörterbuch. Es war einmal — und ist noch immer.
-Maya Angelou|1928–2014|Sie wusste, warum der gefangene Vogel singt. Ihre Worte richteten Generationen auf.
-Toni Morrison|1931–2019|Sie schrieb die Geschichten, die Amerika vergessen wollte, in unvergängliche Literatur. Nobelpreis für ein Gewissen.
-Selma Lagerlöf|1858–1940|Mit Nils Holgersson flog sie über Schweden und als erste Frau zum Literaturnobelpreis. Erzählen war ihr Zauber.
-Heinrich Heine|1797–1856|Der spöttischste und zärtlichste Dichter deutscher Sprache. Denk ich an Deutschland in der Nacht — dann denkt Deutschland an ihn.
-Annette von Droste-Hülshoff|1797–1848|Die größte deutsche Dichterin ihres Jahrhunderts schrieb gegen die Enge ihrer Zeit an. Der Knabe im Moor fürchtet sich noch immer.
-Wolfgang Borchert|1921–1947|Mit 26 Jahren verglüht, hinterließ er den lautesten Schrei gegen den Krieg: Sag NEIN. Draußen vor der Tür steht er für immer.
-Loriot|1923–2011|Vicco von Bülow adelte den deutschen Humor. Ein Leben ohne Möpse ist möglich, aber sinnlos — ein Deutschland ohne ihn auch.
-Charlie Chaplin|1889–1977|Der Tramp mit dem Stöckchen brachte die Welt zum Lachen und die Diktatoren zum Zittern. Seine große Rede gilt noch heute.
-Jim Henson|1936–1990|Kermit, Ernie und Bert tragen seine Seele weiter. Er machte Puppen lebendig und Kinder glücklich — für immer.
-Fred Rogers|1928–2003|Der freundlichste Nachbar des Fernsehens sagte jedem Kind: Du bist gut, so wie du bist. Und meinte es.
-Bob Ross|1942–1995|Es gibt keine Fehler, nur glückliche kleine Unfälle. Er malte Bäume und pflanzte Gelassenheit in Millionen Herzen.
-Frédéric Chopin|1810–1849|Das Herz Polens schlug in seinen Nocturnes. Klaviere weinen schöner, seit es ihn gab.
-Antonín Dvořák|1841–1904|Aus der Neuen Welt schrieb er Sehnsucht in Noten. Der Metzgerlehrling, der Sinfonien schenkte.
-Niki de Saint Phalle|1930–2002|Ihre bunten Nanas tanzen auf den Plätzen der Welt. Kunst war ihre Therapie — und unser Geschenk.
-Johannes Gutenberg|ca. 1400–1468|Seine beweglichen Lettern befreiten das Wissen aus den Klöstern. Jede gedruckte Seite ist sein Erbe.
-Nikola Tesla|1856–1943|Er träumte in Wechselstrom und beleuchtete die Welt. Visionär, dem die Zukunft mehr galt als der Gewinn.
-Carl Benz|1844–1929|Er baute den ersten Motorwagen — belächelt von allen, bis die Welt aufstieg. Das Automobil begann in seiner Werkstatt.
-Bertha Benz|1849–1944|Ohne zu fragen fuhr sie mit dem Wagen ihres Mannes 106 Kilometer — die erste Fernfahrt der Geschichte. Ihr Mut bewies, was Technik kann.
-Gottlieb Daimler|1834–1900|Das Beste oder nichts — sein Motor brachte die Welt in Bewegung, zu Lande, zu Wasser und in der Luft.
-Rudolf Diesel|1858–1913|Sein Motor trägt seinen Namen um den Globus. Er träumte von einer Maschine für die kleinen Leute.
-Otto Lilienthal|1848–1896|Opfer müssen gebracht werden — er sprang zweitausendmal und schenkte dem Menschen den Traum vom Fliegen.
-Wilbur und Orville Wright|1867/71–1912/48|Zwei Fahrradbauer, zwölf Sekunden, ein neues Zeitalter. Der Himmel war nie wieder unerreichbar.
-Louis Braille|1809–1852|Mit fünfzehn erfand der blinde Junge sechs Punkte, die Millionen das Lesen schenkten. Fingerspitzen wurden Augen.
-Samuel Morse|1791–1872|Punkt, Strich, Punkt — er schrumpfte die Welt auf Sekunden. Die erste Nachricht fragte: „Was hat Gott gewirkt?"
-Alexander Graham Bell|1847–1922|Er lehrte Taube sprechen und Drähte reden. Das erste Telefonat der Welt begann mit seiner Stimme.
-Thomas Edison|1847–1931|Genie ist ein Prozent Inspiration und 99 Prozent Transpiration — er bewies es mit tausend Patenten und einem Lichtermeer.
-Alfred Nobel|1833–1896|Der Erfinder des Dynamits vermachte sein Vermögen dem Frieden. Sein Testament krönt bis heute die Besten der Menschheit.
-Melitta Bentz|1873–1950|Eine Hausfrau aus Dresden, ein Löschblatt, eine Blechdose — und der Kaffee der Welt wurde besser. Einfachheit ist Genie.
-Margarete Steiff|1847–1909|An den Rollstuhl gefesselt, nähte sie Teddybären für die ganze Welt. Für Kinder ist nur das Beste gut genug.
-Robert Bosch|1861–1942|Industrieller mit Gewissen: Er zahlte die besten Löhne, stiftete Krankenhäuser und half Verfolgten. Lieber Geld verlieren als Vertrauen.
-Ernst Abbe|1840–1905|Der Physiker machte Zeiss groß — und gab die Firma den Arbeitern. Der Achtstundentag begann in Jena.
-Carl Zeiss|1816–1888|Seine Linsen öffneten Fenster ins Allerkleinste. Die Wissenschaft sieht schärfer durch ihn.
-Werner von Siemens|1816–1892|Telegraf, Dynamo, elektrische Bahn — er verdrahtete das 19. Jahrhundert mit dem 20.
-Josephine Cochrane|1839–1913|Sie hatte genug vom zerbrochenen Porzellan und erfand die Spülmaschine. Not macht erfinderisch — Komfort macht Geschichte.
-Garrett Morgan|1877–1963|Sohn befreiter Sklaven, Erfinder der Gasmaske und der dreiphasigen Ampel. Er rettete Leben an jeder Kreuzung.
-Stephanie Kwolek|1923–2014|Ihre Faser Kevlar ist fünfmal stärker als Stahl. Tausende Polizisten verdanken ihr Leben einer Chemikerin.
-James Watt|1736–1819|Seine Dampfmaschine trieb die Industrielle Revolution an. Jede Glühbirne ehrt ihn mit seinem Namen.
-Douglas Engelbart|1925–2013|Die Maus, das Fenster, der Link — er erfand die Zukunft des Computers an einem einzigen Nachmittag 1968.
-Dennis Ritchie|1941–2011|Er schuf die Programmiersprache C und Unix. In jedem Smartphone schlägt sein leises Erbe.
-John von Neumann|1903–1957|Spieltheorie, Computerarchitektur, Quantenmechanik — sein Gehirn war das schnellste Rechenwerk seiner Zeit.
-Jacques Cousteau|1910–1997|Er gab der Menschheit Kiemen und dem Meer eine Stimme. Die stille Welt wurde durch ihn hörbar.
-Edmund Hillary|1919–2008|Nach dem Everest baute er Schulen für die Sherpas. Der Gipfel war ihm weniger wert als die Menschen am Berg.
-Tenzing Norgay|1914–1986|Der Sherpa, der den höchsten Punkt der Erde als Erster betrat — mit einem Lächeln und ohne Eitelkeit.
-Roald Amundsen|1872–1928|Der Erste am Südpol, verschollen bei der Rettung eines Rivalen. Größe zeigt sich zuletzt in der Hilfe.
-Ernest Shackleton|1874–1922|Sein Schiff zerbrach im Eis — er brachte jeden einzelnen Mann lebend nach Hause. Der größte Misserfolg der Heldengeschichte.
-Amelia Earhart|1897–1937|Sie flog allein über den Atlantik und verschwand über dem Pazifik. Abenteuer ist es wert, um seiner selbst willen gewagt zu werden.
-Neil Armstrong|1930–2012|Ein kleiner Schritt für einen Menschen — der bescheidenste Held des Jahrhunderts sprach vom „wir", nie vom „ich".
-Juri Gagarin|1934–1968|Der erste Mensch im All sah die Erde ohne Grenzen. „Sie ist blau", funkte er — und meinte: Sie ist eins.
-Sally Ride|1951–2012|Die erste Amerikanerin im All widmete ihr Leben danach den Mädchen, die von den Sternen träumen.
-Jesse Owens|1913–1980|Vier Goldmedaillen 1936 in Berlin — der schnellste Widerspruch der Geschichte gegen den Rassenwahn.
-Muhammad Ali|1942–2016|Er schwebte wie ein Schmetterling, stach wie eine Biene und opferte seinen Titel für sein Gewissen. The Greatest — im Ring und davor.
-Roger Bannister|1929–2018|Die Meile unter vier Minuten galt als unmöglich — er lief sie und wurde danach Neurologe. Grenzen sind Verabredungen.
-Gino Bartali|1914–2000|Der Radchampion schmuggelte gefälschte Papiere im Fahrradrahmen und rettete Hunderte Juden. „Das Gute tut man und redet nicht darüber."
-Emil Zátopek|1922–2000|Die tschechische Lokomotive gewann dreimal Gold in einer Woche — und verschenkte eine Medaille an einen Konkurrenten, der sie nie gewann.
-Sokrates|469–399 v. Chr.|Ich weiß, dass ich nichts weiß — mit dieser Demut begann das abendländische Denken. Er starb für die Freiheit der Frage.
-Konfuzius|551–479 v. Chr.|Was du nicht willst, das man dir tu, das füg auch keinem andern zu. Zweieinhalb Jahrtausende Weisheit in einem Satz.
-Immanuel Kant|1724–1804|Er verließ Königsberg nie und vermaß doch das ganze Denken. Der bestirnte Himmel über mir, das moralische Gesetz in mir.
-Hannah Arendt|1906–1975|Sie dachte ohne Geländer und erkannte die Banalität des Bösen. Niemand hat das Verzeihen und das Versprechen tiefer verstanden.
-Laotse|6. Jh. v. Chr.|Der Weg von tausend Meilen beginnt mit einem Schritt. Sein Tao Te King fließt wie Wasser durch die Jahrhunderte.
-Marc Aurel|121–180|Der Kaiser, der lieber Philosoph war. Seine Selbstbetrachtungen trösten Suchende seit zwei Jahrtausenden.
-Seneca|ca. 4 v. Chr.–65 n. Chr.|Nicht weil es schwer ist, wagen wir es nicht — weil wir es nicht wagen, ist es schwer. Der Stoiker starb, wie er lehrte: gelassen.
-Rumi|1207–1273|Der Mystiker, dessen Verse noch heute Herzen öffnen. Die Wunde ist der Ort, an dem das Licht in dich eintritt.
-Maimonides|1138–1204|Arzt, Philosoph, Brückenbauer zwischen Glauben und Vernunft. Gib einem Menschen keinen Fisch — lehre ihn fischen.
-Erasmus von Rotterdam|1466–1536|Der erste Europäer: Er kämpfte mit der Feder für Toleranz, als die Welt Scheiterhaufen baute.
-Baruch Spinoza|1632–1677|Verstoßen von allen, schliff er Linsen und Gedanken von vollkommener Klarheit. Freiheit des Denkens war sein Gott.
-Sebastian Kneipp|1821–1897|Der Pfarrer, der mit Wasser heilte. Fünf Säulen für ein gesundes Leben — Millionen gehen noch heute seinen Weg.
-Justus von Liebig|1803–1873|Er entschlüsselte die Ernährung der Pflanzen und besiegte den Hunger der Felder. Vater der Agrikulturchemie.
-Philipp Reis|1834–1874|Der Lehrer aus Friedrichsdorf baute das erste Telefon — „Das Pferd frisst keinen Gurkensalat" war der erste Satz der Fernsprechgeschichte.
-Levi Strauss|1829–1902|Der Auswanderer aus Franken machte aus Zeltstoff die Hose der Welt. Jede Jeans erzählt seine Geschichte.
-Hans Rosling|1948–2017|Er bewies mit tanzenden Statistiken, dass die Welt besser ist als wir glauben. Fakten waren seine Form der Hoffnung.
-Helmut Schmidt|1918–2015|In der Flut von 1962 und den Stürmen der Politik: ein Lotse, der Kurs hielt. Klarheit war seine Währung.
-Marlene Dietrich|1901–1992|Der Weltstar sagte Nein zu Hitler und sang für die Freiheit. Berlin verzieh ihr spät — die Welt liebte sie immer.
-Elisabeth Kübler-Ross|1926–2004|Sie lehrte die Welt, mit Sterbenden zu sprechen statt über sie. Die fünf Phasen der Trauer tragen ihren Namen.
-Clara Immerwahr|1870–1915|Die erste promovierte Chemikerin Deutschlands starb im Protest gegen den Giftgaskrieg. Ihr Gewissen überlebte sie.
-Ludwig Guttmann|1899–1980|Der geflohene Neurologe erfand die Paralympics. Er gab Gelähmten den Sport zurück — und der Welt ein Fest der Stärke.
-Albert Sabin|1906–1993|Seine Schluckimpfung gegen Polio verschenkte er patentfrei an die Welt. Kinder auf allen Kontinenten liefen dank ihm.
-Maria Montessori|1870–1952|Hilf mir, es selbst zu tun: Sie sah im Kind den Baumeister des Menschen. Ihre Schulen tragen ihre Achtung weiter.
-Friedrich Fröbel|1782–1852|Er erfand den Kindergarten — und die Welt übernahm sogar das deutsche Wort dafür. Spielen ist die höchste Form des Lernens.
-Wilhelm von Humboldt|1767–1835|Bildung als Entfaltung des ganzen Menschen — seine Universität wurde das Vorbild der Welt.
-Bessie Coleman|1892–1926|Keine Flugschule Amerikas nahm sie — also lernte sie Französisch und flog in Paris. Die erste schwarze Pilotin der Welt.
-Ruth Bader Ginsburg|1933–2020|Mit juristischer Präzision erkämpfte sie Gleichberechtigung, Fall für Fall. Die Notorious RBG wurde zur Ikone der Beharrlichkeit.
-Terry Fox|1958–1981|Mit einem Bein lief er 143 Tage quer durch Kanada für die Krebsforschung. Sein Marathon der Hoffnung läuft jedes Jahr weiter.
-Raoul Follereau|1903–1977|Der Anwalt der Leprakranken küsste, wen niemand berühren wollte. Niemand hat das Recht, allein glücklich zu sein.
-Edith Cavell|1865–1915|Die Krankenschwester pflegte Verwundete beider Seiten und half Hunderten zur Flucht. „Patriotismus ist nicht genug — ich darf keinen Hass in mir tragen."
-Chiune Sugihara|1900–1986|Der japanische Konsul schrieb Visa, bis ihm die Hand versagte — gegen den Befehl, für Tausende Leben.
-Frank Foley|1884–1958|Der britische Passbeamte in Berlin stempelte Zehntausende in die Freiheit. Ein Spion, dessen größte Mission die Menschlichkeit war.
-Mary Jackson|1921–2005|Die erste schwarze Ingenieurin der NASA öffnete die Türen, durch die sie selbst kaum gehen durfte.
-Fritz Walter|1920–2002|Der Kapitän des Wunders von Bern gab einem geschlagenen Land sein Lächeln zurück. Bescheiden bis zum letzten Anpfiff.
-Rudolf Virchow|1821–1902|Arzt, Forscher, Sozialreformer: Medizin ist eine soziale Wissenschaft — und Politik nichts als Medizin im Großen.
-Ferdinand von Zeppelin|1838–1917|Ausgelacht als „Narr vom Bodensee", schenkte er dem Himmel Giganten. Beharrlichkeit ist das beste Baumaterial.
-Nellie Bly|1864–1922|Sie ließ sich in eine Anstalt einweisen, um Missstände aufzudecken, und umrundete die Welt in 72 Tagen. Journalismus mit Herz und Wagemut.
-Ida B. Wells|1862–1931|Mit der Feder kämpfte sie gegen Lynchjustiz, als es lebensgefährlich war. Wahrheit war ihre einzige Waffe.
-Booker T. Washington|1856–1915|Als Sklave geboren, baute er Schulen für ein ganzes Volk. Bildung war sein Weg in die Würde.
-Henri Becquerel|1852–1908|Er entdeckte die Strahlung, die aus dem Inneren der Materie kommt — und teilte den Nobelpreis mit den Curies.
-Christiaan Huygens|1629–1695|Pendeluhr, Saturnringe, Wellentheorie des Lichts — der stillste Riese der Wissenschaftsgeschichte.
-Anton van Leeuwenhoek|1632–1723|Der Tuchhändler schliff Linsen und entdeckte eine unsichtbare Welt: Bakterien. Der erste Blick ins Mikroskop war seiner.
-Carl von Linné|1707–1778|Er gab jeder Pflanze und jedem Tier einen Namen. Die Sprache der Natur trägt seine Ordnung.
-Gerty Cori|1896–1957|Die erste Frau mit dem Medizin-Nobelpreis entschlüsselte den Zuckerstoffwechsel. Teamarbeit mit ihrem Mann — auf Augenhöhe, gegen die Zeit.
-Alfred Wegener|1880–1930|Die Kontinente wandern — man lachte ihn aus, die Erde gab ihm recht. Er starb auf dem Eis Grönlands, der Wahrheit hinterher.
-Emilie du Châtelet|1706–1749|Sie übersetzte Newton und dachte ihn weiter. Die Aufklärung hatte auch ein weibliches Gesicht.
-Benjamin Franklin|1706–1790|Drucker, Blitzableiter, Staatsgründer. Er entriss dem Himmel den Blitz und den Tyrannen das Zepter.
-Mary Wollstonecraft|1759–1797|Ihre Verteidigung der Rechte der Frau war ihrer Zeit um zwei Jahrhunderte voraus. Vernunft kennt kein Geschlecht.
-Olympe de Gouges|1748–1793|Sie erklärte die Rechte der Frau, als nur von Männern die Rede war — und bezahlte auf dem Schafott.
-Vasili Archipow|1926–1998|In der Kubakrise verweigerte er als Einziger den Atomtorpedo. Ein leises Nein rettete womöglich die Welt.
-Stanislaw Petrow|1939–2017|Der Computer meldete Raketenangriff — er meldete Fehlalarm. Sein Zweifel bewahrte die Menschheit vor dem Atomkrieg.
-Aristoteles|384–322 v. Chr.|Er ordnete das Wissen der Welt, von der Logik bis zur Biologie. Zwei Jahrtausende lang hieß Denken: bei ihm lernen.
-Theodor Heuss|1884–1963|Der erste Bundespräsident gab der jungen Demokratie Würde und Wärme. Ein Bürger unter Bürgern.
-Bertha Pappenheim|1859–1936|Sie kämpfte gegen Mädchenhandel und für jüdische Sozialarbeit. Fürsorge war ihr Widerstand.
-Louise Otto-Peters|1819–1895|Sie gründete die deutsche Frauenbewegung mit Feder und Beharrlichkeit. „Dem Reich der Freiheit werb ich Bürgerinnen."
-Johannes Brahms|1833–1897|Aus Hamburgs Gassen zum Vollender der Sinfonie. Sein Wiegenlied singt die halbe Welt in den Schlaf.
-Robert Schumann|1810–1856|Poet am Klavier, Entdecker fremder Talente, Liebender gegen alle Widerstände. Die Romantik hat sein Gesicht.
-Georg Friedrich Händel|1685–1759|Sein Messias erklingt, wo Menschen Trost suchen. Halleluja — ein Leben in einem Wort.
+# Afterlife — Epitaph source file
+# Format: Name|Life dates|Epitaph (1-2 sentences)
+# Lines starting with # are ignored. Just add more and run the builder again.
+Marie Curie|1867–1934|She made the invisible visible and gave the world two new elements. Two Nobel Prizes — and a heart that burned for science.
+Albert Einstein|1879–1955|He bent space and time with the force of thought, and taught us that imagination matters more than knowledge.
+Isaac Newton|1643–1727|He watched an apple fall and grasped the heavens. The modern world stands upon his shoulders.
+Charles Darwin|1809–1882|He read the book of life and found in it the kinship of all living things. His courage changed how we see ourselves.
+Louis Pasteur|1822–1895|He defeated invisible enemies no one had ever seen. Millions live because he would not give up.
+Robert Koch|1843–1910|A country doctor who stripped tuberculosis and cholera of their hiding places. He gave medicine new eyes.
+Wilhelm Conrad Röntgen|1845–1923|He shone a light through the hidden and refused to profit from it. His rays heal to this day.
+Max Planck|1858–1947|He opened the door to the quantum world and bore the heaviest grief with dignity. Nature's smallest unit carries his name.
+Lise Meitner|1878–1968|She was first to understand how atomic nuclei break — and refused to build a weapon from it. Conscience and genius in one person.
+Rosalind Franklin|1920–1958|Her Photograph 51 revealed the shape of life itself. Fame came late; the truth was always hers.
+Ada Lovelace|1815–1852|She wrote programs for a machine that did not yet exist. History's first programmer dreamed a century ahead.
+Alan Turing|1912–1954|He broke the code of a war and imagined the soul of every machine. The world owes him more than it ever repaid.
+Grace Hopper|1906–1992|She taught computers to speak in human words. "Amazing Grace" — admiral of bits and bytes.
+Emmy Noether|1882–1935|Her theorems hold up physics the way foundations hold a cathedral. The greatest minds called her a genius; the universities barely let her teach.
+Caroline Herschel|1750–1848|From the kitchen to the starry sky: she discovered eight comets. The first woman paid to be an astronomer.
+Hypatia of Alexandria|c. 355–415|She taught mathematics and the stars when women were meant to be silent. Her light outshines the centuries.
+Galileo Galilei|1564–1642|He turned his telescope to the sky and the truth against power. "And yet it moves."
+Johannes Kepler|1571–1630|He heard the music of the planets and wrote down their laws. The heavens still follow his ellipses.
+Alexander von Humboldt|1769–1859|He measured the world and was first to see that in nature everything is woven to everything else. The last universal scholar.
+Gregor Mendel|1822–1884|A monk who read the alphabet of heredity in the blossoms of peas. His garden became the cradle of genetics.
+Alexander Fleming|1881–1955|A forgotten dish, a watchful eye — and humanity received penicillin. The luckiest accident in the history of medicine.
+Jonas Salk|1914–1995|He defeated polio and gave his patent away to the world. "Could you patent the sun?"
+Edward Jenner|1749–1823|With one vaccine against smallpox began the conquest of history's deadliest plague. Father of immunology.
+Ignaz Semmelweis|1818–1865|He saved mothers with the simplest truth: clean hands. Mocked in life, honored forever.
+Florence Nightingale|1820–1910|The lady with the lamp turned nursing into a science and compassion into a calling. Her statistics saved armies.
+Gertrude Elion|1918–1999|Without a doctorate she developed drugs against leukemia and viruses. A Nobel Prize for a life in service of the sick.
+Barbara McClintock|1902–1992|She saw genes leap, decades before anyone would believe it. Patience is the quietest form of genius.
+Jane Goodall|1934–2025|She lived among chimpanzees and taught us to see persons in animals. An ambassador of hope to her final day.
+Katherine Johnson|1918–2020|Her calculations carried humans to the Moon and safely home. She counted — in every sense of the word.
+Stephen Hawking|1942–2018|Trapped in his own body, he journeyed to black holes and the beginning of time. The mind knows no limits.
+Carl Sagan|1934–1996|He turned billions of people into stargazers. "We are made of star-stuff" — and he proved it with poetry.
+Konrad Zuse|1910–1995|In a Berlin living room he built the world's first computer. The Z3 was calculating before the word "software" existed.
+Paul Ehrlich|1854–1915|He dreamed of magic bullets against disease — and invented the first. Founder of chemotherapy.
+Emil von Behring|1854–1917|His serum against diphtheria snatched countless children from death. History's first Nobel Prize in Medicine was his.
+Dorothea Erxleben|1715–1762|The first woman in Germany to earn a medical doctorate — against the scorn of her age. She opened a door that never closed again.
+Maria Sibylla Merian|1647–1717|She painted caterpillars, moths and the miracle of transformation — and sailed to Surinam to do it. Art and science in one hand.
+Charles Drew|1904–1950|He invented the blood bank and saved soldiers and civilians by the thousands. His legacy flows in every transfusion.
+Elizabeth Blackwell|1821–1910|The first woman doctor of modern times — rejected by 29 universities, admitted by history.
+Virginia Apgar|1909–1974|Every newborn in the world is greeted by her score. Ten points for an entire life's work.
+Nicolaus Copernicus|1473–1543|He took the center from the Earth and gave it the truth. The universe grew larger because of him.
+Archimedes|287–212 BC|He moved the world with levers, spirals and pure thought. "Eureka!" science still cries with him.
+Ibn Sina (Avicenna)|980–1037|His Canon of Medicine healed across continents for half a millennium. A builder of bridges between worlds of knowledge.
+Al-Khwarizmi|c. 780–850|From his name came the word "algorithm." Every computing machine on Earth still speaks his language.
+Hildegard of Bingen|1098–1179|Abbess, healer, composer, visionary — ahead of her time in everything. The herbs of the cloister garden still carry her knowledge.
+Norman Borlaug|1914–2009|His wheat defeated the hunger of hundreds of millions. The man who saved more lives than any other.
+James Harrison|1936–2025|His rare blood protected more than two million babies. The man with the golden arm gave 1,173 times.
+Hedy Lamarr|1914–2000|Hollywood star and inventor of frequency hopping — without her, no Wi-Fi, no Bluetooth. Beauty was the least of her gifts.
+George Washington Carver|c. 1864–1943|Born into slavery, he became America's greatest plant scientist. He gave poor farmers a hundred new harvests.
+Srinivasa Ramanujan|1887–1920|Formulas came to him like dreams — thousands that mathematics still unravels. A genius out of nowhere.
+Leonhard Euler|1707–1783|He filled mathematics with more ideas than anyone before him — and even blind, he kept calculating in his head.
+Carl Friedrich Gauss|1777–1855|The prince of mathematicians outcounted his teachers as a child. His curve describes half the world.
+Sophie Germain|1776–1831|She had to pose as a man to study mathematics — and proved theorems that defeated men.
+Dmitri Mendeleev|1834–1907|He dreamed the order of the elements and left gaps for the yet undiscovered. The periodic table is his monument.
+Michael Faraday|1791–1867|The bookbinder's apprentice who tamed electricity. Every motor in the world turns in his memory.
+James Clerk Maxwell|1831–1879|Four equations — and light, magnetism and electricity became one. The most beautiful poem in physics.
+Niels Bohr|1885–1962|He gave the atom its face and physics its humility. "Anyone not shocked by quantum theory has not understood it."
+Richard Feynman|1918–1988|He juggled quanta and explained them on bongo drums. To him, science was the greatest adventure.
+Rachel Carson|1907–1964|Her "Silent Spring" woke the conscience of the world. The environmental movement began with her pen.
+Wangari Maathai|1940–2011|She planted millions of trees and harvested freedom. The first African woman to win the Nobel Peace Prize.
+Mary Anning|1799–1847|The fossil hunter of Lyme Regis found dragons in the rock and wrote Earth's history — without ever being credited.
+Antoine Lavoisier|1743–1794|He gave chemistry its language and oxygen its name. The Revolution took his head, not his fame.
+Blaise Pascal|1623–1662|Mathematician, inventor, philosopher — his heart knew reasons that reason cannot know.
+Mahatma Gandhi|1869–1948|He proved that nonviolence is stronger than an empire. Be the change you wish to see in the world.
+Martin Luther King Jr.|1929–1968|He had a dream — and a nation awoke. His march goes on, as long as people thirst for justice.
+Nelson Mandela|1918–2013|Twenty-seven years in prison did not make him bitter but great. He forgave — and united a torn country.
+Rosa Parks|1913–2005|She kept her seat so that a people could rise. The mother of the civil rights movement.
+Harriet Tubman|c. 1822–1913|She fled slavery — and returned thirteen times to free others. No passenger on her Underground Railroad was ever lost.
+Sophie Scholl|1921–1943|She scattered leaflets against the darkness and paid at twenty-one. "Long live freedom" — and she lives in us.
+Hans Scholl|1918–1943|With the White Rose he set his conscience against the dictatorship. Courage is doing right when it costs everything.
+Dietrich Bonhoeffer|1906–1945|The theologian who would not look away from evil. He set faith against tyranny and paid with his life.
+Raoul Wallenberg|1912–?|With protective passports and sheer nerve he saved tens of thousands from deportation. A hero who vanished into the dark.
+Oskar Schindler|1908–1974|His list was life. Twelve hundred people and their descendants carry his memory through the generations.
+Irena Sendler|1910–2008|She smuggled 2,500 children out of the Warsaw Ghetto — in boxes, sacks and coffins. She buried their names in jars.
+Henry Dunant|1828–1910|The horror of Solferino would not release him — so he founded the Red Cross. Humanity became his banner.
+Bertha von Suttner|1843–1914|"Lay down your arms!" she cried to a world arming for war. The first woman to win the Nobel Peace Prize.
+Jane Addams|1860–1935|She opened her house to the poorest of Chicago and the eyes of the world. Social work began with her.
+Abraham Lincoln|1809–1865|He held a nation together and broke the chains of slavery. Government of the people, by the people, for the people.
+Frederick Douglass|c. 1818–1895|He stole the gift of reading and argued empires of cruelty to the ground. From slave to the conscience of America.
+Susan B. Anthony|1820–1906|For half a century she fought for women's right to vote — she did not live to see it win, yet it bears her name.
+Emmeline Pankhurst|1858–1928|Deeds, not words: she won British women their voice. Rebellion in the service of justice.
+Willy Brandt|1913–1992|His kneeling in Warsaw said more than a thousand speeches. He dared more democracy — and more reconciliation.
+Eleanor Roosevelt|1884–1962|She helped write the Universal Declaration of Human Rights — the conscience of the world in thirty articles.
+Desmond Tutu|1931–2021|He laughed apartheid in the face and taught a nation to forgive. Without forgiveness, no future.
+Albert Schweitzer|1875–1965|Theologian, organist, jungle doctor — reverence for life was his only dogma.
+Anne Frank|1929–1945|Her diary gave six million voices a face. "In spite of everything, I still believe people are truly good at heart."
+Janusz Korczak|1878–1942|The children's doctor went with his orphans to the very end — he would not leave them, not even before death.
+Elizabeth Fry|1780–1845|The angel of the prisons: she brought humanity behind walls that had known none.
+Clara Barton|1821–1912|On the battlefields she bound wounds; in peace she founded the American Red Cross. Fearless in the service of the wounded.
+Mary Seacole|1805–1881|When her help was refused, she traveled to the Crimean front at her own expense. Healing knows no color.
+Adolph Kolping|1813–1865|The shoemaker who gave journeymen a home. His work still shelters wanderers today.
+Friedrich Wilhelm Raiffeisen|1818–1888|What one cannot do, many can: his cooperatives saved farmers from ruin — and endure across the world.
+Fridtjof Nansen|1861–1930|Polar explorer and rescuer: his passport gave the stateless an identity and hundreds of thousands a future.
+Dag Hammarskjöld|1905–1961|The quietest diplomat in the world died on a mission of peace. His journal revealed the soul behind the office.
+Kofi Annan|1938–2018|He gave the United Nations dignity and the forgotten a voice. Peace was his life's work.
+Simon Wiesenthal|1908–2005|He survived the camps and gave his life to justice — not revenge. Memory was his weapon.
+Georg Elser|1903–1945|A simple carpenter saw the coming ruin while millions cheered. Thirteen minutes short of changing history.
+Harvey Milk|1930–1978|He gave hope a public office and countless people the courage to be themselves. "Hope will never be silent."
+John Lewis|1940–2020|On the bridge at Selma he carried freedom on his shoulders. "Good trouble" — his legacy to all the brave.
+Thurgood Marshall|1908–1993|As a lawyer he defeated segregation; as a justice he guarded the Constitution. Justice was his craft.
+Ludwig van Beethoven|1770–1827|Deaf, he composed the Ode to Joy. His defiance of fate became humanity's anthem.
+Johann Sebastian Bach|1685–1750|His fugues are mathematics that weeps and rejoices. Musicians of every century call him simply: the beginning.
+Wolfgang Amadeus Mozart|1756–1791|Thirty-five years, over 600 works, endless grace. As if heaven itself had briefly composed on Earth.
+Clara Schumann|1819–1896|The greatest pianist of her century carried eight children, a body of work and an era on her shoulders.
+Fanny Hensel|1805–1847|She composed in the shadow of her brother Mendelssohn — the world is only now discovering her songs. Late is not the same as in vain.
+Vincent van Gogh|1853–1890|He sold almost no paintings in his lifetime and gave posterity starry nights. His suffering became color, his color comfort.
+Claude Monet|1840–1926|He painted light itself, not things. In his water lilies, time dissolves.
+Michelangelo Buonarroti|1475–1564|He carved angels from marble and stretched heaven across the Sistine ceiling. Four years on his back — for eternity.
+Leonardo da Vinci|1452–1519|Painter, anatomist, engineer, dreamer — the universal genius itself. His notebooks are dreaming still.
+Rembrandt van Rijn|1606–1669|He painted the light on the faces of ordinary people and made them immortal. Master of shadow, master of the soul.
+Albrecht Dürer|1471–1528|The master of Nuremberg made engraving a world art. Every child knows his praying hands.
+Käthe Kollwitz|1867–1945|She gave a face to the grieving, the poor and the mothers. Never again war — in charcoal, stone and bronze.
+Frida Kahlo|1907–1954|Broken by fate, she painted herself back together. Her pain became color, her color freedom.
+Ella Fitzgerald|1917–1996|The First Lady of Song turned syllables into shooting stars. Her voice was the kindest miracle of jazz.
+Louis Armstrong|1901–1971|From the alleys of New Orleans he carried jazz around the world. What a Wonderful World — his legacy in four words.
+Aretha Franklin|1942–2018|The Queen of Soul demanded respect — and a whole movement sang along. Her voice was civil right and prayer at once.
+Edith Piaf|1915–1963|The sparrow of Paris sang from the curbside into world history. Non, je ne regrette rien.
+Maria Callas|1923–1977|La Divina — her voice could break and heal in the same note. Opera has two ages: before her and after.
+Johann Wolfgang von Goethe|1749–1832|Poet, scientist, minister, citizen of the world. Over all the peaks is peace — and in every library, his name.
+Friedrich Schiller|1759–1805|He gave freedom its most beautiful verses. All men become brothers — his dream rings in Europe's anthem.
+William Shakespeare|1564–1616|He knew every motion of the human heart and gave it words for eternity. All the world has remained his stage.
+Jane Austen|1775–1817|With a sharp pen and a warm heart she dissected her society. Her heroines have remained our contemporaries.
+Charles Dickens|1812–1870|He wrote the poor of London into the conscience of the world. Christmas still bears his handwriting.
+Mark Twain|1835–1910|On a raft with Huck Finn he taught America to laugh — and to look closer. Humor was his form of truth.
+Leo Tolstoy|1828–1910|War and Peace, Anna Karenina — and in the end the simple question: what do people live by? By love.
+Astrid Lindgren|1907–2002|She gave children Pippi and the certainty that they are allowed to be strong. Childhood built her a monument.
+Michael Ende|1929–1995|Momo taught us that time is life — and The Neverending Story, that imagination saves us. Fantastica thanks him.
+Erich Kästner|1899–1974|His books burned on the pyres — he stayed and kept writing. Emil and the detectives keep the watch.
+Antoine de Saint-Exupéry|1900–1944|Pilot and poet — lost over the sea. It is only with the heart that one sees rightly; the little prince still waits for him.
+Hans Christian Andersen|1805–1875|The ugly duckling from Odense became the world's greatest teller of tales. Every child knows his dreams.
+Jacob and Wilhelm Grimm|1785/86–1863/59|They gathered the fairy tales of a whole people and built the German language its dictionary. Once upon a time — and still.
+Maya Angelou|1928–2014|She knew why the caged bird sings. Her words lifted up generations.
+Toni Morrison|1931–2019|She turned the stories America wished to forget into imperishable literature. A Nobel Prize for a conscience.
+Selma Lagerlöf|1858–1940|With Nils Holgersson she flew over Sweden and became the first woman to win the Nobel Prize in Literature. Storytelling was her magic.
+Heinrich Heine|1797–1856|The most mocking and most tender poet of the German tongue. Think of him in the night, and Germany thinks of him.
+Annette von Droste-Hülshoff|1797–1848|The greatest German poet of her century wrote against the narrowness of her time. The boy in the moor still trembles.
+Wolfgang Borchert|1921–1947|Burned out at twenty-six, he left the loudest cry against war: Say NO. He stands forever outside the door.
+Loriot|1923–2011|Vicco von Bülow ennobled German humor. A life without pugs is possible, but pointless — and so is a Germany without him.
+Charlie Chaplin|1889–1977|The tramp with the little cane made the world laugh and dictators tremble. His great speech still holds today.
+Jim Henson|1936–1990|Kermit, Ernie and Bert carry his soul onward. He made puppets live and children happy — forever.
+Fred Rogers|1928–2003|Television's kindest neighbor told every child: you are good just as you are. And he meant it.
+Bob Ross|1942–1995|There are no mistakes, only happy little accidents. He painted trees and planted calm in millions of hearts.
+Frédéric Chopin|1810–1849|The heart of Poland beat in his nocturnes. Pianos have wept more beautifully ever since.
+Antonín Dvořák|1841–1904|From the New World he wrote longing into notes. The butcher's apprentice who gave us symphonies.
+Niki de Saint Phalle|1930–2002|Her colorful Nanas dance in the squares of the world. Art was her therapy — and our gift.
+Johannes Gutenberg|c. 1400–1468|His movable type freed knowledge from the monasteries. Every printed page is his legacy.
+Nikola Tesla|1856–1943|He dreamed in alternating current and lit the world. A visionary to whom the future mattered more than the profit.
+Carl Benz|1844–1929|He built the first motorcar — laughed at by all, until the world climbed aboard. The automobile began in his workshop.
+Bertha Benz|1849–1944|Without asking, she drove her husband's car 106 kilometers — history's first long journey. Her nerve proved what the machine could do.
+Gottlieb Daimler|1834–1900|The best or nothing — his engine set the world in motion, by land, by water and in the air.
+Rudolf Diesel|1858–1913|His engine carries his name around the globe. He dreamed of a machine for the common people.
+Otto Lilienthal|1848–1896|Sacrifices must be made — he leaped two thousand times and gave humankind the dream of flight.
+Wilbur and Orville Wright|1867/71–1912/48|Two bicycle makers, twelve seconds, a new age. The sky was never out of reach again.
+Louis Braille|1809–1852|At fifteen the blind boy invented six dots that gave millions the gift of reading. Fingertips became eyes.
+Samuel Morse|1791–1872|Dot, dash, dot — he shrank the world to seconds. The first message asked: "What hath God wrought?"
+Alexander Graham Bell|1847–1922|He taught the deaf to speak and wires to talk. The world's first phone call began with his voice.
+Thomas Edison|1847–1931|Genius is one percent inspiration and ninety-nine percent perspiration — he proved it with a thousand patents and a sea of light.
+Alfred Nobel|1833–1896|The inventor of dynamite left his fortune to peace. His will still crowns the finest of humankind.
+Melitta Bentz|1873–1950|A housewife from Dresden, a sheet of blotting paper, a tin can — and the world's coffee grew better. Simplicity is genius.
+Margarete Steiff|1847–1909|Bound to a wheelchair, she sewed teddy bears for the whole world. For children, only the best is good enough.
+Robert Bosch|1861–1942|An industrialist with a conscience: he paid the best wages, endowed hospitals and helped the persecuted. Better to lose money than trust.
+Ernst Abbe|1840–1905|The physicist made Zeiss great — and gave the company to its workers. The eight-hour day began in Jena.
+Carl Zeiss|1816–1888|His lenses opened windows into the smallest of things. Science sees more sharply because of him.
+Werner von Siemens|1816–1892|Telegraph, dynamo, electric railway — he wired the nineteenth century to the twentieth.
+Josephine Cochrane|1839–1913|She had had enough of broken china and invented the dishwasher. Necessity breeds invention — comfort makes history.
+Garrett Morgan|1877–1963|Son of freed slaves, inventor of the gas mask and the three-way traffic signal. He saved lives at every crossing.
+Stephanie Kwolek|1923–2014|Her fiber Kevlar is five times stronger than steel. Thousands of officers owe their lives to a chemist.
+James Watt|1736–1819|His steam engine drove the Industrial Revolution. Every unit of power now honors him with his name.
+Douglas Engelbart|1925–2013|The mouse, the window, the link — he unveiled the future of the computer in a single afternoon in 1968.
+Dennis Ritchie|1941–2011|He created the C programming language and Unix. In every smartphone beats his quiet legacy.
+John von Neumann|1903–1957|Game theory, computer architecture, quantum mechanics — his mind was the fastest calculating engine of his time.
+Jacques Cousteau|1910–1997|He gave humankind gills and the sea a voice. The silent world became audible through him.
+Edmund Hillary|1919–2008|After Everest he built schools for the Sherpas. The summit meant less to him than the people on the mountain.
+Tenzing Norgay|1914–1986|The Sherpa who first set foot on the highest point on Earth — with a smile and without vanity.
+Roald Amundsen|1872–1928|First to the South Pole, lost while rescuing a rival. Greatness shows itself last in helping.
+Ernest Shackleton|1874–1922|His ship broke in the ice — he brought every single man home alive. The greatest failure in the story of heroes.
+Amelia Earhart|1897–1937|She flew alone across the Atlantic and vanished over the Pacific. Adventure is worth daring for its own sake.
+Neil Armstrong|1930–2012|One small step for a man — the humblest hero of the century spoke of "we," never of "I."
+Yuri Gagarin|1934–1968|The first human in space saw the Earth without borders. "It is blue," he called down — and meant: it is one.
+Sally Ride|1951–2012|The first American woman in space gave the rest of her life to the girls who dream of the stars.
+Jesse Owens|1913–1980|Four gold medals in Berlin in 1936 — history's swiftest answer to the madness of race.
+Muhammad Ali|1942–2016|He floated like a butterfly, stung like a bee, and gave up his title for his conscience. The Greatest — in the ring and beyond it.
+Roger Bannister|1929–2018|The four-minute mile was thought impossible — he ran it, then became a neurologist. Limits are only agreements.
+Gino Bartali|1914–2000|The cycling champion hid forged papers in his bicycle frame and saved hundreds of Jews. "Good is something you do, not something you talk about."
+Emil Zátopek|1922–2000|The Czech Locomotive won three golds in one week — and gave a medal to a rival who never won one.
+Socrates|469–399 BC|I know that I know nothing — with that humility Western thought began. He died for the freedom to ask.
+Confucius|551–479 BC|Do not do to others what you would not want done to you. Two and a half millennia of wisdom in a single line.
+Immanuel Kant|1724–1804|He never left Königsberg and yet mapped all of thought. The starry heavens above me, the moral law within me.
+Hannah Arendt|1906–1975|She thought without a railing and recognized the banality of evil. No one understood forgiveness and the promise more deeply.
+Lao Tzu|6th c. BC|The journey of a thousand miles begins with a single step. His Tao Te Ching flows like water through the centuries.
+Marcus Aurelius|121–180|The emperor who would rather have been a philosopher. His Meditations have consoled seekers for two thousand years.
+Seneca|c. 4 BC–65 AD|It is not because things are hard that we do not dare — it is because we do not dare that they are hard. The Stoic died as he taught: serene.
+Rumi|1207–1273|The mystic whose verses still open hearts. The wound is the place where the light enters you.
+Maimonides|1138–1204|Physician, philosopher, bridge-builder between faith and reason. Do not give a man a fish — teach him to fish.
+Erasmus of Rotterdam|1466–1536|The first European: he fought with his pen for tolerance while the world built pyres.
+Baruch Spinoza|1632–1677|Cast out by all, he ground lenses and thoughts of perfect clarity. Freedom of thought was his God.
+Sebastian Kneipp|1821–1897|The priest who healed with water. Five pillars for a healthy life — millions still walk his path.
+Justus von Liebig|1803–1873|He decoded the nourishment of plants and defeated the hunger of the fields. Father of agricultural chemistry.
+Philipp Reis|1834–1874|The teacher from Friedrichsdorf built the first telephone — "The horse does not eat cucumber salad" was the first sentence ever sent.
+Levi Strauss|1829–1902|The emigrant from Franconia turned tent cloth into the trousers of the world. Every pair of jeans tells his story.
+Hans Rosling|1948–2017|With dancing statistics he proved the world is better than we believe. Facts were his form of hope.
+Helmut Schmidt|1918–2015|In the flood of 1962 and the storms of politics: a helmsman who held course. Clarity was his currency.
+Marlene Dietrich|1901–1992|The world star said No to Hitler and sang for freedom. Berlin forgave her late — the world always loved her.
+Elisabeth Kübler-Ross|1926–2004|She taught the world to speak with the dying instead of about them. The five stages of grief bear her name.
+Clara Immerwahr|1870–1915|The first woman in Germany to earn a doctorate in chemistry died in protest against gas warfare. Her conscience outlived her.
+Ludwig Guttmann|1899–1980|The refugee neurologist invented the Paralympics. He gave the paralyzed sport again — and the world a festival of strength.
+Albert Sabin|1906–1993|He gave his oral polio vaccine to the world patent-free. Children on every continent walked because of him.
+Maria Montessori|1870–1952|Help me to do it myself: she saw in the child the builder of the human being. Her schools carry her respect onward.
+Friedrich Fröbel|1782–1852|He invented the kindergarten — and the world even kept the German word for it. Play is the highest form of learning.
+Wilhelm von Humboldt|1767–1835|Education as the unfolding of the whole person — his university became the model for the world.
+Bessie Coleman|1892–1926|No flight school in America would take her — so she learned French and flew in Paris. The first Black woman pilot in the world.
+Ruth Bader Ginsburg|1933–2020|With legal precision she won equality, case by case. The Notorious RBG became an icon of persistence.
+Terry Fox|1958–1981|On one leg he ran 143 days across Canada for cancer research. His Marathon of Hope runs on every year.
+Raoul Follereau|1903–1977|The advocate of the lepers embraced those no one would touch. No one has the right to be happy alone.
+Edith Cavell|1865–1915|The nurse tended the wounded of both sides and helped hundreds escape. "Patriotism is not enough — I must have no hatred in me."
+Chiune Sugihara|1900–1986|The Japanese consul wrote visas until his hand failed — against orders, for thousands of lives.
+Frank Foley|1884–1958|The British passport officer in Berlin stamped tens of thousands into freedom. A spy whose greatest mission was humanity.
+Mary Jackson|1921–2005|NASA's first Black woman engineer opened the doors she herself was barely allowed to pass through.
+Fritz Walter|1920–2002|The captain of the Miracle of Bern gave a defeated country back its smile. Humble to the final whistle.
+Rudolf Virchow|1821–1902|Doctor, researcher, social reformer: medicine is a social science — and politics nothing but medicine writ large.
+Ferdinand von Zeppelin|1838–1917|Mocked as "the fool of Lake Constance," he gave the sky its giants. Persistence is the finest building material.
+Nellie Bly|1864–1922|She had herself committed to an asylum to expose its abuses, and circled the globe in 72 days. Journalism with heart and daring.
+Ida B. Wells|1862–1931|With her pen she fought lynching when it was deadly to do so. Truth was her only weapon.
+Booker T. Washington|1856–1915|Born into slavery, he built schools for an entire people. Education was his road to dignity.
+Henri Becquerel|1852–1908|He discovered the radiation that comes from within matter — and shared the Nobel Prize with the Curies.
+Christiaan Huygens|1629–1695|Pendulum clock, the rings of Saturn, the wave theory of light — the quietest giant in the history of science.
+Anton van Leeuwenhoek|1632–1723|The cloth merchant ground lenses and discovered an invisible world: bacteria. The first glimpse through the microscope was his.
+Carl Linnaeus|1707–1778|He gave every plant and animal a name. The language of nature carries his order.
+Gerty Cori|1896–1957|The first woman to win the Nobel Prize in Medicine decoded the metabolism of sugar. A partnership with her husband — as equals, against time.
+Alfred Wegener|1880–1930|The continents drift — he was laughed at; the Earth proved him right. He died on the ice of Greenland, chasing the truth.
+Émilie du Châtelet|1706–1749|She translated Newton and thought him further. The Enlightenment had a woman's face as well.
+Benjamin Franklin|1706–1790|Printer, lightning rod, founder of a nation. He snatched the lightning from the sky and the scepter from tyrants.
+Mary Wollstonecraft|1759–1797|Her defense of the rights of woman was two centuries ahead of her time. Reason has no sex.
+Olympe de Gouges|1748–1793|She declared the rights of woman when only men were spoken of — and paid on the scaffold.
+Vasili Arkhipov|1926–1998|In the Cuban Missile Crisis he alone refused the nuclear torpedo. One quiet No may have saved the world.
+Stanislav Petrov|1939–2017|The computer reported a missile attack — he reported a false alarm. His doubt spared humanity a nuclear war.
+Aristotle|384–322 BC|He ordered the knowledge of the world, from logic to biology. For two millennia, to think meant to learn from him.
+Theodor Heuss|1884–1963|The first federal president gave the young democracy dignity and warmth. A citizen among citizens.
+Bertha Pappenheim|1859–1936|She fought against the trafficking of girls and for Jewish social work. Care was her form of resistance.
+Louise Otto-Peters|1819–1895|She founded the German women's movement with pen and persistence. "For the realm of freedom I recruit women citizens."
+Johannes Brahms|1833–1897|From the alleys of Hamburg to the perfecter of the symphony. Half the world sings his lullaby to sleep.
+Robert Schumann|1810–1856|Poet at the piano, discoverer of unknown talent, lover against all resistance. Romanticism wears his face.
+Georg Friedrich Händel|1685–1759|His Messiah sounds wherever people seek comfort. Hallelujah — a life in a single word.

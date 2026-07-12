@@ -17,6 +17,12 @@ public class TreePortalUnlock : MonoBehaviour
     public Transform player;
     public string playerTag = "Player";
 
+    [Tooltip("Portal erst nach der Erinnerungssynthese in der Krone freigeben.")]
+    public bool requireMemoryFinale = true;
+
+    [Tooltip("Wird automatisch in der Szene gesucht, falls leer.")]
+    public MemoryTableauDirector memoryDirector;
+
     [Header("Portal-Referenzen")]
     [Tooltip("Das ScenePortal, das gesperrt startet und hier entsperrt wird.")]
     public ScenePortal portal;
@@ -42,6 +48,8 @@ public class TreePortalUnlock : MonoBehaviour
     private bool _unlocked;
     private float _wakeTimer;
 
+    public bool IsUnlocked => _unlocked;
+
     private void Start()
     {
         if (portal != null) portal.locked = true;
@@ -56,6 +64,13 @@ public class TreePortalUnlock : MonoBehaviour
             portalParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
         ResolvePlayer();
+        ResolveMemoryDirector();
+    }
+
+    private void ResolveMemoryDirector()
+    {
+        if (memoryDirector == null)
+            memoryDirector = FindObjectOfType<MemoryTableauDirector>();
     }
 
     private void ResolvePlayer()
@@ -74,7 +89,15 @@ public class TreePortalUnlock : MonoBehaviour
         if (!_unlocked)
         {
             if (player == null) { ResolvePlayer(); if (player == null) return; }
-            if (player.position.y >= unlockHeight)
+            if (requireMemoryFinale && memoryDirector == null)
+                ResolveMemoryDirector();
+
+            // Abwaertskompatibel bleiben: Solange noch kein Director in der
+            // Szene verkabelt ist, funktioniert die alte Hoehenfreigabe weiter.
+            // Sobald der Director existiert, ist sein Finale zwingend.
+            bool finaleReady = !requireMemoryFinale || memoryDirector == null ||
+                               memoryDirector.AllMemoriesResolved;
+            if (player.position.y >= unlockHeight && finaleReady)
                 Unlock();
             return;
         }
@@ -98,6 +121,6 @@ public class TreePortalUnlock : MonoBehaviour
         if (portalParticles != null) portalParticles.Play();
         if (unlockSound != null) unlockSound.Play();
 
-        Debug.Log("TreePortalUnlock: Krone erreicht — Portal erwacht.");
+        Debug.Log("TreePortalUnlock: Erinnerungssynthese vollendet — Portal erwacht.");
     }
 }

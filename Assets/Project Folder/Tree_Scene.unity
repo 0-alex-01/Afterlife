@@ -18623,6 +18623,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6251920492078742113, guid: 6cdd667aa0034cd4dadc8d58a65fb098, type: 3}
   m_PrefabInstance: {fileID: 543597617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &544946629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544946631}
+  - component: {fileID: 544946630}
+  m_Layer: 0
+  m_Name: TreeNarrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &544946630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544946629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9be5ec5b3bccb478e316fdbb694165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeNarrator
+  welcomeLine: {fileID: 8300000, guid: d87d8539e20ba234f9bd5cb59b827de6, type: 3}
+  instructionLine: {fileID: 8300000, guid: c8318714966df8a438a5711a135d1885, type: 3}
+  fallLine: {fileID: 8300000, guid: ff991cd4214e3a84da5f587eefe2c76a, type: 3}
+  warmthLine: {fileID: 8300000, guid: 09d5210af2fb48d45b133a761f94b1a9, type: 3}
+  portalLine: {fileID: 8300000, guid: df19949249dc56645af72184f105bba0, type: 3}
+  welcomeDelay: 3
+  instructionDelay: 6
+  fallDrop: 4
+  warmthThreshold: 0.5
+  minGapBetweenLines: 1
+  source: {fileID: 0}
+  ascension: {fileID: 0}
+  portal: {fileID: 0}
+  playerHead: {fileID: 0}
+--- !u!4 &544946631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544946629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &545426346
 GameObject:
   m_ObjectHideFlags: 0
@@ -31101,6 +31159,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919829141}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &927084978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927084980}
+  - component: {fileID: 927084979}
+  m_Layer: 0
+  m_Name: MemoryTableauDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &927084979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927084978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9915cf819fccd334c9a75f67b6d8655f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MemoryTableauDirector
+  player: {fileID: 0}
+  chapterSources:
+  - {fileID: 1371879816}
+  - {fileID: 754900529}
+  - {fileID: 2112082999}
+  - {fileID: 1840278388}
+  tableauAnchors:
+  - {fileID: 1732946746}
+  - {fileID: 1631637604}
+  - {fileID: 372010616}
+  - {fileID: 243177633}
+  - {fileID: 734047752}
+  ascensionController: {fileID: 1842323869}
+  portalUnlock: {fileID: 1549075276}
+  chapterTriggerHeights:
+  - 56.1
+  - 59.9
+  - 63.3
+  - 66.1
+  finaleTriggerHeight: 71.1
+  treeCenter: {x: -14.64, y: 0, z: 8.6}
+  gatherDuration: 1.4
+  returnDuration: 1.25
+  finaleGatherDuration: 2.1
+  finaleAscendDuration: 3.4
+  finaleClip: {fileID: 0}
+  normalizeExistingClips: 1
+  memoryVolume: 0.92
+  ambientDuckDuringMemory: 0.43
+  ambientDuckDuringFinale: 0.3
+  fragmentsPerChapter: 32
+  fragmentsInFinale: 46
+  imageScale: 1
+--- !u!4 &927084980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927084978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932276500
 GameObject:
   m_ObjectHideFlags: 0
@@ -40272,6 +40407,8 @@ MonoBehaviour:
   toggleKey: 282
   desktopToggleKey: 283
   mouseSensitivity: 2.5
+  cyclePortalKey: 57
+  lightPathKey: 48
   desktopCamera: {fileID: 0}
 --- !u!1 &1275036799
 GameObject:
@@ -56269,6 +56406,8 @@ MonoBehaviour:
   fadeColor: {r: 0.25, g: 0.28, b: 0.33, a: 1}
   fadeDuration: 1.8
   locked: 1
+  portalFillVisual: {fileID: 0}
+  activateDuration: 1.3
 --- !u!65 &1549075275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56305,6 +56444,8 @@ MonoBehaviour:
   unlockHeight: 66.5
   player: {fileID: 0}
   playerTag: Player
+  requireMemoryFinale: 1
+  memoryDirector: {fileID: 0}
   portal: {fileID: 1549075274}
   portalLight: {fileID: 575722183}
   portalParticles: {fileID: 1463324677}
@@ -99409,3 +99550,5 @@ SceneRoots:
   - {fileID: 1484823582}
   - {fileID: 22196337}
   - {fileID: 1900792983}
+  - {fileID: 927084980}
+  - {fileID: 544946631}

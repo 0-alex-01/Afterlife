@@ -55,6 +55,11 @@ public class CemeteryAtmosphereManager : MonoBehaviour
     private float smoothedProgress = 0f;
     private bool pathRevealed = false;
 
+    /// <summary>Wie viele Figuren bisher getröstet wurden (zählt nur progressionsrelevante).</summary>
+    public int ComfortedCount => comfortedCount;
+    /// <summary>Ob die Lichtspur zum Portal bereits freigeschaltet wurde.</summary>
+    public bool PathRevealed => pathRevealed;
+
     // captured base environment (restored implicitly at end of play mode)
     private bool fogWasOn;
     private FogMode baseFogMode;

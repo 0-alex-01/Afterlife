@@ -1,28 +1,28 @@
-# Afterlife — Zitat-Datenbank (Lichterpfad-Memorials)
-# Format: Zitat|Autor
-# Zeilen mit # werden ignoriert. Einfach ergänzen — MemorialQuote zieht daraus
-# pro erlöster Seele ein zufälliges Zitat (ohne Wiederholung in einer Sitzung).
-Es gibt ein Land der Lebenden und ein Land der Toten, und die Brücke zwischen ihnen ist die Liebe.|Thornton Wilder
-Der Tod geht uns nichts an: Solange wir sind, ist er nicht da — und wenn er da ist, sind wir nicht mehr.|Epikur
-Der Tod ist unsere Hochzeit mit der Ewigkeit.|Rumi
-Der Tod ist wie die Geburt ein Geheimnis der Natur.|Marc Aurel
-Der Tod ist entweder Ende oder Übergang.|Seneca
-Niemand weiß, ob der Tod nicht das größte aller Güter ist.|Sokrates
-Das Leben der Toten liegt im Gedächtnis der Lebenden.|Cicero
-Die Toten sind nicht abwesend, sie sind nur unsichtbar.|Augustinus
-Wenn das Leben uns gefällt, sollte uns auch der Tod nicht missfallen, da er vom selben Meister stammt.|Michelangelo
-Wie ein wohlverbrachter Tag einen glücklichen Schlaf bringt, so bringt ein wohlgelebtes Leben einen glücklichen Tod.|Leonardo da Vinci
-Der Tod ist nicht das Licht, das erlischt, sondern das Löschen der Lampe, weil der Morgen gekommen ist.|Rabindranath Tagore
-Wenn ich sterbe, werde ich nicht aufhören zu leben; ich habe mein Tagewerk beendet, ein anderes beginnt.|Victor Hugo
-Der Tod ist das romantisierende Prinzip unseres Lebens.|Novalis
-Alles Vergängliche ist nur ein Gleichnis.|Johann Wolfgang von Goethe
-Der Tod ist die uns abgekehrte, von uns unbeschienene Seite des Lebens.|Rainer Maria Rilke
-Denn was ist Sterben anderes, als nackt im Wind zu stehen und in der Sonne zu schmelzen?|Khalil Gibran
-Was die Raupe Ende der Welt nennt, nennt der Rest der Welt Schmetterling.|Laotse
-Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.|Antoine de Saint-Exupéry
-Von guten Mächten wunderbar geborgen, erwarten wir getrost, was kommen mag.|Dietrich Bonhoeffer
-Die Furcht vor dem Tod folgt aus der Furcht vor dem Leben. Wer sein Leben ganz lebt, ist jederzeit bereit zu sterben.|Mark Twain
-Die Erinnerung ist das einzige Paradies, aus dem wir nicht vertrieben werden können.|Jean Paul
-Und jedem Anfang wohnt ein Zauber inne, der uns beschützt und der uns hilft, zu leben.|Hermann Hesse
-Das einzig Wichtige im Leben sind die Spuren von Liebe, die wir hinterlassen, wenn wir gehen.|Albert Schweitzer
-Auch der Tod ist nicht zu fürchten von dem, der weise gelebt hat.|Buddha
+# Afterlife — Quote Database (Light-Path Memorials)
+# Format: Quote|Author
+# Lines starting with # are ignored. Just add more — MemorialQuote draws one
+# random quote per released soul (no repeat within a session).
+There is a land of the living and a land of the dead, and the bridge between them is love.|Thornton Wilder
+Death is nothing to us: while we exist, death is not here — and when it comes, we are no more.|Epicurus
+Death is our wedding with eternity.|Rumi
+Death, like birth, is a mystery of nature.|Marcus Aurelius
+Death is either an ending or a passage.|Seneca
+No one knows whether death may not be the greatest of all blessings.|Socrates
+The life of the dead rests in the memory of the living.|Cicero
+The dead are not absent; they are only unseen.|Saint Augustine
+If life pleases us, death — coming from the same hand — should not displease us.|Michelangelo
+As a well-spent day brings happy sleep, so a life well lived brings a peaceful death.|Leonardo da Vinci
+Death is not the light going out; it is the lamp put down because the dawn has come.|Rabindranath Tagore
+When I die, I shall not cease to live: my day's work is done, and another begins.|Victor Hugo
+Death is the romanticizing principle of our life.|Novalis
+All that is transient is but a parable.|Johann Wolfgang von Goethe
+Death is the side of life that is turned away from us, the side we never light.|Rainer Maria Rilke
+For what is it to die but to stand naked in the wind and melt into the sun?|Kahlil Gibran
+What the caterpillar calls the end of the world, the rest of the world calls a butterfly.|Lao Tzu
+It is only with the heart that one sees clearly; what is essential is invisible to the eye.|Antoine de Saint-Exupéry
+Sheltered wonderfully by gracious powers, we await with courage whatever may come.|Dietrich Bonhoeffer
+The fear of death follows from the fear of life. Whoever lives fully is ready to die at any time.|Mark Twain
+Memory is the one paradise from which we cannot be driven.|Jean Paul
+A magic dwells in every beginning, one that protects us and helps us live.|Hermann Hesse
+When we go, the only thing that matters is the traces of love we leave behind.|Albert Schweitzer
+Death is not to be feared by one who has lived wisely.|Buddha

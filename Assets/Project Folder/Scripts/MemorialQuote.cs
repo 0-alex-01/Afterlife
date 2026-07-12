@@ -262,7 +262,7 @@ public class MemorialQuote : MonoBehaviour
             q = entries[idx][0];
             a = entries[idx][1];
         }
-        _label.text = $"„{q}“\n<size=70%>— {a}</size>";
+        _label.text = $"“{q}”\n<size=70%>— {a}</size>";
     }
 
     private TextMeshPro FindLabel()
@@ -359,9 +359,9 @@ public class MemorialQuote : MonoBehaviour
 
         // Vorschau-Text für die Scene View; im Spiel ersetzt PrepareRevealText()
         // ihn durch das zufällige Zitat aus der Datenbank.
-        string q = string.IsNullOrEmpty(quote) ? "Zitat erscheint nach dem Trösten" : quote;
+        string q = string.IsNullOrEmpty(quote) ? "A quote appears after comforting" : quote;
         string a = string.IsNullOrEmpty(author) ? "…" : author;
-        label.text = $"„{q}“\n<size=70%>— {a}</size>";
+        label.text = $"“{q}”\n<size=70%>— {a}</size>";
         label.color = textColor;
 
 #if UNITY_EDITOR

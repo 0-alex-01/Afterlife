@@ -8,6 +8,16 @@ public class AfterlifeNoclip : MonoBehaviour
     public KeyCode desktopToggleKey = KeyCode.F2;
     public float mouseSensitivity = 2.5f;
 
+    [Header("Demo-Hotkeys (Mirrorroom, auch außerhalb Noclip aktiv)")]
+    [Tooltip("Schaltet zyklisch durch die drei Wahl-Portale: Leere -> Wiedergeburt -> Gericht.")]
+    public KeyCode cyclePortalKey = KeyCode.Alpha9;
+    [Tooltip("Entzündet den Lichtpfad über den See zum aktiven Portal (startet ihn ggf. neu).")]
+    public KeyCode lightPathKey = KeyCode.Alpha0;
+
+    private static readonly ChoiceTheme[] PortalOrder =
+        { ChoiceTheme.Void, ChoiceTheme.Rebirth, ChoiceTheme.Judgement };
+    private int _portalIndex = -1;
+
     [Header("Desktop Mode")]
     public Camera desktopCamera;
     private bool isDesktopMode = false;
@@ -81,6 +91,11 @@ public class AfterlifeNoclip : MonoBehaviour
 
         if (Input.GetKeyDown(toggleKey)) ToggleNoclip();
         if (Input.GetKeyDown(desktopToggleKey)) ToggleDesktopMode();
+
+        // Demo-Hotkeys: bewusst NICHT hinter Noclip/Desktop versteckt, damit der
+        // Operator sie während der Live-Demo drücken kann, während jemand in VR spielt.
+        if (Input.GetKeyDown(cyclePortalKey)) CyclePortal();
+        if (Input.GetKeyDown(lightPathKey)) RestartLightPath();
 
         if (isNoclip || isDesktopMode)
         {
@@ -302,6 +317,70 @@ public class AfterlifeNoclip : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha7)) choiceController.OnCommit(ChoiceTheme.Rebirth);
             else if (Input.GetKeyDown(KeyCode.Alpha8)) choiceController.OnCommit(ChoiceTheme.Judgement);
         }
+    }
+
+    /// <summary>
+    /// Demo: schaltet zyklisch durch die drei Wahl-Portale. Das gewählte Portal materialisiert,
+    /// die anderen werden ausgeblendet. Läuft bereits ein Lichtpfad, folgt er dem neuen Portal
+    /// in dessen Themenfarbe. Umgeht bewusst den Commit-Lock der Podeste (reine Schau-Funktion).
+    /// </summary>
+    private void CyclePortal()
+    {
+        var portals = Object.FindObjectsByType<ChoicePortal>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        if (portals.Length == 0) return;
+
+        // Nächstes Thema wählen, für das es tatsächlich ein Portal gibt.
+        ChoicePortal chosen = null;
+        for (int attempt = 0; attempt < PortalOrder.Length && chosen == null; attempt++)
+        {
+            _portalIndex = (_portalIndex + 1) % PortalOrder.Length;
+            foreach (var p in portals)
+                if (p != null && p.theme == PortalOrder[_portalIndex]) { chosen = p; break; }
+        }
+        if (chosen == null) return;
+
+        foreach (var p in portals)
+        {
+            if (p == null || p == chosen) continue;
+            p.Dematerialize();
+            p.gameObject.SetActive(false);
+        }
+
+        chosen.gameObject.SetActive(true);
+        chosen.Materialize();
+        Debug.Log($"[AfterlifeNoclip] Portal umgeschaltet: {chosen.theme}");
+
+        var path = FindAnyObjectByType<LakePathToPortal>();
+        if (path != null && path.Started)
+            path.DebugRestart(chosen.theme, chosen.transform);
+    }
+
+    /// <summary>
+    /// Demo: entzündet den Lichtpfad über den See zum aktiven Portal (bzw. startet ihn neu).
+    /// Ist noch kein Portal aktiv, wird zuerst per <see cref="CyclePortal"/> eines eingeschaltet.
+    /// </summary>
+    private void RestartLightPath()
+    {
+        var path = FindAnyObjectByType<LakePathToPortal>();
+        if (path == null) return;
+
+        ChoicePortal active = FindActivePortal();
+        if (active == null)
+        {
+            CyclePortal();
+            active = FindActivePortal();
+            if (active == null) return;
+        }
+
+        path.DebugRestart(active.theme, active.transform);
+        Debug.Log($"[AfterlifeNoclip] Lichtpfad gestartet -> {active.theme}");
+    }
+
+    private static ChoicePortal FindActivePortal()
+    {
+        foreach (var p in Object.FindObjectsByType<ChoicePortal>(FindObjectsSortMode.None))
+            if (p != null && p.gameObject.activeInHierarchy) return p;
+        return null;
     }
 }
 

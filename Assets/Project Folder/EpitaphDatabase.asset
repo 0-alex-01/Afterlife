@@ -13,32 +13,31 @@ MonoBehaviour:
   m_Name: EpitaphDatabase
   m_EditorClassIdentifier: Assembly-CSharp::EpitaphDatabase
   epitaphs:
-  - "Hier ruht Elara Voss, die dem Meer seine St\xFCrme nahm und sie als Lieder zur\xFCckgab."
-  - "Kapit\xE4n Aurelius Brand \u2014 er segelte hinter den Horizont und fand dort
-    keinen Feind, nur Sterne."
-  - "Mirella von Hagen, Heilerin dreier D\xF6rfer. Der Tod holte sie als Freund,
-    nicht als Sieger."
-  - "Unter diesem Stein schl\xE4ft Jorun der Stille, der mit B\xE4umen sprach \u2014
-    und der Wald lauscht noch heute."
-  - "Isolde Fenn \u2014 sie z\xE4hmte den Blitz in Gl\xE4sern und schenkte hundert
-    H\xE4usern Licht."
-  - Hier liegt Theobald Grau, Uhrmacher. Seine letzte Uhr blieb stehen, als sein
-    Herz es tat.
-  - Seraphina Nacht, Wanderin zwischen den Welten. Sie ging voraus, um den Weg zu
-    kennen.
-  - "General Corvin Aschenfeld \u2014 tausend Schlachten, ein Versprechen: Er starb
-    mit leeren H\xE4nden und reinem Gewissen."
-  - "Hier ruht Ottilie Morgenstern, die jeden Sonnenaufgang z\xE4hlte. Es wurden
-    29.517."
-  - "Balthasar Kr\xE4he, Kartograf des Unbekannten. Diese letzte Grenze zeichnete
-    er nicht mehr selbst."
-  - "Lysandra Thorn \u2014 K\xF6nigin ohne Krone, Mutter ohne Grenzen, Legende ohne
-    Ende."
-  - "Der Gl\xF6ckner Emmerich Halm. Sechzig Jahre rief er die Lebenden; nun l\xE4utet
-    man f\xFCr ihn."
-  - "Hier schl\xE4ft Rosalind Ferner, die tausend Briefe schrieb und nie einen Abschied."
-  - "Magnus Eichwald, Schmied der sieben Br\xFCcken. Was er verband, h\xE4lt l\xE4nger
-    als sein Name."
-  - "Cassia Windrose \u2014 sie tanzte gegen jeden Sturm und verlor nur diesen einen."
-  - "Hier ruht Alarich Nebelgang, W\xE4chter des Nordtors. Keiner kam vorbei, bis
-    der Schlaf es tat."
+  - "Here rests Elara Voss, who took the sea's storms and gave them back as songs."
+  - "Captain Aurelius Brand — he sailed past the horizon and found no enemy there,
+    only stars."
+  - "Mirella von Hagen, healer of three villages. Death came for her as a friend,
+    never as a victor."
+  - "Beneath this stone sleeps Jorun the Silent, who spoke with trees — and the
+    forest listens still."
+  - "Isolde Fenn — she caught the lightning in glass and gave a hundred homes
+    their light."
+  - "Here lies Theobald Grau, clockmaker. His last clock stopped the moment his heart
+    did."
+  - "Seraphina Nacht, wanderer between worlds. She went on ahead, to learn the way."
+  - "General Corvin Aschenfeld — a thousand battles, one promise kept: he died
+    with empty hands and a clear conscience."
+  - "Here rests Ottilie Morgenstern, who counted every sunrise. They came to 29,517."
+  - "Balthasar Kr\xE4he, cartographer of the unknown. This last border he could not
+    chart himself."
+  - "Lysandra Thorn — a queen without a crown, a mother without borders, a legend
+    without end."
+  - "Emmerich Halm, the bellringer. Sixty years he called the living; now the bells
+    ring for him."
+  - "Here sleeps Rosalind Ferner, who wrote a thousand letters and not one farewell."
+  - "Magnus Eichwald, smith of the seven bridges. What he joined together outlasts
+    his name."
+  - "Cassia Windrose — she danced against every storm, and lost to only this
+    one."
+  - "Here rests Alarich Nebelgang, warden of the north gate. None ever passed him,
+    until sleep did."

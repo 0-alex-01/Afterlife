@@ -10,7 +10,7 @@
     }
   ],
   "dependencies": {
-    "com.ivanmurzak.unity.mcp": "0.82.4",
+    "com.ivanmurzak.unity.mcp": "0.83.1",
     "com.ivanmurzak.unity.mcp.animation": "1.2.24",
     "com.unity.ai.assistant": "2.13.0-pre.2",
     "com.unity.ai.inference": "2.6.1",

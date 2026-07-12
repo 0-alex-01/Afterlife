@@ -74,6 +74,9 @@ public class SoulMorphController : MonoBehaviour
     [Header("Audio References")]
     [Tooltip("Per-state ambient loops, length 5, index per MorphState.")]
     [SerializeField] private AudioSource[] stateBeds = new AudioSource[5];
+    [Tooltip("Gesamtlautstärke der Ambient-Betten (dämpft das durchgehende Loop-Bett). 0 = stumm.")]
+    [Range(0f, 1f)]
+    [SerializeField] private float bedMasterVolume = 0.3f;
     [Tooltip("Touch chime audio source.")]
     [SerializeField] private AudioSource touchChime;
 
@@ -291,7 +294,7 @@ public class SoulMorphController : MonoBehaviour
         {
             if (stateBeds != null && i < stateBeds.Length && stateBeds[i] != null)
             {
-                stateBeds[i].volume = (i == (int)_currentState) ? 1f : 0f;
+                stateBeds[i].volume = (i == (int)_currentState) ? bedMasterVolume : 0f;
                 if (!stateBeds[i].isPlaying)
                 {
                     stateBeds[i].Play();
@@ -510,6 +513,7 @@ public class SoulMorphController : MonoBehaviour
             else targetVol = 0f;
             // proximity gently fills the bed
             targetVol *= Mathf.Lerp(0.6f, 1f, _proximity);
+            targetVol *= bedMasterVolume;
             stateBeds[i].volume = targetVol;
             if (targetVol > 0.001f && !stateBeds[i].isPlaying) stateBeds[i].Play();
         }

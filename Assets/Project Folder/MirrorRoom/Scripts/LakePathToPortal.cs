@@ -47,6 +47,27 @@ public class LakePathToPortal : MonoBehaviour
     private float _timer;
     private int _spawned;
 
+    /// <summary>Ob der Pfad bereits läuft (Commit oder Demo-Start).</summary>
+    public bool Started => _started;
+
+    /// <summary>
+    /// Demo/Debug: startet den Pfad (neu) für das gegebene Thema und Ziel-Portal —
+    /// unabhängig vom Commit-Zustand. Bereits entzündete Pfadlichter werden entfernt,
+    /// danach entzündet sich der Pfad wie gewohnt Licht für Licht in der Themenfarbe.
+    /// </summary>
+    public void DebugRestart(ChoiceTheme theme, Transform portal)
+    {
+        foreach (var l in _lights)
+            if (l != null) Destroy(l.gameObject);
+        _lights.Clear();
+        _birth.Clear();
+        _spawned = 0;
+        _timer = igniteInterval; // erstes Licht sofort
+        _color = ThemeColor(theme);
+        _portal = portal;
+        _started = portal != null;
+    }
+
     private void Start()
     {
         if (choice == null) choice = FindFirstObjectByType<PedestalChoiceController>();

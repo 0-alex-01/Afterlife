@@ -1,0 +1,31 @@
+{
+    "asset": "8a8c8dd3403222e498c11c06b6de77da",
+    "fileName": "019f5388-8f18-734d-95da-da08615942f2.png",
+    "prompt": "Full body concept of a calm, neutral, reassuring human spirit guide, a peaceful soul form that helps someone let go and move gently into the afterlife. Serene and comforting, NOT scary, NOT a specific person, deliberately neutral and universal. Androgynous timeless human figure with slender believable anatomy, gentle readable silhouette, smooth calm face with soft closed or softly lowered eyes, quiet peaceful serene expression, no wrinkles, no skin cracks, no hollow eyes, no asymmetry, no gore, no wounds. Simple smooth flowing soul garment, a plain soft robe with clean gentle folds and lightweight cloth that drifts calmly, minimal detail, no torn edges, no ornaments, no accessories. Ethereal translucent spectral ghost-like body, soft glowing semi-transparent surface, dark teal-blue base with a gentle cyan-blue fresnel rim glow around the silhouette (rim color soft cyan blue around 0.25 0.69 0.80), calm blue-white inner light, dreamy soothing luminous afterlife mood, hands and fingers fully visible and unobstructed by clothing. Head to toe in frame, strict front-facing neutral T-pose, both arms perfectly straight and horizontal at shoulder height forming a 90-degree angle from the torso, hands open with fingers gently spread, hands elbows shoulders legs and feet visible, not crossed, not angled downward, not A-pose, no bent elbows, no side view, no three-quarter view, no action pose, no cropped limbs, game character concept, simple isolated dark neutral background. Avoid cartoon proportions, anime style, zombie appearance, exposed gore, bright saturated colors, heavy armor, opaque glowing eyes, floating accessories, visual noise.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

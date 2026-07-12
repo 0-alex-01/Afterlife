@@ -1024,11 +1024,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 98371b27-7504-4e65-a658-849ad7baf99d
+  cloudProjectId: a7a455cc-c089-4db4-852d-a92b2c7ad9f0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Afterlife
-  organizationId: afterliferer
+  organizationId: afterlife-final
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

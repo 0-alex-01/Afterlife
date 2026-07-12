@@ -58,6 +58,16 @@ public class AfterlifeAscensionController : MonoBehaviour
     [Range(0f, 1f)] public float droneVolumeBottom = 0.35f;
     [Range(0f, 1f)] public float droneVolumeTop = 0.6f;
 
+    // Wird vom MemoryTableauDirector weich gefahren. Dadurch kann das
+    // Erinnerungsbild das Ambient-Bett ducken, ohne dass dieser Controller den
+    // Wert im naechsten Frame wieder ueberschreibt.
+    private float memoryDuckMultiplier = 1f;
+    public float MemoryDuckMultiplier
+    {
+        get => memoryDuckMultiplier;
+        set => memoryDuckMultiplier = Mathf.Clamp01(value);
+    }
+
     private float smoothedT;
     private bool hasMotes;
     private ParticleSystem.MainModule moteMain;
@@ -140,6 +150,6 @@ public class AfterlifeAscensionController : MonoBehaviour
 
         // Ambient-Drone praesenter Richtung Krone
         if (ambientDrone != null)
-            ambientDrone.volume = Mathf.Lerp(droneVolumeBottom, droneVolumeTop, t);
+            ambientDrone.volume = Mathf.Lerp(droneVolumeBottom, droneVolumeTop, t) * memoryDuckMultiplier;
     }
 }

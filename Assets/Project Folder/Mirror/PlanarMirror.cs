@@ -48,11 +48,29 @@ public class PlanarMirror : MonoBehaviour
     private static readonly int ReflectionTexID = Shader.PropertyToID("_ReflectionTex");
     private static readonly int TintID = Shader.PropertyToID("_Tint");
     private static readonly int FlipFaceID = Shader.PropertyToID("_FlipFace");
+    private static readonly int MirrorVPID = Shader.PropertyToID("_MirrorVP");
     private static readonly HashSet<Camera> reflectionCameras = new HashSet<Camera>();
 
     private void OnDisable()
     {
+        // TEMP-DBG: Wer schaltet den Spiegel ab? SetActive/enabled=false ruft OnDisable
+        // synchron auf -> der Stack-Trace zeigt den Verursacher. Parent-Kette zeigt,
+        // ob die Komponente selbst oder ein Eltern-Objekt deaktiviert wurde.
+        if (Application.isPlaying)
+        {
+            var chain = new System.Text.StringBuilder();
+            for (var t = transform; t != null; t = t.parent)
+                chain.Append($"{t.name}(activeSelf={t.gameObject.activeSelf}) <- ");
+            Debug.Log($"[MirrorDBG] OnDisable t={Time.unscaledTime:F2} enabled={enabled} chain={chain}\nSTACK:\n{new System.Diagnostics.StackTrace(true)}", this);
+        }
         Cleanup();
+    }
+
+    // TEMP-DBG: Gegenprobe, falls der Spiegel spaeter wieder aktiviert wird.
+    private void OnEnable()
+    {
+        if (Application.isPlaying)
+            Debug.Log($"[MirrorDBG] OnEnable t={Time.unscaledTime:F2}", this);
     }
 
     // Unity 6 / URP 17: Die alte UniversalRenderPipeline.RenderSingleCamera ist veraltet und
@@ -60,8 +78,15 @@ public class PlanarMirror : MonoBehaviour
     // Stattdessen rendern wir das Spiegelbild in LateUpdate ueber RenderPipeline.SubmitRenderRequest.
     // Das laeuft AUSSERHALB der SRP-Render-Schleife und vermeidet so den
     // "Recursive rendering is not supported"-Fehler.
+    private float _dbgNextLog;
+    private string _dbgViewerLog;
     private void LateUpdate()
     {
+        if (Application.isPlaying && Time.unscaledTime >= _dbgNextLog)
+        {
+            _dbgNextLog = Time.unscaledTime + 1f;
+            Debug.Log($"[MirrorDBG] LateUpdate fired t={Time.unscaledTime:F1} isActEn={isActiveAndEnabled} rt={(reflectionTexture!=null?"OK":"NULL")} camMain={(Camera.main?Camera.main.name:"NULL")}", this);
+        }
         if (Application.isPlaying && Input.GetKeyDown(dumpKey)) DumpReflectionTexture();
         RenderReflection();
     }
@@ -74,8 +99,13 @@ public class PlanarMirror : MonoBehaviour
         Camera viewer = GetViewerCamera();
         if (viewer == null)
         {
-            if (debugLog) Debug.LogWarning("[PlanarMirror] Keine Viewer-Kamera gefunden -> Reflexion uebersprungen.", this);
+            if (Application.isPlaying) Debug.LogWarning("[MirrorDBG] RenderReflection: viewer NULL -> skipped", this);
             return;
+        }
+        if (Application.isPlaying && _dbgViewerLog != (viewer ? viewer.name : "NULL"))
+        {
+            _dbgViewerLog = viewer ? viewer.name : "NULL";
+            Debug.Log($"[MirrorDBG] RenderReflection viewer -> '{_dbgViewerLog}'", this);
         }
 
         if (viewer != _lastLoggedViewer)
@@ -108,6 +138,11 @@ public class PlanarMirror : MonoBehaviour
         propBlock.SetTexture(ReflectionTexID, reflectionTexture);
         propBlock.SetColor(TintID, tint);
         propBlock.SetFloat(FlipFaceID, flipNormal ? 1f : 0f);
+        // VP-Matrix der Spiegelkamera für das World-Space-Sampling im Shader.
+        // renderIntoTexture=false: URP schreibt die RT bereits in Top-Down-Konvention —
+        // mit true wäre das Spiegelbild vertikal gespiegelt (Bild stand auf dem Kopf).
+        Matrix4x4 gpuProj = GL.GetGPUProjectionMatrix(reflectionCamera.projectionMatrix, false);
+        propBlock.SetMatrix(MirrorVPID, gpuProj * reflectionCamera.worldToCameraMatrix);
         r.SetPropertyBlock(propBlock);
     }
 

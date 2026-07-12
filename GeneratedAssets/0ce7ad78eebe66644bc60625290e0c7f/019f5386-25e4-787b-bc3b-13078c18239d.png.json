@@ -1,0 +1,31 @@
+{
+    "asset": "0ce7ad78eebe66644bc60625290e0c7f",
+    "fileName": "019f5386-25e4-787b-bc3b-13078c18239d.png",
+    "prompt": "Full body concept of a mysterious lost soul trapped between life and the afterlife, melancholic and unsettling rather than aggressive, slender believable human anatomy with slightly elongated proportions and a strong readable silhouette, pale emotionally distant face with subtly hollow eyes, restrained facial asymmetry, faint cracks in the skin, quiet haunted expression, layered worn ceremonial funeral clothing, a long damaged coat or robe with torn fabric edges and aged stitching, subtle Victorian influences, lightweight cloth strips, hands and detailed fingers fully visible and unobstructed by clothing, desaturated charcoal faded black cold gray and muted blue palette with small traces of tarnished silver, slightly translucent skin and fabric edges with a subtle blue-white spectral glow, restrained fresnel rim light around the silhouette, cinematic eerie elegant supernatural afterlife mood. Head to toe in frame, strict front-facing neutral T-pose, both arms perfectly straight and horizontal at shoulder height forming a 90-degree angle from the torso, hands elbows shoulders legs and feet visible, not crossed, not angled downward, not A-pose, no bent elbows, no side view, no three-quarter view, no action pose, no cropped limbs, game character concept, simple isolated neutral background. Avoid cartoon proportions, anime style, generic zombie appearance, exposed gore, bright saturated colors, heavy armor, opaque glowing eyes, overly transparent body, floating accessories.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
