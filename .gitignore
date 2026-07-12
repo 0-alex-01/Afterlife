@@ -140,6 +140,10 @@ sysinfo.txt.meta
 # Unity recovery files
 /[Aa]ssets/_Recovery/
 
+# Local Codex scene recovery backups (keep locally, never commit)
+/[Aa]ssets/CodexGrassRecovery/
+/[Aa]ssets/CodexGrassRecovery.meta
+
 # Automatically generated solution files
 *.slnx
 
