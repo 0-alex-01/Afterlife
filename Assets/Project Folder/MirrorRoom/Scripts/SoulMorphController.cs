@@ -40,6 +40,8 @@ public class SoulMorphController : MonoBehaviour
     [SerializeField] private Transform playerHandLeft;
     [Tooltip("The real VR player's right ghost hand.")]
     [SerializeField] private Transform playerHandRight;
+    [Tooltip("Optional ghost material applied to every visible mesh of the active VR hands.")]
+    [SerializeField] private Material playerHandMaterial;
 
     [Header("Mirror References")]
     [Tooltip("The mirror's transform. Reflective side = its -Z facing the player; local +Z points behind into the twin space.")]
@@ -77,6 +79,9 @@ public class SoulMorphController : MonoBehaviour
     [Tooltip("Gesamtlautstärke der Ambient-Betten (dämpft das durchgehende Loop-Bett). 0 = stumm.")]
     [Range(0f, 1f)]
     [SerializeField] private float bedMasterVolume = 0.3f;
+    [Tooltip("Zusätzlicher Lautstärkefaktor nur für Audio_Bed_Clear.")]
+    [Range(0f, 1f)]
+    [SerializeField] private float clearBedVolumeFactor = 0.75f;
     [Tooltip("Touch chime audio source.")]
     [SerializeField] private AudioSource touchChime;
 
@@ -247,6 +252,7 @@ public class SoulMorphController : MonoBehaviour
     private float _pulseValue;             // additive pulse 0..overshoot
     private Coroutine _pulseRoutine;
     private Coroutine _rippleRoutine;
+    private bool _clearBedFinished;
 
     // Choice mechanic runtime.
     private ChoiceTheme _choiceTheme = ChoiceTheme.None;
@@ -289,15 +295,26 @@ public class SoulMorphController : MonoBehaviour
 
     private void Start()
     {
+        ApplyPlayerHandMaterial(playerHandLeft);
+        ApplyPlayerHandMaterial(playerHandRight);
+
         // Start the active state's audio bed and particles.
         for (int i = 0; i < 5; i++)
         {
             if (stateBeds != null && i < stateBeds.Length && stateBeds[i] != null)
             {
-                stateBeds[i].volume = (i == (int)_currentState) ? bedMasterVolume : 0f;
-                if (!stateBeds[i].isPlaying)
+                if (i == 0)
                 {
-                    stateBeds[i].Play();
+                    stateBeds[i].loop = false;
+                    stateBeds[i].volume = i == (int)_currentState
+                        ? bedMasterVolume * clearBedVolumeFactor
+                        : 0f;
+                    StartCoroutine(PlayClearBedTwice(stateBeds[i]));
+                }
+                else
+                {
+                    stateBeds[i].volume = (i == (int)_currentState) ? bedMasterVolume : 0f;
+                    if (!stateBeds[i].isPlaying) stateBeds[i].Play();
                 }
             }
             if (stateParticles != null && i < stateParticles.Length && stateParticles[i] != null)
@@ -311,6 +328,18 @@ public class SoulMorphController : MonoBehaviour
                     stateParticles[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
                 }
             }
+        }
+    }
+
+    private void ApplyPlayerHandMaterial(Transform handRoot)
+    {
+        if (handRoot == null || playerHandMaterial == null) return;
+        foreach (var renderer in handRoot.GetComponentsInChildren<Renderer>(true))
+        {
+            if (renderer == null || renderer is ParticleSystemRenderer) continue;
+            var materials = renderer.sharedMaterials;
+            for (int i = 0; i < materials.Length; i++) materials[i] = playerHandMaterial;
+            renderer.sharedMaterials = materials;
         }
     }
 
@@ -514,9 +543,23 @@ public class SoulMorphController : MonoBehaviour
             // proximity gently fills the bed
             targetVol *= Mathf.Lerp(0.6f, 1f, _proximity);
             targetVol *= bedMasterVolume;
+            if (i == 0) targetVol *= clearBedVolumeFactor;
+            if (i == 0 && _clearBedFinished) targetVol = 0f;
             stateBeds[i].volume = targetVol;
-            if (targetVol > 0.001f && !stateBeds[i].isPlaying) stateBeds[i].Play();
+            if (i != 0 && targetVol > 0.001f && !stateBeds[i].isPlaying) stateBeds[i].Play();
         }
+    }
+
+    private IEnumerator PlayClearBedTwice(AudioSource bed)
+    {
+        if (bed == null) yield break;
+        for (int i = 0; i < 2; i++)
+        {
+            bed.Play();
+            while (bed.isPlaying) yield return null;
+        }
+        _clearBedFinished = true;
+        bed.volume = 0f;
     }
 
     // ---------------------------------------------------------------- Apply visuals

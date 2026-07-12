@@ -58,6 +58,7 @@ Cooldowns einplanen (min. 20–30 s zwischen Idle-Lines), Anweisungen nur einmal
 | Gate durchschritten (MirrorroomEntryGate.TriggerGate — Türen öffnen, Membran löst sich, Chime) | "There it is. The chime wasn't for the door, by the way. It was for you." |
 | Erster Blick auf den See (~4 s nach dem Gate) | "A lake. A mirror. And in the mirror: you. Don't worry — it doesn't bite. It does something far worse. It waits." |
 | Annäherung an den Spiegel (< ~3 m) | "That's you. Not as you were — as you are. That difference is the entire point of this room." |
+| Erste Morph-Veränderung im Spiegel sichtbar (kurz nach der Annäherung) | "See how your reflection shifts? That's no trick of the glass. Your form is loosening — rehearsing for the afterlife. The body was only ever a first draft." |
 | PedestalRiseSequence abgeschlossen | "Three pedestals, rising from the lake. Three futures. You only get one. That's not a rule, by the way. It's just how futures work." |
 | Erster Hover (PedestalChoiceController.OnHoverEnter) | "You may touch them before you choose. The mirror shows you who you would become. Trying things on is allowed — the universe is surprisingly accommodating about it." |
 | Zögern > 60 s ohne Commit | "Take your time. Most big decisions get made in three seconds and regretted for thirty years. Here, you're allowed to do it the other way around for once." |

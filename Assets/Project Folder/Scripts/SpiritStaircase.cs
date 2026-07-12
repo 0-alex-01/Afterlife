@@ -14,6 +14,10 @@ public class SpiritStaircase : MonoBehaviour
     [Header("Erscheinen")]
     [Tooltip("Welt-Höhe, ab der die Treppe erscheint (wie TreePortalUnlock.unlockHeight).")]
     public float revealHeight = 66.5f;
+    [Tooltip("So viele Sekunden muss der Spieler oberhalb der revealHeight bleiben (auf der Plattform stehen), bevor die Treppe erscheint. Verlässt er die Höhe, beginnt die Zeit von vorn.")]
+    public float dwellSeconds = 10f;
+    [Tooltip("Horizontaler Radius (Meter) um die Treppen-Basis, in dem der Spieler stehen muss. Verhindert, dass die Treppe schon beim Hochklettern an der Außenseite erscheint. 0 = keine Radius-Prüfung.")]
+    public float revealRadius = 4.5f;
 
     [Tooltip("Verzögerung zwischen zwei Stufen in Sekunden.")]
     public float stepInterval = 0.08f;
@@ -73,13 +77,34 @@ public class SpiritStaircase : MonoBehaviour
         if (Camera.main != null) player = Camera.main.transform;
     }
 
+    private float _dwellTimer;
+
     private void Update()
     {
         if (_revealed) return;
         if (player == null) { ResolvePlayer(); if (player == null) return; }
 
-        if (player.position.y >= revealHeight)
-            Reveal();
+        // Erst erscheinen, wenn der Spieler eine Weile AUF der Plattform war:
+        // hoch genug UND horizontal im Nest-Bereich. Die Kletterrouten führen höher
+        // als die alte Schwelle — reine Höhenprüfung löste schon beim Klettern aus.
+        bool onPlatform = player.position.y >= revealHeight;
+        if (onPlatform && revealRadius > 0f)
+        {
+            Vector3 flat = player.position - transform.position;
+            flat.y = 0f;
+            onPlatform = flat.sqrMagnitude <= revealRadius * revealRadius;
+        }
+
+        if (onPlatform)
+        {
+            _dwellTimer += Time.deltaTime;
+            if (_dwellTimer >= dwellSeconds)
+                Reveal();
+        }
+        else
+        {
+            _dwellTimer = 0f;
+        }
     }
 
     /// <summary>Treppe erscheinen lassen (auch von außen aufrufbar, z. B. für Tests).</summary>

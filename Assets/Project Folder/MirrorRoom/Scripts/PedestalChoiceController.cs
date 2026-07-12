@@ -35,10 +35,27 @@ public class PedestalChoiceController : MonoBehaviour
     [Range(0f, 1f)][SerializeField] private float dimmedLightFactor = 0.1f;
 
     private ChoiceTheme _hover = ChoiceTheme.None;
+    private ChoiceTheme _committedTheme = ChoiceTheme.None;
     private bool _committed;
 
     public bool Committed => _committed;
     public ChoiceTheme HoverTheme => _hover;
+    public ChoiceTheme CommittedTheme => _committedTheme;
+
+    private IEnumerator Start()
+    {
+        PedestalRiseSequence rise = FindFirstObjectByType<PedestalRiseSequence>();
+        if (rise != null) yield return new WaitUntil(() => rise.Risen);
+
+        foreach (var p in pedestals)
+        {
+            if (p != null && p.portal != null)
+            {
+                p.portal.gameObject.SetActive(true);
+                p.portal.ShowFrame();
+            }
+        }
+    }
 
     /// <summary>A ghost hand approached this theme's object — preview the mirror.</summary>
     public void OnHoverEnter(ChoiceTheme theme)
@@ -64,6 +81,7 @@ public class PedestalChoiceController : MonoBehaviour
     {
         if (_committed || theme == ChoiceTheme.None) return;
         _committed = true;
+        _committedTheme = theme;
 
         if (mirror != null) mirror.CommitChoice(theme);
 
@@ -82,10 +100,9 @@ public class PedestalChoiceController : MonoBehaviour
                 }
                 else
                 {
-                    // Nicht gewählte Portale hart ausblenden — sie dürfen nie gleichzeitig
-                    // mit dem gewählten am selben Ort stehen (Overlap/Z-Fighting der Füllungen).
+                    // Alle drei Rahmen bleiben sichtbar. Nur die ovale Innenfläche des
+                    // gewählten Portals materialisiert und wird begehbar.
                     p.portal.Dematerialize();
-                    p.portal.gameObject.SetActive(false);
                 }
             }
             StartCoroutine(FadeOutPedestal(p, chosen));

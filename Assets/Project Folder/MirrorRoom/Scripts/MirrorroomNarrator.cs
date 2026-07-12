@@ -7,9 +7,10 @@ using UnityEngine;
 /// Beobachtet die vorhandenen Systeme, ohne sie zu verändern:
 ///   1. Tür-Line nach dem Szenenstart,
 ///   2. See-Reveal, sobald das EntryGate den Spiegel freischaltet (SoulMorphController.enabled),
-///   3. Podest-Line, sobald PedestalRiseSequence.Risen,
-///   4. Zöger-Line, wenn danach lange nicht gewählt wird,
-///   5. Lichtpfad-Line nach dem Commit (LakePathToPortal.Started).
+///   3. Reflexions-Line zehn Sekunden nach dem See-Reveal,
+///   4. Podest-Line, sobald PedestalRiseSequence.Risen,
+///   5. Zöger-Line, wenn danach lange nicht gewählt wird,
+///   6. Lichtpfad-Line nach dem Commit (LakePathToPortal.Started).
 /// Alle Referenzen sind optional und werden sonst automatisch gesucht.
 /// </summary>
 public class MirrorroomNarrator : MonoBehaviour
@@ -19,24 +20,32 @@ public class MirrorroomNarrator : MonoBehaviour
     public AudioClip doorLine;
     [Tooltip("\"A lake. A mirror…\" — erster Blick auf den See nach dem Gate.")]
     public AudioClip lakeRevealLine;
+    [Tooltip("\"See how your reflection shifts?\" — kurz nach dem Erwachen des Spiegels.")]
+    public AudioClip reflectionShiftLine;
     [Tooltip("\"Three pedestals, rising from the lake…\" — Podeste sind aufgestiegen.")]
     public AudioClip pedestalsLine;
     [Tooltip("\"Three pedestals. The void, a new life…\" — wenn lange nicht gewählt wird.")]
     public AudioClip hesitationLine;
     [Tooltip("\"The lake will carry you…\" — der Lichtpfad hat sich entzündet.")]
     public AudioClip lightPathLine;
+    [Tooltip("\"Whatever lies beyond…\" — Nachklang der selbst getroffenen Entscheidung.")]
+    public AudioClip choiceEndingLine;
 
     [Header("Timing")]
     [Tooltip("Sekunden Ruhe nach Szenenstart, bevor die Tür-Line spielt.")]
     public float doorLineDelay = 2.5f;
     [Tooltip("Sekunden nach dem Gate, bevor die See-Line spielt (Türen sind dann offen).")]
     public float lakeRevealDelay = 3.5f;
+    [Tooltip("Sekunden nach dem Ende der See-Line, bevor die Reflexions-Line spielt.")]
+    public float reflectionShiftDelay = 10f;
     [Tooltip("Sekunden nach dem Podest-Aufstieg, bevor die Podest-Line spielt.")]
     public float pedestalsLineDelay = 1f;
     [Tooltip("Sekunden ohne Wahl (nach dem Aufstieg), bevor die Zöger-Line spielt.")]
     public float hesitationSeconds = 45f;
     [Tooltip("Sekunden nach dem Commit, bevor die Lichtpfad-Line spielt.")]
     public float lightPathDelay = 1.5f;
+    [Tooltip("Sekunden nach der Entscheidung, bevor die Abschluss-Line eingeplant wird.")]
+    public float choiceEndingDelay = 10f;
     [Tooltip("Mindestpause zwischen zwei Lines.")]
     public float minGapBetweenLines = 1f;
 
@@ -79,12 +88,17 @@ public class MirrorroomNarrator : MonoBehaviour
         yield return Wait(lakeRevealDelay);
         yield return Speak(lakeRevealLine);
 
-        // 3) Podeste aufgestiegen.
+        // Der Spiegel hatte Zeit, sichtbar zu erwachen, bevor der Erzähler
+        // die Veränderung der eigenen Form kommentiert.
+        yield return Wait(reflectionShiftDelay);
+        yield return Speak(reflectionShiftLine);
+
+        // 4) Podeste aufgestiegen.
         yield return new WaitUntil(() => pedestalRise == null || pedestalRise.Risen);
         yield return Wait(pedestalsLineDelay);
         yield return Speak(pedestalsLine);
 
-        // 4) Zögern — nur wenn nach dem Aufstieg lange keine Wahl fällt.
+        // 5) Zögern — nur wenn nach dem Aufstieg lange keine Wahl fällt.
         float idle = 0f;
         bool hesitationPlayed = false;
         while (!Committed())
@@ -98,7 +112,11 @@ public class MirrorroomNarrator : MonoBehaviour
             yield return null;
         }
 
-        // 5) Lichtpfad nach dem Commit.
+        // Unabhängig von der Lichtpfad-Line zehn Sekunden nach der Wahl einplanen.
+        // Speak wartet bei Bedarf, bis dieselbe Stimme wieder frei ist.
+        StartCoroutine(SpeakAfterDelay(choiceEndingLine, choiceEndingDelay));
+
+        // 6) Lichtpfad nach dem Commit.
         yield return new WaitUntil(() => lakePath == null || lakePath.Started);
         yield return Wait(lightPathDelay);
         yield return Speak(lightPathLine);
@@ -123,6 +141,12 @@ public class MirrorroomNarrator : MonoBehaviour
         source.Play();
         while (source.isPlaying) yield return null;
         yield return Wait(minGapBetweenLines);
+    }
+
+    private IEnumerator SpeakAfterDelay(AudioClip clip, float delay)
+    {
+        yield return Wait(delay);
+        yield return Speak(clip);
     }
 
     private static WaitForSeconds Wait(float seconds)

@@ -14,6 +14,8 @@ public class LakePathToPortal : MonoBehaviour
     [Header("Referenzen")]
     [Tooltip("Die Wahl-Steuerung (liefert Commit + Thema).")]
     public PedestalChoiceController choice;
+    [Tooltip("Podest-Aufstieg; danach werden alle drei dunklen Pfadäste sichtbar.")]
+    public PedestalRiseSequence pedestalRise;
     [Tooltip("Die Seeoberfläche für Wellen und Licht-Reflexe. Leer = automatisch.")]
     public SoulLakeSurface lake;
     [Tooltip("Startpunkt des Pfads (vor/neben dem Spiegel). Leer = dieses Objekt.")]
@@ -41,11 +43,14 @@ public class LakePathToPortal : MonoBehaviour
 
     private readonly List<Transform> _lights = new List<Transform>();
     private readonly List<float> _birth = new List<float>();
+    private readonly Dictionary<ChoiceTheme, List<Transform>> _branches = new Dictionary<ChoiceTheme, List<Transform>>();
     private Color _color;
     private Transform _portal;
     private bool _started;
     private float _timer;
     private int _spawned;
+    private bool _branchesBuilt;
+    private ChoiceTheme _chosenTheme = ChoiceTheme.None;
 
     /// <summary>Ob der Pfad bereits läuft (Commit oder Demo-Start).</summary>
     public bool Started => _started;
@@ -71,20 +76,29 @@ public class LakePathToPortal : MonoBehaviour
     private void Start()
     {
         if (choice == null) choice = FindFirstObjectByType<PedestalChoiceController>();
+        if (pedestalRise == null) pedestalRise = FindFirstObjectByType<PedestalRiseSequence>();
         if (lake == null) lake = FindFirstObjectByType<SoulLakeSurface>();
     }
 
     private void Update()
     {
+        if (!_branchesBuilt && (pedestalRise == null || pedestalRise.Risen))
+            BuildBranches();
+
         if (!_started)
         {
             if (choice == null || !choice.Committed) return;
             foreach (var portal in FindObjectsByType<ChoicePortal>(FindObjectsSortMode.None))
             {
-                if (portal.gameObject.activeInHierarchy) { _portal = portal.transform; break; }
+                if (portal.gameObject.activeInHierarchy && portal.theme == choice.CommittedTheme)
+                {
+                    _portal = portal.transform;
+                    break;
+                }
             }
             if (_portal == null) return;
-            _color = ThemeColor(choice.HoverTheme);
+            _chosenTheme = choice.CommittedTheme;
+            _color = ThemeColor(_chosenTheme);
             _started = true;
             _timer = igniteInterval; // erstes Licht sofort
         }
@@ -129,19 +143,26 @@ public class LakePathToPortal : MonoBehaviour
         a.y = waterY; b.y = waterY;
 
         float t = (_spawned + 1f) / (lightCount + 1f);
-        Vector3 pos = Vector3.Lerp(a, b, t);
-        // S-Kurve quer zur Laufrichtung, an beiden Enden auf null auslaufend.
-        Vector3 dir = (b - a).normalized;
-        Vector3 side = Vector3.Cross(Vector3.up, dir);
-        pos += side * (Mathf.Sin(t * Mathf.PI * 2f) * curveAmplitude * Mathf.Sin(t * Mathf.PI));
-        pos.y = waterY + lightHeight;
+        Vector3 pos = PathPosition(a, b, t, waterY);
 
-        var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        go.name = $"PathLight_{_spawned}";
-        go.transform.SetParent(transform, false);
-        go.transform.position = pos;
+        Transform lightTransform = null;
+        if (_branches.TryGetValue(_chosenTheme, out var branch) && _spawned < branch.Count)
+            lightTransform = branch[_spawned];
+
+        GameObject go;
+        if (lightTransform != null)
+        {
+            go = lightTransform.gameObject;
+        }
+        else
+        {
+            go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            go.name = $"PathLight_{_spawned}";
+            go.transform.SetParent(transform, false);
+            go.transform.position = pos;
+            Destroy(go.GetComponent<Collider>());
+        }
         go.transform.localScale = Vector3.one * 0.14f;
-        Destroy(go.GetComponent<Collider>());
 
         var shader = Shader.Find("Universal Render Pipeline/Unlit");
         if (shader != null)
@@ -177,5 +198,52 @@ public class LakePathToPortal : MonoBehaviour
         _lights.Add(go.transform);
         _birth.Add(Time.time);
         _spawned++;
+    }
+
+    private void BuildBranches()
+    {
+        _branchesBuilt = true;
+        float waterY = lake != null ? lake.WaterY : 0f;
+        Vector3 start = pathStart != null ? pathStart.position : transform.position;
+        start.y = waterY;
+        Shader shader = Shader.Find("Universal Render Pipeline/Unlit");
+
+        foreach (var portal in FindObjectsByType<ChoicePortal>(FindObjectsSortMode.None))
+        {
+            if (portal == null || portal.theme == ChoiceTheme.None) continue;
+            var branch = new List<Transform>(lightCount);
+            Vector3 end = portal.transform.position;
+            end.y = waterY;
+
+            for (int i = 0; i < lightCount; i++)
+            {
+                float t = (i + 1f) / (lightCount + 1f);
+                var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                go.name = $"Path_{portal.theme}_{i}";
+                go.transform.SetParent(transform, false);
+                go.transform.position = PathPosition(start, end, t, waterY);
+                go.transform.localScale = Vector3.one * 0.09f;
+                Destroy(go.GetComponent<Collider>());
+
+                if (shader != null)
+                {
+                    var mat = new Material(shader);
+                    mat.SetColor("_BaseColor", new Color(0.025f, 0.035f, 0.055f, 1f));
+                    go.GetComponent<Renderer>().material = mat;
+                }
+                branch.Add(go.transform);
+            }
+            _branches[portal.theme] = branch;
+        }
+    }
+
+    private Vector3 PathPosition(Vector3 a, Vector3 b, float t, float waterY)
+    {
+        Vector3 pos = Vector3.Lerp(a, b, t);
+        Vector3 dir = (b - a).normalized;
+        Vector3 side = Vector3.Cross(Vector3.up, dir);
+        pos += side * (Mathf.Sin(t * Mathf.PI * 2f) * curveAmplitude * Mathf.Sin(t * Mathf.PI));
+        pos.y = waterY + lightHeight;
+        return pos;
     }
 }

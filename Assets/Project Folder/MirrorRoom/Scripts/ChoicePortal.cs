@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -62,6 +63,10 @@ public class ChoicePortal : MonoBehaviour
     private bool _materialized;
     private bool _entered;
     private Coroutine _materializeRoutine;
+    private Renderer _innerSurface;
+    private Vector3 _innerSurfaceTargetScale = Vector3.one;
+    private readonly List<Renderer> _choiceRenderers = new List<Renderer>();
+    private readonly List<Renderer> _frameRenderers = new List<Renderer>();
 
     private void Reset()
     {
@@ -85,6 +90,26 @@ public class ChoicePortal : MonoBehaviour
         {
             visualRoot = transform;
         }
+
+        foreach (var renderer in GetComponentsInChildren<Renderer>(true))
+        {
+            if (renderer == null) continue;
+            string n = renderer.gameObject.name;
+            bool isChoiceVisual = n == "Portal_Curtain" || n == "VoidTear" ||
+                                  n == "RebirthRing" || n == "TopGold" ||
+                                  n == "BottomRed" || n == "Seam";
+            if (isChoiceVisual)
+                _choiceRenderers.Add(renderer);
+            else if (!(renderer is ParticleSystemRenderer))
+                _frameRenderers.Add(renderer);
+
+            if (n == "Portal_Curtain")
+            {
+                _innerSurface = renderer;
+                _innerSurfaceTargetScale = renderer.transform.localScale;
+            }
+        }
+        SetChoiceVisuals(false);
 
         // Capture authored light intensity as the materialize target, then start dark.
         if (portalLight != null)
@@ -134,6 +159,11 @@ public class ChoicePortal : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (_materialized) SetChoiceVisuals(true);
+    }
+
     /// <summary>
     /// Smoothly reveals the portal (scale 0->1 with a gentle EaseOutBack, light 0->target, particles
     /// play) and then enables the trigger collider so it can be walked through. Idempotent.
@@ -145,6 +175,13 @@ public class ChoicePortal : MonoBehaviour
             return;
         }
         _materialized = true;
+        ShowFrame();
+        SetChoiceVisuals(true);
+        if (_innerSurface != null)
+        {
+            _innerSurface.enabled = true;
+            _innerSurface.transform.localScale = _innerSurfaceTargetScale;
+        }
 
         if (particles != null)
         {
@@ -176,7 +213,7 @@ public class ChoicePortal : MonoBehaviour
             float k = Mathf.Clamp01(t / duration);
             float eased = EaseOutBack(k, easeBackOvershoot);
 
-            vr.localScale = Vector3.one * eased;
+            vr.localScale = Vector3.one;
             float lightK = Mathf.SmoothStep(0f, 1f, k);
             if (portalLight != null)
             {
@@ -188,6 +225,9 @@ public class ChoicePortal : MonoBehaviour
         }
 
         vr.localScale = Vector3.one;
+        SetChoiceVisuals(true);
+        if (_innerSurface != null)
+            _innerSurface.transform.localScale = _innerSurfaceTargetScale;
         if (portalLight != null)
         {
             portalLight.intensity = _lightTargetIntensity;
@@ -233,7 +273,13 @@ public class ChoicePortal : MonoBehaviour
         }
 
         Transform vr = visualRoot != null ? visualRoot : transform;
-        vr.localScale = Vector3.zero;
+        vr.localScale = Vector3.one;
+        SetChoiceVisuals(false);
+        if (_innerSurface != null)
+        {
+            _innerSurface.enabled = false;
+            _innerSurface.transform.localScale = _innerSurfaceTargetScale;
+        }
 
         if (portalLight != null)
         {
@@ -253,6 +299,33 @@ public class ChoicePortal : MonoBehaviour
         if (_trigger != null)
         {
             _trigger.enabled = false;
+        }
+    }
+
+    /// <summary>Shows the outer frame while keeping the themed oval inactive.</summary>
+    public void ShowFrame()
+    {
+        gameObject.SetActive(true);
+        Transform vr = visualRoot != null ? visualRoot : transform;
+        vr.gameObject.SetActive(true);
+        vr.localScale = Vector3.one;
+        foreach (var renderer in _frameRenderers)
+        {
+            if (renderer == null) continue;
+            renderer.gameObject.SetActive(true);
+            renderer.enabled = true;
+        }
+        if (!_materialized) SetChoiceVisuals(false);
+        if (_trigger != null && !_materialized) _trigger.enabled = false;
+    }
+
+    private void SetChoiceVisuals(bool visible)
+    {
+        foreach (var renderer in _choiceRenderers)
+        {
+            if (renderer == null) continue;
+            if (visible) renderer.gameObject.SetActive(true);
+            renderer.enabled = visible;
         }
     }
 

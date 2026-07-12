@@ -22,8 +22,8 @@ public class CemeteryNarrator : MonoBehaviour
     public AudioClip pathLine;
 
     [Header("Timing")]
-    [Tooltip("Distanz (Meter) zur nächsten Trauerfigur, ab der die erste Line spielt.")]
-    public float figureSightDistance = 9f;
+    [Tooltip("Sekunden Ruhe nach dem Szenenstart, bevor die erste Line spielt.")]
+    public float startDelay = 3f;
     [Tooltip("Sekunden Stille NACH dem Ende der Sicht-Line, bevor die Anweisung spielt.")]
     public float instructionDelay = 6f;
     [Tooltip("Sekunden nach dem Freischalten der Lichtspur, bevor die Pfad-Line spielt.")]
@@ -39,8 +39,6 @@ public class CemeteryNarrator : MonoBehaviour
     public Transform playerHead;
 
     private readonly Queue<AudioClip> _queue = new Queue<AudioClip>();
-    private CemeteryFigure[] _figures;
-    private bool _seenPlayed, _instructionQueued, _pathPlayed;
 
     private void Awake()
     {
@@ -52,7 +50,6 @@ public class CemeteryNarrator : MonoBehaviour
 
         if (atmosphere == null) atmosphere = FindFirstObjectByType<CemeteryAtmosphereManager>();
         if (playerHead == null && Camera.main != null) playerHead = Camera.main.transform;
-        _figures = FindObjectsByType<CemeteryFigure>(FindObjectsSortMode.None);
     }
 
     private void Start()
@@ -63,11 +60,13 @@ public class CemeteryNarrator : MonoBehaviour
 
     private IEnumerator Flow()
     {
-        // 1) Erste Figur in Sichtweite.
-        yield return new WaitUntil(NearestFigureInRange);
+        // 1) Direkt beim Szenenstart (nach kurzer Ruhe fürs Ankommen).
+        yield return Wait(startDelay);
         Enqueue(seeThemLine);
 
-        // 2) Anweisung — mit Stille NACH dem Ende der Sicht-Line, nicht ab Einreihen.
+        // 2) Anweisung — erst wenn mindestens zwei Trauernde erschienen sind,
+        //    danach Stille NACH dem Ende der Sicht-Line.
+        yield return new WaitUntil(() => FigureProximityReveal.AppearedCount >= 2);
         yield return WaitForQueueIdle();
         yield return Wait(instructionDelay);
         Enqueue(instructionLine);
@@ -76,27 +75,6 @@ public class CemeteryNarrator : MonoBehaviour
         yield return new WaitUntil(() => atmosphere != null && atmosphere.PathRevealed);
         yield return Wait(pathLineDelay);
         Enqueue(pathLine);
-    }
-
-    private bool NearestFigureInRange()
-    {
-        if (playerHead == null)
-        {
-            if (Camera.main != null) playerHead = Camera.main.transform;
-            if (playerHead == null) return false;
-        }
-        if (_figures == null || _figures.Length == 0)
-        {
-            _figures = FindObjectsByType<CemeteryFigure>(FindObjectsSortMode.None);
-            if (_figures.Length == 0) return false;
-        }
-        float sqr = figureSightDistance * figureSightDistance;
-        foreach (var f in _figures)
-        {
-            if (f == null) continue;
-            if ((f.transform.position - playerHead.position).sqrMagnitude <= sqr) return true;
-        }
-        return false;
     }
 
     private void Enqueue(AudioClip clip)

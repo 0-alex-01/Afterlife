@@ -43,6 +43,19 @@ public class FigureProximityReveal : MonoBehaviour
         _sequenceStartTime = 0f;
     }
 
+    /// <summary>Wie viele Figuren bereits (weitgehend) materialisiert sind —
+    /// für Systeme wie den Narrator, die auf das Erscheinen warten.</summary>
+    public static int AppearedCount
+    {
+        get
+        {
+            int n = 0;
+            foreach (var f in _all)
+                if (f != null && (f._done || (f._revealing && f._t <= 0.4f))) n++;
+            return n;
+        }
+    }
+
     private void Start()
     {
         _figure = GetComponent<CemeteryFigure>();

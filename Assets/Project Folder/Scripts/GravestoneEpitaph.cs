@@ -68,6 +68,9 @@ public class GravestoneEpitaph : MonoBehaviour
     [Tooltip("Deterministisch pro Stein (Name als Seed). Aus = bei jedem Aufbau neu gewürfelt.")]
     public bool seedFromName = true;
 
+    [Tooltip("Im Spiel bei jedem Start eine frische, zufällige Persönlichkeit aus dem Pool ziehen (ohne Wiederholung pro Sitzung). Der in der Szene gebakte Text ist dann nur die Scene-View-Vorschau.")]
+    public bool randomizeAtRuntime = true;
+
     [Header("Platzierung beim (Neu-)Aufbau")]
     [Tooltip("Abstand über der Steinoberfläche in Metern (hauchdünn = Gravur-Look).")]
     public float engraveOffset = 0.002f;
@@ -140,7 +143,13 @@ public class GravestoneEpitaph : MonoBehaviour
 
         _label = FindLabel();
         if (_label == null) _label = BuildLabel(); // Fallback: Szene ohne gebautes Label
-        if (_label == null || !revealOnComfort) return;
+        if (_label == null) return;
+
+        // Jede Sitzung eine neue Persönlichkeit aus dem vollen Pool —
+        // der gebakte Szenen-Text ist nur die Vorschau fürs Level-Design.
+        if (randomizeAtRuntime) RandomizeLabelText();
+
+        if (!revealOnComfort) return;
 
         _watchedFigure = FindNearestFigure(2.8f);
         if (_watchedFigure != null && !_watchedFigure.IsComforted)
@@ -199,6 +208,23 @@ public class GravestoneEpitaph : MonoBehaviour
             else DestroyImmediate(old.gameObject);
         }
         _label = BuildLabel();
+    }
+
+    /// <summary>Im Spiel: zufällige Persönlichkeit aus dem Pool einsetzen — ohne
+    /// Wiederholung innerhalb einer Sitzung (echtes Random statt Namens-Seed).</summary>
+    private void RandomizeLabelText()
+    {
+        string[] entries = GetSourceEntries();
+        if (entries.Length == 0 && database != null && database.epitaphs != null)
+            entries = database.epitaphs;
+        int count = entries.Length;
+        if (count == 0 || _label == null) return;
+
+        int idx = Random.Range(0, count);
+        if (_usedIndices.Count < count)
+            while (_usedIndices.Contains(idx)) idx = (idx + 1) % count;
+        _usedIndices.Add(idx);
+        _label.text = entries[idx];
     }
 
     private TextMeshPro BuildLabel()

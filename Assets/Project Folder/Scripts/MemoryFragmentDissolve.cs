@@ -97,6 +97,15 @@ public class MemoryFragmentDissolve : MonoBehaviour
         if (audioSource != null)
             audioSource.volume = 0f;
 
-        gameObject.SetActive(false);
+        // NICHT das ganze GameObject deaktivieren: Auf der Figur leben weitere
+        // Systeme (z. B. MemorialQuote für die Zitat-Stationen), die nach der
+        // Erlösung weiterlaufen müssen — sonst frieren die Zitate ein (kein
+        // Billboard/Reveal mehr). Stattdessen nur Sichtbares und Physik abschalten.
+        foreach (var r in GetComponentsInChildren<Renderer>())
+            r.enabled = false;
+        foreach (var c in GetComponentsInChildren<Collider>())
+            c.enabled = false;
+        var anim = GetComponentInChildren<Animator>();
+        if (anim != null) anim.enabled = false;
     }
 }

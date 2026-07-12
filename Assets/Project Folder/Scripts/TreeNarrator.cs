@@ -37,6 +37,10 @@ public class TreeNarrator : MonoBehaviour
     public float fallDrop = 4f;
     [Tooltip("Ab welchem Aufstiegsanteil (0–1) die Wärme-Line spielt.")]
     [Range(0f, 1f)] public float warmthThreshold = 0.5f;
+    [Tooltip("Sekunden, die der Spieler die jeweilige Position halten muss, bevor die Wärme-Line spielt.")]
+    public float positionDwellSeconds = 5f;
+    [Tooltip("Distanz zum Portal (Meter), ab der die Portal-Line spielt — erst kurz vor dem Portal, nicht schon beim Erwachen auf der letzten Plattform.")]
+    public float portalLineDistance = 6f;
     [Tooltip("Mindestpause zwischen zwei Lines.")]
     public float minGapBetweenLines = 1f;
 
@@ -47,10 +51,13 @@ public class TreeNarrator : MonoBehaviour
     public TreePortalUnlock portal;
     [Tooltip("Spielerkopf für die Höhenmessung. Leer = vom AscensionController oder Camera.main.")]
     public Transform playerHead;
+    [Tooltip("Das begehbare Portal für die Distanzmessung der Portal-Line. Leer = ScenePortal der Szene, sonst das TreePortalUnlock-Objekt.")]
+    public Transform portalTarget;
 
     private readonly Queue<AudioClip> _queue = new Queue<AudioClip>();
     private bool _fallPlayed, _warmthPlayed, _portalPlayed;
     private float _peakHeight = float.NegativeInfinity;
+    private float _warmthDwell;
     private bool _introStarted;
 
     private void Awake()
@@ -106,19 +113,45 @@ public class TreeNarrator : MonoBehaviour
             Enqueue(fallLine);
         }
 
-        // Wärme ab halber Höhe.
-        if (!_warmthPlayed && NormalizedHeight(y) >= warmthThreshold)
+        // Wärme ab halber Höhe — erst, wenn der Spieler die Höhe kurz gehalten hat
+        // (schnelles Durchklettern löst die Line nicht aus).
+        if (!_warmthPlayed)
         {
-            _warmthPlayed = true;
-            Enqueue(warmthLine);
+            if (NormalizedHeight(y) >= warmthThreshold)
+            {
+                _warmthDwell += Time.deltaTime;
+                if (_warmthDwell >= positionDwellSeconds)
+                {
+                    _warmthPlayed = true;
+                    Enqueue(warmthLine);
+                }
+            }
+            else
+            {
+                _warmthDwell = 0f;
+            }
         }
 
-        // Portal erwacht.
+        // Portal-Line: erst kurz VOR dem Portal, nicht schon beim Erwachen auf der
+        // letzten Plattform — der Spieler muss dem erwachten Portal nahe kommen.
         if (!_portalPlayed && portal != null && portal.IsUnlocked)
         {
-            _portalPlayed = true;
-            Enqueue(portalLine);
+            ResolvePortalTarget();
+            if (portalTarget != null &&
+                Vector3.Distance(playerHead.position, portalTarget.position) <= portalLineDistance)
+            {
+                _portalPlayed = true;
+                Enqueue(portalLine);
+            }
         }
+    }
+
+    private void ResolvePortalTarget()
+    {
+        if (portalTarget != null) return;
+        var scenePortal = FindFirstObjectByType<ScenePortal>();
+        if (scenePortal != null) { portalTarget = scenePortal.transform; return; }
+        if (portal != null) portalTarget = portal.transform;
     }
 
     private float NormalizedHeight(float y)

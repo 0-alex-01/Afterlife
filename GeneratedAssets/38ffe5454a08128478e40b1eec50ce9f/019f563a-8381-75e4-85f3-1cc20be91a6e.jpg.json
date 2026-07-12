@@ -1,0 +1,31 @@
+{
+    "asset": "38ffe5454a08128478e40b1eec50ce9f",
+    "fileName": "019f563a-8381-75e4-85f3-1cc20be91a6e.jpg",
+    "prompt": "A cinematic, highly detailed horizontal split portal texture. The left half shows a divine heaven with golden light rays, ethereal white clouds, and a celestial atmosphere. The right half shows a hellish inferno with glowing red lava, jagged dark rocks, fire, and swirling smoke. The center has a magical transition. High resolution, 1024x1024.",
+    "negativePrompt": "",
+    "model": "flux-2-pro",
+    "modelName": "Flux 2 (Pro)",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

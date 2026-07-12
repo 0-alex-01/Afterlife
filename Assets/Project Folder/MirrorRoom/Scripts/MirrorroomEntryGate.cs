@@ -5,7 +5,7 @@ namespace MirrorRoom
 {
     /// <summary>
     /// Handles the entry gate mechanic for the Mirrorroom.
-    /// The player starts at z = -6 and must cross this gate at z = -3 to unlock/enable the mirror self-perception.
+    /// The player must cross this gate to unlock/enable the mirror self-perception.
     /// Opens physical door wings and dissolves the energy membrane when crossed.
     /// </summary>
     public class MirrorroomEntryGate : MonoBehaviour
@@ -253,4 +253,3 @@ namespace MirrorRoom
         }
     }
 }
-

@@ -320,6 +320,17 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
   box-shadow: 0 0 12px rgba(127,224,212,.6); opacity: 0; }
 .active .end-line { animation: rise 1.5s ease 1s forwards; }
 
+/* ---------- Vignetten (Line-Art-Skizzen) ---------- */
+.vignette { position: absolute; right: 7vw; top: 12vh; opacity: 0; pointer-events: none; }
+.active .vignette { animation: rise 1.2s ease .8s forwards; }
+.vignette svg { display: block; overflow: visible; }
+.vig-soul { stroke: var(--soul); fill: none; stroke-width: 1.6; stroke-linecap: round; filter: drop-shadow(0 0 5px rgba(127,224,212,.55)); }
+.vig-warm { stroke: var(--warm); fill: none; stroke-width: 1.6; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(227,169,95,.6)); }
+.vig-dim  { stroke: var(--soul-dim); fill: none; stroke-width: 1.3; stroke-linecap: round; }
+.vig-fill-soul { fill: var(--soul); stroke: none; filter: drop-shadow(0 0 5px rgba(127,224,212,.65)); }
+.vig-fill-warm { fill: var(--warm); stroke: none; filter: drop-shadow(0 0 6px rgba(227,169,95,.7)); }
+@media (max-width: 1180px) { .vignette { display: none; } }
+
 /* ---------- Print / PDF ---------- */
 @media print {
   @page { size: 297mm 167mm; margin: 0; }
@@ -332,7 +343,7 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
     height: 167mm; width: 297mm; page-break-after: always;
     break-inside: avoid;
   }
-  .rv, .title-word, .title-sub, .title-team, .map-node { opacity: 1 !important; animation: none !important; transform: none !important; }
+  .rv, .title-word, .title-sub, .title-team, .map-node, .vignette { opacity: 1 !important; animation: none !important; transform: none !important; }
   .ekg-path, .map-path { stroke-dasharray: none; stroke-dashoffset: 0; animation: none !important; }
 }
 
@@ -363,7 +374,7 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
   </div>
   <h1 class="title-word">AFTERLIFE</h1>
   <p class="title-sub">Eine VR-Reise über das Loslassen</p>
-  <p class="title-team"><b>Nam</b> · <b>Alex</b> · <b>Vincent</b> &nbsp;—&nbsp; 15. Juli 2026</p>
+  <p class="title-team"><b>Nam</b> · <b>Alex</b> · <b>Vincent</b></p>
 </section>
 
 <!-- 2 ── TEAM -->
@@ -376,7 +387,8 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
       <p class="role">Ebene 1 — Der Tod</p>
       <ul>
         <li><b>Intro:</b> Herzschlag, EKG, Flatline</li>
-        <li><b>Portalraum</b> &amp; die drei Naturwelten</li>
+        <li><b>Portalraum</b></li>
+        <li><b>Drei Naturwelten</b> — Harmonie · Zerfall · Chaos</li>
         <li>Höhlen-Übergang zu Ebene 2</li>
       </ul>
     </div>
@@ -417,8 +429,8 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
         <circle cx="36" cy="36" r="4" fill="#7fe0d4"/>
       </svg>
     </div>
-    <p><b class="accent">Eine Geste trägt alles: Berühren &amp; Halten.</b><br>
-    <span class="dim">Erst tröstest du damit andere — am Ende wählst du damit dein eigenes Schicksal.</span></p>
+    <p><b class="accent">Deine Hände tragen die Reise: klettern, trösten, wählen.</b><br>
+    <span class="dim">Was du berührst, verändert die Welt — und am Ende dich selbst.</span></p>
   </div>
   <div class="goals">
     <div class="goal rv d4"><span class="k">Emotion statt Gameplay</span><p>Jede Szene trägt genau eine Emotion — Schock, Staunen, Mitgefühl, Konfrontation.</p></div>
@@ -441,8 +453,18 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
           <stop offset="1" stop-color="#e3a95f"/>
         </linearGradient>
       </defs>
-      <path class="map-path" pathLength="1000"
-        d="M40,190 C160,190 170,120 290,120 S420,210 540,210 S670,110 790,110 S920,180 1050,180"/>
+      <!-- Akt 0 -> Portalraum -->
+      <path class="map-path" pathLength="1000" d="M40,190 C160,190 170,120 290,120"/>
+      <!-- Portalraum -> Ebene 2: drei Naturwelten-Pfade (Harmonie / Zerfall / Chaos) -->
+      <path class="map-path" pathLength="1000" style="stroke:#97d17e" opacity=".75" d="M290,120 C370,95 465,155 540,210"/>
+      <path class="map-path" pathLength="1000" style="stroke:#e3a95f" opacity=".75" d="M290,120 C380,135 455,180 540,210"/>
+      <path class="map-path" pathLength="1000" style="stroke:#c96a5e" opacity=".75" d="M290,120 C365,165 460,205 540,210"/>
+      <!-- Ebene 2 -> Spiegelraum -->
+      <path class="map-path" pathLength="1000" d="M540,210 C630,210 700,110 790,110"/>
+      <!-- Spiegelraum -> drei lose Enden in die Afterlife-Welten -->
+      <path class="map-path" pathLength="1000" style="stroke:#e8b06a" opacity=".85" d="M790,110 C870,90 935,62 1000,52"/>
+      <path class="map-path" pathLength="1000" style="stroke:#97d17e" opacity=".85" d="M790,110 C875,115 940,122 1005,127"/>
+      <path class="map-path" pathLength="1000" style="stroke:#9a8fc7" opacity=".85" d="M790,110 C865,140 935,175 1000,198"/>
       <g class="map-node n1">
         <circle cx="40" cy="190" r="7" fill="#4df08c"/>
         <text x="40" y="230" text-anchor="middle" class="akt">AKT 0</text>
@@ -468,10 +490,13 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
         <text x="790" y="150" text-anchor="middle" class="emo">Konfrontation · Wahl</text>
       </g>
       <g class="map-node n5">
-        <circle cx="1050" cy="180" r="7" fill="#e3a95f"/>
-        <text x="1050" y="220" text-anchor="middle" class="akt">EBENE 3</text>
-        <text x="1050" y="242" text-anchor="middle" class="lbl">Das Danach</text>
-        <text x="1050" y="262" text-anchor="middle" class="emo">drei Welten · drei Enden</text>
+        <text x="1030" y="20" text-anchor="middle" class="akt">EBENE 3 · DAS DANACH</text>
+        <circle cx="1000" cy="52" r="6" fill="#e8b06a"/>
+        <text x="1014" y="56" text-anchor="start" class="emo" style="fill:#e8b06a">Himmel &amp; Hölle</text>
+        <circle cx="1005" cy="127" r="6" fill="#97d17e"/>
+        <text x="1019" y="131" text-anchor="start" class="emo" style="fill:#97d17e">Wiedergeburt</text>
+        <circle cx="1000" cy="198" r="6" fill="#9a8fc7"/>
+        <text x="1014" y="202" text-anchor="start" class="emo" style="fill:#9a8fc7">Leere</text>
       </g>
     </svg>
   </div>
@@ -480,6 +505,17 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
 
 <!-- 5 ── EBENE 1 -->
 <section class="slide" data-n="5">
+  <div class="vignette" aria-hidden="true">
+    <svg width="190" height="220" viewBox="0 0 190 220">
+      <path class="vig-dim" d="M40,210 V60 Q40,30 95,26 Q150,30 150,60 V210"/>
+      <path class="vig-dim" d="M30,210 H160"/>
+      <ellipse class="vig-soul" cx="95" cy="122" rx="38" ry="72" opacity=".8"/>
+      <ellipse class="vig-soul" cx="95" cy="122" rx="24" ry="50" opacity=".35"/>
+      <circle class="vig-fill-soul" cx="78" cy="90" r="2.2"/>
+      <circle class="vig-fill-soul" cx="112" cy="140" r="1.8"/>
+      <circle class="vig-fill-soul" cx="95" cy="60" r="1.5"/>
+    </svg>
+  </div>
   <p class="eyebrow rv">Ebene 1 · <b>Der Tod</b> · Alex</p>
   <h2 class="rv">Ein Herzschlag. <span class="thin">Dann Stille.</span></h2>
   <p class="lead rv">Die Reise beginnt klinisch: EKG-Linie, Herzton, Flatline — Schwarzblende.
@@ -513,6 +549,7 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
         <li><b>Aufstiegssystem:</b> Wurzelspirale → 4 Plattformen → 3 Kletterrouten → Kronennest</li>
         <li><b>AfterlifeAscensionController:</b> Licht, Post-Processing, Partikel &amp; Sound wandeln sich mit der Höhe — von melancholisch zu warm</li>
         <li><b>Portal in der Krone:</b> schlummert gedimmt, erwacht ab 66,5 m Kopfhöhe</li>
+        <li><b>Geistertreppe:</b> materialisiert sich Stufe für Stufe außen um die Krone, sobald man oben verweilt</li>
       </ul>
     </div>
     <div class="ascent rv d3">
@@ -529,6 +566,20 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
 
 <!-- 7 ── FRIEDHOF -->
 <section class="slide" data-n="7">
+  <div class="vignette" aria-hidden="true">
+    <svg width="230" height="190" viewBox="0 0 230 190">
+      <path class="vig-dim" d="M30,180 Q28,80 62,72 Q96,80 94,180"/>
+      <path class="vig-dim" d="M45,110 H79 M52,128 H72"/>
+      <path class="vig-dim" d="M110,180 q10,-38 34,-52 q10,-6 18,-4 q8,3 6,12 q-3,12 -18,20 q-22,12 -24,24"/>
+      <circle class="vig-dim" cx="172" cy="108" r="11"/>
+      <rect class="vig-warm" x="140" y="158" width="9" height="20" rx="2"/>
+      <path class="vig-fill-warm" d="M144.5,144 q5,7 0,12 q-5,-5 0,-12"/>
+      <circle class="vig-fill-soul" cx="185" cy="70" r="1.8" opacity=".8"/>
+      <circle class="vig-fill-soul" cx="196" cy="48" r="1.4" opacity=".6"/>
+      <circle class="vig-fill-soul" cx="206" cy="28" r="1.1" opacity=".4"/>
+      <path class="vig-dim" d="M14,182 H216"/>
+    </svg>
+  </div>
   <p class="eyebrow rv">Ebene 2 · Akt II · <b>Trauer</b> · Nam</p>
   <h2 class="rv">Friedhof der unvollendeten Abschiede</h2>
   <p class="lead rv">Fünf gesichtslose Trauernde an ihren Gräbern. Deine Aufgabe ist keine Mechanik —
@@ -546,13 +597,30 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
   </div>
   <ul class="feature-list warm rv">
     <li><b>CemeteryAtmosphereManager:</b> mit jeder Erlösung dünnt der Nebel aus, das Licht wärmt sich</li>
-    <li><b>Epitaphe &amp; Zitate</b> an den Gräbern, enthüllt durch Nähe</li>
+    <li><b>242 Biografien realer Persönlichkeiten</b> auf den Grabsteinen — von Marie Curie bis Alan Turing — plus Zitat-Stationen am Lichterpfad, enthüllt durch Nähe</li>
     <li>Nach der dritten Erlösung: <b>Lichtspur aus 12 Lichtern</b> zum Portal — der Weg öffnet sich</li>
   </ul>
 </section>
 
 <!-- 8 ── SPIEGELRAUM -->
 <section class="slide" data-n="8">
+  <div class="vignette" aria-hidden="true">
+    <svg width="250" height="260" viewBox="0 0 250 260">
+      <rect class="vig-dim" x="120" y="20" width="100" height="170" rx="10"/>
+      <rect class="vig-soul" x="128" y="28" width="84" height="154" rx="7" opacity=".55"/>
+      <circle class="vig-soul" cx="170" cy="80" r="13" opacity=".85"/>
+      <path class="vig-soul" d="M150,182 q0,-52 20,-58 q20,6 20,58" opacity=".85"/>
+      <circle class="vig-dim" cx="62" cy="88" r="14"/>
+      <path class="vig-dim" d="M40,200 q0,-58 22,-64 q22,6 22,64"/>
+      <path class="vig-dim" d="M20,208 H230"/>
+      <rect class="vig-dim" x="30" y="226" width="16" height="22" rx="2"/>
+      <rect class="vig-dim" x="108" y="226" width="16" height="22" rx="2"/>
+      <rect class="vig-dim" x="186" y="226" width="16" height="22" rx="2"/>
+      <circle class="vig-fill-soul" cx="38" cy="218" r="4" opacity=".9"/>
+      <circle cx="116" cy="218" r="4" fill="#97d17e" style="filter: drop-shadow(0 0 5px rgba(151,209,126,.7))"/>
+      <circle class="vig-fill-warm" cx="194" cy="218" r="4"/>
+    </svg>
+  </div>
   <p class="eyebrow rv">Ebene 2 · Akt III · <b>Selbstbegegnung</b> · Nam</p>
   <h2 class="rv">Der See der Seelen</h2>
   <p class="lead rv">Über einen Wasserpfad, vorbei an treibenden Seelenlichtern, zur eigenen Seele
@@ -625,6 +693,7 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
     <div class="tech rv d5">
       <h4>Atmosphäre &amp; Audio</h4>
       <ul>
+        <li><b>Voice-Narrator</b> in allen drei Räumen — reagiert auf Stürze, Zögern und die Wahl</li>
         <li><b>Skybox- &amp; Nebel-Dramaturgie</b> pro Szene — vom Wolkengrau zum warmen Gold</li>
         <li>Licht-Systeme: <code>LightHeartbeatPulse</code>, <code>SpiritLightPulse</code></li>
         <li>Ambient-Loops &amp; Nähe-Sounds (<code>IntermittentMemorySound</code>, <code>BarkTouchSound</code>)</li>
