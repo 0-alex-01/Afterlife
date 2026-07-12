@@ -1,0 +1,23 @@
+{
+    "asset": "89646d87591657b46a6bbbdb5af8aef2",
+    "fileName": "019f4be4-098e-7e13-bee7-8e4f11e2d1fd.fbx",
+    "prompt": "Create a lightweight floating chaos portal rift for a Unity VR scene.\r\nIt should be an unstable moving portal made of broken floating stone fragments, jagged shards, and chaotic magical energy.\r\nThe center must stay open and empty for a portal effect.\r\nNo heavy base, no stairs, no platform, no candles.\r\nThe portal should look like it can move, teleport, and flicker through the scene.\r\nUse an asymmetrical broken ring shape with purple, cyan, and green glow accents.\r\nStylized low-to-mid poly game-ready prop.",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "db42c3216a8633d4fa1e9826104f899c",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 55000
+}

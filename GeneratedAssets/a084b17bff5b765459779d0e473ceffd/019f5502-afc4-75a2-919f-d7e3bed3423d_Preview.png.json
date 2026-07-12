@@ -1,0 +1,12 @@
+{
+    "asset": "a084b17bff5b765459779d0e473ceffd",
+    "fileName": "019f5502-afc4-75a2-919f-d7e3bed3423d_Preview.png",
+    "prompt": "Seamless chaotic nature path material for a fantasy environment, twisted organic trail with dark cracked earth, tangled roots, scattered glowing embers, faint red-orange and sickly green glow, broken leaf patterns, subtle unstable energy, wild overgrown natural chaos aesthetic, irregular edges fading into the surrounding ground, no hard borders, no text, no symbols, designed for a flat Unity plane used as a path guide, tileable texture, game-ready, optimized for VR",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 1197929463,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

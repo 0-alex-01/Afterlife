@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0cf59a8328ee604fa9c2d6eae58bafa3
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297113
+  packageName: 'Shaped Clouds - Fast 2D Cloud System [URP]'
+  packageVersion: 1.1.2
+  assetPath: Assets/ShapedClouds/Documentation~/api/ShapedClouds.Settings.CloudBlur.html
+  uploadId: 882430

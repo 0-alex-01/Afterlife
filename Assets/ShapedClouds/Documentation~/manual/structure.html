@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Structure | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Structure | Shaped Clouds Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../resources/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="index.html" title="Home" class="">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="quick-start.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="active">
+                      <a href="structure.html" title="Structure" class="active">Structure</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Customization</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="customization/clouds-controller.html" title="Clouds Controller" class="">Clouds Controller</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/base-noise-renderer.html" title="Base Noise Renderer" class="">Base Noise Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/mesh-renderer.html" title="Cloud Mesh Renderer" class="">Cloud Mesh Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/filter.html" title="Cloud Filter" class="">Cloud Filter</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/noise-layer.html" title="Noise Layer" class="">Noise Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/blur.html" title="Blur" class="">Blur</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <a href="optimization.html" title="Optimization" class="">Optimization</a>
+                    </li>
+                    <li class="">
+                      <a href="troubleshooting.html" title="Troubleshooting" class="">Troubleshooting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="structure">Structure</h1>
+
+<p>While simple, the structure of this dynamic cloud system can be confusing.
+Here, we'll review the most important parts and what they do.</p>
+<p>Individual pages for each component/class contains a more in-depth view of how to configure it.</p>
+<h2 id="clouds-controller">Clouds Controller</h2>
+<p><a href="customization/clouds-controller.html">Manual</a> | <a href="../api/ShapedClouds.CloudsController.html">Scripting API</a></p>
+<p>The Clouds Controller is responsible for managing all steps of the rendering process except for the rendering itself.
+It stores settings related to performance and visuals, and most features are enabled or disabled in this component.
+To add one to your scene, you can either add it by right-clicking in the hierarchy window and selecting &quot;Shaped Clouds/Clouds Controller&quot;, or creating an empty GameObject and adding the component &quot;Shaped Clouds/Clouds Controller&quot; to it.</p>
+<p>When adding the object through the hierarchy window, a child object will also be created, with a Base Noise Renderer, more on what it does <a href="#base-noise-renderer">below</a>.</p>
+<h3 id="base-and-final-textures">Base and Final textures</h3>
+<p>Most of the optimization of the system comes from using two separate textures at lower resolutions than the render target.</p>
+<p>The first texture is called the Base Texture, and is particularly low resolution/blurry.
+This texture determines the overall shape of clouds, and is how the system can generate clouds of any shape.
+Higher detail clouds will of course require higher resolutions, but simple noise and shapes won't feel the difference and are effectively free in terms of performance.</p>
+<p>All included shaders that render to this texture blend additively.
+As a result, their order doesn't matter, and negative colors are valid and will remove clouds from the sky, rather than add.</p>
+<figure>
+    <img src="../resources/structure/base.png" alt="Base Texture">
+    <figcaption>What a Base Texture looks like.</figcaption>
+</figure>
+<br>
+<p>The second texture is called the Final Texture, and is how the appearance of clouds is determined.
+This is where clouds get their look, including receiving light from the Sun/Moon and how detailed they are.
+Low resolutions are more noticeable, but the Final Texture can usually still be kept at half or third resolution for better performance.</p>
+<figure>
+    <img src="../resources/structure/final.png" alt="Final Texture">
+    <figcaption>What the alpha channel of a Final Texture looks like.</figcaption>
+</figure>
+<h3 id="cloud-filter">Cloud Filter</h3>
+<p><a href="customization/filter.html">Manual</a> | <a href="../api/ShapedClouds.Settings.CloudFilter.html">Scripting API</a></p>
+<p>Collection of settings determining how the Base Texture is rendered to the Final Texture.
+Has a specialized shader that can be replaced if modifications are needed.</p>
+<h3 id="blur">Blur</h3>
+<p><a href="customization/blur.html">Manual</a> | <a href="../api/ShapedClouds.Settings.CloudBlur.html">Scripting API</a></p>
+<p>Between the Base Texture being used to render the Final Texture, and the Final Texture being used to render clouds to the screen, each of those clouds can optionally be blurred.
+By using a bidirectional blur, sharp edges that would make the low resolution more obvious can be smoothened, resulting in a cleaner looking sky.</p>
+<p>Configuration is relatively simple, but check the page for comparison images.</p>
+<h2 id="cloud-renderers">Cloud Renderers</h2>
+<p><a href="../api/ShapedClouds.CloudRenderers.html">Scripting API</a></p>
+<p>Cloud Renderers are MonoBehaviours inheriting from the <a href="../api/ShapedClouds.CloudRenderers.CloudRenderer.html">CloudRenderer</a> abstract class, and are used to render objects to the Base Texture.
+These are the heart of the system, and what controls the shape clouds will have.
+Anything can be rendered with a Cloud Renderer, but the asset only comes with two options, capable of doing almost anything needed.</p>
+<p>These objects should be put as direct children of a Clouds Controller, which will be the controller responsible for rendering it.
+Children of children are not included and won't be rendered.</p>
+<p>Here's an example of how cloud renderers should be organized, taken directly from the &quot;Meshes&quot; demo:</p>
+<p><img src="../resources/structure/hierarchy.png" alt="Hierarchy"></p>
+<h3 id="base-noise-renderer">Base Noise Renderer</h3>
+<p><a href="customization/base-noise-renderer.html">Manual</a> | <a href="../api/ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html">Scripting API</a></p>
+<p>Generates random noise to act as the overall shape of clouds.
+The noise texture itself can be modified, as well as the amount of layers and their values (limit is 8).</p>
+<h3 id="cloud-mesh-renderer">Cloud Mesh Renderer</h3>
+<p><a href="customization/mesh-renderer.html">Manual</a> | <a href="../api/ShapedClouds.CloudRenderers.CloudMeshRenderer.html">Scripting API</a></p>
+<p>Renders a mesh or a renderer to the Base Texture.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

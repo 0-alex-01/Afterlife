@@ -1,0 +1,23 @@
+{
+    "asset": "dd46206a8d3df844585c24fa4667ca63",
+    "fileName": "019f52f4-c55c-7cd4-a202-98e732494f43.glb",
+    "prompt": "Modular volcanic rock ground tile for a dark hell environment, rough cracked black basalt stone, uneven surface, subtle glowing red lava cracks, scorched and burned appearance, low-poly, optimized for VR, game-ready 3D asset, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "d6837fac40b98814c8de76196f89303c",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 30000
+}

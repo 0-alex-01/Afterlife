@@ -1,0 +1,23 @@
+{
+    "asset": "06aa738225546494682a0ed2627c524a",
+    "fileName": "019f52fa-a1ac-730b-b4bc-600e19278a4d.glb",
+    "prompt": "Jagged volcanic rock formation for a hell environment, black scorched basalt, rough sharp silhouette, cracked surface with faint red glowing lava lines, dark fantasy style, low-poly, optimized for VR, game-ready 3D asset, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "de0fd8206c2733044815d44f2c34382d",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 50000
+}

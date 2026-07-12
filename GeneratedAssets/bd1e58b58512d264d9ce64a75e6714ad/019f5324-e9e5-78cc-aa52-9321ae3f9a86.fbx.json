@@ -1,0 +1,23 @@
+{
+    "asset": "bd1e58b58512d264d9ce64a75e6714ad",
+    "fileName": "019f5324-e9e5-78cc-aa52-9321ae3f9a86.fbx",
+    "prompt": "Massive infernal gate for a hell world, towering dark fantasy structure made of black volcanic stone, jagged silhouette, glowing red lava cracks, intimidating demonic architecture, ancient and powerful appearance, low-poly, optimized for VR, game-ready 3D asset, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "923ec22c7fb176f4fae18dfc7db9edaf",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 45000
+}

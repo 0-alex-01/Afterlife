@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1b20ff1434bd352a2bb933a93cae9a47
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297113
+  packageName: 'Shaped Clouds - Fast 2D Cloud System [URP]'
+  packageVersion: 1.1.2
+  assetPath: Assets/ShapedClouds/Documentation~/api/ShapedClouds.CloudRenderers.CloudRenderer.html
+  uploadId: 882430

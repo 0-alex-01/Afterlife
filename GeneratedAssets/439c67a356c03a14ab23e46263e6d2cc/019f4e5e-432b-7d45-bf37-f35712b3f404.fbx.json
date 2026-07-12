@@ -1,0 +1,23 @@
+{
+    "asset": "439c67a356c03a14ab23e46263e6d2cc",
+    "fileName": "019f4e5e-432b-7d45-bf37-f35712b3f404.fbx",
+    "prompt": "Create a single white marble stair step for a mystical VR afterlife scene. Only one step, not a full staircase. The step should look elegant, sacred, bright, and slightly monumental, as if it belongs to a heavenly staircase in the clouds. Use white marble with subtle gray and light gold veining, a broad flat top surface, a clean symmetrical shape, and very slight edge wear. No railings, no walls, no ornaments, no extra objects, and no environment. Optimize for Meta Quest 3 VR with low- to mid-poly geometry, clean topology, URP-compatible materials, correct scale, and a bottom-centered pivot. Make it suitable for duplication in Unity.",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "da93f47ffa5221d4d93a1d22ed6293b2",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 20000
+}

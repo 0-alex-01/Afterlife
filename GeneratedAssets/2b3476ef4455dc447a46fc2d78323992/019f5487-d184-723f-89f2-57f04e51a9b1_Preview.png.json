@@ -1,0 +1,12 @@
+{
+    "asset": "2b3476ef4455dc447a46fc2d78323992",
+    "fileName": "019f5487-d184-723f-89f2-57f04e51a9b1_Preview.png",
+    "prompt": "Dark fantasy hell landscape background, distant black volcanic mountains, jagged rock silhouettes, glowing lava rivers far away, red smoke and drifting ash in the air, deep red glow on the horizon, ominous infernal atmosphere, wide composition, distant background only, no close foreground objects, no characters, no text, designed as a 2D background plane for a Unity VR hell world",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

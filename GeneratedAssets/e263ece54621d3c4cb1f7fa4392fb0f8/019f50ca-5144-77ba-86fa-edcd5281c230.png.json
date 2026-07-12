@@ -1,0 +1,28 @@
+{
+    "asset": "e263ece54621d3c4cb1f7fa4392fb0f8",
+    "fileName": "019f50ca-5144-77ba-86fa-edcd5281c230.png",
+    "prompt": "Create a transparent smoke particle texture for a supernatural hell messenger effect.\r\n\r\nAppearance:\r\n- A single soft plume of dark black and charcoal smoke.\r\n- Wispy, curling and partially transparent.\r\n- Dense near the center and gradually fading toward every edge.\r\n- Irregular organic shape.\r\n- Subtle deep-red ember glow inside a few areas.\r\n- Mystical and ominous, not like industrial exhaust.\r\n- No hard edges.\r\n- No visible rectangular background.\r\n- No character, environment, fireball or extra objects.\r\n\r\nTechnical requirements:\r\n- Transparent background with a real alpha channel.\r\n- Soft feathered opacity around all edges.\r\n- Suitable as a particle texture in Unity URP.\r\n- Square texture.\r\n- Optimized for Meta Quest 3 VR.\r\n- Low visual noise.\r\n- No text.",
+    "negativePrompt": "",
+    "model": "flux-2-dev",
+    "modelName": "Flux 2 (Dev)",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

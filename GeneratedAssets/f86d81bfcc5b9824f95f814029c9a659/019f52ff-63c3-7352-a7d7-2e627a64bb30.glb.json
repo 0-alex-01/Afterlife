@@ -1,0 +1,23 @@
+{
+    "asset": "f86d81bfcc5b9824f95f814029c9a659",
+    "fileName": "019f52ff-63c3-7352-a7d7-2e627a64bb30.glb",
+    "prompt": "Infernal fire pit made of cracked black volcanic stones, circular shape, glowing magma embers inside, dark fantasy hell style, designed as a base for a fire particle effect, low-poly, optimized for VR, game-ready 3D asset, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "a2311239c5d6109469540ae2dd123612",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 35000
+}

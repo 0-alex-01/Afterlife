@@ -1,0 +1,23 @@
+{
+    "asset": "2fd6fc1a2ca3ffd4d87393d89c2893a7",
+    "fileName": "019f5540-7e06-7b71-868c-41418a750712.fbx",
+    "prompt": "Round chaotic stone platform, cracked dark rock, glowing red-orange fissures, twisted roots, dead branches, sharp stone spikes around the edges, subtle green magical glow, corrupted nature style, fantasy chaos world, low-poly, game-ready 3D asset, optimized for VR, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "f724197d06473ec47b8d707a2284a38a",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 50000
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Cloud Filter | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Cloud Filter | Shaped Clouds Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../../resources/favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="../index.html" title="Home" class="">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="../quick-start.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="">
+                      <a href="../structure.html" title="Structure" class="">Structure</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Customization</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="../customization/clouds-controller.html" title="Clouds Controller" class="">Clouds Controller</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/base-noise-renderer.html" title="Base Noise Renderer" class="">Base Noise Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/mesh-renderer.html" title="Cloud Mesh Renderer" class="">Cloud Mesh Renderer</a>
+                          </li>
+                          <li class="active">
+                            <a href="../customization/filter.html" title="Cloud Filter" class="active">Cloud Filter</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/noise-layer.html" title="Noise Layer" class="">Noise Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/blur.html" title="Blur" class="">Blur</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <a href="../optimization.html" title="Optimization" class="">Optimization</a>
+                    </li>
+                    <li class="">
+                      <a href="../troubleshooting.html" title="Troubleshooting" class="">Troubleshooting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cloud-filter">Cloud Filter</h1>
+
+<p><a href="../../api/ShapedClouds.Settings.CloudFilter.html">Scripting API</a></p>
+<p>Collection of settings determining how the Base Texture is rendered to the Final Texture.
+Controls all lighting and the appearance of clouds.</p>
+<h2 id="inspector-settings">Inspector Settings</h2>
+<p><img src="../../resources/filter/field.png" alt="Cloud Filter field"></p>
+<p>Now, let's go over <em>most</em> of those fields and what they do.</p>
+<h3 id="noise-texturedensityscaletime-scalerotationwind-rotationlayersshader">Noise Texture/Density/Scale/Time Scale/Rotation/Wind Rotation/Layers/Shader</h3>
+<p>Effectively the same as in <a href="base-noise-renderer.html">Base Noise Renderer</a> and already covered in that page, with only the following differences:</p>
+<ul>
+<li>The noise generated isn't used to add clouds, but to remove them.
+<ul>
+<li>This means clouds are always smaller in the Final Texture.</li>
+<li>This also means textures may not behave as expected.</li>
+<li>Negative intensity of layers WILL add clouds instead of subtract.
+<ul>
+<li>Doing so is absolutely not recommended, as one of the optimizations made will get rid of fragments with 0 clouds in them, meaning that there's a limit to where clouds can be rendered.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Density doesn't simply makes clouds smaller and more sparse, but it instead affects the actual density inside the clouds that light travels through.
+<ul>
+<li>Higher density is more opaque, lower density is more transparent.</li>
+<li>This does not affect color, check the <a href="#color-absorption">Color Absorption</a> section below to see why.</li>
+</ul>
+</li>
+</ul>
+<p>To illustrate how the noise is used, since it's a meaningful difference, check out a few different textures included with the asset:</p>
+<figure>
+	<img src="../../resources/filter/noise-default.png" alt="Default simple texture">
+	<figcaption>Default simple texture</figcaption>
+</figure>
+<br>
+<figure>
+	<img src="../../resources/filter/noise-super.png" alt="SBS - super noise 14">
+	<figcaption>SBS - super noise 14</figcaption>
+</figure>
+<br>
+<figure>
+	<img src="../../resources/filter/noise-milky.png" alt="SBS - Milky 11">
+	<figcaption>SBS - Milky 11</figcaption>
+</figure>
+<br>
+<figure>
+	<img src="../../resources/filter/noise-melt.png" alt="SBS - Melt 2">
+	<figcaption>SBS - Melt 2</figcaption>
+</figure>
+<br>
+<p>This noise has a relatively small range (mostly an even gray, rather than going from black to white), so intensity of layers had to be increased compared to other textures.</p>
+<p>Also note that all of these screenshots were taken with full resolution for the Final Texture, which is generally only recommended if the details are needed to match the art style.
+Most games would probably benefit from lower resolutions, as the clouds being too detailed can be distracting and draw undesired attention to imperfections.</p>
+<h3 id="color-absorption">Color Absorption</h3>
+<p>The amount of light absorbed by the clouds (or, more accurately, being scattered away from the viewer), making them darker.
+Does something similar to what density would do, but it was separated from the density field for artistic purposes.</p>
+<p>This way, it's possible to have very dense clouds that still don't look super dark.</p>
+<h3 id="color">Color</h3>
+<p>The color of the cloud itself, affects how the cloud receives light and reflects it.</p>
+<h3 id="sunset-color">Sunset Color</h3>
+<p>Multiplies the color of the Sun by this as it approaches the horizon.
+To disable this feature, set this color to white (1,1,1).</p>
+<h3 id="moon-color">Moon Color</h3>
+<p>The color of the Moon.
+Only used when Use Custom Moon Light is disabled and/or no custom moon light was set.</p>
+<h3 id="ambient-daynight">Ambient Day/Night</h3>
+<p>Ambient Day is the amount of the light during the day that scatters around and hits clouds from indirect angles.
+A different way to think about it is that a percentage of the light from the Sun will become the minimum amount of color a cloud can have.</p>
+<p>Ambient Night is the same as Ambient Day, but for the night and the Moon.</p>
+<p>Both ignored when Use Custom Ambient Color is enabled.</p>
+<h3 id="custom-ambient-color">Custom Ambient Color</h3>
+<p>When using custom ambient color, no calculations for it are done in the shader, and the color given will be used instead.
+This is generally more efficient, even if not a meaningful difference.</p>
+<p>Mostly here because some games might want to take full control over ambient lighting.</p>
+<h3 id="custom-sunmoon-light">Custom Sun/Moon Light</h3>
+<p>When disabled, the Sun is the main light of the scene (strongest directional light), same as most shaders, and the Moon uses the Moon Color field and the opposite direction of the Sun.</p>
+<p>If using a custom Sun/Moon, the specified light will behave as that source of light, even if it's disabled.
+It'll be considered as a directional light even if it isn't, but it's recommended to make it easier by using a directional light.</p>
+<p>A custom Moon can be very useful if your project simulates the Moon separate from the Sun (as opposed to doing exactly what this shader does by default).</p>
+<p>A custom Sun can be useful if you have more than one directional light (like the Moon) and the Sun loses intensity as it sets.
+In that scenario, the directional light representing the Sun would reach 0 intensity when it's night, and other directional lights would become the new main light/Sun.
+By specifying a light as the Sun, you can prevent it from affecting clouds in weird ways.</p>
+<h3 id="fade-distance">Fade Distance</h3>
+<p>Distance from the horizon that clouds stop being visible.
+A value of 0 makes clouds fade and fully vanish at the horizon.
+A value of 1 makes clouds fully vanish only directly down.</p>
+<h3 id="fade-power">Fade Power</h3>
+<p>When calculating the distance to the horizon, calculate the power of it by this exponent.
+Higher values make the fade longer, while lower values make it shorter.</p>
+<h3 id="detail-level">Detail Level</h3>
+<p>As an optimization and artistic choice, the Cloud Filter doesn't always apply noise everywhere.</p>
+<p>Regions too dense in clouds are unlikely to look any different with a little bit of noise subtracted from them.
+So, the filter simply skips sampling textures when over these dense regions.</p>
+<p>This field controls at what point the filter decides not to add detail to a fragment.
+A value of 0 means never add any detail.
+A value of 1 means always add full detail.</p>
+<p>Lower values will improve performance, especially in cloudy situations.
+Higher values aren't necessarily going to look better, as the detail will often be too grainy and evenly spread.</p>
+<p>The recommended value is 0.5 or lower for big and dense clouds, since they usually only have any detail at all at their edges.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

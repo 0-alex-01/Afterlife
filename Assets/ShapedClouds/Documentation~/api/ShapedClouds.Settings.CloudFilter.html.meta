@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e97bfd849f23e6b82b2d4ac40fba373a
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297113
+  packageName: 'Shaped Clouds - Fast 2D Cloud System [URP]'
+  packageVersion: 1.1.2
+  assetPath: Assets/ShapedClouds/Documentation~/api/ShapedClouds.Settings.CloudFilter.html
+  uploadId: 882430

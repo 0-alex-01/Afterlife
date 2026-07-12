@@ -1,0 +1,28 @@
+{
+    "asset": "92713b547393ff54c857cd6598231a6a",
+    "fileName": "019f5401-fce3-7f24-a1fd-0e91a837f812.png",
+    "prompt": "Infernal ending symbol for a hell world, demonic portal with glowing red core, surrounded by black jagged volcanic rock, flames, smoke, lava glow, dark fantasy style, centered and iconic composition, strong silhouette, suitable as a Unity UI sprite for a Canvas, no text, transparent background",
+    "negativePrompt": "",
+    "model": "gpt-image-1-5",
+    "modelName": "GPT Image 1.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

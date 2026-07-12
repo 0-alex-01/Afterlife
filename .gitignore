@@ -137,5 +137,11 @@ sysinfo.txt.meta
 # Unity AI Assistant temp/cache files
 /[Aa]ssets/AI Toolkit/Temp*
 
+# Unity recovery files
+/[Aa]ssets/_Recovery/
+
+# Automatically generated solution files
+*.slnx
+
 # Claude Code personal settings
 .claude/settings.local.json
