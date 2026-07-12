@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -11,27 +11,39 @@ public class EffectManager : MonoBehaviour
 
     private void Start()
     {
+        if (effects == null || effects.Length == 0)
+        {
+            Debug.LogWarning($"[EffectManager] '{gameObject.name}' has no effects assigned in the inspector.", this);
+            return;
+        }
+
         vfxs = new VisualEffect[effects.Length];
         for (int i = 0; i < effects.Length; ++i)
         {
+            if (effects[i] == null) continue;
             effects[i].SetActive(false);
             vfxs[i] = effects[i].GetComponent<VisualEffect>();
         }
 
-        effects[currentEffect].SetActive(true);
+        if (currentEffect >= 0 && currentEffect < effects.Length && effects[currentEffect] != null)
+        {
+            effects[currentEffect].SetActive(true);
+        }
     }
 
     private void Update()
     {
+        if (effects == null || effects.Length == 0 || vfxs == null) return;
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if(currentEffect - 1 >= 0)
             {
-                vfxs[currentEffect].Stop();
-                effects[currentEffect].SetActive(false);
+                if (vfxs[currentEffect] != null) vfxs[currentEffect].Stop();
+                if (effects[currentEffect] != null) effects[currentEffect].SetActive(false);
                 --currentEffect;
-                effects[currentEffect].SetActive(true);
-                vfxs[currentEffect].Play();
+                if (effects[currentEffect] != null) effects[currentEffect].SetActive(true);
+                if (vfxs[currentEffect] != null) vfxs[currentEffect].Play();
             }
         }
 
@@ -39,11 +51,11 @@ public class EffectManager : MonoBehaviour
         {
             if (currentEffect + 1 < effects.Length)
             {
-                vfxs[currentEffect].Stop();
-                effects[currentEffect].SetActive(false);
+                if (vfxs[currentEffect] != null) vfxs[currentEffect].Stop();
+                if (effects[currentEffect] != null) effects[currentEffect].SetActive(false);
                 ++currentEffect;
-                effects[currentEffect].SetActive(true);
-                vfxs[currentEffect].Play();
+                if (effects[currentEffect] != null) effects[currentEffect].SetActive(true);
+                if (vfxs[currentEffect] != null) vfxs[currentEffect].Play();
             }
         }
     }
