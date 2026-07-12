@@ -1,0 +1,23 @@
+{
+    "asset": "3783349cee6e4d24f9ea007692720b56",
+    "fileName": "019f4e3c-f4bd-7ec6-a0dc-63d8c1facace.fbx",
+    "prompt": "Create a single floating circular stone platform for a mystical VR afterlife scene.\r\n\r\nDesign:\r\n- A round stone platform, approximately 6 meters in diameter.\r\n- The top surface should be mostly flat so a player can stand safely on it in VR.\r\n- The platform should be made of pale gray weathered stone.\r\n- Add subtle cracks, chipped edges, and signs of age.\r\n- The outer edge should be partially broken and uneven.\r\n- The underside should look like rough broken rock, as if the platform was torn from a larger stone structure.\r\n- Add subtle engraved circular patterns, celestial rings, and symbolic markings on the top surface.\r\n- The engravings should feel ancient, sacred, and slightly mysterious.\r\n- The platform should feel monumental and mystical, but not overloaded with tiny details.\r\n- No railings, no stairs, no vegetation, no extra props.\r\n\r\nStyle:\r\n- Sacred, dreamlike, ancient, symbolic.\r\n- Suitable for a heaven / judgment / afterlife scene.\r\n",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "bacd9e69da4f6fd4eb4f9d5a78196656",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 65000
+}

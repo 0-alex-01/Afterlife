@@ -1,0 +1,23 @@
+{
+    "asset": "2e5bcc941a5d8904fa3386f388c0b320",
+    "fileName": "019f5551-0bfc-7ac4-b658-941b1d8057ca.fbx",
+    "prompt": "Tree cluster for a chaotic nature world, mostly normal-looking trees with natural trunks and branches, grouped closely together in an organic forest arrangement, varied height and size, slightly untamed and irregular growth, subtle wild atmosphere, some exposed roots, grass, and scattered rocks at the base, game-ready 3D asset, low-poly, optimized for VR, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "c765e51e39cfe314cbe68a7c8149d584",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 30000
+}

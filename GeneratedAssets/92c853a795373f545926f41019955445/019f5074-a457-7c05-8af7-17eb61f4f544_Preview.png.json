@@ -1,0 +1,12 @@
+{
+    "asset": "92c853a795373f545926f41019955445",
+    "fileName": "019f5074-a457-7c05-8af7-17eb61f4f544_Preview.png",
+    "prompt": "Create a seamless cloud material based on the provided cloud reference image.\r\n\r\nGoal:\r\n- Reproduce the soft, bright, heavenly cloud appearance from the reference.\r\n- The material should look fluffy, luminous, soft, and slightly warm white.\r\n- Keep subtle gray-blue shadows inside the cloud forms.\r\n- Add gentle cream and pale golden highlights where light passes through.\r\n- Avoid harsh contrast, dark storm tones, cartoon outlines, or strong color saturation.\r\n\r\nMaterial properties:\r\n- Create a seamless tileable texture set.\r\n- Soft volumetric cloud-like surface appearance.\r\n- Fine billowy cloud detail with larger rounded cloud masses.\r\n- Slightly translucent-looking and airy, but still suitable for a standard Unity URP material.\r\n- No visible borders, sky background, horizon, sun, or extra objects.\r\n- Remove all background information from the reference and use only the cloud surface appearance.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 34442312,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

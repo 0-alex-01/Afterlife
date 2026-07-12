@@ -1,0 +1,28 @@
+{
+    "asset": "8b88337459c7e0743b30598843e5e3bd",
+    "fileName": "019f5454-fa85-7901-822c-d697d823d0dc.png",
+    "prompt": "Heavenly ending image sprite, radiant celestial gate surrounded by soft glowing clouds, golden light, white marble elements, subtle rays of sunlight, gentle mist, peaceful and divine atmosphere, centered composition, elegant and serene, visually clear silhouette, suitable as a Unity UI sprite for a Canvas, no text, no characters, transparent background",
+    "negativePrompt": "",
+    "model": "gpt-image-1-5",
+    "modelName": "GPT Image 1.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

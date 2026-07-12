@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Troubleshooting | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Troubleshooting | Shaped Clouds Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../resources/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="index.html" title="Home" class="">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="quick-start.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="">
+                      <a href="structure.html" title="Structure" class="">Structure</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Customization</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="customization/clouds-controller.html" title="Clouds Controller" class="">Clouds Controller</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/base-noise-renderer.html" title="Base Noise Renderer" class="">Base Noise Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/mesh-renderer.html" title="Cloud Mesh Renderer" class="">Cloud Mesh Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/filter.html" title="Cloud Filter" class="">Cloud Filter</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/noise-layer.html" title="Noise Layer" class="">Noise Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/blur.html" title="Blur" class="">Blur</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <a href="optimization.html" title="Optimization" class="">Optimization</a>
+                    </li>
+                    <li class="active">
+                      <a href="troubleshooting.html" title="Troubleshooting" class="active">Troubleshooting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="troubleshooting">Troubleshooting</h1>
+
+<p>If clouds aren't rendering or are rendering incorrectly, here's a checklist of simple things that can cause issues:</p>
+<ul>
+<li>Not using URP/using Unity 2021 or older.
+<ul>
+<li>Causes compilation errors, certain features are simply not available and the asset won't work.</li>
+</ul>
+</li>
+<li>Depth texture isn't enabled in the Pipeline Asset.
+<ul>
+<li>Causes clouds to always render on top of everything.</li>
+<li><strong>NOT</strong> required if Render Above Opaques is disabled in the Clouds Controller.</li>
+</ul>
+</li>
+<li>Tonemapping/post processing is disabled.
+<ul>
+<li>This asset was made with HDR and tonemapping in mind (untested with HDR displays).</li>
+<li>Either enable tonemapping or tune settings to lower brightness.
+<ul>
+<li>The most direct way of doing that is by changing the color of the clouds to a darker tone.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Final resolution is too high.
+<ul>
+<li>Causes a significant performance impact.</li>
+<li>Usually using half is not noticeable and significantly faster.</li>
+</ul>
+</li>
+<li>Base resolution is too high.
+<ul>
+<li>Causes a significant performance impact.</li>
+<li>For the base resolution, a very low resolution is usually acceptable, as the detail is added by the cloud filter.</li>
+<li>The asset can produce good looking clouds really fast because this step is almost free at low enough resolutions.</li>
+</ul>
+</li>
+</ul>
+<p>If you checked everything here and still had issues, please contact the developer and explain what happened in as much detail as possible.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

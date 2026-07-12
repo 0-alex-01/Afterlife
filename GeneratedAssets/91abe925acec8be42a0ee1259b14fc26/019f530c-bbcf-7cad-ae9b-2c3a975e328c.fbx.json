@@ -1,0 +1,23 @@
+{
+    "asset": "91abe925acec8be42a0ee1259b14fc26",
+    "fileName": "019f530c-bbcf-7cad-ae9b-2c3a975e328c.fbx",
+    "prompt": "Weathered fantasy skull for a hell environment, aged bone texture, slightly cracked and burned surface, dark eerie look, partially damaged, non-gory, low-poly, optimized for VR, game-ready 3D asset, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "abdcc0fb831b7d1419ffd56488d9122e",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 30000
+}

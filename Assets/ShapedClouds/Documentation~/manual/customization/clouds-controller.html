@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Clouds Controller | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Clouds Controller | Shaped Clouds Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../../resources/favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="../index.html" title="Home" class="">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="../quick-start.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="">
+                      <a href="../structure.html" title="Structure" class="">Structure</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Customization</a>
+
+                        <ul class="nav level2">
+                          <li class="active">
+                            <a href="../customization/clouds-controller.html" title="Clouds Controller" class="active">Clouds Controller</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/base-noise-renderer.html" title="Base Noise Renderer" class="">Base Noise Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/mesh-renderer.html" title="Cloud Mesh Renderer" class="">Cloud Mesh Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/filter.html" title="Cloud Filter" class="">Cloud Filter</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/noise-layer.html" title="Noise Layer" class="">Noise Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/blur.html" title="Blur" class="">Blur</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <a href="../optimization.html" title="Optimization" class="">Optimization</a>
+                    </li>
+                    <li class="">
+                      <a href="../troubleshooting.html" title="Troubleshooting" class="">Troubleshooting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="clouds-controller">Clouds Controller</h1>
+
+<p><a href="../../api/ShapedClouds.CloudsController.html">Scripting API</a></p>
+<p>The Clouds Controller is responsible for managing all steps of the rendering process except for the rendering itself.
+It stores settings related to performance and visuals, and most features are enabled or disabled in this component.
+To add one to your scene, you can either add it by right-clicking in the hierarchy window and selecting &quot;Shaped Clouds/Clouds Controller&quot;, or creating an empty GameObject and adding the component &quot;Shaped Clouds/Clouds Controller&quot; to it.</p>
+<h2 id="inspector-settings">Inspector Settings</h2>
+<p><img src="../../resources/controller/component.png" alt="Base Noise Renderer component"></p>
+<p>Now, let's go over each of those fields and what they do.</p>
+<h3 id="pause-in-editor">Pause In Editor</h3>
+<p>If enabled, pauses the controller in the editor.
+Wind won't move clouds, but they still update with a time scale of 0.</p>
+<p>The main purpose of this field is to freeze clouds while in the editor, so they always start moving at the same point.
+Useful when clouds should be more consistent.</p>
+<h3 id="height">Height</h3>
+<p>Height of clouds, starting from the camera.
+Clouds are rendered around the camera at all times, instead of being in a real point in world space.</p>
+<p>Used for distance and offset calculations, measured in meters.</p>
+<p>Accurate values to real world will look similar, as long as the camera never tries to fly closer to the clouds.
+This asset was simply not made with that in mind.</p>
+<p>When there are multiple Cloud Controllers active in the scene, this also determines the order they render in.
+Higher height (more distant) clouds will renders earlier, while lower height (closer) will render last.</p>
+<h3 id="curvature">Curvature</h3>
+<p>How much the clouds curve downwards to reach further down the horizon.
+With a curvature of 0, clouds appear completely flat.
+With a curvature of 1, clouds wrap all the way below the camera.</p>
+<p>The higher the curvature, the more distorted the clouds shape and trajectory will be, especially when looking at the horizon.</p>
+<p>High curvatures are ideal to make clouds look more 3D, but some real cloud formations look perfectly flat since they're either very thin or very far high.</p>
+<h3 id="depth">Depth</h3>
+<p>The maximum thickness clouds have, only used when clouds render on top of opaque objects.</p>
+<p>To avoid making clouds look extremely flat when on top of opaques, a calculation is done to smooth going from clouds to the object.
+The more the surface overlaps, the more it is covered in clouds.
+Depth determines the distance in meters it needs to overlap before being fully covered by clouds.</p>
+<p>A depth of 0 turns clouds into a very thin line.</p>
+<h3 id="orthographic-fov">Orthographic FOV</h3>
+<p>When using an orthographic camera, this setting allows matching the appearance of clouds to this FOV, if it was a perspective camera.</p>
+<p>Ignored when rendering into a perspective camera.
+But the same clouds can render to both a perspective and an orthographic camera in the same frame, provided they're not blocked from doing so.</p>
+<h3 id="basefinal-blur">Base/Final Blur</h3>
+<p><a href="blur.html">Manual</a> | <a href="../../api/ShapedClouds.Settings.CloudBlur.html">Scripting API</a></p>
+<p>Blur effect applied to the Base and Final Textures.
+When disabled, no extra textures are allocated or rendering done.</p>
+<h3 id="cloud-filter">Cloud Filter</h3>
+<p><a href="filter.html">Manual</a> | <a href="../../api/ShapedClouds.Settings.CloudFilter.html">Scripting API</a></p>
+<p>Collection of settings determining how the Base Texture is rendered to the Final Texture.
+Has a specialized shader that can be replaced if modifications are needed.</p>
+<h3 id="finalbase-resolution">Final/Base Resolution</h3>
+<p>Controls how large the temporary textures used by the clouds are, relative to the target texture.
+The resolution of the base texture will automatically be equal to the final resolution, if it's set to a larger value.</p>
+<p>Try using as low of a resolution as possible, and increase it one by one, until you can't see the improvement between different settings.
+Should generally be kept low, especially the base resolution, as it's the best source of performance this asset can provide.</p>
+<p>If you can't make clouds look right without a very high resolution, try using a blur for that same texture, the right settings might get rid of pixelated clouds while retaining a recognizable form.</p>
+<h3 id="filter-mode">Filter Mode</h3>
+<p>Point will make clouds pixelated, you should use Bilinear or Trilinear for smooth clouds.
+Unless you want the rough visual, of course.</p>
+<h3 id="use-dynamic-scale">Use Dynamic Scale</h3>
+<p>Scales textures according to dynamic resolution.</p>
+<h3 id="finalbase-color-format">Final/Base Color Format</h3>
+<p>The texture color format of each texture.
+Default is Default HDR, which is RGBA Half in most platforms.</p>
+<p>If the platform supports it, you can get a decent improvement in performance by using smaller formats, reducing VRAM and bandwitdh usage.</p>
+<h3 id="ignore-camera-layers">Ignore Camera Layers</h3>
+<p>Clouds won't render to cameras in these layers, they also respect their own layers and the culling mask from the camera itself.</p>
+<p>Reflection Probes will ignore camera layers, which is why you should use the option below instead.</p>
+<h3 id="ignore-camera-types">Ignore Camera Types</h3>
+<p>Clouds won't render to cameras of these types.
+By default, doesn't render to Preview (the small view you see when selecting a camera) and Reflection (Reflection Probes).</p>
+<h3 id="order">Order</h3>
+<p>If you need to override the order of rendering created by setting the height field, change this value.
+For this, lower values of order will render first, and higher will render later.</p>
+<h3 id="blit-shader">Blit Shader</h3>
+<p>Customize the shader used to blit clouds to the screen.
+Generally not a good idea to change it, but it might be required depending on what you're trying to do.</p>
+<h3 id="render-above-opaques">Render Above Opaques</h3>
+<p>When true, renders clouds on top of opaques, if they're further from the camera than the clouds.
+When false, clouds always render behind everything except the skybox.</p>
+<h3 id="separate-depth-curvature">Separate Depth Curvature</h3>
+<p>When enabled, uses a different curvature when calculating distance from the camera.
+Mainly useful to both have clouds look less flat and also have them very far from the camera.</p>
+<h3 id="enqueue-pass">Enqueue Pass</h3>
+<p>When enabled, clouds are enqueued as usual, but when disabled, this controller enters a separate list of controllers to be enqueued by a <a href="../../api/ShapedClouds.ShapedCloudsRendererFeature.html">Renderer Feature</a>.
+This feature doesn't control any settings, only when the scriptable pass is injected into the pipeline.</p>
+<p>Although it might seem random, having this enabled makes clouds always render before any renderer feature, even if they are also injected into the AfterSkybox event.
+By only enqueing clouds in a renderer feature, you can make clouds render after another renderer feature, or put it between two other renderer features.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

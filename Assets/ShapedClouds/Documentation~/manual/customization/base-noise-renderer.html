@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Base Noise Renderer | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Base Noise Renderer | Shaped Clouds Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../../resources/favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="../index.html" title="Home" class="">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="../quick-start.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="">
+                      <a href="../structure.html" title="Structure" class="">Structure</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Customization</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="../customization/clouds-controller.html" title="Clouds Controller" class="">Clouds Controller</a>
+                          </li>
+                          <li class="active">
+                            <a href="../customization/base-noise-renderer.html" title="Base Noise Renderer" class="active">Base Noise Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/mesh-renderer.html" title="Cloud Mesh Renderer" class="">Cloud Mesh Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/filter.html" title="Cloud Filter" class="">Cloud Filter</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/noise-layer.html" title="Noise Layer" class="">Noise Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="../customization/blur.html" title="Blur" class="">Blur</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <a href="../optimization.html" title="Optimization" class="">Optimization</a>
+                    </li>
+                    <li class="">
+                      <a href="../troubleshooting.html" title="Troubleshooting" class="">Troubleshooting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="base-noise-renderer">Base Noise Renderer</h1>
+
+<p><a href="../../api/ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html">Scripting API</a></p>
+<p>Generates random noise to act as the overall shape of clouds.
+The noise texture itself can be modified, as well as the amount of layers and their values (limit is 8).</p>
+<p>Can be added to a GameObject by clicking &quot;Add Component&quot; and selecting &quot;Shaped Clouds/Cloud Renderers/Base Noise Renderer&quot;, or created as a new GameObject by right-clicking in the hierarchy and selecting &quot;Shaped Clouds/Base Noise Renderer&quot;.
+Reminder that the GameObject this component is attached to has to be a direct child of a <a href="clouds-controller.html">Clouds Controller</a>, or it won't render.</p>
+<h2 id="inspector-settings">Inspector Settings</h2>
+<p><img src="../../resources/base-noise/component.png" alt="Base Noise Renderer component"></p>
+<p>Now, let's go over each of those fields and what they do.</p>
+<h3 id="noise-texture">Noise Texture</h3>
+<p>Controls the texture used by the effect, should be a tileable noise texture with preferably a size of 512x512 at most.
+The most important import setting for any texture being used as noise is sRGB (Color Texture), which should be unticked (false) since this is a linear texture.</p>
+<p>Here's a few different textures (all included with the asset, in the Textures folder) and how they look without changing anything else about the component:</p>
+<figure>
+	<img src="../../resources/base-noise/noise-default.png" alt="Default simple texture">
+	<figcaption>Default simple texture</figcaption>
+</figure>
+<br>
+<figure>
+	<img src="../../resources/base-noise/noise-super.png" alt="SBS - super noise 14">
+	<figcaption>SBS - super noise 14</figcaption>
+</figure>
+<br>
+<figure>
+	<img src="../../resources/base-noise/noise-melt.png" alt="SBS - Melt 2">
+	<figcaption>SBS - Melt 2</figcaption>
+</figure>
+<br>
+<p>Notice that the second and third images have visible pixels.
+That's a result of the noise textures being too large (low scale layers) and resolution being too low, and can be fixed by adjusting them like this:</p>
+<p><img src="../../resources/base-noise/noise-melt-high.png" alt="SBS - Melt at high resolution and high scale"></p>
+<p>This image uses full resolution for both Base and Final Texture, a scale of 0.5 for the first layer and 0.75 for the second.
+Ideally, the resolution would be lower and a blur would be applied, any details left for the <a href="filter.html">Cloud Filter</a> to do, but this is just an example.</p>
+<p>You can also use textures that were never meant to be noise, if your goal is making interesting looking clouds.
+As long as the texture is tileable and a little bit abstract, it can be used to generate very unique clouds.</p>
+<h3 id="density">Density</h3>
+<p>Controls how full the cloud is.
+Distinct from the same field in the <a href="filter.html">Cloud Filter</a> because the Base Texture doesn't have a concept of opacity, just thickness/density of clouds.
+With a lower density, the cloud becomes weaker, but the visible parts aren't going to fade away in the same way.
+Instead, they'll be hidden by detail.</p>
+<p>Here's a comparison of the same clouds with vastly different density settings:</p>
+<p><img src="../../resources/base-noise/density-comparison.png" alt="Density comparison"></p>
+<p>If density is negative, the noise will subtract clouds instead of adding them, opening holes in the sky.
+Can be used to make more unpredictable shapes, without having to use considerably different textures.</p>
+<h3 id="cloudiness">Cloudiness</h3>
+<p>Controls how much of the sky is covered by clouds.
+Keep in mind that 0 cloudiness doesn't necessarily correspond to no clouds in the sky, and 1 isn't necessarily the sky being fully covered.</p>
+<p>To adjust those values, the fields <a href="../../api/ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html#ShapedClouds_CloudRenderers_CloudBaseNoiseRenderer_cloudinessBase">cloudinessBase</a> and <a href="../../api/ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html#ShapedClouds_CloudRenderers_CloudBaseNoiseRenderer_cloudinessMult">cloudinessMult</a> can help adjust the slider so it's perfect.</p>
+<p>It works this way because cloudiness should be an easy way to control how many clouds in the sky, but different noise textures and layer settings will make it stop working.</p>
+<h3 id="scale">Scale</h3>
+<p>The scale of the noise textures.
+Each layer of noise has its own scale field, which is multiplied by this one.
+In other words, this scale field controls the size of the noise texture used in all layers at the same time.</p>
+<h3 id="time-scale">Time Scale</h3>
+<p>How fast wind moves the different layers of noise.
+Similar to Scale, multiplies the wind value of all layers and is used to modify them together.</p>
+<h3 id="rotation">Rotation</h3>
+<p>Rotates the texture used by the layers, again, all at once.
+Useful for more directional noise, so that the correct side of the texture is moving in the desired direction.</p>
+<h3 id="wind-rotation">Wind Rotation</h3>
+<p>Rotates the wind direction of the layers of noise, together.
+If you plan on making a dynamic weather system with wind direction that varies, you might want to use this to avoid having to control each layer individually.</p>
+<h3 id="layers">Layers</h3>
+<p><a href="noise-layer.html">Manual</a> | <a href="../../api/ShapedClouds.Settings.CloudNoiseLayer.html">Scripting API</a></p>
+<p>The layers of noise this base texture will use.
+No more than 8 layers are allowed, which is more than enough.</p>
+<p>If you need more than 8 layers of base noise, create a second base noise object and add more layers there.</p>
+<h3 id="shader">Shader</h3>
+<p>If you write a custom shader, or make small changes to a copy of the default, set it in this field.
+The renderer will automatically create a new material based on the new shader and destroy the previous one.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

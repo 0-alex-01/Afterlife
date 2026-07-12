@@ -1,0 +1,12 @@
+{
+    "asset": "c54dc693676cc684ca862251205b7bf1",
+    "fileName": "019f561c-90ac-7468-878f-ad224e0c2330_Preview.png",
+    "prompt": "Create a seamless stylized PBR path material for a peaceful harmony nature world in a VR environment.\r\n\r\nThe material should look like a soft natural forest path made of light earth, smooth moss, tiny grass patches and subtle rounded stones. Use gentle transitions between the different elements so the surface feels calm, balanced and organic.\r\n\r\nThe path should have soft beige, muted green and warm brown tones. Add a few delicate natural details such as small leaves, tiny flowers and subtle glowing particles or faint golden accents, but keep the design elegant and not visually busy.\r\n\r\nThe surface should appear slightly soft and well cared for, without mud, cracks, sharp rocks or signs of destruction. It should guide the player clearly through the environment while blending naturally into a harmonious forest landscape.\r\n\r\nMake the texture seamless and tileable for use on multiple connected plane objects in Unity. Avoid visible borders, directional lighting, shadows or large unique objects. ",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 128804314,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

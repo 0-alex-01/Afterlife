@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Optimization | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Optimization | Shaped Clouds Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../resources/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="index.html" title="Home" class="">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="quick-start.html" title="Quick Start" class="">Quick Start</a>
+                    </li>
+                    <li class="">
+                      <a href="structure.html" title="Structure" class="">Structure</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Customization</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="customization/clouds-controller.html" title="Clouds Controller" class="">Clouds Controller</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/base-noise-renderer.html" title="Base Noise Renderer" class="">Base Noise Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/mesh-renderer.html" title="Cloud Mesh Renderer" class="">Cloud Mesh Renderer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/filter.html" title="Cloud Filter" class="">Cloud Filter</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/noise-layer.html" title="Noise Layer" class="">Noise Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="customization/blur.html" title="Blur" class="">Blur</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                      <a href="optimization.html" title="Optimization" class="active">Optimization</a>
+                    </li>
+                    <li class="">
+                      <a href="troubleshooting.html" title="Troubleshooting" class="">Troubleshooting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="optimization">Optimization</h1>
+
+<p>When executed correctly, the clouds can be almost free in terms of performance <strong>even in mobile games</strong>.</p>
+<p>In this page, we'll go through the main optimizations done to make clouds render faster and how you can take advantage of them.
+Most of these settings have a minimal compromise.</p>
+<h2 id="render-above-opaques">Render Above Opaques</h2>
+<ul>
+<li><strong>Impact on performance: medium-low</strong></li>
+<li><strong>Impact on visuals: varies</strong></li>
+</ul>
+<p>This option allows clouds to be rendered above distant geometry, meant for really distant objects.
+Because clouds are 2D and merely try to look like they have volume, this effect can look off in many situations.</p>
+<p>When disabling this option, clouds won't use the more complex fragment shader, and will instead simply copy the generated clouds to the screen.
+In addition, when this option is disabled, clouds will use the camera depth buffer for Z-testing, instead of doing this check in the fragment shader.
+As a result, performance will improve, and the effect can work even without the camera depth texture enabled in the pipeline asset.</p>
+<p>Can have decent performance impact at high resolutions, as a lot of the fragment shader would be skipped when not looking directly at the sky.
+Visual impact depends on how important this effect is, some games don't care and others need it.</p>
+<h2 id="curvature-check">Curvature Check</h2>
+<ul>
+<li><strong>Impact on performance: low</strong></li>
+<li><strong>Impact on visuals: low</strong></li>
+</ul>
+<p>Put simply, clouds calculate the shape of the UV mapping according to the curvature field.
+However, this also means that, unless the curvature of the controller is set to 1, a part of the shape should be empty.</p>
+<p>The code checks if this part is empty or not and stops rendering early.
+It still ultimately renders a black pixel, but it won't sample noise textures, which is the more expensive part of the effect.</p>
+<p>You can improve performance when not looking directly up (doing so would still render clouds to the entire screen, since it'll be fully covered) by lowering the curvature field, at the cost of making clouds appear flatter.
+This optimization will affect both the base noise rendering and filter shader from the Base Texture to Final Texture.</p>
+<h2 id="density-check">Density Check</h2>
+<ul>
+<li><strong>Impact on performance: medium-high</strong></li>
+<li><strong>Impact on visuals: medium-low</strong></li>
+</ul>
+<p>This optimization is essentially just skipping a lot of unnecessary calculations and noise texture samples by checking density and determining when it makes very little or no difference in the final image.
+When rendering to the Final Texture using the default filter shader, the filter will check if that region of the sky is black (0 density or lower) in the Base Texture, and immediatelly return nothing if it is.
+When the sky is completely clear, clouds go from &quot;basically free&quot; to &quot;just copying a few textures around&quot;, with anything in-between behaving as one would expect.
+This means that the render time of clouds varies with how many clouds are visible to the camera (but they're not culled when behind geometry).</p>
+<p>Another component to this optimization is that there's a very small difference between adding detail to the cloud or not when the cloud is really dense in that region.
+That's what the level of detail field controls, the filter will skip sampling noise from clouds when the density is higher than this value.
+This can have a significant impact on visuals depending on how clouds are meant to look like, but it has a large impact on performance.
+Should generally be kept as low as possible while still looking nice.</p>
+<h2 id="cloud-resolutions">Cloud Resolutions</h2>
+<ul>
+<li><strong>Impact on performance: high</strong></li>
+<li><strong>Impact on visuals: high</strong></li>
+</ul>
+<p>The highest impact on both performance and visuals.
+Also the only reason to have a separate Base and Final Textures, as the general shape of clouds can often be simpler than the details.</p>
+<p>Lowering the resolution of the Base Texture to the quarter setting will generally be fine, with zero sacrifice on visuals, unless the details are important.
+At high enough game resolutions (like 4K), you can drop it to the lowest (eighth) and it'll be barely noticeable.</p>
+<p>The Final Texture is a different story, clear and sharp clouds require a full resolution, and it can be difficult to sacrifice the visuals for some art styles.
+But, in most cases, the difference between a full-sized and a half-sized texture is too large to ignore, so it's generally better to give the player the option to control this through the settings screen of the game.</p>
+<p>This is one of the only settings in the entire system that strictly changes only the visual quality, rather than changing clouds into something else.
+That makes it the ideal setting to control cloud quality and their impact on performance, aside from removing them entirely or replacing them with a different system.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

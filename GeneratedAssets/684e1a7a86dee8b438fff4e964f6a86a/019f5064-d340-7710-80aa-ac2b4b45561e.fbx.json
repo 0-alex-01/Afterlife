@@ -1,0 +1,23 @@
+{
+    "asset": "684e1a7a86dee8b438fff4e964f6a86a",
+    "fileName": "019f5064-d340-7710-80aa-ac2b4b45561e.fbx",
+    "prompt": "Create a single stylized soft cloud cluster for a mystical VR afterlife scene. The cloud should consist of several rounded connected cloud masses, with a soft white and pale warm appearance. It should look calm, heavenly and dreamlike rather than cartoonish. Keep the silhouette simple and readable. No sky, no environment, no rain, no lightning and no extra objects. Optimize the mesh for Meta Quest 3 VR with low-poly geometry, clean topology and one simple URP-compatible material.",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "2925d3027edc5634a8effc1a00bcda97",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 35000
+}

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 74b95a6109a96ace4b2fbf68035e9e8b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297113
+  packageName: 'Shaped Clouds - Fast 2D Cloud System [URP]'
+  packageVersion: 1.1.2
+  assetPath: Assets/ShapedClouds/Documentation~/api/ShapedClouds.Settings.CloudNoiseLayer.html
+  uploadId: 882430

@@ -1,0 +1,12 @@
+{
+    "asset": "c705adbdd0b4e2e46ba84beed9d6fe82",
+    "fileName": "019f509e-e98b-71ae-b6ad-ea1a13eb776f_Preview.png",
+    "prompt": "Create a transparent bright white fog material for a mystical VR afterlife scene.\r\n\r\nThe material should create the impression of soft glowing heavenly mist floating in space. It must not look like a solid surface or a visible flat card. The edges should fade out smoothly into transparency, with a soft cloudy center and feathered opacity.\r\n\r\nRequirements:\r\n- Unity URP-compatible\r\n- Surface type: Transparent\r\n- Soft white and slightly warm cream tones\r\n- Very soft opacity gradients\r\n- The material should be partially see-through\r\n- No hard rectangular edges\r\n- No visible plane shape\r\n- No dark shadows\r\n- No storm look\r\n- Suitable for large fog planes placed in a scene\r\n- Optimized for Meta Quest 3 VR\r\n- Subtle glow or emission is allowed\r\n- Include alpha / opacity information if supported",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 7774849,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

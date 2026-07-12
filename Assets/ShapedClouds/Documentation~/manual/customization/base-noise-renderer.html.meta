@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5c018c1013458824a9a470b84b445684
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297113
+  packageName: 'Shaped Clouds - Fast 2D Cloud System [URP]'
+  packageVersion: 1.1.2
+  assetPath: Assets/ShapedClouds/Documentation~/manual/customization/base-noise-renderer.html
+  uploadId: 882430

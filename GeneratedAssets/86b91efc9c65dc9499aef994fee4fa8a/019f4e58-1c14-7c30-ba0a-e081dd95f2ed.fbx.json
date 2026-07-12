@@ -1,0 +1,23 @@
+{
+    "asset": "86b91efc9c65dc9499aef994fee4fa8a",
+    "fileName": "019f4e58-1c14-7c30-ba0a-e081dd95f2ed.fbx",
+    "prompt": "Create a single monumental two-pan justice balance scale for a mystical VR afterlife scene. The scale has a tall central pillar, a horizontal balance beam, two chains and two empty hanging bowls. Use aged dark bronze with subtle gold details and restrained celestial engravings. The object should appear ancient, ceremonial, solemn, mystical and slightly unsettling. Keep the central pillar, beam and both bowls clearly readable. No human figure, no Lady Justice statue, no sword, no blindfold and no additional objects. Create a clean, symmetrical, sturdy design suitable as a hero prop in a Meta Quest 3 VR scene. Low- to mid-poly, clean topology, correct scale, centered bottom pivot and URP-compatible materials.",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "ee6fdb23b5f591f428c3903930d1f1b4",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 50000
+}

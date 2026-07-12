@@ -1,0 +1,23 @@
+{
+    "asset": "2644d5bb8655aae4882cff29a85c30ef",
+    "fileName": "019f5071-7840-7624-b79b-1f6bf58aee2d.fbx",
+    "prompt": "Create a large seamless white cyclorama for a mystical VR afterlife scene. It should have a wide flat walkable floor that smoothly curves upward into a tall white background, with no visible corners or seams. The space should feel luminous, boundless, sacred and dreamlike. No ceiling, no decorations, no doors, no windows and no extra objects. Keep it low-poly, collider-friendly, URP-compatible and optimized for Meta Quest 3 VR.",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "589c2e7290db5cb4c8bcea80cf8219fb",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 30000
+}

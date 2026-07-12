@@ -1,0 +1,23 @@
+{
+    "asset": "4c6c38e14c88aa44c89c7a9dd022abe6",
+    "fileName": "019f5316-2dca-7d4e-b492-f18a7b460e55.glb",
+    "prompt": "Pile of old bones for a hell environment, weathered and scorched bone texture, dark fantasy style, non-gory, irregular arrangement, low-poly, optimized for VR, game-ready 3D asset, no background",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "d3f0181ce966ae94abf6b822c1658a52",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

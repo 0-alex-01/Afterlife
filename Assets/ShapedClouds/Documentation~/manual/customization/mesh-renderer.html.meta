@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 83ec3368aa73b4497b6bd8b2c9522881
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297113
+  packageName: 'Shaped Clouds - Fast 2D Cloud System [URP]'
+  packageVersion: 1.1.2
+  assetPath: Assets/ShapedClouds/Documentation~/manual/customization/mesh-renderer.html
+  uploadId: 882430

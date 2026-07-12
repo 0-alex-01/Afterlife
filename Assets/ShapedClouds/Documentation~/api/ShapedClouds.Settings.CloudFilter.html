@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CloudFilter | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CloudFilter | Shaped Clouds Documentation ">
+    
+    <meta name="description" content="Settings for the cloud filter, responsible for rendering lighting and adding detail.">
+      <link rel="shortcut icon" href="../resources/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.html" title="ShapedClouds" class="">ShapedClouds</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.CloudsController.html" title="CloudsController" class="">CloudsController</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CompassAttribute.html" title="CompassAttribute" class="">CompassAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.ShapedCloudsRendererFeature.html" title="ShapedCloudsRendererFeature" class="">ShapedCloudsRendererFeature</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.CloudRenderers.html" title="ShapedClouds.CloudRenderers" class="">ShapedClouds.CloudRenderers</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html" title="CloudBaseNoiseRenderer" class="">CloudBaseNoiseRenderer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudMeshRenderer.html" title="CloudMeshRenderer" class="">CloudMeshRenderer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudMeshRenderer.CloudMeshMaterial.html" title="CloudMeshRenderer.CloudMeshMaterial" class="">CloudMeshRenderer.CloudMeshMaterial</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudRenderer.html" title="CloudRenderer" class="">CloudRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.Settings.html" title="ShapedClouds.Settings" class="">ShapedClouds.Settings</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudBlur.html" title="CloudBlur" class="">CloudBlur</a>
+                          </li>
+                          <li class="active">
+                            <a href="ShapedClouds.Settings.CloudFilter.html" title="CloudFilter" class="active">CloudFilter</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudNoiseLayer.html" title="CloudNoiseLayer" class="">CloudNoiseLayer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudTextureResolution.html" title="CloudTextureResolution" class="">CloudTextureResolution</a>
+                          </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ShapedClouds.Settings.CloudFilter">
+
+
+
+  <h1 id="ShapedClouds_Settings_CloudFilter" data-uid="ShapedClouds.Settings.CloudFilter" class="text-break">Class CloudFilter</h1>
+  <div class="markdown level0 summary"><p>Settings for the cloud filter, responsible for rendering lighting and adding detail.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">object</span></div>
+    <div class="level1"><span class="xref">CloudFilter</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ShapedClouds.html">ShapedClouds</a>.<a class="xref" href="ShapedClouds.Settings.html">Settings</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="ShapedClouds_Settings_CloudFilter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class CloudFilter</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <h4 id="ShapedClouds_Settings_CloudFilter_ambientDay" data-uid="ShapedClouds.Settings.CloudFilter.ambientDay">ambientDay</h4>
+  <div class="markdown level1 summary"><p>Ambient lighting during the day, as a percentage of the Sun.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float ambientDay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_ambientDay_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Ignored if <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_useCustomAmbientColor">useCustomAmbientColor</a> is enabled, which allows controlling the ambient color entirely through code.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_ambientNight" data-uid="ShapedClouds.Settings.CloudFilter.ambientNight">ambientNight</h4>
+  <div class="markdown level1 summary"><p>Ambient lighting during the night, as a percentage of the Moon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float ambientNight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_ambientNight_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Ignored if <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_useCustomAmbientColor">useCustomAmbientColor</a> is enabled, which allows controlling the ambient color entirely through code.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_color" data-uid="ShapedClouds.Settings.CloudFilter.color">color</h4>
+  <div class="markdown level1 summary"><p>Color filter for clouds, multiplies color by RGB and transparency by A.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ColorUsage(true, true)]
+public Color color</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_colorAbsorption" data-uid="ShapedClouds.Settings.CloudFilter.colorAbsorption">colorAbsorption</h4>
+  <div class="markdown level1 summary"><p>How much light from the sun clouds will absorb.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float colorAbsorption</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_customAmbientColor" data-uid="ShapedClouds.Settings.CloudFilter.customAmbientColor">customAmbientColor</h4>
+  <div class="markdown level1 summary"><p>Only used when <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_useCustomAmbientColor">useCustomAmbientColor</a> is enabled, determines the color of clouds before lighting.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ColorUsage(false, true)]
+public Color customAmbientColor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_density" data-uid="ShapedClouds.Settings.CloudFilter.density">density</h4>
+  <div class="markdown level1 summary"><p>How dense clouds are, controls how opaque they are.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float density</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_detailLevel" data-uid="ShapedClouds.Settings.CloudFilter.detailLevel">detailLevel</h4>
+  <div class="markdown level1 summary"><p>Controls how dense the cloud can be and still receive detail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float detailLevel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_detailLevel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When a cloud is dense enough, the filter won't apply noise to it, saving a texture sample for each noise layer.
+This variable controls at what point that happens, 0 being never and 1 being always.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_fadeDistance" data-uid="ShapedClouds.Settings.CloudFilter.fadeDistance">fadeDistance</h4>
+  <div class="markdown level1 summary"><p>The distance clouds start to fade away as they go down the horizon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float fadeDistance</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_fadeDistance_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>0 is the horizon line and 1 is all the way down. Negative values fades clouds above the horizon.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_fadeLength" data-uid="ShapedClouds.Settings.CloudFilter.fadeLength">fadeLength</h4>
+  <div class="markdown level1 summary"><p>The length of the fade effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float fadeLength</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_layers" data-uid="ShapedClouds.Settings.CloudFilter.layers">layers</h4>
+  <div class="markdown level1 summary"><p>The layers of noise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudNoiseLayer[] layers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudNoiseLayer.html">CloudNoiseLayer</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_layers_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The maximum amount accepted by the default shader is 8.
+Each layer is an additional texture sample, 2 is often enough but higher numbers can hide individual layers better.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_material" data-uid="ShapedClouds.Settings.CloudFilter.material">material</h4>
+  <div class="markdown level1 summary"><p>Material created from the shader, used to render clouds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NonSerialized]
+public Material material</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Material.html">Material</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_material_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><pre><code>If using a custom shader that doesn't use the default shader's properties, you can directly change properties of the material here.
+Ideally, create a separate MonoBehaviour and have it modify this material. 
+</code></pre>
+<p></p>
+<pre><code>If replacing this material, you must also replace the shader so that they match.
+However, replacing materials through code is discouraged and, if doing so, the better way to do it is to replace the shader and let the controller create a new material.
+</code></pre>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_moon" data-uid="ShapedClouds.Settings.CloudFilter.moon">moon</h4>
+  <div class="markdown level1 summary"><p>Directional light to be used as the Moon, can be disabled if it doesn't affect anything else on the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Light moon</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Light.html">Light</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_moon_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Only used when <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_useCustomMoonLight">useCustomMoonLight</a> is enabled.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_moonColor" data-uid="ShapedClouds.Settings.CloudFilter.moonColor">moonColor</h4>
+  <div class="markdown level1 summary"><p>Light from the Moon, used during the night.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ColorUsage(false, true)]
+public Color moonColor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_moonColor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The Moon is not simulated, this simply acts as the Sun during the night, and comes from the opposite direction.
+Not used when CloudFilter.useCustomMoonLight is enabled, as the color is taken from the light object instead.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_noiseTexture" data-uid="ShapedClouds.Settings.CloudFilter.noiseTexture">noiseTexture</h4>
+  <div class="markdown level1 summary"><p>The noise texture to use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture noiseTexture</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Texture.html">Texture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_noiseTexture_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If null, uses the material default instead.
+Only the R channel is used, textures should NOT be set as sRGB (color) in import settings.
+Higher resolutions are better depending on how low the scale of the noise will be.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_rotation" data-uid="ShapedClouds.Settings.CloudFilter.rotation">rotation</h4>
+  <div class="markdown level1 summary"><p>Rotates the noise textures clockwise, affects all layers. Doesn't affect wind direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float rotation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_scale" data-uid="ShapedClouds.Settings.CloudFilter.scale">scale</h4>
+  <div class="markdown level1 summary"><p>Scale of the noise, affects all layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float scale</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_shader" data-uid="ShapedClouds.Settings.CloudFilter.shader">shader</h4>
+  <div class="markdown level1 summary"><p>Shader used to render the clouds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader shader</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Shader.html">Shader</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_sun" data-uid="ShapedClouds.Settings.CloudFilter.sun">sun</h4>
+  <div class="markdown level1 summary"><p>Directional light to be used as the Sun, can be disabled if it doesn't affect anything else on the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Light sun</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Light.html">Light</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_sun_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Only used when <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_useCustomSunLight">useCustomSunLight</a> is enabled.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_sunsetColor" data-uid="ShapedClouds.Settings.CloudFilter.sunsetColor">sunsetColor</h4>
+  <div class="markdown level1 summary"><p>Color filter for the light coming from the Sun during sunset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ColorUsage(false, true)]
+public Color sunsetColor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudFilter_sunsetColor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The light still fades to black, there's no need for this color to be dark.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudFilter_timeScale" data-uid="ShapedClouds.Settings.CloudFilter.timeScale">timeScale</h4>
+  <div class="markdown level1 summary"><p>How fast the wind moves the clouds, affects all layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeScale</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_useCustomAmbientColor" data-uid="ShapedClouds.Settings.CloudFilter.useCustomAmbientColor">useCustomAmbientColor</h4>
+  <div class="markdown level1 summary"><p>When true, uses the ambient color specified by <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_customAmbientColor">customAmbientColor</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool useCustomAmbientColor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_useCustomMoonLight" data-uid="ShapedClouds.Settings.CloudFilter.useCustomMoonLight">useCustomMoonLight</h4>
+  <div class="markdown level1 summary"><p>When true, the light specified by <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_moon">moon</a> will determine the Moon light color and direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool useCustomMoonLight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_useCustomSunLight" data-uid="ShapedClouds.Settings.CloudFilter.useCustomSunLight">useCustomSunLight</h4>
+  <div class="markdown level1 summary"><p>When true, the light specified by <a class="xref" href="ShapedClouds.Settings.CloudFilter.html#ShapedClouds_Settings_CloudFilter_sun">sun</a> will determine the Sun light color and direction, instead of the main light of the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool useCustomSunLight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudFilter_windRotation" data-uid="ShapedClouds.Settings.CloudFilter.windRotation">windRotation</h4>
+  <div class="markdown level1 summary"><p>Rotates the direction of the wind clockwise, affects all layers. Doesn't affect noise texture rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float windRotation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="ShapedClouds_Settings_CloudFilter_CloudUpdate_" data-uid="ShapedClouds.Settings.CloudFilter.CloudUpdate*"></a>
+  <h4 id="ShapedClouds_Settings_CloudFilter_CloudUpdate_ShapedClouds_CloudsController_System_Single_" data-uid="ShapedClouds.Settings.CloudFilter.CloudUpdate(ShapedClouds.CloudsController,System.Single)">CloudUpdate(CloudsController, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CloudUpdate(CloudsController controller, float deltaTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.CloudsController.html">CloudsController</a></td>
+        <td><span class="parametername">controller</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">deltaTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="ShapedClouds_Settings_CloudFilter_DestroyMaterial_" data-uid="ShapedClouds.Settings.CloudFilter.DestroyMaterial*"></a>
+  <h4 id="ShapedClouds_Settings_CloudFilter_DestroyMaterial" data-uid="ShapedClouds.Settings.CloudFilter.DestroyMaterial">DestroyMaterial()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyMaterial()</code></pre>
+  </div>
+  <a id="ShapedClouds_Settings_CloudFilter_SetWindDirection_" data-uid="ShapedClouds.Settings.CloudFilter.SetWindDirection*"></a>
+  <h4 id="ShapedClouds_Settings_CloudFilter_SetWindDirection_UnityEngine_Vector3_" data-uid="ShapedClouds.Settings.CloudFilter.SetWindDirection(UnityEngine.Vector3)">SetWindDirection(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Utility method to convert a world space Vector3 direction into a windRotation that points there.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetWindDirection(Vector3 direction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector3.html">Vector3</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The world space direction to rotate wind towards.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="ShapedClouds_Settings_CloudFilter_Setup_" data-uid="ShapedClouds.Settings.CloudFilter.Setup*"></a>
+  <h4 id="ShapedClouds_Settings_CloudFilter_Setup_ShapedClouds_CloudsController_UnityEngine_Camera_" data-uid="ShapedClouds.Settings.CloudFilter.Setup(ShapedClouds.CloudsController,UnityEngine.Camera)">Setup(CloudsController, Camera)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Setup(CloudsController controller, Camera camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.CloudsController.html">CloudsController</a></td>
+        <td><span class="parametername">controller</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Camera.html">Camera</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

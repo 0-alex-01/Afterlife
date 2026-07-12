@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CloudsController | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CloudsController | Shaped Clouds Documentation ">
+    
+    <meta name="description" content="Component responsible for managing the entire process of rendering clouds.">
+      <link rel="shortcut icon" href="../resources/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.html" title="ShapedClouds" class="">ShapedClouds</a>
+
+                        <ul class="nav level2">
+                          <li class="active">
+                            <a href="ShapedClouds.CloudsController.html" title="CloudsController" class="active">CloudsController</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CompassAttribute.html" title="CompassAttribute" class="">CompassAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.ShapedCloudsRendererFeature.html" title="ShapedCloudsRendererFeature" class="">ShapedCloudsRendererFeature</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.CloudRenderers.html" title="ShapedClouds.CloudRenderers" class="">ShapedClouds.CloudRenderers</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html" title="CloudBaseNoiseRenderer" class="">CloudBaseNoiseRenderer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudMeshRenderer.html" title="CloudMeshRenderer" class="">CloudMeshRenderer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudMeshRenderer.CloudMeshMaterial.html" title="CloudMeshRenderer.CloudMeshMaterial" class="">CloudMeshRenderer.CloudMeshMaterial</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudRenderer.html" title="CloudRenderer" class="">CloudRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.Settings.html" title="ShapedClouds.Settings" class="">ShapedClouds.Settings</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudBlur.html" title="CloudBlur" class="">CloudBlur</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudFilter.html" title="CloudFilter" class="">CloudFilter</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudNoiseLayer.html" title="CloudNoiseLayer" class="">CloudNoiseLayer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudTextureResolution.html" title="CloudTextureResolution" class="">CloudTextureResolution</a>
+                          </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ShapedClouds.CloudsController">
+
+
+
+  <h1 id="ShapedClouds_CloudsController" data-uid="ShapedClouds.CloudsController" class="text-break">Class CloudsController</h1>
+  <div class="markdown level0 summary"><p>Component responsible for managing the entire process of rendering clouds.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">object</span></div>
+    <div class="level1"><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Object.html">Object</a></div>
+    <div class="level2"><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Component.html">Component</a></div>
+    <div class="level3"><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+    <div class="level4"><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+    <div class="level5"><span class="xref">CloudsController</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ShapedClouds.html">ShapedClouds</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="ShapedClouds_CloudsController_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteInEditMode]
+[AddComponentMenu(&quot;Shaped Clouds/Clouds Controller&quot;)]
+public class CloudsController : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <h4 id="ShapedClouds_CloudsController_baseBlur" data-uid="ShapedClouds.CloudsController.baseBlur">baseBlur</h4>
+  <div class="markdown level1 summary"><p>Used to blur the base texture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudBlur baseBlur</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudBlur.html">CloudBlur</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_baseColorFormat" data-uid="ShapedClouds.CloudsController.baseColorFormat">baseColorFormat</h4>
+  <div class="markdown level1 summary"><p>The texture format used by the base cloud texture, included shaders only use the first channel (Red).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTextureFormat baseColorFormat</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/RenderTextureFormat.html">RenderTextureFormat</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_baseColorFormat_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><pre><code> The safest option is RenderTextureFormat.DefaultHDR, but less channels/lower accuracy can provide a meaningful performance boost or save VRAM.
+ Recommended is RenderTextureFormat.RHalf, if the platform supports it. 
+</code></pre>
+<p></p>
+<pre><code> RenderTextureFormat.R8 might be good enough, if doing very simple clouds.
+</code></pre>
+</div>
+  <h4 id="ShapedClouds_CloudsController_baseResolution" data-uid="ShapedClouds.CloudsController.baseResolution">baseResolution</h4>
+  <div class="markdown level1 summary"><p>The resolution of the base texture, which is used to determine the cloud density at any particular pixel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudTextureResolution baseResolution</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudTextureResolution.html">CloudTextureResolution</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_baseResolution_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Cannot be higher than the resolution of the final texture.
+Since details are only added in the final texture, this texture can be low resolution and blurry while the end result still looks sharp.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_blitMaterial" data-uid="ShapedClouds.CloudsController.blitMaterial">blitMaterial</h4>
+  <div class="markdown level1 summary"><p>Material created from the shader, this is done every time the shader changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NonSerialized]
+public Material blitMaterial</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Material.html">Material</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_blitShader" data-uid="ShapedClouds.CloudsController.blitShader">blitShader</h4>
+  <div class="markdown level1 summary"><p>The shader used to copy the cloud texture to the screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader blitShader</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Shader.html">Shader</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_curvature" data-uid="ShapedClouds.CloudsController.curvature">curvature</h4>
+  <div class="markdown level1 summary"><p>The curvature of the clouds, 0 being flat.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float curvature</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_curvature_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A high curvature will heavily deform cloud shape and trajectory, as well as make clouds seem considerably larger.
+Takes a hemispheric shape, making distant clouds appear less flat.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_depth" data-uid="ShapedClouds.CloudsController.depth">depth</h4>
+  <div class="markdown level1 summary"><p>How deep, in world space distance (meters), the clouds appear to be when overlapping opaque objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float depth</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_depth_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>0 makes them flat, higher numbers will fake depth by using the density of the cloud at that fragment.
+Does nothing if <a class="xref" href="ShapedClouds.CloudsController.html#ShapedClouds_CloudsController_renderAboveOpaques">renderAboveOpaques</a> is false.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_depthCurvature" data-uid="ShapedClouds.CloudsController.depthCurvature">depthCurvature</h4>
+  <div class="markdown level1 summary"><p>The curvature of the clouds when calculating distance from the camera, 0 being flat.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float depthCurvature</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_depthCurvature_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Objects further than that distance will appear behind clouds.
+Cloud height is also taken into account when calculating distance.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_earlyList" data-uid="ShapedClouds.CloudsController.earlyList">earlyList</h4>
+  <div class="markdown level1 summary"><p>List of active CloudsController objects that enqueue their passes through the controller itself, but haven't been rendered yet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly List&lt;CloudsController&gt; earlyList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="ShapedClouds.CloudsController.html">CloudsController</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_earlyList_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Called early list because it always comes before the <a class="xref" href="ShapedClouds.CloudsController.html#ShapedClouds_CloudsController_lateList">late list</a>, as well as any other Renderer Feature.
+Items on this list are sorted from first to last to render.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_enqueuePass" data-uid="ShapedClouds.CloudsController.enqueuePass">enqueuePass</h4>
+  <div class="markdown level1 summary"><p>Enables enqueuing the pass through this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool enqueuePass</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_enqueuePass_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><pre><code> If disabled, a &lt;xref href=&quot;ShapedClouds.ShapedCloudsRendererFeature?text=renderer+feature&quot; data-throw-if-not-resolved=&quot;false&quot;&gt;&lt;/xref&gt; is required. 
+</code></pre>
+<p></p>
+<pre><code> Used to render other passes before this.
+ Controllers with this disabled are ALWAYS rendered after (on top) of the ones with it enabled, but order with other controllers not enqueuing is maintained.
+</code></pre>
+</div>
+  <h4 id="ShapedClouds_CloudsController_filter" data-uid="ShapedClouds.CloudsController.filter">filter</h4>
+  <div class="markdown level1 summary"><p>Holds settings for how to render clouds to the final texture, using the base texture as input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudFilter filter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudFilter.html">CloudFilter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_filterMode" data-uid="ShapedClouds.CloudsController.filterMode">filterMode</h4>
+  <div class="markdown level1 summary"><p>The filtering mode of the cloud textures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FilterMode filterMode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/FilterMode.html">FilterMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_filterMode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Bilinear is usually the best choice - point will look pixelated.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_finalBlur" data-uid="ShapedClouds.CloudsController.finalBlur">finalBlur</h4>
+  <div class="markdown level1 summary"><p>Used to blur the final texture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudBlur finalBlur</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudBlur.html">CloudBlur</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_finalColorFormat" data-uid="ShapedClouds.CloudsController.finalColorFormat">finalColorFormat</h4>
+  <div class="markdown level1 summary"><p>The texture format used by the final cloud texture, must have all 4 channels to work properly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTextureFormat finalColorFormat</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/RenderTextureFormat.html">RenderTextureFormat</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_finalColorFormat_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The safest option is RenderTextureFormat.DefaultHDR, but lower accuracy can provide a meaningful performance boost or save VRAM.
+Recommended is RenderTextureFormat.ARGBHalf, if the platform supports it.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_finalResolution" data-uid="ShapedClouds.CloudsController.finalResolution">finalResolution</h4>
+  <div class="markdown level1 summary"><p>The resolution of the final texture, which is then drawn to the screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudTextureResolution finalResolution</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudTextureResolution.html">CloudTextureResolution</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_finalResolution_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Low detail and blurry noises (like the default one) will look fine with low resolutions.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_height" data-uid="ShapedClouds.CloudsController.height">height</h4>
+  <div class="markdown level1 summary"><p>The visual height of the clouds in world space, affects how they move with wind and perspective,
+but doesn't affect how big generated noise appears to be.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float height</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_height_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Clouds with greater height are rendered earlier, appearing to be higher.
+This behaviour can be overridden by changing the <a class="xref" href="ShapedClouds.CloudsController.html#ShapedClouds_CloudsController_order">order</a> field.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_ignoreCameraLayers" data-uid="ShapedClouds.CloudsController.ignoreCameraLayers">ignoreCameraLayers</h4>
+  <div class="markdown level1 summary"><p>The effect will ignore cameras in these layers, use to save performance or to selectively only have clouds act on certain cameras.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask ignoreCameraLayers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/LayerMask.html">LayerMask</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_ignoreCameraLayers_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Alternatively, change the layer of the GameObject this behaviour is attached to.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_ignoreCameraTypes" data-uid="ShapedClouds.CloudsController.ignoreCameraTypes">ignoreCameraTypes</h4>
+  <div class="markdown level1 summary"><p>The effect will ignore cameras of these types, use to save performance or to selectively only have clouds act on certain cameras.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraType ignoreCameraTypes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/CameraType.html">CameraType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_lateList" data-uid="ShapedClouds.CloudsController.lateList">lateList</h4>
+  <div class="markdown level1 summary"><p>List of active CloudsController objects that should be enqueued by a <a class="xref" href="ShapedClouds.ShapedCloudsRendererFeature.html">ShapedCloudsRendererFeature</a>, and haven't rendered yet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly List&lt;CloudsController&gt; lateList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="ShapedClouds.CloudsController.html">CloudsController</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_lateList_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Called late list because it always comes after the <a class="xref" href="ShapedClouds.CloudsController.html#ShapedClouds_CloudsController_earlyList">early list</a>.
+Items on this list are sorted from first to last to render.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_order" data-uid="ShapedClouds.CloudsController.order">order</h4>
+  <div class="markdown level1 summary"><p>The priority of the clouds rendered by this component, a higher number will render later and appear in front.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int order</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_order_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When two controllers have the same priority, order is then decided by the smaller cloud height, which should be closer to the camera.
+If that's also the same, there are no guarantees for the order.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_orthographicFOV" data-uid="ShapedClouds.CloudsController.orthographicFOV">orthographicFOV</h4>
+  <div class="markdown level1 summary"><p>The field of view to use for orthographic cameras.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 180)]
+public float orthographicFOV</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_pauseInEditor" data-uid="ShapedClouds.CloudsController.pauseInEditor">pauseInEditor</h4>
+  <div class="markdown level1 summary"><p>When enabled, timescale is set to 0 in the editor. Useful to set a specific starting position when the scene starts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool pauseInEditor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_renderAboveOpaques" data-uid="ShapedClouds.CloudsController.renderAboveOpaques">renderAboveOpaques</h4>
+  <div class="markdown level1 summary"><p>When enabled, renders clouds on top of opaque objects if they're further from the camera than the clouds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool renderAboveOpaques</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_renderAboveOpaques_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Uses a more complex calculation in the default shader and requires Depth Texture to be enabled in the Render Pipeline Asset.
+Large curvatures will often lead to clouds blocking geometry in the distance, if this is undesired, either disable the feature or set CloudsController.depthCurvature.</p>
+</div>
+  <h4 id="ShapedClouds_CloudsController_renderers" data-uid="ShapedClouds.CloudsController.renderers">renderers</h4>
+  <div class="markdown level1 summary"><p>Holds the <a class="xref" href="ShapedClouds.CloudRenderers.CloudRenderer.html">renderers</a> in the scene.
+List is automatically managed based on direct children in hierarchy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[NonSerialized]
+public List&lt;CloudRenderer&gt; renderers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="ShapedClouds.CloudRenderers.CloudRenderer.html">CloudRenderer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_separateDepthCurvature" data-uid="ShapedClouds.CloudsController.separateDepthCurvature">separateDepthCurvature</h4>
+  <div class="markdown level1 summary"><p>If true, uses a different curvature when calculating distance from the camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool separateDepthCurvature</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_timeScale" data-uid="ShapedClouds.CloudsController.timeScale">timeScale</h4>
+  <div class="markdown level1 summary"><p>How quickly all <a class="xref" href="ShapedClouds.CloudRenderers.CloudRenderer.html">cloud renderers</a> update.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeScale</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_CloudsController_useDynamicScale" data-uid="ShapedClouds.CloudsController.useDynamicScale">useDynamicScale</h4>
+  <div class="markdown level1 summary"><p>Enables dynamic scaling for textures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool useDynamicScale</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="ShapedClouds_CloudsController_GetPass_" data-uid="ShapedClouds.CloudsController.GetPass*"></a>
+  <h4 id="ShapedClouds_CloudsController_GetPass" data-uid="ShapedClouds.CloudsController.GetPass">GetPass()</h4>
+  <div class="markdown level1 summary"><p>Selects the correct pass based on the version of Unity and compatibility mode being enabled or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScriptableRenderPass GetPass()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ScriptableRenderPass</span></td>
+        <td><p>The pass that should be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="ShapedClouds_CloudsController_SetPassUnqueued_" data-uid="ShapedClouds.CloudsController.SetPassUnqueued*"></a>
+  <h4 id="ShapedClouds_CloudsController_SetPassUnqueued_System_Boolean_" data-uid="ShapedClouds.CloudsController.SetPassUnqueued(System.Boolean)">SetPassUnqueued(bool)</h4>
+  <div class="markdown level1 summary"><p>Set the pass as queued or unenqueued.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPassUnqueued(bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>True if unenqueued.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_CloudsController_SetPassUnqueued_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>An unenqueued pass is queued later by the <a class="xref" href="ShapedClouds.ShapedCloudsRendererFeature.html">Renderer Feature</a>, and uses a separate list of controllers.
+As such, it needs to know if it's enqueued or not, so it knows which list to use.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

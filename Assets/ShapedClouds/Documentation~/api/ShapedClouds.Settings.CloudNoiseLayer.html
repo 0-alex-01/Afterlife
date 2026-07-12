@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CloudNoiseLayer | Shaped Clouds Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CloudNoiseLayer | Shaped Clouds Documentation ">
+    
+    <meta name="description" content="Settings for layers of noise, used in  and .">
+      <link rel="shortcut icon" href="../resources/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../manual/index.html" title="Manual">Manual</a>
+                      </li>
+                      <li>
+                          <a href="../api/ShapedClouds.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.html" title="ShapedClouds" class="">ShapedClouds</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.CloudsController.html" title="CloudsController" class="">CloudsController</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CompassAttribute.html" title="CompassAttribute" class="">CompassAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.ShapedCloudsRendererFeature.html" title="ShapedCloudsRendererFeature" class="">ShapedCloudsRendererFeature</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.CloudRenderers.html" title="ShapedClouds.CloudRenderers" class="">ShapedClouds.CloudRenderers</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html" title="CloudBaseNoiseRenderer" class="">CloudBaseNoiseRenderer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudMeshRenderer.html" title="CloudMeshRenderer" class="">CloudMeshRenderer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudMeshRenderer.CloudMeshMaterial.html" title="CloudMeshRenderer.CloudMeshMaterial" class="">CloudMeshRenderer.CloudMeshMaterial</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.CloudRenderers.CloudRenderer.html" title="CloudRenderer" class="">CloudRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ShapedClouds.Settings.html" title="ShapedClouds.Settings" class="">ShapedClouds.Settings</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudBlur.html" title="CloudBlur" class="">CloudBlur</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudFilter.html" title="CloudFilter" class="">CloudFilter</a>
+                          </li>
+                          <li class="active">
+                            <a href="ShapedClouds.Settings.CloudNoiseLayer.html" title="CloudNoiseLayer" class="active">CloudNoiseLayer</a>
+                          </li>
+                          <li class="">
+                            <a href="ShapedClouds.Settings.CloudTextureResolution.html" title="CloudTextureResolution" class="">CloudTextureResolution</a>
+                          </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ShapedClouds.Settings.CloudNoiseLayer">
+
+
+
+  <h1 id="ShapedClouds_Settings_CloudNoiseLayer" data-uid="ShapedClouds.Settings.CloudNoiseLayer" class="text-break">Class CloudNoiseLayer</h1>
+  <div class="markdown level0 summary"><p>Settings for layers of noise, used in <a class="xref" href="ShapedClouds.Settings.CloudFilter.html">CloudFilter</a> and <a class="xref" href="ShapedClouds.CloudRenderers.CloudBaseNoiseRenderer.html">CloudBaseNoiseRenderer</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">object</span></div>
+    <div class="level1"><span class="xref">CloudNoiseLayer</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ShapedClouds.html">ShapedClouds</a>.<a class="xref" href="ShapedClouds.Settings.html">Settings</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="ShapedClouds_Settings_CloudNoiseLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class CloudNoiseLayer</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer__ctor_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer__ctor" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor">CloudNoiseLayer()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudNoiseLayer()</code></pre>
+  </div>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer__ctor_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer__ctor_UnityEngine_Vector2_System_Single_System_Single_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor(UnityEngine.Vector2,System.Single,System.Single)">CloudNoiseLayer(Vector2, float, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudNoiseLayer(Vector2 wind, float scale, float intensity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector2.html">Vector2</a></td>
+        <td><span class="parametername">wind</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">intensity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer__ctor_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer__ctor_UnityEngine_Vector2_UnityEngine_Vector2_System_Single_System_Single_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor(UnityEngine.Vector2,UnityEngine.Vector2,System.Single,System.Single)">CloudNoiseLayer(Vector2, Vector2, float, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudNoiseLayer(Vector2 offset, Vector2 wind, float scale, float intensity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector2.html">Vector2</a></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector2.html">Vector2</a></td>
+        <td><span class="parametername">wind</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">intensity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer__ctor_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer__ctor_UnityEngine_Vector4_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.#ctor(UnityEngine.Vector4)">CloudNoiseLayer(Vector4)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudNoiseLayer(Vector4 v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector4.html">Vector4</a></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_intensity" data-uid="ShapedClouds.Settings.CloudNoiseLayer.intensity">intensity</h4>
+  <div class="markdown level1 summary"><p>Intensity multiplier for this layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float intensity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_offset" data-uid="ShapedClouds.Settings.CloudNoiseLayer.offset">offset</h4>
+  <div class="markdown level1 summary"><p>UV space offset for the clouds. Change this manually to move clouds around.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 offset</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_rotation" data-uid="ShapedClouds.Settings.CloudNoiseLayer.rotation">rotation</h4>
+  <div class="markdown level1 summary"><p>Clockwise rotation of the texture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 360)]
+public float rotation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudNoiseLayer_rotation_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Useful if you want to align the noise with the direction it's moving towards.
+If set to the same number as wind rotation, aligns the top part of the texture with the direction of the wind.</p>
+</div>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_scale" data-uid="ShapedClouds.Settings.CloudNoiseLayer.scale">scale</h4>
+  <div class="markdown level1 summary"><p>Scale of the cloud noise, higher values make the noise smaller and lower values make it bigger.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float scale</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_wind" data-uid="ShapedClouds.Settings.CloudNoiseLayer.wind">wind</h4>
+  <div class="markdown level1 summary"><p>World space velocity of the wind. Rotation is clockwise and 0 corresponds to North (Vector3.forward).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 wind</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer_Update_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.Update*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_Update_ShapedClouds_CloudsController_System_Single_System_Single_System_Single_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.Update(ShapedClouds.CloudsController,System.Single,System.Single,System.Single)">Update(CloudsController, float, float, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CloudNoiseLayer Update(CloudsController controller, float deltaTime, float scale = 1, float addRotation = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.CloudsController.html">CloudsController</a></td>
+        <td><span class="parametername">controller</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">deltaTime</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><span class="parametername">addRotation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudNoiseLayer.html">CloudNoiseLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+</h3>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer_op_Implicit_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.op_Implicit*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_op_Implicit_ShapedClouds_Settings_CloudNoiseLayer__UnityEngine_Vector4" data-uid="ShapedClouds.Settings.CloudNoiseLayer.op_Implicit(ShapedClouds.Settings.CloudNoiseLayer)~UnityEngine.Vector4">implicit operator Vector4(CloudNoiseLayer)</h4>
+  <div class="markdown level1 summary"><p>Returns the internal Vector4 of the layer, which should be input to the material.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector4(CloudNoiseLayer cl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudNoiseLayer.html">CloudNoiseLayer</a></td>
+        <td><span class="parametername">cl</span></td>
+        <td><p>CloudNoiseLayer to get the vector from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector4.html">Vector4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ShapedClouds_Settings_CloudNoiseLayer_op_Implicit_ShapedClouds_Settings_CloudNoiseLayer__UnityEngine_Vector4_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Only updated when <a class="xref" href="ShapedClouds.Settings.CloudNoiseLayer.html#ShapedClouds_Settings_CloudNoiseLayer_Update_ShapedClouds_CloudsController_System_Single_System_Single_System_Single_">Update</a> is called.</p>
+</div>
+  <a id="ShapedClouds_Settings_CloudNoiseLayer_op_Implicit_" data-uid="ShapedClouds.Settings.CloudNoiseLayer.op_Implicit*"></a>
+  <h4 id="ShapedClouds_Settings_CloudNoiseLayer_op_Implicit_UnityEngine_Vector4__ShapedClouds_Settings_CloudNoiseLayer" data-uid="ShapedClouds.Settings.CloudNoiseLayer.op_Implicit(UnityEngine.Vector4)~ShapedClouds.Settings.CloudNoiseLayer">implicit operator CloudNoiseLayer(Vector4)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator CloudNoiseLayer(Vector4 v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/6000.2/Documentation/ScriptReference/Vector4.html">Vector4</a></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ShapedClouds.Settings.CloudNoiseLayer.html">CloudNoiseLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Shaped Clouds Documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

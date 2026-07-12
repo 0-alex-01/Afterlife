@@ -1,0 +1,23 @@
+{
+    "asset": "c8fc461dde3bd294a82053a71f9cba11",
+    "fileName": "019f50c3-0b2e-7b98-999c-7fff4d4b82e1.fbx",
+    "prompt": "Create a tall humanoid hell messenger for a mystical VR afterlife scene. The character is 2.3 meters tall, thin, solemn and intimidating, wearing a long torn black ceremonial robe. Its face is completely hidden inside a deep hood, with only two subtle dim glowing eyes. The lower robe fades into smoke and shadow. Add restrained ancient dark-metal shoulder and chest details. No weapon, no large wings, no exaggerated horns, no visible human face and no environment. Use a neutral symmetrical A-pose with arms separated from the torso for later humanoid rigging. ",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "33b3d95d0ef7d884e8e89fcffbf3168c",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": 55000
+}
