@@ -3,14 +3,14 @@ using System.Linq;
 
 /// <summary>
 /// Debug-Tasten für die Friedhof-Szene (Desktop-Tests ohne VR-Hände):
-/// K = nächste noch trauernde Figur erlösen — durchläuft die echte Kette
+/// L = nächste noch trauernde Figur erlösen — durchläuft die echte Kette
 /// (Dissolve, Grab-Kerze, Manager-Fortschritt). Zählende Figuren zuerst;
 /// nach der letzten zählenden startet automatisch die Lichtspur zum Portal.
 /// </summary>
 public class CemeteryDebugHotkeys : MonoBehaviour
 {
     [Tooltip("Erlöst die nächste noch nicht getröstete Figur (zählende zuerst).")]
-    public KeyCode comfortKey = KeyCode.K;
+    public KeyCode comfortKey = KeyCode.L;
 
     private void Update()
     {

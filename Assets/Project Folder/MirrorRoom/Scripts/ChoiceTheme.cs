@@ -8,5 +8,5 @@ public enum ChoiceTheme
     None = 0,
     Void = 1,       // extinguishing candle / dark sphere -> black mirror -> "Leere" scene
     Rebirth = 2,    // sprouting seed / egg -> green bloom mirror -> "Wiedergeburt" scene
-    Judgement = 3   // split crystal / scale -> vertical split mirror -> "HimmelHoelle" scene
+    Judgement = 3   // split crystal / scale -> vertical split mirror -> "WaageScene" scene
 }

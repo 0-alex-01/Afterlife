@@ -294,7 +294,7 @@ MonoBehaviour:
   voiceDelayAfterFlatline: 2.5
   fadeImage: {fileID: 1261268053}
   flatlineFlicker: {fileID: 1261268055}
-  nextSceneName: Environment_Free
+  nextSceneName: StartPortalRoom
   fadeInDuration: 1.5
   fadeDuration: 2
   slowDownHeartbeat: 1

@@ -1,11 +1,18 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MysticalPortalController : MonoBehaviour
 {
+    public event System.Action HuntActivated;
+    public event System.Action PortalEscaped;
+
+    public bool IsHuntActivated => sequenceActivated;
+
     [Header("Referenzen")]
     [Tooltip("Hier das komplette Complete XR Origin Objekt eintragen.")]
     [SerializeField] private Transform player;
@@ -102,12 +109,20 @@ public class MysticalPortalController : MonoBehaviour
     [SerializeField] private Color wisdomTextColor = Color.white;
 
     [Header("Szenenwechsel")]
-    [Tooltip("Exakter Name der nächsten Szene. Leer lassen, wenn keine Szene geladen werden soll.")]
-    [SerializeField] private string nextSceneName;
+    [Tooltip("Exakter Name der nächsten Szene. Bei leerem Feld geht es zur Tree_Scene.")]
+    [SerializeField] private string nextSceneName = "Tree_Scene";
 
     [Header("VR-Bewegung im Finale deaktivieren")]
     [Tooltip("Zum Beispiel Continuous Move Provider oder Teleportation Provider eintragen.")]
     [SerializeField] private Behaviour[] movementScriptsToDisable;
+
+    [Header("Portaljagd - visuelles Feedback")]
+    [SerializeField] private bool createHuntVfxAutomatically = true;
+    [SerializeField] private Color huntCoreColor = new Color(0.55f, 0.12f, 1f, 1f);
+    [SerializeField] private Color huntAccentColor = new Color(0.08f, 0.9f, 1f, 1f);
+    [SerializeField] private float huntOrbitRadius = 1.2f;
+    [SerializeField] private float huntOrbitSpeed = 58f;
+    [SerializeField] private float huntPulseSpeed = 2.2f;
 
     private int nextEscapePointIndex;
 
@@ -121,6 +136,10 @@ public class MysticalPortalController : MonoBehaviour
     private Vector3 portalBaseScale;
 
     private CanvasGroup wisdomTextCanvasGroup;
+    private Transform huntVfxRoot;
+    private Transform[] huntOrbiters;
+    private ParticleSystem huntParticles;
+    private Light huntLight;
 
     private Transform VisualTransform
     {
@@ -156,10 +175,15 @@ public class MysticalPortalController : MonoBehaviour
 
         SetFadeAlpha(0f);
         SetWisdomTextAlpha(0f);
+
+        if (createHuntVfxAutomatically)
+            CreateHuntVfx();
     }
 
     private void Update()
     {
+        AnimateHuntVfx();
+
         if (finalSequenceStarted)
             return;
 
@@ -181,7 +205,28 @@ public class MysticalPortalController : MonoBehaviour
             return;
 
         sequenceActivated = true;
+        HuntActivated?.Invoke();
+        StartCoroutine(HuntAwakeningPulse());
         StartCoroutine(InitialEscapeRoutine());
+    }
+
+    /// <summary>
+    /// Liefert alle Stationen der Portaljagd, damit die Szenengrenze sie sicher einschließt.
+    /// </summary>
+    public List<Vector3> GetHuntWaypointPositions()
+    {
+        var points = new List<Vector3> { transform.position };
+
+        if (escapePoints == null)
+            return points;
+
+        foreach (Transform escapePoint in escapePoints)
+        {
+            if (escapePoint != null)
+                points.Add(escapePoint.position);
+        }
+
+        return points;
     }
 
     private IEnumerator InitialEscapeRoutine()
@@ -284,6 +329,7 @@ public class MysticalPortalController : MonoBehaviour
         FacePlayerHorizontally();
 
         isMoving = false;
+        PortalEscaped?.Invoke();
     }
 
     private IEnumerator FinalPortalSequence()
@@ -380,9 +426,19 @@ public class MysticalPortalController : MonoBehaviour
             );
         }
 
-        if (!string.IsNullOrWhiteSpace(nextSceneName))
+        string destinationScene = string.IsNullOrWhiteSpace(nextSceneName)
+            ? "Tree_Scene"
+            : nextSceneName;
+
+        if (Application.CanStreamedLevelBeLoaded(destinationScene))
         {
-            SceneManager.LoadScene(nextSceneName);
+            SceneManager.LoadScene(destinationScene);
+        }
+        else
+        {
+            Debug.LogError(
+                $"MysticalPortalController: Zielszene '{destinationScene}' fehlt in den Build Settings.",
+                this);
         }
     }
 
@@ -536,6 +592,154 @@ public class MysticalPortalController : MonoBehaviour
     {
         position.y = fixedYHeight;
         return position;
+    }
+
+    private void CreateHuntVfx()
+    {
+        if (huntVfxRoot != null)
+            return;
+
+        var rootObject = new GameObject("Portal Hunt VFX");
+        huntVfxRoot = rootObject.transform;
+        huntVfxRoot.SetParent(VisualTransform, false);
+
+        Shader shader = Shader.Find("Universal Render Pipeline/Unlit");
+        if (shader == null)
+            shader = Shader.Find("Unlit/Color");
+
+        Material orbMaterial = shader != null ? new Material(shader) : null;
+        if (orbMaterial != null)
+        {
+            orbMaterial.name = "Runtime Portal Hunt Orbs";
+            if (orbMaterial.HasProperty("_BaseColor"))
+                orbMaterial.SetColor("_BaseColor", huntAccentColor * 1.8f);
+            else if (orbMaterial.HasProperty("_Color"))
+                orbMaterial.SetColor("_Color", huntAccentColor);
+        }
+
+        huntOrbiters = new Transform[3];
+        for (int index = 0; index < huntOrbiters.Length; index++)
+        {
+            GameObject orb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            orb.name = $"Hunt Wisp {index + 1}";
+            orb.transform.SetParent(huntVfxRoot, false);
+            orb.transform.localScale = Vector3.one * 0.075f;
+            Destroy(orb.GetComponent<Collider>());
+
+            MeshRenderer meshRenderer = orb.GetComponent<MeshRenderer>();
+            meshRenderer.sharedMaterial = orbMaterial;
+            meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
+            meshRenderer.receiveShadows = false;
+
+            TrailRenderer trail = orb.AddComponent<TrailRenderer>();
+            trail.time = 0.42f;
+            trail.startWidth = 0.055f;
+            trail.endWidth = 0f;
+            trail.minVertexDistance = 0.08f;
+            trail.sharedMaterial = orbMaterial;
+            trail.startColor = huntAccentColor;
+            trail.endColor = new Color(huntCoreColor.r, huntCoreColor.g, huntCoreColor.b, 0f);
+
+            huntOrbiters[index] = orb.transform;
+        }
+
+        var particleObject = new GameObject("Portal Hunt Sparks");
+        particleObject.transform.SetParent(huntVfxRoot, false);
+        huntParticles = particleObject.AddComponent<ParticleSystem>();
+
+        ParticleSystem.MainModule main = huntParticles.main;
+        main.loop = true;
+        main.maxParticles = 90;
+        main.startLifetime = new ParticleSystem.MinMaxCurve(0.8f, 1.6f);
+        main.startSpeed = new ParticleSystem.MinMaxCurve(0.08f, 0.34f);
+        main.startSize = new ParticleSystem.MinMaxCurve(0.025f, 0.085f);
+        main.startColor = new ParticleSystem.MinMaxGradient(huntCoreColor, huntAccentColor);
+
+        ParticleSystem.EmissionModule emission = huntParticles.emission;
+        emission.rateOverTime = 14f;
+
+        ParticleSystem.ShapeModule shape = huntParticles.shape;
+        shape.shapeType = ParticleSystemShapeType.Sphere;
+        shape.radius = Mathf.Max(0.3f, huntOrbitRadius * 0.72f);
+        shape.radiusThickness = 0.18f;
+
+        ParticleSystemRenderer particleRenderer =
+            particleObject.GetComponent<ParticleSystemRenderer>();
+        particleRenderer.renderMode = ParticleSystemRenderMode.Billboard;
+
+        Shader particleShader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
+        if (particleShader == null)
+            particleShader = Shader.Find("Particles/Standard Unlit");
+        if (particleShader != null)
+        {
+            var particleMaterial = new Material(particleShader)
+            {
+                name = "Runtime Portal Hunt Sparks"
+            };
+            if (particleMaterial.HasProperty("_BaseColor"))
+                particleMaterial.SetColor("_BaseColor", huntCoreColor);
+            particleRenderer.sharedMaterial = particleMaterial;
+        }
+
+        huntLight = rootObject.AddComponent<Light>();
+        huntLight.type = LightType.Point;
+        huntLight.color = huntCoreColor;
+        huntLight.range = 4.5f;
+        huntLight.intensity = 0.85f;
+        huntLight.shadows = LightShadows.None;
+    }
+
+    private void AnimateHuntVfx()
+    {
+        if (huntVfxRoot == null)
+            return;
+
+        float movementMultiplier = isMoving ? 2.25f : sequenceActivated ? 1.35f : 0.7f;
+        float pulse = 0.88f + Mathf.Sin(Time.time * huntPulseSpeed) * 0.12f;
+        huntVfxRoot.localScale = Vector3.one * pulse;
+
+        if (huntOrbiters != null)
+        {
+            for (int index = 0; index < huntOrbiters.Length; index++)
+            {
+                Transform orb = huntOrbiters[index];
+                if (orb == null)
+                    continue;
+
+                float angle = (Time.time * huntOrbitSpeed * movementMultiplier) + index * 120f;
+                float radians = angle * Mathf.Deg2Rad;
+                float vertical = Mathf.Sin(radians * 1.7f) * 0.34f;
+                orb.localPosition = new Vector3(
+                    Mathf.Cos(radians) * huntOrbitRadius,
+                    vertical,
+                    Mathf.Sin(radians) * huntOrbitRadius);
+            }
+        }
+
+        if (huntLight != null)
+            huntLight.intensity = (sequenceActivated ? 1.2f : 0.72f) + pulse * 0.32f;
+
+        if (huntParticles != null)
+        {
+            ParticleSystem.EmissionModule emission = huntParticles.emission;
+            emission.rateOverTime = isMoving ? 34f : sequenceActivated ? 22f : 12f;
+        }
+    }
+
+    private IEnumerator HuntAwakeningPulse()
+    {
+        if (huntParticles != null)
+            huntParticles.Emit(28);
+
+        float duration = 0.55f;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            if (huntLight != null)
+                huntLight.intensity = Mathf.Lerp(3.4f, 1.45f, elapsed / duration);
+            yield return null;
+        }
     }
 
     private bool HasValidEscapePoint(int index)

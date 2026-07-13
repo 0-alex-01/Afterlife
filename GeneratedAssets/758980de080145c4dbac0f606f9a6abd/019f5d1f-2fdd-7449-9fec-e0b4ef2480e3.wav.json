@@ -1,0 +1,15 @@
+{
+    "asset": "758980de080145c4dbac0f606f9a6abd",
+    "fileName": "019f5d1f-2fdd-7449-9fec-e0b4ef2480e3.wav",
+    "prompt": "A realistic, clear sound of a newborn baby crying and screaming intensely, distressed and crying loudly, clean close-up recording, no background music, no adult voices.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 5.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

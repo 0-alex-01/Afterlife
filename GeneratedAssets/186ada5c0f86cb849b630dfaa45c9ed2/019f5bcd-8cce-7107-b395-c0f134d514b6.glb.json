@@ -1,0 +1,23 @@
+{
+    "asset": "186ada5c0f86cb849b630dfaa45c9ed2",
+    "fileName": "019f5bcd-8cce-7107-b395-c0f134d514b6.glb",
+    "prompt": "A wild, asymmetrical circular fantasy portal frame made of sharp, jagged black stones, thorny dark brambles, and cracks filled with glowing orange lava. 3D Model, clean geometry, fantasy style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "4fae7b3033c31944392ee779c81ff3ef",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

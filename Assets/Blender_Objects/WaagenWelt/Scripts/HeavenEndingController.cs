@@ -22,7 +22,10 @@ public class HeavenEndingController : MonoBehaviour
     [SerializeField] private float delayBeforeEnding = 6f;
 
     [Min(0.01f)]
-    [SerializeField] private float fadeDuration = 2f;
+    [SerializeField] private float fadeDuration = 4f;
+
+    [Tooltip("Der Hintergrund wird beim Abschluss vollständig weiß.")]
+    [SerializeField] private Color closingWhite = Color.white;
 
     [Header("Harps / Audio")]
     [SerializeField] private AudioSource harpSource;
@@ -65,6 +68,7 @@ public class HeavenEndingController : MonoBehaviour
         if (endingText != null)
         {
             endingText.text = endingMessage;
+            endingText.color = new Color(0.12f, 0.12f, 0.15f, 1f);
         }
     }
 
@@ -79,6 +83,38 @@ public class HeavenEndingController : MonoBehaviour
         endingRoutine = StartCoroutine(
             HeavenEndingRoutine()
         );
+    }
+
+
+    public void CancelHeavenEnding()
+    {
+        if (endingRoutine != null)
+        {
+            StopCoroutine(endingRoutine);
+            endingRoutine = null;
+        }
+
+        endingStarted = false;
+
+        if (heavenEndingCanvasGroup != null)
+        {
+            heavenEndingCanvasGroup.alpha = 0f;
+            heavenEndingCanvasGroup.interactable = false;
+            heavenEndingCanvasGroup.blocksRaycasts = false;
+        }
+
+        if (harpSource != null && harpSource.isPlaying)
+        {
+            harpSource.Stop();
+        }
+
+        if (showDebugLogs)
+        {
+            Debug.Log(
+                "HeavenEndingController: Himmelsende wegen Höllenpfad abgebrochen.",
+                this
+            );
+        }
     }
 
     private IEnumerator HeavenEndingRoutine()
@@ -140,6 +176,25 @@ public class HeavenEndingController : MonoBehaviour
                 heavenEndingSprite;
         }
 
+        Image[] endingImages = heavenEndingCanvasGroup != null
+            ? heavenEndingCanvasGroup.GetComponentsInChildren<Image>(true)
+            : null;
+
+        if (endingImages != null)
+        {
+            foreach (Image image in endingImages)
+            {
+                if (image != null && image.name == "BrightBackground")
+                {
+                    image.color = closingWhite;
+                    image.rectTransform.anchorMin = Vector2.zero;
+                    image.rectTransform.anchorMax = Vector2.one;
+                    image.rectTransform.offsetMin = Vector2.zero;
+                    image.rectTransform.offsetMax = Vector2.zero;
+                }
+            }
+        }
+
         yield return FadeCanvas(
             heavenEndingCanvasGroup,
             0f,
@@ -159,6 +214,11 @@ public class HeavenEndingController : MonoBehaviour
                 "HeavenEndingController: Endbild sichtbar.",
                 this
             );
+        }
+
+        if (sequenceManager != null)
+        {
+            sequenceManager.MarkSequenceFinished();
         }
 
         endingRoutine = null;

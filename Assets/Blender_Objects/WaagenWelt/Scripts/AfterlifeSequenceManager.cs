@@ -178,6 +178,7 @@ public class AfterlifeSequenceManager : MonoBehaviour
     private Coroutine choirFadeRoutine;
     private Coroutine lightFadeRoutine;
     private Coroutine activeSequenceRoutine;
+    private bool fallCatchSequenceRequested;
 
     private bool[] originalLocomotionStates;
 
@@ -418,32 +419,30 @@ public class AfterlifeSequenceManager : MonoBehaviour
 
     public void StartHellSequence()
     {
-        /*
-         * Die Höllensequenz darf erst ausgelöst werden,
-         * nachdem der Spieler die Treppe betreten und
-         * StartAscent() den Zustand auf Ascending gesetzt hat.
-         *
-         * Dadurch bewirkt ein Umdrehen vor der Treppe nichts.
-         */
-        if (currentState != SequenceState.Ascending &&
-            currentState != SequenceState.Warning)
-        {
-            if (showDebugLogs)
-            {
-                Debug.Log(
-                    $"AfterlifeSequenceManager: Höllensequenz blockiert. " +
-                    $"Aktueller Zustand: {currentState}. " +
-                    "Der Spieler muss zuerst die Treppe betreten.",
-                    this
-                );
-            }
+        StartHellSequenceInternal(false);
+    }
 
+
+    public void StartHellSequenceFromFall()
+    {
+        StartHellSequenceInternal(true);
+    }
+
+
+    private void StartHellSequenceInternal(bool fromFall)
+    {
+        if (currentState == SequenceState.HellSequence ||
+            (!fromFall &&
+             (currentState == SequenceState.HeavenSequence ||
+              currentState == SequenceState.Finished)))
+        {
             return;
         }
 
         StopCurrentSequence();
 
         currentState = SequenceState.HellSequence;
+        fallCatchSequenceRequested = fromFall;
 
         activeSequenceRoutine =
             StartCoroutine(HellSequenceRoutine());
@@ -494,7 +493,11 @@ public class AfterlifeSequenceManager : MonoBehaviour
             );
         }
 
-        if (faceMessengerOnHellStart)
+        // Im VR-Sturzpfad darf der XR-Root nicht zum alten Spawnpunkt
+        // gedreht werden. Der HellSequenceController setzt den Boten
+        // stattdessen direkt vor die aktuelle Kopfkamera.
+        if (faceMessengerOnHellStart &&
+            !fallCatchSequenceRequested)
         {
             yield return RotatePlayerTowardMessenger();
         }
@@ -903,6 +906,7 @@ public class AfterlifeSequenceManager : MonoBehaviour
         StopFadeCoroutines();
 
         currentState = SequenceState.Waiting;
+        fallCatchSequenceRequested = false;
 
         UnlockPlayerLocomotion();
 

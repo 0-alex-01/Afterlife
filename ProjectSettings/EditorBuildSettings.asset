@@ -9,17 +9,23 @@ EditorBuildSettings:
     path: Assets/Project Folder/IntroScene.unity
     guid: a33b178da077bcb4d97057123419dbc0
   - enabled: 1
-    path: Assets/Project Folder/Environment_Free.unity
-    guid: c732593fe76e5a84197f9cd13963f706
+    path: Assets/Scenes/StartPortalRoom.unity
+    guid: 1c46f31e256521c43a2d9860536c0261
   - enabled: 1
-    path: Assets/Project Folder/DayNightCycleDemo.unity
-    guid: 294e2b99c3434641abb77a3f8ea8d340
+    path: Assets/Scenes/lakeScene.unity
+    guid: 1195dd1508f2dad48adf7622c92bc159
   - enabled: 1
-    path: Assets/Project Folder/DemoScene.unity
-    guid: 319dafa5c80f29f428dc1e0d03f04177
+    path: Assets/Scenes/Chaos 1.unity
+    guid: ba6a51fd017335340b8f10b54bcf0bda
   - enabled: 1
-    path: Assets/AutoHand/Examples/Scenes/OpenXR/Demo.unity
-    guid: 1551acbe06158c74e8ab2f58f9b373dc
+    path: "Assets/Scenes/Verg\xE4nglichkeit.unity"
+    guid: 15071675e653011459d4de56100b57b7
+  - enabled: 1
+    path: Assets/Project Folder/Tree_Scene.unity
+    guid: 646d5188acc2c3042b9cadca6fc4d5cf
+  - enabled: 1
+    path: Assets/Project Folder/CemeteryOfUnfinishedGoodbyes.unity
+    guid: 96d3f415491714140aede3d88490a47d
   - enabled: 1
     path: Assets/Project Folder/Mirrorroom.unity
     guid: f8d1d7182fdd68641a0d49da60365ef0
@@ -30,14 +36,8 @@ EditorBuildSettings:
     path: Assets/Project Folder/Wiedergeburt.unity
     guid: 95ccaf3d9ff89b54e999eb02ec31f874
   - enabled: 1
-    path: Assets/Project Folder/HimmelHoelle.unity
-    guid: 0aa9040739c16514faf815a8c940e59d
-  - enabled: 1
-    path: Assets/Project Folder/CemeteryOfUnfinishedGoodbyes.unity
-    guid: 96d3f415491714140aede3d88490a47d
-  - enabled: 1
-    path: Assets/Project Folder/Tree_Scene.unity
-    guid: 646d5188acc2c3042b9cadca6fc4d5cf
+    path: Assets/Scenes/WaageScene.unity
+    guid: a1b280725420c814e907da8100c5c6cc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0ae8438a2a7d40e4c9596412264c6357, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

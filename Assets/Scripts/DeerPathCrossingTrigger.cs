@@ -101,6 +101,20 @@ public class DeerPathCrossingTrigger : MonoBehaviour
     private bool hasTriggered;
     private bool isSpawning;
 
+    private void Awake()
+    {
+        if (deerPrefabs == null)
+            return;
+
+        // In dieser Szene sind die drei Vorlagen echte Szenenobjekte. Sie dürfen
+        // erst als erzeugte Kopien sichtbar werden und nicht über dem Weg schweben.
+        foreach (GameObject deerTemplate in deerPrefabs)
+        {
+            if (deerTemplate != null && deerTemplate.scene.IsValid())
+                deerTemplate.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!IsXRPlayer(other))
@@ -139,6 +153,12 @@ public class DeerPathCrossingTrigger : MonoBehaviour
         isSpawning = true;
 
         StartCoroutine(CrossingSequence());
+    }
+
+    public void RebindPlayer(Transform livePlayer)
+    {
+        if (livePlayer != null)
+            xrOrigin = livePlayer;
     }
 
     private IEnumerator CrossingSequence()
@@ -206,6 +226,7 @@ public class DeerPathCrossingTrigger : MonoBehaviour
                 Quaternion.identity,
                 spawnedDeerParent
             );
+            deer.SetActive(true);
 
             // Jedes Reh erhält eigene Werte.
             float individualRunSpeed =

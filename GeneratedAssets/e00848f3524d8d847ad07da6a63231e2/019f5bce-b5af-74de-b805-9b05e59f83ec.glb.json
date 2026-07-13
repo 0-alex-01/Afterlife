@@ -1,0 +1,23 @@
+{
+    "asset": "e00848f3524d8d847ad07da6a63231e2",
+    "fileName": "019f5bce-b5af-74de-b805-9b05e59f83ec.glb",
+    "prompt": "A dark, decaying circular fantasy portal frame made of rotting, mossy wood, with glowing purple mushrooms, and wilted autumn leaves. 3D Model, clean geometry, fantasy style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "786e2ca1d1a6f30429161368e196fe9c",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

@@ -66,6 +66,20 @@ public class AnimalFleeAI : MonoBehaviour
         EnterIdle();
     }
 
+    /// <summary>
+    /// Setzt Wanderzentrum und feste Laufhöhe nach einer externen
+    /// Szenen-/Bodenkorrektur auf die aktuelle Position.
+    /// </summary>
+    public void RebaseToCurrentPosition(Transform livePlayer = null)
+    {
+        if (livePlayer != null)
+            player = livePlayer;
+
+        startPosition = transform.position;
+        wanderTarget = transform.position;
+        fixedY = transform.position.y;
+    }
+
     private void Update()
     {
         if (player != null)

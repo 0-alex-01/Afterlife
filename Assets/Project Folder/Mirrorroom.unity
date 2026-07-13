@@ -102600,7 +102600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654321004, guid: d4e5f60718293a4b5c6d7e8f90112233, type: 3}
       propertyPath: debugLog
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654321004, guid: d4e5f60718293a4b5c6d7e8f90112233, type: 3}
       propertyPath: flipNormal
@@ -102608,7 +102608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654321004, guid: d4e5f60718293a4b5c6d7e8f90112233, type: 3}
       propertyPath: debugOverlay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654321004, guid: d4e5f60718293a4b5c6d7e8f90112233, type: 3}
       propertyPath: showInEditor

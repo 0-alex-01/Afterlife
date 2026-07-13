@@ -1,0 +1,15 @@
+{
+    "asset": "08e550d04efd05d4abb20c83810afebd",
+    "fileName": "019f5d1d-f91d-7e00-b5ef-a90fedb57ace.wav",
+    "prompt": "A short, gentle newborn baby cooing softly with a tiny innocent giggle, warm and peaceful, clearly recognizable as a baby, natural breathing, comforting and ethereal atmosphere suitable for a mystical tree of life scene. No crying, no adult voice, no moaning, no groaning, no words, no music, clean close recording, subtle forest ambience.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 5.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

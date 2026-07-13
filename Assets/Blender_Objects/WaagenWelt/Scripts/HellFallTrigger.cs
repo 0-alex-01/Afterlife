@@ -76,10 +76,10 @@ public class HellFallTrigger : MonoBehaviour
             return;
         }
 
-        Debug.Log($"HellFallTrigger: {reason} ausgelöst. Schneller Höllenteleport startet.", this);
+        Debug.Log($"HellFallTrigger: {reason} ausgelöst. Sensenmann fängt den Spieler ab.", this);
 
         if (sequenceManager != null)
-            sequenceManager.StartHellSequence();
+            sequenceManager.StartHellSequenceFromFall();
 
         if (hellSequenceController != null)
             hellSequenceController.BeginImmediateHellTransition();

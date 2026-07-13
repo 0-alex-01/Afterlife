@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChoicePortal
   theme: 3
-  targetSceneName: HimmelHoelle
+  targetSceneName: WaageScene
   fadeColor: {r: 0.5, g: 0.25, b: 0.1, a: 1}
   fadeDuration: 1.5
   visualRoot: {fileID: 4634239895634700620}

@@ -144,6 +144,10 @@ sysinfo.txt.meta
 /[Aa]ssets/CodexGrassRecovery/
 /[Aa]ssets/CodexGrassRecovery.meta
 
+# Local legacy Chaos scene backup; the build uses Assets/Scenes/Chaos 1.unity
+/Assets/Scenes/BasicScene/Chaos.unity
+/Assets/Scenes/BasicScene/Chaos.unity.meta
+
 # Automatically generated solution files
 *.slnx
 

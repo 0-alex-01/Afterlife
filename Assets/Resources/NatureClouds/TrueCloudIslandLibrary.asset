@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb74855fbbdd4327a5f508f4b8d70920, type: 3}
+  m_Name: TrueCloudIslandLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::NatureCloudAssetLibrary
+  cloudMeshes:
+  - {fileID: 4300000, guid: 86a54d4ab218ff7439810689af0e25a3, type: 3}
+  - {fileID: 4300000, guid: a560cbbd1f26b5e45b3c06a2fe994962, type: 3}
+  - {fileID: 4300000, guid: 2f13f1aeb12852049b51984093fae7e8, type: 3}
+  cloudMaterial: {fileID: 2100000, guid: 7d359a3b4ab24ddcb6f313d25cfbb5ca, type: 2}
+  decayMaterial: {fileID: 2100000, guid: a6e3bd152f1840b8abfef2c264cca83a, type: 2}
+  autoHandPlayerPrefab: {fileID: 4039255345588696228, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  harmonyArrivalLine: {fileID: 8300000, guid: 4d776d361f3d4bc4286769e99550981f, type: 3}
+  harmonyCaveLine: {fileID: 8300000, guid: 08c7289040945fb44ac1c67094b90ad6, type: 3}
+  chaosArrivalLine: {fileID: 8300000, guid: 39eff263a80ffb846baa6e59e72e7302, type: 3}
+  chaosMovingPortalLine: {fileID: 8300000, guid: 336da1db12e64024894c16765582f82f, type: 3}
+  chaosRetryLine: {fileID: 8300000, guid: 49776174202efbb418d9b6085032969d, type: 3}
+  decayArrivalLine: {fileID: 8300000, guid: f11d285154c1448fa4a021756f2c4c56, type: 3}
+  decayFirstAnchorLine: {fileID: 8300000, guid: 93d3ee57e54f4a9db8f878d33a8be4da, type: 3}

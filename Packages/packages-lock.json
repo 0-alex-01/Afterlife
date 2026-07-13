@@ -19,16 +19,6 @@
       },
       "url": "https://package.openupm.com"
     },
-    "com.ivanmurzak.unity.mcp.animation": {
-      "version": "1.2.24",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.ivanmurzak.unity.mcp": "0.82.4",
-        "com.unity.modules.animation": "1.0.0"
-      },
-      "url": "https://package.openupm.com"
-    },
     "com.kink3d.mirrors": {
       "version": "https://github.com/Kink3d/kMirrors.git",
       "depth": 0,

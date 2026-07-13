@@ -1,0 +1,23 @@
+{
+    "asset": "1363627dd972e8747bc7070727f38f46",
+    "fileName": "019f5bcd-4757-7e21-b749-d97cc854efb6.glb",
+    "prompt": "A beautiful, circular fantasy portal frame made of twisting green tree branches, vines, and healthy forest roots, blooming with colorful flowers and leaves. 3D Model, clean geometry, hand-painted style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "c7a022631aeecb44e94b572f9165a70b",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

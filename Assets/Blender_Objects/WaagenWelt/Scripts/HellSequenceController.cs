@@ -1,4 +1,5 @@
 using System.Collections;
+using Autohand;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,51 @@ public class HellSequenceController : MonoBehaviour
     [Tooltip("Spawnpunkt auf Bodenhöhe in der Höllenwelt.")]
     [SerializeField]
     private Transform hellSpawnPoint;
+
+    [Tooltip("Direktes Ziel in der Höllenbox. In WaageScene wird automatisch 'bones (3)' verwendet.")]
+    [SerializeField]
+    private Transform hellArrivalTarget;
+
+    [Tooltip("Unsichtbarer Boden unter dem Höllenziel.")]
+    [SerializeField]
+    private Transform hellArrivalSafetyFloor;
+
+    [SerializeField]
+    private string hellArrivalTargetName = "bones (3)";
+
+    [Tooltip("Verwendet für die finale Waagen-Szene die feste, getestete Höllenposition.")]
+    [SerializeField]
+    private bool useFixedHellArrivalPosition = true;
+
+    [SerializeField]
+    private Vector3 fixedHellArrivalPosition =
+        new Vector3(-7.274f, -6.465958f, -3.588f);
+
+
+    [Header("Fall Catch (VR)")]
+    [Tooltip("Physischer AutoHand-Spieler. Wird automatisch unter dem XR-Root gesucht.")]
+    [SerializeField]
+    private AutoHandPlayer autoHandPlayer;
+
+    [Tooltip("Kleine Aufwärtsbewegung beim Auffangen, damit der Stopp sichtbar wirkt.")]
+    [Min(0f)]
+    [SerializeField]
+    private float fallCatchLift = 0.25f;
+
+    [Tooltip("Kurze Pause nach dem Auffangen, bevor der Sensenmann näherkommt.")]
+    [Min(0f)]
+    [SerializeField]
+    private float fallCatchPause = 0.65f;
+
+    [Tooltip("Schnellerer Anflug des Sensenmanns bei einem echten Sturz.")]
+    [Min(0.1f)]
+    [SerializeField]
+    private float fallMessengerApproachDuration = 1.35f;
+
+    [Tooltip("Blickkontakt nach dem Auffangen und vor der Schwarzblende.")]
+    [Min(0f)]
+    [SerializeField]
+    private float fallMessengerStareDuration = 2.25f;
 
 
     [Header("Hell Messenger Approach")]
@@ -203,6 +249,10 @@ public class HellSequenceController : MonoBehaviour
     [SerializeField]
     private AfterlifeSequenceManager sequenceManager;
 
+    [Tooltip("Wird beim Höllenpfad abgebrochen, damit kein weißes Himmels-Canvas sichtbar bleibt.")]
+    [SerializeField]
+    private HeavenEndingController heavenEndingController;
+
     [Tooltip(
         "Spieler darf sich nach der Ankunft in der Hölle wieder bewegen."
     )]
@@ -222,6 +272,13 @@ public class HellSequenceController : MonoBehaviour
     private bool immediateTeleportRequested;
     private bool playerArrivedInHell;
     private bool endingStarted;
+
+    private Rigidbody autoHandBody;
+    private bool fallCatchStateStored;
+    private bool bodyWasKinematic;
+    private bool bodyUsedGravity;
+    private bool characterControllerWasEnabled;
+    private bool autoHandPlayerWasEnabled;
 
     private float hellArrivalTime;
     private Vector3 hellArrivalPosition;
@@ -287,6 +344,26 @@ public class HellSequenceController : MonoBehaviour
 
     private void FindMissingReferences()
     {
+        if (autoHandPlayer == null &&
+            xrOriginRoot != null)
+        {
+            autoHandPlayer =
+                xrOriginRoot.GetComponentInChildren<AutoHandPlayer>(true);
+        }
+
+        if (autoHandPlayer != null)
+        {
+            autoHandBody =
+                autoHandPlayer.GetComponent<Rigidbody>();
+
+            if (playerCamera == null &&
+                autoHandPlayer.headCamera != null)
+            {
+                playerCamera =
+                    autoHandPlayer.headCamera.transform;
+            }
+        }
+
         if (playerCamera == null &&
             xrOriginRoot != null)
         {
@@ -305,6 +382,46 @@ public class HellSequenceController : MonoBehaviour
         {
             characterController =
                 xrOriginRoot.GetComponent<CharacterController>();
+        }
+
+        if (heavenEndingController == null)
+        {
+            heavenEndingController =
+                FindFirstObjectByType<HeavenEndingController>(
+                    FindObjectsInactive.Include
+                );
+        }
+
+        if (hellArrivalTarget == null ||
+            hellArrivalSafetyFloor == null)
+        {
+            Transform[] sceneTransforms =
+                FindObjectsByType<Transform>(
+                    FindObjectsInactive.Include,
+                    FindObjectsSortMode.None
+                );
+
+            foreach (Transform candidate in sceneTransforms)
+            {
+                if (candidate == null)
+                {
+                    continue;
+                }
+
+                if (hellArrivalTarget == null &&
+                    candidate.name == hellArrivalTargetName &&
+                    hellArea != null &&
+                    candidate.IsChildOf(hellArea.transform))
+                {
+                    hellArrivalTarget = candidate;
+                }
+
+                if (hellArrivalSafetyFloor == null &&
+                    candidate.name == "HellArrivalSafetyFloor")
+                {
+                    hellArrivalSafetyFloor = candidate;
+                }
+            }
         }
     }
 
@@ -339,6 +456,11 @@ public class HellSequenceController : MonoBehaviour
             return;
         }
 
+        if (heavenEndingController != null)
+        {
+            heavenEndingController.CancelHeavenEnding();
+        }
+
         transitionStarted = true;
 
         transitionRoutine =
@@ -349,13 +471,27 @@ public class HellSequenceController : MonoBehaviour
 
 
     /// <summary>
-    /// Wird beim tatsächlichen Herunterfallen verwendet. Eine bereits laufende
-    /// Boten-Annäherung wird übersprungen, damit der Spieler nicht weiter durch
-    /// das weiße Nichts fällt, bevor die Schwarzblende und der Teleport beginnen.
+    /// Wird beim tatsächlichen Herunterfallen verwendet. Der physische AutoHand-
+    /// Körper wird sofort in der Luft festgehalten. Danach bleibt genug Zeit für
+    /// den Sensenmann-Anflug und den Blickkontakt, ohne dass der Spieler weiterfällt.
     /// </summary>
     public void BeginImmediateHellTransition()
     {
         immediateTeleportRequested = true;
+
+        FindMissingReferences();
+
+        // Erst prüfen, dann den VR-Körper einfrieren. So bleibt der Spieler
+        // beweglich, falls eine Szenenreferenz fehlt und die Sequenz gar nicht
+        // gestartet werden kann.
+        if (!ValidateTransitionReferences())
+        {
+            immediateTeleportRequested = false;
+            RestorePlayerAfterFallCatch();
+            return;
+        }
+
+        FreezePlayerForFallCatch();
 
         if (!transitionStarted)
         {
@@ -386,10 +522,11 @@ public class HellSequenceController : MonoBehaviour
             return false;
         }
 
-        if (hellSpawnPoint == null)
+        if (hellArrivalTarget == null &&
+            hellSpawnPoint == null)
         {
             Debug.LogError(
-                "HellSequenceController: Hell Spawn Point fehlt.",
+                "HellSequenceController: Weder bones (3) noch Hell Spawn Point gefunden.",
                 this
             );
 
@@ -420,29 +557,41 @@ public class HellSequenceController : MonoBehaviour
             );
         }
 
-        if (!immediateTeleportRequested &&
-            delayBeforeMessengerMoves > 0f)
+        if (immediateTeleportRequested)
+        {
+            if (hellMessenger != null)
+            {
+                hellMessenger.gameObject.SetActive(true);
+            }
+
+            if (fallCatchPause > 0f)
+            {
+                yield return new WaitForSeconds(fallCatchPause);
+            }
+        }
+        else if (delayBeforeMessengerMoves > 0f)
         {
             float delayElapsed = 0f;
 
-            while (delayElapsed < delayBeforeMessengerMoves &&
-                   !immediateTeleportRequested)
+            while (delayElapsed < delayBeforeMessengerMoves)
             {
                 delayElapsed += Time.deltaTime;
                 yield return null;
             }
         }
 
-        if (!immediateTeleportRequested &&
-            hellMessenger != null)
+        if (hellMessenger != null)
         {
             yield return MoveMessengerTowardPlayer();
         }
 
-        if (!immediateTeleportRequested &&
-            messengerStareDuration > 0f)
+        float stareDuration = immediateTeleportRequested
+            ? fallMessengerStareDuration
+            : messengerStareDuration;
+
+        if (stareDuration > 0f)
         {
-            yield return StareAtPlayerRoutine();
+            yield return StareAtPlayerRoutine(stareDuration);
         }
 
         PlayTransitionSound();
@@ -518,21 +667,47 @@ public class HellSequenceController : MonoBehaviour
 
     private IEnumerator MoveMessengerTowardPlayer()
     {
-        Vector3 startPosition =
-            hellMessenger.position;
+        Vector3 startPosition;
+
+        if (immediateTeleportRequested && playerCamera != null)
+        {
+            Vector3 cameraForward = playerCamera.forward;
+            cameraForward.y = 0f;
+
+            if (cameraForward.sqrMagnitude < 0.001f)
+            {
+                cameraForward = playerCamera.transform.forward;
+            }
+
+            cameraForward.Normalize();
+
+            startPosition =
+                playerCamera.position + cameraForward * 4f;
+            startPosition.y =
+                playerCamera.position.y + messengerEyeHeightOffset;
+
+            hellMessenger.position = startPosition;
+            FaceMessengerTowardPlayer();
+        }
+        else
+        {
+            startPosition = hellMessenger.position;
+        }
 
         float elapsed = 0f;
 
-        while (elapsed <
-               messengerApproachDuration &&
-               !immediateTeleportRequested)
+        float approachDuration = immediateTeleportRequested
+            ? fallMessengerApproachDuration
+            : messengerApproachDuration;
+
+        while (elapsed < approachDuration)
         {
             elapsed += Time.deltaTime;
 
             float progress =
                 Mathf.Clamp01(
                     elapsed /
-                    messengerApproachDuration
+                    approachDuration
                 );
 
             float curvedProgress =
@@ -559,13 +734,10 @@ public class HellSequenceController : MonoBehaviour
             yield return null;
         }
 
-        if (!immediateTeleportRequested)
-        {
-            hellMessenger.position =
-                CalculateMessengerTargetPosition();
+        hellMessenger.position =
+            CalculateMessengerTargetPosition();
 
-            FaceMessengerTowardPlayer();
-        }
+        FaceMessengerTowardPlayer();
     }
 
 
@@ -584,8 +756,9 @@ public class HellSequenceController : MonoBehaviour
          * zum aktuellen Messenger.
          */
         Vector3 directionFromCameraToMessenger =
-            hellMessenger.position -
-            playerCamera.position;
+            immediateTeleportRequested
+                ? playerCamera.forward
+                : hellMessenger.position - playerCamera.position;
 
         directionFromCameraToMessenger.y = 0f;
 
@@ -617,13 +790,11 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
-    private IEnumerator StareAtPlayerRoutine()
+    private IEnumerator StareAtPlayerRoutine(float stareDuration)
     {
         float elapsed = 0f;
 
-        while (elapsed <
-               messengerStareDuration &&
-               !immediateTeleportRequested)
+        while (elapsed < stareDuration)
         {
             elapsed += Time.deltaTime;
 
@@ -701,35 +872,179 @@ public class HellSequenceController : MonoBehaviour
 
     private IEnumerator TeleportPlayerToHell()
     {
-        bool controllerWasEnabled =
-            characterController != null &&
-            characterController.enabled;
+        Vector3 arrivalPosition =
+            hellArrivalTarget != null
+                ? hellArrivalTarget.position
+                : useFixedHellArrivalPosition
+                ? fixedHellArrivalPosition
+                : hellSpawnPoint.position;
 
-        if (controllerWasEnabled)
+        Quaternion arrivalRotation =
+            hellSpawnPoint != null
+                ? hellSpawnPoint.rotation
+                : xrOriginRoot.rotation;
+
+        if (hellArrivalSafetyFloor != null)
         {
-            characterController.enabled = false;
+            // Der Collider ist 0,3 m hoch. So liegt seine Oberkante
+            // exakt auf der Fußposition des AutoHand-Spielers.
+            hellArrivalSafetyFloor.position =
+                arrivalPosition + Vector3.down * 0.15f;
         }
 
+        if (autoHandBody != null &&
+            !autoHandBody.isKinematic)
+        {
+            autoHandBody.linearVelocity = Vector3.zero;
+            autoHandBody.angularVelocity = Vector3.zero;
+        }
+
+        // In dieser Szene steckt der eigentliche AutoHandPlayer als Kind
+        // in einem äußeren XR-Rig. Darum muss der gemeinsame Rig-Root
+        // verschoben werden, sonst setzt AutoHand das Kind wieder zurück.
         xrOriginRoot.SetPositionAndRotation(
-            hellSpawnPoint.position,
-            hellSpawnPoint.rotation
+            arrivalPosition,
+            arrivalRotation
         );
 
-        yield return null;
-
-        if (controllerWasEnabled)
+        if (autoHandBody != null &&
+            autoHandPlayer != null)
         {
-            characterController.enabled = true;
+            autoHandBody.position =
+                autoHandPlayer.transform.position;
+            autoHandBody.rotation =
+                autoHandPlayer.transform.rotation;
         }
+
+        Physics.SyncTransforms();
+        yield return new WaitForFixedUpdate();
+
+        // Ein zweites Setzen nach dem Physikschritt verhindert,
+        // dass Tracking oder Rigidbody den äußeren Rig-Root zurückziehen.
+        xrOriginRoot.SetPositionAndRotation(
+            arrivalPosition,
+            arrivalRotation
+        );
+
+        if (autoHandBody != null &&
+            autoHandPlayer != null)
+        {
+            autoHandBody.position =
+                autoHandPlayer.transform.position;
+            autoHandBody.rotation =
+                autoHandPlayer.transform.rotation;
+        }
+
+        Physics.SyncTransforms();
+        yield return new WaitForFixedUpdate();
+
+        RestorePlayerAfterFallCatch();
 
         if (showDebugLogs)
         {
             Debug.Log(
                 $"HellSequenceController: Teleport zu " +
-                $"'{hellSpawnPoint.name}'.",
+                $"{arrivalPosition} " +
+                $"({(hellArrivalTarget != null ? hellArrivalTarget.name : "Fallback")}).",
                 this
             );
         }
+    }
+
+
+    private void FreezePlayerForFallCatch()
+    {
+        FindMissingReferences();
+
+        if (!fallCatchStateStored)
+        {
+            fallCatchStateStored = true;
+
+            if (autoHandBody != null)
+            {
+                bodyWasKinematic = autoHandBody.isKinematic;
+                bodyUsedGravity = autoHandBody.useGravity;
+            }
+
+            if (autoHandPlayer != null)
+            {
+                autoHandPlayerWasEnabled = autoHandPlayer.enabled;
+            }
+
+            characterControllerWasEnabled =
+                characterController != null && characterController.enabled;
+        }
+
+        if (characterController != null)
+        {
+            characterController.enabled = false;
+        }
+
+        // AutoHand schreibt sonst auch bei einem kinematischen Körper
+        // in FixedUpdate Position und Geschwindigkeit zurück.
+        if (autoHandPlayer != null)
+        {
+            autoHandPlayer.enabled = false;
+        }
+
+        if (autoHandBody != null)
+        {
+            if (!autoHandBody.isKinematic)
+            {
+                autoHandBody.linearVelocity = Vector3.zero;
+                autoHandBody.angularVelocity = Vector3.zero;
+            }
+
+            autoHandBody.useGravity = false;
+            autoHandBody.isKinematic = true;
+        }
+
+        if (xrOriginRoot != null && fallCatchLift > 0f)
+        {
+            xrOriginRoot.position +=
+                Vector3.up * fallCatchLift;
+
+            if (autoHandBody != null &&
+                autoHandPlayer != null)
+            {
+                autoHandBody.position =
+                    autoHandPlayer.transform.position;
+            }
+        }
+    }
+
+
+    private void RestorePlayerAfterFallCatch()
+    {
+        if (!fallCatchStateStored)
+        {
+            return;
+        }
+
+        if (autoHandBody != null)
+        {
+            autoHandBody.isKinematic = bodyWasKinematic;
+            autoHandBody.useGravity = bodyUsedGravity;
+
+            if (!autoHandBody.isKinematic)
+            {
+                autoHandBody.linearVelocity = Vector3.zero;
+                autoHandBody.angularVelocity = Vector3.zero;
+            }
+        }
+
+        if (autoHandPlayer != null)
+        {
+            autoHandPlayer.enabled = autoHandPlayerWasEnabled;
+        }
+
+        if (characterController != null)
+        {
+            characterController.enabled =
+                characterControllerWasEnabled;
+        }
+
+        fallCatchStateStored = false;
     }
 
 
@@ -884,6 +1199,15 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
+    private void OnDisable()
+    {
+        // Besonders wichtig bei abgebrochenem Play Mode: Ein laufender
+        // Fall-Catch darf AutoHand und den Rigidbody nicht eingefroren im
+        // Editor zurücklassen.
+        RestorePlayerAfterFallCatch();
+    }
+
+
     public void ResetHellTransition()
     {
         if (transitionRoutine != null)
@@ -908,6 +1232,8 @@ public class HellSequenceController : MonoBehaviour
         immediateTeleportRequested = false;
         playerArrivedInHell = false;
         endingStarted = false;
+
+        RestorePlayerAfterFallCatch();
 
         PrepareCanvases();
     }

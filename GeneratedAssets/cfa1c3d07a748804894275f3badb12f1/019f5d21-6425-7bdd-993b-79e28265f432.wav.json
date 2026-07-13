@@ -1,0 +1,15 @@
+{
+    "asset": "cfa1c3d07a748804894275f3badb12f1",
+    "fileName": "019f5d21-6425-7bdd-993b-79e28265f432.wav",
+    "prompt": "A sweet, innocent newborn baby laughing and giggling softly, warm and happy, adorable tiny chuckles, clear close-up-recording, no background music, no crying, no adult voices, comforting and peaceful atmosphere.",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 5.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}
