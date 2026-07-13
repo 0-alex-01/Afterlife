@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class IntroSceneLoader : MonoBehaviour
 {
+    [Header("Start Menu")]
+    [Tooltip("Zeigt vor der EKG-Sequenz das Afterlife-Startmenue an.")]
+    public bool showStartMenu = true;
+
     [Header("Audio")]
     public AudioSource introAudio;
 
@@ -44,9 +48,39 @@ public class IntroSceneLoader : MonoBehaviour
     public float slowdownCurve = 1.5f;       // >1 = bleibt länger schnell, fällt gegen Ende stärker ab
     public float audioLengthFallback = 42f;  // Clip-Länge in Sek., falls nicht auslesbar
 
-    private void Start()
+    private IEnumerator Start()
     {
-        StartCoroutine(IntroRoutine());
+        // Sicherstellen, dass Play-On-Awake oder ein vorheriger Testlauf nicht unter dem Menue weiterlaeuft.
+        StopIntroAudio();
+
+        if (showStartMenu)
+        {
+            yield return AfterlifeStartMenu.WaitForStart();
+            ResetEcgTrace();
+        }
+
+        yield return IntroRoutine();
+    }
+
+    private void StopIntroAudio()
+    {
+        if (introAudio != null)
+            introAudio.Stop();
+        if (flatlineAudio != null)
+            flatlineAudio.Stop();
+        if (voiceAudio != null)
+            voiceAudio.Stop();
+    }
+
+    private static void ResetEcgTrace()
+    {
+        ECGLineUI[] traces = FindObjectsByType<ECGLineUI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (ECGLineUI trace in traces)
+        {
+            bool wasEnabled = trace.enabled;
+            trace.enabled = false;
+            trace.enabled = wasEnabled;
+        }
     }
 
     private IEnumerator IntroRoutine()
