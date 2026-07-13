@@ -24,7 +24,7 @@ namespace UnityEngine.XR.Hands.Samples.VisualizerSample
             if (m_HighFidelityJoint == highFidelityJoint)
                 return;
 
-            m_JointRenderer.material = highFidelityJoint ? m_HighFidelityJointMaterial : m_LowFidelityJointMaterial;
+            m_JointRenderer.sharedMaterial = highFidelityJoint ? m_HighFidelityJointMaterial : m_LowFidelityJointMaterial;
 
             m_HighFidelityJoint = highFidelityJoint;
         }

@@ -34,7 +34,7 @@ namespace Unity.VRTemplate
             var material = new Material(Shader.Find(k_ShaderName));
             material.mainTexture = renderTexture;
             GetComponent<VideoPlayer>().targetTexture = renderTexture;
-            m_Renderer.material = material;
+            m_Renderer.sharedMaterial = material;
         }
     }
 }
