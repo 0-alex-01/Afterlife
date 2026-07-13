@@ -1,0 +1,23 @@
+{
+    "asset": "bbb6e29e8875c394c8961a0e957c7796",
+    "fileName": "019f5b19-66b1-7b77-b70c-6300721764e0.fbx",
+    "prompt": "A large, majestic ancient oak tree with thick gnarled roots and lush green foliage, mystical high-fantasy stylized",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "649edcbc012f0524a85c42acd52df7b1",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

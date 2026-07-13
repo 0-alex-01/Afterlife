@@ -1,0 +1,23 @@
+{
+    "asset": "751c9010c913454468c4168767bb4e6b",
+    "fileName": "019f5b29-2b80-7594-94fa-6720b4daff0b.fbx",
+    "prompt": "A gargantuan ancient oak tree with a massive, solid, and incredibly dense voluminous canopy of lush summer green leaves, thick gnarled trunk and roots, mystical high-fantasy stylized 3D model, bushy foliage volumes, healthy and alive",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "f20275d1b85eb55438fcd854ba761a8f",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

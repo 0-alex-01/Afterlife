@@ -1,0 +1,23 @@
+{
+    "asset": "15f17b23473d6e34b987af15a7759496",
+    "fileName": "019f5b17-5b49-78a8-9c3f-5e9cb26fc641.fbx",
+    "prompt": "An Ouroboros snake eating its own tail, forming a perfect circle, mystical glowing scales, ancient artifact style",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "c2d2ca040424d894b9240aae6dea08bb",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

@@ -1,0 +1,23 @@
+{
+    "asset": "a212c79f50a1db94f92df1bf80d5e293",
+    "fileName": "019f5b32-2c97-74ef-be2a-8f37fb1e744d.fbx",
+    "prompt": "A majestic gargantuan oak tree with a massive wide-spreading crown of lush summer green leaves, long gnarled trunk and roots, mystical high-fantasy stylized 3D model, voluminous foliage, healthy and alive, beautiful summer tree silhouette",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "ad70c7d0c362c5149b34de532ff0a8ea",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

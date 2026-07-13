@@ -1,0 +1,23 @@
+{
+    "asset": "f5f9bec90cd9f754889ed98d3dda87cc",
+    "fileName": "019f5b19-3bf2-77cb-b72f-bc6faaf9100b.fbx",
+    "prompt": "A dead, withered oak tree, no leaves, dark grey bark, skeletal branches, same silhouette and root structure, mystical aura of decay",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "b2a6ccd49e08b8049a6036dd97fa0317",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}
