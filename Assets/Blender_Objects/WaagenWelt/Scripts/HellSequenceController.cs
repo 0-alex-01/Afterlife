@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HellSequenceController : MonoBehaviour
 {
     [Header("Player / XR Rig")]
-    [Tooltip("Root des Complete XR Origin.")]
+    [Tooltip("Root des Complete XR Origin beziehungsweise AutoHandPlayers.")]
     [SerializeField]
     private Transform xrOriginRoot;
 
@@ -24,7 +24,10 @@ public class HellSequenceController : MonoBehaviour
 
 
     [Header("Hell Messenger Approach")]
-    [Tooltip("Der Höllenbote oder dessen neutraler Parent.")]
+    [Tooltip(
+        "Der Höllenbote oder dessen neutraler Parent. " +
+        "Hier dasselbe Objekt eintragen wie im AfterlifeSequenceManager."
+    )]
     [SerializeField]
     private Transform hellMessenger;
 
@@ -52,7 +55,7 @@ public class HellSequenceController : MonoBehaviour
 
     [Tooltip(
         "Vertikaler Offset zur aktuellen Augenhöhe. " +
-        "Ein negativer Wert positioniert ihn etwas unter der Kamera."
+        "Ein negativer Wert positioniert den Boten etwas unter der Kamera."
     )]
     [SerializeField]
     private float messengerEyeHeightOffset = -0.2f;
@@ -81,7 +84,7 @@ public class HellSequenceController : MonoBehaviour
     [Header("Scene Areas")]
     [Tooltip(
         "Nur die visuellen Objekte der Himmelswelt. " +
-        "Keine Manager, Canvas-Objekte oder XR-Objekte."
+        "Keine Manager, Canvas-Objekte oder Player-Objekte."
     )]
     [SerializeField]
     private GameObject heavenArea;
@@ -225,6 +228,18 @@ public class HellSequenceController : MonoBehaviour
     private float hellArrivalTime;
     private Vector3 hellArrivalPosition;
 
+    /*
+     * Die Richtung vom Spieler zum Messenger wird zu Beginn
+     * der Annäherung gespeichert. Dadurch bleibt die Bewegung
+     * stabil und ändert nicht ständig ihre Richtung.
+     */
+    private Vector3 messengerApproachDirection =
+        Vector3.forward;
+
+
+    public bool HasTransitionStarted =>
+        transitionStarted;
+
 
     private void Awake()
     {
@@ -264,7 +279,8 @@ public class HellSequenceController : MonoBehaviour
         }
 
         if (!showEndingWhenPlayerMoves ||
-            timeInHell < minimumHellTimeBeforeMovementTrigger ||
+            timeInHell <
+            minimumHellTimeBeforeMovementTrigger ||
             xrOriginRoot == null)
         {
             return;
@@ -290,7 +306,9 @@ public class HellSequenceController : MonoBehaviour
             xrOriginRoot != null)
         {
             Camera foundCamera =
-                xrOriginRoot.GetComponentInChildren<Camera>(true);
+                xrOriginRoot.GetComponentInChildren<Camera>(
+                    true
+                );
 
             if (foundCamera != null)
             {
@@ -326,19 +344,56 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Wird über das Event "On Hell Sequence Started"
+    /// des AfterlifeSequenceManagers aufgerufen.
+    ///
+    /// Die Prüfung, ob der Spieler bereits auf der Treppe war,
+    /// erfolgt ausschließlich im AfterlifeSequenceManager.
+    /// </summary>
     public void BeginHellTransition()
     {
+        if (showDebugLogs)
+        {
+            Debug.Log(
+                "HellSequenceController: " +
+                "BeginHellTransition wurde aufgerufen.",
+                this
+            );
+        }
+
         if (transitionStarted)
         {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning(
+                    "HellSequenceController: " +
+                    "Transition läuft bereits.",
+                    this
+                );
+            }
+
             return;
         }
 
-        if (!ValidateTransitionReferences())
+        /*
+         * Hier werden zunächst nur die Referenzen geprüft,
+         * die für die Bewegung des Messengers benötigt werden.
+         *
+         * Hell Spawn Point und Black Fade Canvas werden erst
+         * nach der Messenger-Annäherung geprüft.
+         */
+        if (!ValidateMessengerReferences())
         {
             return;
         }
 
         transitionStarted = true;
+
+        if (!hellMessenger.gameObject.activeSelf)
+        {
+            hellMessenger.gameObject.SetActive(true);
+        }
 
         transitionRoutine =
             StartCoroutine(
@@ -347,8 +402,10 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
-    private bool ValidateTransitionReferences()
+    private bool ValidateMessengerReferences()
     {
+        bool valid = true;
+
         if (xrOriginRoot == null)
         {
             Debug.LogError(
@@ -356,7 +413,7 @@ public class HellSequenceController : MonoBehaviour
                 this
             );
 
-            return false;
+            valid = false;
         }
 
         if (playerCamera == null)
@@ -366,30 +423,52 @@ public class HellSequenceController : MonoBehaviour
                 this
             );
 
-            return false;
+            valid = false;
         }
+
+        if (hellMessenger == null)
+        {
+            Debug.LogError(
+                "HellSequenceController: Hell Messenger fehlt.",
+                this
+            );
+
+            valid = false;
+        }
+
+        return valid;
+    }
+
+
+    private bool ValidateWorldTransitionReferences()
+    {
+        bool valid = true;
 
         if (hellSpawnPoint == null)
         {
             Debug.LogError(
-                "HellSequenceController: Hell Spawn Point fehlt.",
+                "HellSequenceController: Hell Spawn Point fehlt. " +
+                "Der Messenger konnte sich bewegen, aber der Spieler " +
+                "kann nicht in die Höllenwelt teleportiert werden.",
                 this
             );
 
-            return false;
+            valid = false;
         }
 
         if (blackFadeCanvasGroup == null)
         {
             Debug.LogError(
-                "HellSequenceController: Black Fade CanvasGroup fehlt.",
+                "HellSequenceController: Black Fade CanvasGroup fehlt. " +
+                "Der Messenger konnte sich bewegen, aber die " +
+                "Schwarzblende kann nicht ausgeführt werden.",
                 this
             );
 
-            return false;
+            valid = false;
         }
 
-        return true;
+        return valid;
     }
 
 
@@ -403,6 +482,8 @@ public class HellSequenceController : MonoBehaviour
             );
         }
 
+        PrepareMessengerApproachDirection();
+
         if (delayBeforeMessengerMoves > 0f)
         {
             yield return new WaitForSeconds(
@@ -410,14 +491,35 @@ public class HellSequenceController : MonoBehaviour
             );
         }
 
-        if (hellMessenger != null)
-        {
-            yield return MoveMessengerTowardPlayer();
-        }
+        /*
+         * Der Messenger ist eine Pflichtreferenz.
+         * Deshalb wird diese Coroutine immer ausgeführt,
+         * wenn BeginHellTransition erfolgreich gestartet ist.
+         */
+        yield return MoveMessengerTowardPlayer();
 
         if (messengerStareDuration > 0f)
         {
             yield return StareAtPlayerRoutine();
+        }
+
+        /*
+         * Erst nach der sichtbaren Messenger-Annäherung
+         * werden die Referenzen für Fade und Teleport geprüft.
+         */
+        if (!ValidateWorldTransitionReferences())
+        {
+            transitionStarted = false;
+            transitionRoutine = null;
+
+            Debug.LogError(
+                "HellSequenceController: Die Messenger-Bewegung " +
+                "wurde ausgeführt, aber die Welttransition wurde " +
+                "wegen fehlender Referenzen abgebrochen.",
+                this
+            );
+
+            yield break;
         }
 
         PlayTransitionSound();
@@ -432,6 +534,13 @@ public class HellSequenceController : MonoBehaviour
         if (hellArea != null)
         {
             hellArea.SetActive(true);
+        }
+        else if (showDebugLogs)
+        {
+            Debug.LogWarning(
+                "HellSequenceController: Hell Area ist nicht zugewiesen.",
+                this
+            );
         }
 
         yield return TeleportPlayerToHell();
@@ -468,7 +577,7 @@ public class HellSequenceController : MonoBehaviour
         );
 
         /*
-         * Nach dem vollständigen Wiedereinblenden
+         * Erst nach dem vollständigen Wiedereinblenden
          * darf sich der Spieler wieder bewegen.
          */
         if (unlockMovementAfterArrival &&
@@ -491,8 +600,65 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
+    private void PrepareMessengerApproachDirection()
+    {
+        if (playerCamera == null ||
+            hellMessenger == null)
+        {
+            messengerApproachDirection =
+                Vector3.forward;
+
+            return;
+        }
+
+        /*
+         * Richtung von der Kamera zum ursprünglichen
+         * Standort des Messengers.
+         */
+        messengerApproachDirection =
+            hellMessenger.position -
+            playerCamera.position;
+
+        messengerApproachDirection.y = 0f;
+
+        if (messengerApproachDirection.sqrMagnitude <
+            0.001f)
+        {
+            messengerApproachDirection =
+                -playerCamera.forward;
+
+            messengerApproachDirection.y = 0f;
+        }
+
+        if (messengerApproachDirection.sqrMagnitude <
+            0.001f)
+        {
+            messengerApproachDirection =
+                Vector3.forward;
+        }
+
+        messengerApproachDirection.Normalize();
+    }
+
+
     private IEnumerator MoveMessengerTowardPlayer()
     {
+        if (hellMessenger == null ||
+            playerCamera == null)
+        {
+            yield break;
+        }
+
+        if (showDebugLogs)
+        {
+            Debug.Log(
+                $"HellSequenceController: Messenger bewegt sich von " +
+                $"{hellMessenger.position} zur Kamera bei " +
+                $"{playerCamera.position}.",
+                this
+            );
+        }
+
         Vector3 startPosition =
             hellMessenger.position;
 
@@ -510,13 +676,14 @@ public class HellSequenceController : MonoBehaviour
                 );
 
             float curvedProgress =
-                messengerMovementCurve.Evaluate(
-                    progress
-                );
+                messengerMovementCurve != null
+                    ? messengerMovementCurve.Evaluate(progress)
+                    : progress;
 
             /*
-             * Ziel wird jedes Frame neu aus der
-             * aktuellen Kamera-Position berechnet.
+             * Das Ziel folgt weiterhin der Kamera,
+             * aber die grundsätzliche Annäherungsrichtung
+             * bleibt stabil.
              */
             Vector3 currentTarget =
                 CalculateMessengerTargetPosition();
@@ -537,6 +704,15 @@ public class HellSequenceController : MonoBehaviour
             CalculateMessengerTargetPosition();
 
         FaceMessengerTowardPlayer();
+
+        if (showDebugLogs)
+        {
+            Debug.Log(
+                "HellSequenceController: " +
+                "Messenger hat seine Zielposition erreicht.",
+                this
+            );
+        }
     }
 
 
@@ -550,35 +726,37 @@ public class HellSequenceController : MonoBehaviour
                 : Vector3.zero;
         }
 
-        /*
-         * Horizontale Linie von der Kamera
-         * zum aktuellen Messenger.
-         */
-        Vector3 directionFromCameraToMessenger =
-            hellMessenger.position -
-            playerCamera.position;
+        Vector3 horizontalDirection =
+            messengerApproachDirection;
 
-        directionFromCameraToMessenger.y = 0f;
+        horizontalDirection.y = 0f;
 
-        if (directionFromCameraToMessenger.sqrMagnitude <
+        if (horizontalDirection.sqrMagnitude <
             0.001f)
         {
-            directionFromCameraToMessenger =
+            horizontalDirection =
                 -playerCamera.forward;
 
-            directionFromCameraToMessenger.y = 0f;
+            horizontalDirection.y = 0f;
         }
 
-        directionFromCameraToMessenger.Normalize();
+        if (horizontalDirection.sqrMagnitude <
+            0.001f)
+        {
+            horizontalDirection =
+                Vector3.forward;
+        }
+
+        horizontalDirection.Normalize();
 
         Vector3 targetPosition =
             playerCamera.position +
-            directionFromCameraToMessenger *
+            horizontalDirection *
             messengerStoppingDistance;
 
         /*
-         * Aktuelle Augenhöhe der Main Camera.
-         * Dadurch funktioniert es auch oben auf der Treppe.
+         * Der Bote wird auf Basis der aktuellen
+         * Augenhöhe positioniert.
          */
         targetPosition.y =
             playerCamera.position.y +
@@ -590,6 +768,12 @@ public class HellSequenceController : MonoBehaviour
 
     private IEnumerator StareAtPlayerRoutine()
     {
+        if (hellMessenger == null ||
+            playerCamera == null)
+        {
+            yield break;
+        }
+
         float elapsed = 0f;
 
         while (elapsed <
@@ -599,13 +783,13 @@ public class HellSequenceController : MonoBehaviour
 
             FaceMessengerTowardPlayer();
 
-            /*
-             * Der Messenger bleibt während des
-             * Anstarrens vor der aktuellen Kamera.
-             */
             Vector3 targetPosition =
                 CalculateMessengerTargetPosition();
 
+            /*
+             * Während des Anstarrens folgt der Bote
+             * sanft der aktuellen Kopfposition.
+             */
             hellMessenger.position =
                 Vector3.Lerp(
                     hellMessenger.position,
@@ -631,11 +815,8 @@ public class HellSequenceController : MonoBehaviour
             playerCamera.position -
             hellMessenger.position;
 
-        /*
-         * Y bleibt enthalten, damit der Messenger
-         * auch vertikal zur aktuellen Augenhöhe schaut.
-         */
-        if (direction.sqrMagnitude < 0.001f)
+        if (direction.sqrMagnitude <
+            0.001f)
         {
             return;
         }
@@ -671,6 +852,12 @@ public class HellSequenceController : MonoBehaviour
 
     private IEnumerator TeleportPlayerToHell()
     {
+        if (xrOriginRoot == null ||
+            hellSpawnPoint == null)
+        {
+            yield break;
+        }
+
         bool controllerWasEnabled =
             characterController != null &&
             characterController.enabled;
@@ -685,6 +872,10 @@ public class HellSequenceController : MonoBehaviour
             hellSpawnPoint.rotation
         );
 
+        /*
+         * Ein Frame warten, damit Unity Transform,
+         * Kamera und Character Controller aktualisieren kann.
+         */
         yield return null;
 
         if (controllerWasEnabled)
@@ -707,8 +898,12 @@ public class HellSequenceController : MonoBehaviour
     {
         playerArrivedInHell = true;
         hellArrivalTime = Time.time;
-        hellArrivalPosition =
-            xrOriginRoot.position;
+
+        if (xrOriginRoot != null)
+        {
+            hellArrivalPosition =
+                xrOriginRoot.position;
+        }
 
         if (showDebugLogs)
         {
@@ -813,6 +1008,15 @@ public class HellSequenceController : MonoBehaviour
             yield break;
         }
 
+        /*
+         * Falls nur das Canvas-Objekt selbst deaktiviert ist,
+         * wird es für die Blende wieder aktiviert.
+         */
+        if (!targetCanvas.gameObject.activeSelf)
+        {
+            targetCanvas.gameObject.SetActive(true);
+        }
+
         if (duration <= 0f)
         {
             targetCanvas.alpha =
@@ -854,6 +1058,13 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
+    [ContextMenu("TEST - Höllentransition starten")]
+    private void TestHellTransition()
+    {
+        BeginHellTransition();
+    }
+
+
     public void ResetHellTransition()
     {
         if (transitionRoutine != null)
@@ -879,5 +1090,13 @@ public class HellSequenceController : MonoBehaviour
         endingStarted = false;
 
         PrepareCanvases();
+
+        if (showDebugLogs)
+        {
+            Debug.Log(
+                "HellSequenceController: Transition wurde zurückgesetzt.",
+                this
+            );
+        }
     }
 }

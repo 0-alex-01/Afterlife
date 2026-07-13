@@ -418,10 +418,26 @@ public class AfterlifeSequenceManager : MonoBehaviour
 
     public void StartHellSequence()
     {
-        if (currentState == SequenceState.HellSequence ||
-            currentState == SequenceState.HeavenSequence ||
-            currentState == SequenceState.Finished)
+        /*
+         * Die Höllensequenz darf erst ausgelöst werden,
+         * nachdem der Spieler die Treppe betreten und
+         * StartAscent() den Zustand auf Ascending gesetzt hat.
+         *
+         * Dadurch bewirkt ein Umdrehen vor der Treppe nichts.
+         */
+        if (currentState != SequenceState.Ascending &&
+            currentState != SequenceState.Warning)
         {
+            if (showDebugLogs)
+            {
+                Debug.Log(
+                    $"AfterlifeSequenceManager: Höllensequenz blockiert. " +
+                    $"Aktueller Zustand: {currentState}. " +
+                    "Der Spieler muss zuerst die Treppe betreten.",
+                    this
+                );
+            }
+
             return;
         }
 

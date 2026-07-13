@@ -213,6 +213,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1818266897}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 734632387}
@@ -368,6 +371,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 825934231}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1463226894}
@@ -525,6 +531,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &51310303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51310306}
+  - component: {fileID: 51310305}
+  - component: {fileID: 51310304}
+  m_Layer: 0
+  m_Name: StairCaseAreaTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &51310304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51310303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a4cace4655de24db06bbcb6b18bd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaircaseAreaTrigger
+  sequenceManager: {fileID: 0}
+  playerCharacterController: {fileID: 2112650663}
+  triggerOnlyOnce: 1
+  showDebugLogs: 1
+--- !u!65 &51310305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51310303}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.5139084, y: 3.4326751, z: 13.099161}
+  m_Center: {x: -0.2569542, y: 1.2163376, z: 6.469342}
+--- !u!4 &51310306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51310303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.492, y: 0.431, z: 30.593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &71903104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 445304732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &72062042
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +822,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2128134891}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 41445751}
@@ -839,6 +923,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1207857086}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 617514896}
@@ -937,6 +1024,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 793319106}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 879837897}
@@ -945,6 +1035,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 105728668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &117031266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1772563429}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &118171954
 PrefabInstance:
@@ -1100,6 +1195,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1159292105}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 671535316}
@@ -1108,6 +1206,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 135917364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &149341551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 658806766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &150607442
 GameObject:
@@ -1397,7 +1500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &174539381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,6 +1774,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2011398923}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2092314680}
@@ -1769,6 +1875,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1983992032}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1950462099}
@@ -1940,6 +2049,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1252893039}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 347810019}
@@ -1948,6 +2060,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 238078260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &239753924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1948689835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &247087142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 485051150}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &247912004
 PrefabInstance:
@@ -2177,6 +2299,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
+--- !u!1 &257156159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1928996126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &290396640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7277802327471902856, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
@@ -2405,6 +2532,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1850073455}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1141440346}
@@ -2503,6 +2633,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1171190145}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1735061728}
@@ -2511,6 +2644,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 321287172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322254332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 679679669}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &337140176
 PrefabInstance:
@@ -2601,6 +2739,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 570481211}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 587984304}
@@ -2787,6 +2928,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 435054509}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1292315481}
@@ -2916,6 +3060,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1019603826}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1628111684}
@@ -2924,6 +3071,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 373656809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &375026566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 738824016}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &395904346 stripped
 Transform:
@@ -2936,7 +3088,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 811990954}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03179d1c71729b3429940e67711597a2, type: 3}
   m_Name: 
@@ -2947,7 +3099,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 811990954}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c2299af165ef2148b128cb7c00383bf, type: 3}
   m_Name: 
@@ -3116,8 +3268,8 @@ MonoBehaviour:
   currentState: 0
   xrOriginRoot: {fileID: 1007075}
   playerCamera: {fileID: 1536248204}
-  characterController: {fileID: 0}
-  desktopController: {fileID: 0}
+  characterController: {fileID: 2112650663}
+  desktopController: {fileID: 2112650662}
   vrLocomotionBehaviours:
   - {fileID: 395904348}
   - {fileID: 395904347}
@@ -3302,6 +3454,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1143350486}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1708626443}
@@ -3400,6 +3555,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 830730243}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 729712290}
@@ -3441,6 +3599,30 @@ Transform:
   - {fileID: 1903806207}
   m_Father: {fileID: 664133226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &435054507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 364745303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &435054509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435054507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &437185371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1736247683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &438812590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
@@ -3535,6 +3717,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 445304735}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 398171486}
@@ -3544,6 +3729,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 445304732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &445304735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71903104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &482879640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3645,6 +3844,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 960579101}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1210998520}
@@ -3856,6 +4058,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 485051153}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 510954659}
@@ -3865,6 +4070,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 485051150}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &485051153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247087142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &489409620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3954,6 +4173,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1833235415}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 864271306}
@@ -4125,6 +4347,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 797746173}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 773047612}
@@ -4134,6 +4359,119 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 512727159}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &532427512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532427516}
+  - component: {fileID: 532427515}
+  - component: {fileID: 532427514}
+  - component: {fileID: 532427513}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &532427513
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532427512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &532427514
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532427512}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &532427515
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532427512}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &532427516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532427512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.69, y: 2.68, z: 49.24588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548011729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,7 +4501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de4456888490b847adf71476554a91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerProgressMonitor
-  playerRoot: {fileID: 395904346}
+  playerRoot: {fileID: 1007075}
   playerCamera: {fileID: 1536248204}
   totalStepCount: 55
   staircaseForwardReference: {fileID: 556540587}
@@ -4425,6 +4763,25 @@ Transform:
   - {fileID: 150607443}
   m_Father: {fileID: 2026050436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &570481209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 337140176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &570481211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570481209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &587984301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -4533,6 +4890,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1302446143}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1803641916}
@@ -4710,6 +5070,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1109453273}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1897337062}
@@ -5063,6 +5426,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 658806769}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 641637499}
@@ -5072,6 +5438,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 658806766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &658806769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149341551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &664133223
 GameObject:
   m_ObjectHideFlags: 0
@@ -5223,11 +5603,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
---- !u!20 &677128050 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7277802327414017196, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &677128054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7277802327414017193, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
@@ -5330,6 +5705,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 679679672}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1202243800}
@@ -5339,6 +5717,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 679679669}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &679679672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322254332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &699881668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,6 +5933,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 864932178}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1461058538}
@@ -5673,6 +6068,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
+--- !u!1 &736809748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 816330248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &738824016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5762,6 +6162,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 738824019}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1580533702}
@@ -5771,6 +6174,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 738824016}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &738824019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375026566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &755542501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5875,7 +6292,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1502, y: -498}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755848605
 MonoBehaviour:
@@ -6031,6 +6448,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1827633979}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 805144000}
@@ -6129,6 +6549,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1122996284}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1803096675}
@@ -6138,6 +6561,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 781589154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &793319104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 105728668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &793319106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793319104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &797746171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 512727159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &797746173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797746171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &805143997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -6206,7 +6667,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3f8848c9fb8ea184c943abb1be1d4129, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.641
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6314,8 +6775,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 302829214166318448, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302829214166318448, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 829123723633956862, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728222965792722767, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728222965792722767, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434669665639472304, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: maxMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551395051494834509, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686382583760385631, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4039255345588696228, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_Name
@@ -6325,17 +6814,29 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5579281912885831286, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579281912885831286, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_Center.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177557913174124488, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.79
+      objectReference: {fileID: 0}
     - target: {fileID: 8398930802952340619, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_LocalPosition.x
       value: -49.66122
       objectReference: {fileID: 0}
     - target: {fileID: 8398930802952340619, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0.173
       objectReference: {fileID: 0}
     - target: {fileID: 8398930802952340619, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.04359
+      value: 29.818
       objectReference: {fileID: 0}
     - target: {fileID: 8398930802952340619, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6368,7 +6869,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4039255345588696228, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112650663}
+    - targetCorrespondingSourceObject: {fileID: 4039255345588696228, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112650662}
   m_SourcePrefab: {fileID: 100100000, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
 --- !u!1 &813320642
 GameObject:
@@ -6400,7 +6907,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: fa884029b75b35849a81e599469a9b43, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.883
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6581,7 +7088,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 677128050}
+  m_Camera: {fileID: 1618613931}
   m_PlaneDistance: 0.2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -6705,6 +7212,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816330251}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1823158336}
@@ -6714,15 +7224,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 816330248}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &816330251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736809748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &825540723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6532916064084297379, guid: 06aa738225546494682a0ed2627c524a, type: 3}
   m_PrefabInstance: {fileID: 354320817}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &825934229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 36966715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &825934231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825934229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &830730241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 423763168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &830730243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830730241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &833554695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 1223674327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &846262009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1427266197}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &850889042 stripped
 Transform:
@@ -6746,6 +7313,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864271303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &864932176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 723335687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &864932178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864932176}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -6791,6 +7377,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
+--- !u!1 &930401406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1862414130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &938764587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6909,6 +7500,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 1859365517}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &954638435 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5120291373324406506, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &959324429
 GameObject:
   m_ObjectHideFlags: 0
@@ -6991,7 +7587,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 677128050}
+  m_Camera: {fileID: 1618613931}
   m_PlaneDistance: 0.2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7026,6 +7622,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &960579099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 482879640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &960579101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960579099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &969099712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6532916064084297379, guid: 06aa738225546494682a0ed2627c524a, type: 3}
@@ -7132,6 +7747,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1072127853}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1704385919}
@@ -7230,6 +7848,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 997790180}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1827641340}
@@ -7239,6 +7860,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 987032997}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &997790178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 987032997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &997790180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997790178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1000930787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -7289,7 +7929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HellSequenceController
   xrOriginRoot: {fileID: 1007075}
   playerCamera: {fileID: 1536248204}
-  characterController: {fileID: 0}
+  characterController: {fileID: 2112650663}
   hellSpawnPoint: {fileID: 1056664062}
   hellMessenger: {fileID: 1832151938}
   messengerRotationOffset: {x: 0, y: 0, z: 0}
@@ -7332,7 +7972,7 @@ MonoBehaviour:
   fadeFromBlackDuration: 1.5
   oneShotSource: {fileID: 0}
   transitionClip: {fileID: 0}
-  transitionVolume: 0.9
+  transitionVolume: 0.502
   hellAmbienceSource: {fileID: 808843400}
   hellEndingCanvasGroup: {fileID: 959324430}
   devilGateImage: {fileID: 1288932051}
@@ -7365,6 +8005,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1019603824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 373656809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019603826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019603824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1021086143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7519,6 +8178,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1129859553}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1142592481}
@@ -7633,6 +8295,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 593875051}
   m_LocalEulerAnglesHint: {x: 0, y: 129.862, z: 0}
+--- !u!1 &1072127851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 969167052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1072127853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072127851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1088078788
 GameObject:
   m_ObjectHideFlags: 0
@@ -7683,6 +8364,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
+--- !u!1 &1101579111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1819613161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1108608992
 GameObject:
   m_ObjectHideFlags: 0
@@ -7758,6 +8444,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108608992}
   m_CullTransparentMesh: 1
+--- !u!1 &1109453271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 609369767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109453273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109453271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1122996282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 781589154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1122996284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122996282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1129859551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1026790622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1129859553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129859551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1133396113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7840,7 +8583,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 677128050}
+  m_Camera: {fileID: 1618613931}
   m_PlaneDistance: 0.3
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7904,6 +8647,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142592478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1143350484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 417739656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1143350486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143350484}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -8000,6 +8762,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2025923652}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2111714775}
@@ -8026,6 +8791,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154877358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1159292103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 135917364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159292105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159292103}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -8090,6 +8874,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
+--- !u!1 &1171190143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 321287172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1171190145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171190143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1181306711
 GameObject:
   m_ObjectHideFlags: 0
@@ -8120,7 +8923,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 54aefe4670b84f243967ea0c1d92a184, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.133
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8327,6 +9130,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1897656531}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1154877361}
@@ -8336,6 +9142,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1205159438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1207857084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 103470432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1207857086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207857084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1210998517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -8472,6 +9297,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1567558253}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 550056884}
@@ -8847,6 +9675,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2391709313139be419569ef0cd846f63, type: 3}
+--- !u!1 &1252893037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 238078260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1252893039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252893037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1274586390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9014,10 +9861,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
+--- !u!1 &1301137995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1344985772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1302446141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 593165990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1302446143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302446141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &1302905135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 222725939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1305138561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1647101635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1323148123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1828268575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1323423263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1954774680}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1344126775
 PrefabInstance:
@@ -9165,6 +10051,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1344985775}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 806165201}
@@ -9174,6 +10063,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1344985772}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1344985775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301137995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1354448960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9263,6 +10166,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1922602597}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 32236170}
@@ -9557,6 +10463,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1427266200}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1229955764}
@@ -9566,6 +10475,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1427266197}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1427266200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846262009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1461058535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -9836,6 +10759,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2136357776}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1845947567}
@@ -9934,6 +10860,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1759425441}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 604317150}
@@ -10045,6 +10974,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1994935462}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1909233946}
@@ -10127,6 +11059,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
+--- !u!1 &1567558251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1221512050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1567558253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567558251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &1570281651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b96a3b372853e54ca468b58ca1c5c09, type: 3}
@@ -10271,6 +11222,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1772187240}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 255880733}
@@ -10284,6 +11238,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 1385764392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1618613931 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8754801924087128983, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1628111681 stripped
 GameObject:
@@ -10393,6 +11352,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1647101638}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 197963580}
@@ -10401,6 +11363,25 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1647101635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1647101638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305138561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1657455191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1994372946}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1666203868 stripped
 GameObject:
@@ -10414,7 +11395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666203868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d269199224b9461409937b7538463379, type: 3}
   m_Name: 
@@ -10778,8 +11759,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.55167705, y: 1, z: 1}
-  m_Center: {x: 0.22416383, y: 2.1054335e-10, z: 5.3520836e-17}
+  m_Size: {x: 0.17892116, y: 1, z: 1}
+  m_Center: {x: 0.4105429, y: -2.0753472e-11, z: 1.3989331e-16}
 --- !u!1 &1735061725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -10888,6 +11869,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1736247686}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1390520666}
@@ -10897,6 +11881,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1736247683}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736247686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437185371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1744103705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10986,6 +11984,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071070173}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 672355466}
@@ -10995,6 +11996,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1744103705}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1759425439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1519181962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1759425441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759425439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1768353490
 GameObject:
   m_ObjectHideFlags: 0
@@ -11012,7 +12032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1768353491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11147,6 +12167,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
+--- !u!1 &1772187238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1596045623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1772187240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772187238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1772563429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11244,6 +12283,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1772563432}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1795358035}
@@ -11253,6 +12295,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1772563429}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1772563432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117031266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &1788084398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
@@ -11287,11 +12343,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2243020122175513880, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122175513880, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122246761220, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11335,11 +12391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122829345126, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122829345126, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122894124685, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11363,15 +12419,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243020123108092049, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 89.4
       objectReference: {fileID: 0}
     - target: {fileID: 2243020123108092049, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 3639148551234328385, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_Height
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639148551234328385, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757617331447001322, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504524130642332244, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7277802327471902856, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11399,19 +12467,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321045060958, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321045060958, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321669693207, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321669693207, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321834335947, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11435,11 +12503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322154648534, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322154648534, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322346956810, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11463,11 +12531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322663144351, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 89.4
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322663144351, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322872225859, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11542,6 +12610,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8404871649812681847, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404871649812681847, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
       value: 2
       objectReference: {fileID: 0}
@@ -11584,6 +12656,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803641913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1818266895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 17754503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1818266897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818266895}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -11680,6 +12771,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1819613164}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1094521145}
@@ -11689,6 +12783,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1819613161}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819613164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101579111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1823158333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -11701,6 +12809,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823158333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1827633977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 776527021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1827633979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827633977}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -11824,6 +12951,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1828268578}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 922899604}
@@ -11833,6 +12963,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1828268575}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1828268578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323148123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1828416785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11933,6 +13077,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
   m_PrefabInstance: {fileID: 251044701}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1833235413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 489409620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1833235415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833235413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1845947564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -11945,6 +13108,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845947564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1850073453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 318565581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1850073455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850073453}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -12251,6 +13433,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1862414133}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1000930790}
@@ -12260,6 +13445,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1862414130}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1862414133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930401406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1864204630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -12291,6 +13490,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897337059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1897656529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1205159438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1897656531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897656529}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
@@ -12675,6 +13893,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3258396189383055686, guid: f86d81bfcc5b9824f95f814029c9a659, type: 3}
   m_PrefabInstance: {fileID: 1930713039}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1922602595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1354448960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1922602597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922602595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1928996126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12764,6 +14001,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1928996129}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 28503734}
@@ -12773,6 +14013,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1928996126}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1928996129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257156159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1930713039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12931,6 +14185,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1948689838}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1721219343}
@@ -12940,6 +14197,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1948689835}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1948689838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239753924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &1950462096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -13089,6 +14360,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1954774683}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 25725520}
@@ -13098,6 +14372,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1954774680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1954774683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323423263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1967216515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13167,6 +14455,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06aa738225546494682a0ed2627c524a, type: 3}
+--- !u!1 &1977071894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 2050620051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1983992030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 219047619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983992032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983992030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &1994372946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13256,6 +14568,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1994372949}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1864204633}
@@ -13265,6 +14580,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1994372946}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1994372949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657455191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &1994935460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1560260491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1994935462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994935460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &2011398921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 213630522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2011398923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011398921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1001 &2025670477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13322,6 +14689,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
+--- !u!1 &2025923650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1149630018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2025923652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025923650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &2026050435
 GameObject:
   m_ObjectHideFlags: 0
@@ -13461,6 +14847,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2050620054}
     - targetCorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2088217173}
@@ -13470,11 +14859,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 2050620051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2050620054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977071894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &2053509946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 1566057767}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2071070171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1744103705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2071070173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071070171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!1 &2088217170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -13745,11 +15167,100 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
+--- !u!1 &2112650661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039255345588696228, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2112650662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112650661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d269199224b9461409937b7538463379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DesktopPlayerController
+  cameraOffset: {fileID: 954638435}
+  playerCamera: {fileID: 1536248204}
+  moveSpeed: 0.8
+  gravity: -9.81
+  mouseSensitivity: 0.18
+  maximumLookAngle: 80
+  keyboardTurnSpeed: 100
+  desktopControlEnabled: 1
+  showDebugLogs: 1
+--- !u!143 &2112650663
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112650661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.5
+  m_Radius: 0.55
+  m_SlopeLimit: 60
+  m_StepOffset: 0.45
+  m_SkinWidth: 0.1
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!4 &2115217233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 1372242257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2128134889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 98208176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128134891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128134889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
+--- !u!1 &2136357774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3355226370592047717, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
+  m_PrefabInstance: {fileID: 1514683120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2136357776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136357774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5148d806f93c9a849b06b9d23f93db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
+  playerTag: Player
+  showDebugLogs: 1
 --- !u!4 &543450651804931326
 Transform:
   m_ObjectHideFlags: 0
@@ -13973,15 +15484,17 @@ SceneRoots:
   - {fileID: 412558424}
   - {fileID: 2099412139}
   - {fileID: 1591400107}
-  - {fileID: 593875051}
   - {fileID: 548011731}
+  - {fileID: 593875051}
   - {fileID: 1016327649}
   - {fileID: 156100652}
   - {fileID: 1828416785}
   - {fileID: 1133396118}
   - {fileID: 1768353493}
   - {fileID: 959324434}
-  - {fileID: 815650769}
   - {fileID: 811990954}
   - {fileID: 43958063}
   - {fileID: 174539384}
+  - {fileID: 51310306}
+  - {fileID: 815650769}
+  - {fileID: 532427516}
