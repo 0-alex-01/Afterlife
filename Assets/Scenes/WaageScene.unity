@@ -406,6 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 43958063}
   - component: {fileID: 43958062}
+  - component: {fileID: 43958064}
   m_Layer: 0
   m_Name: NarratorVoice_Judgement
   m_TagString: Untagged
@@ -525,6 +526,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!164 &43958064
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43958061}
+  m_Enabled: 1
+  m_DryLevel: -100
+  m_Room: -900
+  m_RoomHF: -1800
+  m_DecayTime: 3.5
+  m_DecayHFRatio: 0.55
+  m_ReflectionsLevel: -1200
+  m_ReverbLevel: -350
+  m_ReverbDelay: 0.07
+  m_Diffusion: 80
+  m_Density: 80
+  m_HFReference: 4500
+  m_RoomLF: -500
+  m_LFReference: 250
+  m_ReflectionsDelay: 0.04
+  m_ReverbPreset: 27
 --- !u!1 &72062042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2060,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.0206146
+      value: -6.867
       objectReference: {fileID: 0}
     - target: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2044,7 +2068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.125431
+      value: -2.984
       objectReference: {fileID: 0}
     - target: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6400,7 +6424,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: fa884029b75b35849a81e599469a9b43, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.786
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7627,7 +7651,7 @@ Transform:
   m_GameObject: {fileID: 1056664061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9057977, z: -0, w: 0.42371055}
-  m_LocalPosition: {x: -16.783005, y: -6.720001, z: 3.7999992}
+  m_LocalPosition: {x: 100.15339, y: 121.49808, z: 45.40057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8120,7 +8144,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 54aefe4670b84f243967ea0c1d92a184, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.663
   m_Pitch: 1
   Loop: 0
   Mute: 0

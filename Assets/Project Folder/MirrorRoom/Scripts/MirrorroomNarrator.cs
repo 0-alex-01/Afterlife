@@ -64,6 +64,7 @@ public class MirrorroomNarrator : MonoBehaviour
         source.playOnAwake = false;
         source.loop = false;
         source.spatialBlend = 0f; // Erzählerstimme sitzt immer direkt im Ohr
+        VoiceLineReverb.Apply(source);
 
         if (mirror == null) mirror = FindFirstObjectByType<SoulMorphController>();
         if (pedestalRise == null) pedestalRise = FindFirstObjectByType<PedestalRiseSequence>();

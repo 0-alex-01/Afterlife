@@ -5063,6 +5063,7 @@ GameObject:
   - component: {fileID: 174746271}
   - component: {fileID: 174746270}
   - component: {fileID: 174746269}
+  - component: {fileID: 174746272}
   m_Layer: 0
   m_Name: VoidSpaceExperience
   m_TagString: Untagged
@@ -5224,6 +5225,29 @@ Transform:
   - {fileID: 85001661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!164 &174746272
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174746268}
+  m_Enabled: 1
+  m_DryLevel: -100
+  m_Room: -900
+  m_RoomHF: -1800
+  m_DecayTime: 3.5
+  m_DecayHFRatio: 0.55
+  m_ReflectionsLevel: -1200
+  m_ReverbLevel: -350
+  m_ReverbDelay: 0.07
+  m_Diffusion: 80
+  m_Density: 80
+  m_HFReference: 4500
+  m_RoomLF: -500
+  m_LFReference: 250
+  m_ReflectionsDelay: 0.04
+  m_ReverbPreset: 27
 --- !u!1 &202199111
 GameObject:
   m_ObjectHideFlags: 0

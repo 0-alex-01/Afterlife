@@ -219,6 +219,7 @@ public class HellSequenceController : MonoBehaviour
     private Coroutine endingRoutine;
 
     private bool transitionStarted;
+    private bool immediateTeleportRequested;
     private bool playerArrivedInHell;
     private bool endingStarted;
 
@@ -347,6 +348,22 @@ public class HellSequenceController : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Wird beim tatsächlichen Herunterfallen verwendet. Eine bereits laufende
+    /// Boten-Annäherung wird übersprungen, damit der Spieler nicht weiter durch
+    /// das weiße Nichts fällt, bevor die Schwarzblende und der Teleport beginnen.
+    /// </summary>
+    public void BeginImmediateHellTransition()
+    {
+        immediateTeleportRequested = true;
+
+        if (!transitionStarted)
+        {
+            BeginHellTransition();
+        }
+    }
+
+
     private bool ValidateTransitionReferences()
     {
         if (xrOriginRoot == null)
@@ -403,19 +420,27 @@ public class HellSequenceController : MonoBehaviour
             );
         }
 
-        if (delayBeforeMessengerMoves > 0f)
+        if (!immediateTeleportRequested &&
+            delayBeforeMessengerMoves > 0f)
         {
-            yield return new WaitForSeconds(
-                delayBeforeMessengerMoves
-            );
+            float delayElapsed = 0f;
+
+            while (delayElapsed < delayBeforeMessengerMoves &&
+                   !immediateTeleportRequested)
+            {
+                delayElapsed += Time.deltaTime;
+                yield return null;
+            }
         }
 
-        if (hellMessenger != null)
+        if (!immediateTeleportRequested &&
+            hellMessenger != null)
         {
             yield return MoveMessengerTowardPlayer();
         }
 
-        if (messengerStareDuration > 0f)
+        if (!immediateTeleportRequested &&
+            messengerStareDuration > 0f)
         {
             yield return StareAtPlayerRoutine();
         }
@@ -499,7 +524,8 @@ public class HellSequenceController : MonoBehaviour
         float elapsed = 0f;
 
         while (elapsed <
-               messengerApproachDuration)
+               messengerApproachDuration &&
+               !immediateTeleportRequested)
         {
             elapsed += Time.deltaTime;
 
@@ -533,10 +559,13 @@ public class HellSequenceController : MonoBehaviour
             yield return null;
         }
 
-        hellMessenger.position =
-            CalculateMessengerTargetPosition();
+        if (!immediateTeleportRequested)
+        {
+            hellMessenger.position =
+                CalculateMessengerTargetPosition();
 
-        FaceMessengerTowardPlayer();
+            FaceMessengerTowardPlayer();
+        }
     }
 
 
@@ -593,7 +622,8 @@ public class HellSequenceController : MonoBehaviour
         float elapsed = 0f;
 
         while (elapsed <
-               messengerStareDuration)
+               messengerStareDuration &&
+               !immediateTeleportRequested)
         {
             elapsed += Time.deltaTime;
 
@@ -875,6 +905,7 @@ public class HellSequenceController : MonoBehaviour
         }
 
         transitionStarted = false;
+        immediateTeleportRequested = false;
         playerArrivedInHell = false;
         endingStarted = false;
 
