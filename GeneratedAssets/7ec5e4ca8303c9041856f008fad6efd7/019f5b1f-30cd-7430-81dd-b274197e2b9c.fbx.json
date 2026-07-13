@@ -1,0 +1,23 @@
+{
+    "asset": "7ec5e4ca8303c9041856f008fad6efd7",
+    "fileName": "019f5b1f-30cd-7430-81dd-b274197e2b9c.fbx",
+    "prompt": "A majestic ancient oak tree with thick gnarled roots and lush, vibrant green summer foliage, healthy and alive, high-fantasy stylized mesh",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "7766a2724e223534cb80872ee7eeb164",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

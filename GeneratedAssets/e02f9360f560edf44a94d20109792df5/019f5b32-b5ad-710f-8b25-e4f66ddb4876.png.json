@@ -1,0 +1,31 @@
+{
+    "asset": "e02f9360f560edf44a94d20109792df5",
+    "fileName": "019f5b32-b5ad-710f-8b25-e4f66ddb4876.png",
+    "prompt": "A gargantuan, ancient summer oak tree, massive and incredibly dense solid dome of vibrant lush green foliage, thick gnarled brown trunk, mystical high-fantasy stylized art, isolated on white background, full body view, overflowing with life and vitality, no visible branches through the leaves",
+    "negativePrompt": "",
+    "model": "flux-2-dev",
+    "modelName": "Flux 2 (Dev)",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

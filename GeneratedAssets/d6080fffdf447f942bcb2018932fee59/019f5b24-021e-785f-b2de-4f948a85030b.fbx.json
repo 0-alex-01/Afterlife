@@ -1,0 +1,23 @@
+{
+    "asset": "d6080fffdf447f942bcb2018932fee59",
+    "fileName": "019f5b24-021e-785f-b2de-4f948a85030b.fbx",
+    "prompt": "A majestic ancient tree with dense, thick, voluminous green summer foliage and white flowers, thick gnarled trunk and roots, mystical high-fantasy stylized 3D model, bushy leaf canopy",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "c52bf77939ad8524a83c1132effca793",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

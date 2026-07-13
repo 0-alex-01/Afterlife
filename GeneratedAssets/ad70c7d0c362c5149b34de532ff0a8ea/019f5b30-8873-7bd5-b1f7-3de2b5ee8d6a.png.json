@@ -1,0 +1,31 @@
+{
+    "asset": "ad70c7d0c362c5149b34de532ff0a8ea",
+    "fileName": "019f5b30-8873-7bd5-b1f7-3de2b5ee8d6a.png",
+    "prompt": "A majestic, gargantuan ancient oak tree, long gnarled brown trunk, massive wide-spreading crown with dense clusters of vibrant lush summer green leaves, high-fantasy stylized art, isolated on white background, full body view, radiant life, very tall and wide canopy",
+    "negativePrompt": "",
+    "model": "flux-2-dev",
+    "modelName": "Flux 2 (Dev)",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
