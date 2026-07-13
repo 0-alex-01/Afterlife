@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &1007075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8398930802952340619, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &17754503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1374,6 +1379,104 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
+--- !u!1 &174539380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174539384}
+  - component: {fileID: 174539383}
+  - component: {fileID: 174539382}
+  - component: {fileID: 174539381}
+  m_Layer: 0
+  m_Name: HellFallTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &174539381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174539380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd4726b8fe2e2047a343a155e161e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HellFallTrigger
+  sequenceManager: {fileID: 412558423}
+  playerRoot: {fileID: 395904346}
+  playerTag: Player
+  triggerOnlyOnce: 1
+--- !u!54 &174539382
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174539380}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!65 &174539383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174539380}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.907028, y: 4, z: 37.023907}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &174539384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174539380}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.6531, y: -3.0244145, z: 38.93992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &185596703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2822,6 +2925,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 373656809}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &395904346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 112091911240028014, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &395904347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3686382583760385631, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03179d1c71729b3429940e67711597a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AfterlifeNoclip
+--- !u!114 &395904348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 829123723633956862, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2299af165ef2148b128cb7c00383bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &398171483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -2984,16 +3114,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AfterlifeSequenceManager
   currentState: 0
-  xrOriginRoot: {fileID: 1666203869}
-  playerCamera: {fileID: 677128054}
-  characterController: {fileID: 1666203872}
-  desktopController: {fileID: 1666203871}
+  xrOriginRoot: {fileID: 1007075}
+  playerCamera: {fileID: 1536248204}
+  characterController: {fileID: 0}
+  desktopController: {fileID: 0}
   vrLocomotionBehaviours:
-  - {fileID: 2076527152}
-  - {fileID: 1777051068}
-  - {fileID: 1144160249}
-  - {fileID: 610544771}
-  - {fileID: 0}
+  - {fileID: 395904348}
+  - {fileID: 395904347}
   choirSource: {fileID: 1181306712}
   normalChoirVolume: 0.55
   warningAudioFadeDuration: 0.8
@@ -4036,8 +4163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de4456888490b847adf71476554a91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerProgressMonitor
-  playerRoot: {fileID: 1666203869}
-  playerCamera: {fileID: 677128054}
+  playerRoot: {fileID: 395904346}
+  playerCamera: {fileID: 1536248204}
   totalStepCount: 55
   staircaseForwardReference: {fileID: 556540587}
   movementThreshold: 0.04
@@ -4592,17 +4719,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 609369767}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &610544771 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3123834650606846029, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496880615cd240be960d436c1c8ae570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &617514893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -6197,6 +6313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 302829214166318448, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4039255345588696228, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
       propertyPath: m_Name
       value: AutoHandPlayer_Afterlife
@@ -7167,9 +7287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c38d57bae687b438fa9a06d43ab387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HellSequenceController
-  xrOriginRoot: {fileID: 1666203869}
-  playerCamera: {fileID: 677128054}
-  characterController: {fileID: 1666203872}
+  xrOriginRoot: {fileID: 1007075}
+  playerCamera: {fileID: 1536248204}
+  characterController: {fileID: 0}
   hellSpawnPoint: {fileID: 1056664062}
   hellMessenger: {fileID: 1832151938}
   messengerRotationOffset: {x: 0, y: 0, z: 0}
@@ -7791,17 +7911,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairStepTrigger
   playerTag: Player
   showDebugLogs: 1
---- !u!114 &1144160249 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8988371223026793012, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1149630018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8545,7 +8654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e61dd074cdd7c4597e1492d005b9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StaircaseRevealController
-  playerHead: {fileID: 677128054}
+  playerHead: {fileID: 1536248204}
   staircaseLookTarget: {fileID: 153431805}
   lookThreshold: 0.72
   requiredLookDuration: 0.6
@@ -9834,6 +9943,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1519181962}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1536248204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3551395051494834509, guid: 255a63542b61d0546b4d10115bc53206, type: 3}
+  m_PrefabInstance: {fileID: 811990954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1560260491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10293,11 +10407,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8298045291338814966, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
   m_PrefabInstance: {fileID: 1798408028}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1666203869 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8298045291338814965, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1666203871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10319,11 +10428,6 @@ MonoBehaviour:
   keyboardTurnSpeed: 100
   desktopControlEnabled: 1
   showDebugLogs: 1
---- !u!143 &1666203872 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 3639148551234328385, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1704385916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -11149,17 +11253,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5482654698271265719, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
   m_PrefabInstance: {fileID: 1772563429}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1777051068 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7412079985589468698, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1e8c997df241c1a67045eeac79b41b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1788084398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3366041965863689604, guid: 4c6c38e14c88aa44c89c7a9dd022abe6, type: 3}
@@ -13382,17 +13475,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2537176151952151164, guid: 684e1a7a86dee8b438fff4e964f6a86a, type: 3}
   m_PrefabInstance: {fileID: 1566057767}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2076527152 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 73949512329761232, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
-  m_PrefabInstance: {fileID: 1798408028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f365cf844c03449bc8973eead2c3c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2088217170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3226486367301007505, guid: 439c67a356c03a14ab23e46263e6d2cc, type: 3}
@@ -13902,3 +13984,4 @@ SceneRoots:
   - {fileID: 815650769}
   - {fileID: 811990954}
   - {fileID: 43958063}
+  - {fileID: 174539384}
