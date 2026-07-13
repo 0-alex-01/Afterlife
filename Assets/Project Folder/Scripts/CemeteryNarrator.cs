@@ -47,6 +47,7 @@ public class CemeteryNarrator : MonoBehaviour
         source.playOnAwake = false;
         source.loop = false;
         source.spatialBlend = 0f;
+        VoiceLineReverb.Apply(source);
 
         if (atmosphere == null) atmosphere = FindFirstObjectByType<CemeteryAtmosphereManager>();
         if (playerHead == null && Camera.main != null) playerHead = Camera.main.transform;

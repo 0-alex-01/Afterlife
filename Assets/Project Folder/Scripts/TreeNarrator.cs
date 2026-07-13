@@ -67,6 +67,7 @@ public class TreeNarrator : MonoBehaviour
         source.playOnAwake = false;
         source.loop = false;
         source.spatialBlend = 0f; // Erzählerstimme sitzt immer direkt im Ohr
+        VoiceLineReverb.Apply(source);
 
         if (ascension == null) ascension = FindFirstObjectByType<AfterlifeAscensionController>();
         if (portal == null) portal = FindFirstObjectByType<TreePortalUnlock>();

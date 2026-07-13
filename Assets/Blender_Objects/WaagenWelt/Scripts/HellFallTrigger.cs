@@ -6,11 +6,16 @@ public class HellFallTrigger : MonoBehaviour
 {
     [Header("Hell Sequence")]
     [SerializeField] private AfterlifeSequenceManager sequenceManager;
+    [SerializeField] private HellSequenceController hellSequenceController;
 
     [Header("AutoHand Player")]
     [SerializeField] private Transform playerRoot;
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private bool triggerOnlyOnce = true;
+
+    [Header("Fall-Absicherung")]
+    [SerializeField] private bool useHeightFallback = true;
+    [SerializeField] private float fallbackTriggerHeight = -1f;
 
     private bool hasTriggered;
 
@@ -22,6 +27,18 @@ public class HellFallTrigger : MonoBehaviour
     private void Awake()
     {
         ConfigurePhysics();
+
+        if (hellSequenceController == null)
+            hellSequenceController = FindFirstObjectByType<HellSequenceController>();
+    }
+
+    private void Update()
+    {
+        if (!useHeightFallback || hasTriggered || playerRoot == null)
+            return;
+
+        if (playerRoot.position.y <= fallbackTriggerHeight)
+            TriggerHellSequence("Höhen-Absicherung");
     }
 
     private void ConfigurePhysics()
@@ -43,16 +60,29 @@ public class HellFallTrigger : MonoBehaviour
         if ((triggerOnlyOnce && hasTriggered) || !IsPlayer(other))
             return;
 
+        TriggerHellSequence("Fall-Trigger");
+    }
+
+    private void TriggerHellSequence(string reason)
+    {
+        if (triggerOnlyOnce && hasTriggered)
+            return;
+
         hasTriggered = true;
 
-        if (sequenceManager == null)
+        if (sequenceManager == null && hellSequenceController == null)
         {
-            Debug.LogError("HellFallTrigger: AfterlifeSequenceManager fehlt.", this);
+            Debug.LogError("HellFallTrigger: Keine Höllensequenz gefunden.", this);
             return;
         }
 
-        Debug.Log("HellFallTrigger: Spieler ist von der Treppe gefallen. Höllensequenz startet.", this);
-        sequenceManager.StartHellSequence();
+        Debug.Log($"HellFallTrigger: {reason} ausgelöst. Schneller Höllenteleport startet.", this);
+
+        if (sequenceManager != null)
+            sequenceManager.StartHellSequence();
+
+        if (hellSequenceController != null)
+            hellSequenceController.BeginImmediateHellTransition();
     }
 
     private bool IsPlayer(Collider other)
