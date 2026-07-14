@@ -65,16 +65,14 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
     [InitializeOnLoadMethod]
     private static void InstallEditorPreviewHooks()
     {
-        EditorSceneManager.sceneOpened -= HandleEditorSceneOpened;
-        EditorSceneManager.sceneOpened += HandleEditorSceneOpened;
-        EditorApplication.playModeStateChanged -= HandleEditorPlayModeChanged;
-        EditorApplication.playModeStateChanged += HandleEditorPlayModeChanged;
-        EditorApplication.delayCall += EnsureEditorPreviewsForOpenedScenes;
+        // Editor previews are intentionally disabled. The nature scenes contain
+        // hundreds of thousands of objects; scanning them from an InitializeOnLoad
+        // callback can overlap OpenXR's startup reload and stall the AppDomain.
     }
 
     private static void HandleEditorSceneOpened(Scene scene, OpenSceneMode mode)
     {
-        EditorApplication.delayCall += () => EnsureEditorPreviewForScene(scene);
+        EditorApplication.delayCall += DestroyAllEditorPreviews;
     }
 
     private static void HandleEditorPlayModeChanged(PlayModeStateChange state)
@@ -82,24 +80,21 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         if (state == PlayModeStateChange.ExitingEditMode)
             DestroyAllEditorPreviews();
         else if (state == PlayModeStateChange.EnteredEditMode)
-            EditorApplication.delayCall += EnsureEditorPreviewsForOpenedScenes;
+            EditorApplication.delayCall += DestroyAllEditorPreviews;
     }
 
-    [MenuItem("Afterlife/Nature Rooms/Rebuild Scene Preview")]
+    [MenuItem("Afterlife/Nature Rooms/Remove Generated Scene Previews")]
     private static void RebuildEditorPreviews()
     {
         DestroyAllEditorPreviews();
-        EnsureEditorPreviewsForOpenedScenes();
         SceneView.RepaintAll();
     }
 
     private static void EnsureEditorPreviewsForOpenedScenes()
     {
-        if (EditorApplication.isPlayingOrWillChangePlaymode)
-            return;
-
-        for (int index = 0; index < SceneManager.sceneCount; index++)
-            EnsureEditorPreviewForScene(SceneManager.GetSceneAt(index));
+        // Generated previews previously overlaid Harmony, Chaos and Decay when
+        // scenes were open additively. Keep authored scene contents untouched.
+        DestroyAllEditorPreviews();
     }
 
     private static void EnsureEditorPreviewForScene(Scene scene)
@@ -109,6 +104,8 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         {
             return;
         }
+
+        RemoveDecayArtifactsFromNonDecayScene(scene);
 
         foreach (GameObject root in scene.GetRootGameObjects())
         {
@@ -133,6 +130,7 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
     private static void DestroyAllEditorPreviews()
     {
+        var previewObjects = new HashSet<GameObject>();
         for (int sceneIndex = 0; sceneIndex < SceneManager.sceneCount; sceneIndex++)
         {
             Scene scene = SceneManager.GetSceneAt(sceneIndex);
@@ -141,10 +139,29 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
             foreach (GameObject root in scene.GetRootGameObjects())
             {
-                if (root.name == EditorPreviewObjectName)
-                    DestroyImmediate(root);
+                if (root.name == EditorPreviewObjectName ||
+                    root.name.Contains("Scene Preview"))
+                {
+                    previewObjects.Add(root);
+                }
+
+                foreach (NatureRoomEnvironmentController controller in
+                         root.GetComponentsInChildren<NatureRoomEnvironmentController>(true))
+                {
+                    if (controller.editorPreview)
+                        previewObjects.Add(controller.gameObject);
+                }
             }
         }
+
+        foreach (GameObject previewObject in previewObjects)
+        {
+            if (previewObject != null)
+                DestroyImmediate(previewObject);
+        }
+
+        if (previewObjects.Count > 0)
+            SceneView.RepaintAll();
     }
 
     private void BuildEditorPreview()
@@ -161,10 +178,10 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         generatedRoot = new GameObject("Generated Nature Room Dressing (Scene Preview)");
         generatedRoot.transform.SetParent(transform, false);
         CreateTrueCloudIslandRing();
-        CreateInvisibleBoundary();
 
-        if (profile == RoomProfile.Decay)
-            CreateDecayWorldConcept();
+        // Runtime-only gameplay objects must never be part of the editor preview.
+        // Otherwise additive scene editing makes decay monoliths and invisible
+        // anti-drop walls appear in Harmony/Chaos again after every domain reload.
 
         MarkPreviewHierarchyDontSave(transform);
         environmentReady = true;
@@ -234,6 +251,8 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         if (!TryGetProfile(scene.name, out RoomProfile sceneProfile))
             return;
 
+        RemoveDecayArtifactsFromNonDecayScene(scene);
+
         foreach (GameObject root in scene.GetRootGameObjects())
         {
             if (root.name == RuntimeObjectName)
@@ -269,12 +288,78 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         }
     }
 
+    private static void RemoveDecayArtifactsFromNonDecayScene(Scene scene)
+    {
+        if (!scene.IsValid() || !scene.isLoaded || scene.name == "Vergänglichkeit")
+            return;
+
+        var artifacts = new List<GameObject>();
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            foreach (Transform candidate in root.GetComponentsInChildren<Transform>(true))
+            {
+                if (!IsDecayArtifact(candidate))
+                    continue;
+
+                bool coveredByParent = false;
+                for (Transform parent = candidate.parent; parent != null; parent = parent.parent)
+                {
+                    if (IsDecayArtifact(parent))
+                    {
+                        coveredByParent = true;
+                        break;
+                    }
+                }
+
+                if (!coveredByParent)
+                    artifacts.Add(candidate.gameObject);
+            }
+        }
+
+        foreach (GameObject artifact in artifacts)
+        {
+            if (artifact == null)
+                continue;
+
+            if (Application.isPlaying)
+                Object.Destroy(artifact);
+#if UNITY_EDITOR
+            else
+                Object.DestroyImmediate(artifact);
+#endif
+        }
+
+        if (artifacts.Count > 0)
+        {
+            Debug.Log(
+                $"[Nature Room] {scene.name}: {artifacts.Count} falsch einsortierte " +
+                "Verwesungs-Hierarchien entfernt.");
+        }
+    }
+
+    private static bool IsDecayArtifact(Transform candidate)
+    {
+        if (candidate == null)
+            return false;
+
+        if (candidate.GetComponent<DecayWorldEscapeController>() != null)
+            return true;
+
+        string objectName = candidate.name;
+        return objectName == "Verwesung - Memory Against Decay" ||
+               objectName == "Field of Broken Time" ||
+               objectName.StartsWith("Decaying Time Monolith", System.StringComparison.Ordinal) ||
+               objectName.StartsWith("Memory Anchor", System.StringComparison.Ordinal) ||
+               objectName == "Remembered Exit Portal";
+    }
+
     private IEnumerator Start()
     {
         if (!Application.isPlaying)
             yield break;
 
         roomScene = gameObject.scene;
+        RemoveDecayArtifactsFromNonDecayScene(roomScene);
 
         // Die großen Szenen initialisieren beim Laden mehrere Prefabs. Zwei Frames
         // warten verhindert, dass wir noch nicht aktivierte Rig-/Portalobjekte erwischen.
@@ -301,7 +386,12 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         generatedRoot.transform.SetParent(transform, false);
 
         CreateTrueCloudIslandRing();
-        CreateInvisibleBoundary();
+
+        // Harmony and Chaos use their authored geometry. A generated horizontal
+        // boundary moved the Harmony player a second time after the real spawn and
+        // produced the unwanted barrier ring in Chaos. Decay keeps its safety ring.
+        if (profile == RoomProfile.Decay)
+            CreateInvisibleBoundary();
 
         if (profile == RoomProfile.Decay)
             CreateDecayWorldConcept();
@@ -337,6 +427,14 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         if (!Application.isPlaying)
             return;
 
+        // A scene can be unloaded while this frame is still finishing. Do not let
+        // a stale controller query an invalid scene during direct room changes.
+        if (!roomScene.IsValid() || !roomScene.isLoaded)
+        {
+            enabled = false;
+            return;
+        }
+
         if (!environmentReady)
             return;
 
@@ -369,7 +467,8 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
             playerPosition.x - boundaryCenter.x,
             playerPosition.z - boundaryCenter.z);
 
-        if (fromCenter.magnitude > boundaryRadius - 1.5f &&
+        if (profile == RoomProfile.Decay &&
+            fromCenter.magnitude > boundaryRadius - 1.5f &&
             !IsInsideSafePathCorridor(playerPosition))
         {
             Vector2 clamped = fromCenter.normalized * (boundaryRadius - 2.5f);
@@ -406,6 +505,9 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
     private Transform FindPlayerRoot()
     {
+        if (!roomScene.IsValid() || !roomScene.isLoaded)
+            return null;
+
         foreach (AutoHandPlayer autoHandPlayer in
                  Object.FindObjectsByType<AutoHandPlayer>(
                      FindObjectsInactive.Include,
@@ -1023,6 +1125,11 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
     private void CreateDecayWorldConcept()
     {
+        // Belt-and-suspenders guard: decay gameplay may only be generated inside
+        // the dedicated Vergänglichkeit scene, even when scenes are open additively.
+        if (profile != RoomProfile.Decay || roomScene.name != "Vergänglichkeit")
+            return;
+
         var decayLoopObject = new GameObject("Verwesung - Memory Against Decay");
         decayLoopObject.transform.SetParent(generatedRoot.transform, false);
         DecayWorldEscapeController decayLoop =

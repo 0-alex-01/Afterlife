@@ -10,6 +10,13 @@ public class FlatlineFlicker : MonoBehaviour
 
     private bool triggered;
 
+    private void OnEnable()
+    {
+        // The intro should remain visually stable in the build. Older versions
+        // left a partially opaque frame behind when the scene initialized.
+        SetAlpha(0f);
+    }
+
     void Update()
     {
         if (triggered || audioSource == null)
@@ -25,19 +32,15 @@ public class FlatlineFlicker : MonoBehaviour
     public IEnumerator FlickerRoutine()
     {
         triggered = true;
-
-        for (int i = 0; i < 8; i++)
-        {
-            SetAlpha(Random.Range(0.15f, 0.55f));
-            yield return new WaitForSeconds(Random.Range(0.03f, 0.09f));
-
-            SetAlpha(0f);
-            yield return new WaitForSeconds(Random.Range(0.03f, 0.12f));
-        }
+        SetAlpha(0f);
+        yield break;
     }
 
     void SetAlpha(float a)
     {
+        if (blackOverlay == null)
+            return;
+
         Color c = blackOverlay.color;
         c.a = a;
         blackOverlay.color = c;
