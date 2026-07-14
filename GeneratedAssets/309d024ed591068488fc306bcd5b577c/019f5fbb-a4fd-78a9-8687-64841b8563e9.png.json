@@ -1,0 +1,31 @@
+{
+    "asset": "309d024ed591068488fc306bcd5b577c",
+    "fileName": "019f5fbb-a4fd-78a9-8687-64841b8563e9.png",
+    "prompt": "A single Buddhist endless knot (eternal knot, Shrivatsa), full object, centered, isolated on a plain pure white background. Interwoven golden and stone ribbons forming a symmetrical sacred loop, ornate carved temple artifact, warm gold accents, soft even studio lighting, straight-on front view, entire knot visible, clean product shot",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -204,6 +204,10 @@ public class HellSequenceController : MonoBehaviour
     [SerializeField]
     private AudioSource narratorSource;
 
+    [Tooltip("Voice-Line direkt nach der sicheren Ankunft in der Hölle.")]
+    [SerializeField]
+    private AudioClip arrivalNarrationClip;
+
     [SerializeField]
     private AudioClip endingNarrationClip;
 
@@ -288,6 +292,7 @@ public class HellSequenceController : MonoBehaviour
     {
         FindMissingReferences();
         PrepareCanvases();
+        EnsureNarratorSource();
 
         if (devilGateImage != null &&
             devilGateSprite != null)
@@ -1055,6 +1060,13 @@ public class HellSequenceController : MonoBehaviour
         hellArrivalPosition =
             xrOriginRoot.position;
 
+        if (narratorSource != null && arrivalNarrationClip != null)
+        {
+            narratorSource.Stop();
+            narratorSource.clip = arrivalNarrationClip;
+            narratorSource.Play();
+        }
+
         if (showDebugLogs)
         {
             Debug.Log(
@@ -1063,6 +1075,22 @@ public class HellSequenceController : MonoBehaviour
                 this
             );
         }
+    }
+
+
+    private void EnsureNarratorSource()
+    {
+        if (narratorSource == null)
+        {
+            GameObject narratorObject = new GameObject("Hell Arrival Narrator");
+            narratorObject.transform.SetParent(transform, false);
+            narratorSource = narratorObject.AddComponent<AudioSource>();
+        }
+
+        narratorSource.playOnAwake = false;
+        narratorSource.loop = false;
+        narratorSource.spatialBlend = 0f;
+        VoiceLineReverb.Apply(narratorSource);
     }
 
 

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Autohand;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
@@ -12,6 +11,7 @@ using UnityEngine.SceneManagement;
 public sealed class DecayWorldEscapeController : MonoBehaviour
 {
     public event System.Action FirstAnchorStabilized;
+    public event System.Action AllAnchorsStabilized;
 
     private readonly List<Transform> anchorCores = new List<Transform>();
     private readonly List<Transform> orbitRoots = new List<Transform>();
@@ -20,7 +20,6 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
     private Transform playerRoot;
     private Transform portalRoot;
     private Collider portalTrigger;
-    private TMP_Text instructionText;
     private Material decayMaterial;
     private int nextAnchorIndex;
     private Color initialFogColor;
@@ -31,6 +30,7 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
         Vector3 startPosition,
         Transform authoredExit,
         Vector3 worldCenter,
+        Vector3 anchorAreaCenter,
         float worldRadius,
         Transform generatedParent,
         NatureCloudAssetLibrary assets)
@@ -56,23 +56,24 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
             : worldCenter + new Vector3(worldRadius * 0.42f, 0f, worldRadius * 0.18f);
         finalPosition = PlaceOnGround(finalPosition, startPosition.y);
 
-        Vector3 pathDirection = Vector3.ProjectOnPlane(finalPosition - startPosition, Vector3.up);
-        if (pathDirection.sqrMagnitude < 36f)
-            pathDirection = new Vector3(0.74f, 0f, 0.67f) * Mathf.Max(28f, worldRadius * 0.45f);
-
-        float[] pathSteps = { 0.28f, 0.53f, 0.78f };
-        for (int index = 0; index < pathSteps.Length; index++)
+        // All three interactive anchors live on the authored middle island.
+        // Their triangle layout keeps the order readable without rebuilding
+        // the old brown bridge or forcing the player onto a generated path.
+        Vector3[] islandOffsets =
         {
-            // Die Anker stehen jetzt genau auf dem geraden, gesicherten Zugangsweg.
-            // Der Spieler muss weder suchen noch seitlich über ungesicherten Boden.
-            Vector3 position = startPosition + pathDirection * pathSteps[index];
+            new Vector3(-4.8f, 0f, -2.8f),
+            new Vector3(4.6f, 0f, -2.4f),
+            new Vector3(0.2f, 0f, 4.8f)
+        };
+        for (int index = 0; index < islandOffsets.Length; index++)
+        {
+            Vector3 position = anchorAreaCenter + islandOffsets[index];
             position = PlaceOnGround(position, startPosition.y);
             CreateMemoryAnchor(index, position);
         }
 
         CreateDecayMonoliths(worldCenter, Mathf.Min(worldRadius * 0.58f, 48f), startPosition.y);
         CreateExitPortal(finalPosition + Vector3.up * 1.7f);
-        CreateInstructionText(startPosition, pathDirection.normalized);
     }
 
     private void Update()
@@ -107,14 +108,6 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
             portalRoot.Rotate(Vector3.forward, 24f * Time.deltaTime, Space.Self);
             float portalPulse = 1f + Mathf.Sin(Time.time * 2.1f) * 0.055f;
             portalRoot.localScale = Vector3.one * portalPulse;
-        }
-
-        if (instructionText != null && playerRoot != null)
-        {
-            Vector3 lookDirection = instructionText.transform.position - playerRoot.position;
-            lookDirection.y = 0f;
-            if (lookDirection.sqrMagnitude > 0.1f)
-                instructionText.transform.rotation = Quaternion.LookRotation(lookDirection.normalized);
         }
 
         RenderSettings.fogColor = Color.Lerp(
@@ -191,7 +184,6 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
 
         if (anchorIndex != nextAnchorIndex)
         {
-            SetInstruction("Die Erinnerung zerfällt noch. Folge dem ersten orangefarbenen Puls.");
             if (anchorIndex < anchorLights.Count && anchorLights[anchorIndex] != null)
                 StartCoroutine(FlashWrongAnchor(anchorLights[anchorIndex]));
             return;
@@ -221,12 +213,11 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
                 anchorLights[nextAnchorIndex].range = 6.2f;
             }
 
-            SetInstruction($"Erinnerung {nextAnchorIndex}/3 stabilisiert. Berühre den nächsten orangefarbenen Puls mit deiner Hand.");
         }
         else
         {
-            SetInstruction("Der Zerfall hält inne. Das Tor erinnert sich an den Ausgang.");
             ActivateExitPortal();
+            AllAnchorsStabilized?.Invoke();
         }
     }
 
@@ -277,7 +268,7 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
         core.transform.localPosition = Vector3.up * 1.25f;
         core.transform.localRotation = Quaternion.Euler(12f, 45f, -8f);
         core.transform.localScale = new Vector3(0.48f, 1.75f, 0.48f);
-        Destroy(core.GetComponent<Collider>());
+        DestroyGeneratedCollider(core.GetComponent<Collider>());
         ApplyDecayMaterial(core.GetComponent<MeshRenderer>());
         anchorCores.Add(core.transform);
 
@@ -300,7 +291,7 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
                 fragmentIndex * 43f,
                 fragmentIndex * 19f);
             fragment.transform.localScale = new Vector3(0.18f, 0.44f, 0.14f);
-            Destroy(fragment.GetComponent<Collider>());
+            DestroyGeneratedCollider(fragment.GetComponent<Collider>());
             ApplyDecayMaterial(fragment.GetComponent<MeshRenderer>());
         }
 
@@ -350,7 +341,7 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
                 Mathf.Lerp(0.45f, 1.1f, Mathf.Repeat(index * 0.43f, 1f)),
                 Mathf.Lerp(3f, 6.8f, Mathf.Repeat(index * 0.61f, 1f)),
                 Mathf.Lerp(0.4f, 0.9f, Mathf.Repeat(index * 0.29f, 1f)));
-            Destroy(monolith.GetComponent<Collider>());
+            DestroyGeneratedCollider(monolith.GetComponent<Collider>());
             ApplyDecayMaterial(monolith.GetComponent<MeshRenderer>());
         }
     }
@@ -374,7 +365,7 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
                 0f);
             segment.transform.localRotation = Quaternion.Euler(0f, 0f, -angle * Mathf.Rad2Deg);
             segment.transform.localScale = new Vector3(0.32f, 0.72f, 0.28f);
-            Destroy(segment.GetComponent<Collider>());
+            DestroyGeneratedCollider(segment.GetComponent<Collider>());
             ApplyDecayMaterial(segment.GetComponent<MeshRenderer>());
         }
 
@@ -396,26 +387,6 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
         if (portalTrigger != null)
             portalTrigger.enabled = true;
         CreateRestorationBurst(portalRoot.position);
-    }
-
-    private void CreateInstructionText(Vector3 startPosition, Vector3 forward)
-    {
-        var textObject = new GameObject("Verwesung Guidance");
-        textObject.transform.SetParent(transform, true);
-        textObject.transform.position = startPosition + forward * 4.5f + Vector3.up * 2.4f;
-        instructionText = textObject.AddComponent<TextMeshPro>();
-        instructionText.fontSize = 2.3f;
-        instructionText.alignment = TextAlignmentOptions.Center;
-        instructionText.color = new Color(1f, 0.67f, 0.38f, 0.94f);
-        instructionText.enableWordWrapping = true;
-        instructionText.rectTransform.sizeDelta = new Vector2(9f, 3f);
-        SetInstruction("Der Zerfall hat den Ausgang vergessen. Folge dem geraden Pfad und berühre den orangefarbenen Erinnerungsanker mit deiner Hand.");
-    }
-
-    private void SetInstruction(string message)
-    {
-        if (instructionText != null)
-            instructionText.text = message;
     }
 
     private void CreateRestorationBurst(Vector3 position)
@@ -512,6 +483,19 @@ public sealed class DecayWorldEscapeController : MonoBehaviour
     private void OnDestroy()
     {
         Shader.SetGlobalFloat("_DecayRestoration", 0f);
+    }
+
+    private static void DestroyGeneratedCollider(Collider target)
+    {
+        if (target == null)
+            return;
+
+        if (Application.isPlaying)
+            Destroy(target);
+#if UNITY_EDITOR
+        else
+            DestroyImmediate(target);
+#endif
     }
 }
 

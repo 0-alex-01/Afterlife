@@ -1,0 +1,23 @@
+{
+    "asset": "9753fc3ab94d17f419fade3f693bcede",
+    "fileName": "019f5fbe-3c51-7340-8e99-e36c73d82451.glb",
+    "prompt": "An ornate Buddhist Dharma wheel with eight spokes, carved golden weathered stone, sacred temple artifact",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "1bb8ccb296d298e43a846bba6992b55e",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

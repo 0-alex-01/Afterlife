@@ -1,0 +1,23 @@
+{
+    "asset": "4522571cf47d696458b94653356a6d9a",
+    "fileName": "019f5fbe-1243-78d8-a280-b8f7e9e8b159.glb",
+    "prompt": "A sculpted three-dimensional Buddhist Om Aum symbol, carved golden weathered stone sacred syllable, temple artifact",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "188bc3196c191ed419e4c1d4df287762",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

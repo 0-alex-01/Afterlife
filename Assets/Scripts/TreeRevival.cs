@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -9,6 +10,9 @@ using UnityEngine;
 /// </summary>
 public class TreeRevival : MonoBehaviour
 {
+    public event Action RevivalCompleted;
+    public bool IsFullyRevived { get; private set; }
+
     [Header("References")]
     [Tooltip("Player head / camera. Auto-resolves to Camera.main if left empty.")]
     public Transform player;
@@ -82,6 +86,12 @@ public class TreeRevival : MonoBehaviour
         // 0 = fully dead (far), 1 = fully alive (near)
         float t = Mathf.Clamp01(Mathf.InverseLerp(fullDeadDistance, fullAliveDistance, dist));
         float eased = t * t * (3f - 2f * t); // smoothstep
+
+        if (!IsFullyRevived && eased >= 0.98f)
+        {
+            IsFullyRevived = true;
+            RevivalCompleted?.Invoke();
+        }
 
         if (_livingMat != null && livingTreeRenderer != null)
         {

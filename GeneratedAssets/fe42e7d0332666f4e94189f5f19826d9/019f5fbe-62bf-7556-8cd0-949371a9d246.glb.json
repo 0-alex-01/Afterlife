@@ -1,0 +1,23 @@
+{
+    "asset": "fe42e7d0332666f4e94189f5f19826d9",
+    "fileName": "019f5fbe-62bf-7556-8cd0-949371a9d246.glb",
+    "prompt": "A Buddhist endless eternal knot, interwoven golden and stone ribbons, symmetrical sacred loop, temple artifact",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "309d024ed591068488fc306bcd5b577c",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

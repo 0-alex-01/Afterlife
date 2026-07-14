@@ -7538,6 +7538,7 @@ MonoBehaviour:
   endingQuestionText: {fileID: 623194820}
   endingQuestion: Was it fate... or your decision?
   narratorSource: {fileID: 0}
+  arrivalNarrationClip: {fileID: 8300000, guid: ef409fab58003364d939ccd690b127f7, type: 3}
   endingNarrationClip: {fileID: 0}
   automaticEndingDelay: 15
   showEndingWhenPlayerMoves: 1

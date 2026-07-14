@@ -1,0 +1,23 @@
+{
+    "asset": "9361e5a1b69b6704c80b433862a0d90e",
+    "fileName": "019f5fbe-3d39-794e-ad0c-cf274ff4def0.glb",
+    "prompt": "A Buddhist stupa dome shrine, tiered base, rounded dome, spired pinnacle, weathered white and golden stone temple architecture",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "92e1583f35c945348bae89f7692bb6fd",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

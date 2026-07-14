@@ -4,12 +4,17 @@ using Autohand;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.SceneManagement;
+#endif
 
 /// <summary>
 /// Richtet die drei eigenständigen Naturräume für VR ein. Es werden keine
 /// Szenen additiv geladen: Jede Szene erhält nur ihre eigene Beleuchtung,
 /// Performance-Regeln, Wolkenkante, Absturzsicherung und einen dezenten Wegweiser.
 /// </summary>
+[ExecuteAlways]
 public sealed class NatureRoomEnvironmentController : MonoBehaviour
 {
     private enum RoomProfile
@@ -20,6 +25,7 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
     }
 
     private const string RuntimeObjectName = "[Nature Room Environment]";
+    private const string EditorPreviewObjectName = "[Nature Room Scene Preview]";
 
     private RoomProfile profile;
     private Scene roomScene;
@@ -53,6 +59,161 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
     private MeshCollider naturalRampCollider;
     private float maximumRampSlope;
     private bool naturalRampCreated;
+    [SerializeField, HideInInspector] private bool editorPreview;
+
+#if UNITY_EDITOR
+    [InitializeOnLoadMethod]
+    private static void InstallEditorPreviewHooks()
+    {
+        EditorSceneManager.sceneOpened -= HandleEditorSceneOpened;
+        EditorSceneManager.sceneOpened += HandleEditorSceneOpened;
+        EditorApplication.playModeStateChanged -= HandleEditorPlayModeChanged;
+        EditorApplication.playModeStateChanged += HandleEditorPlayModeChanged;
+        EditorApplication.delayCall += EnsureEditorPreviewsForOpenedScenes;
+    }
+
+    private static void HandleEditorSceneOpened(Scene scene, OpenSceneMode mode)
+    {
+        EditorApplication.delayCall += () => EnsureEditorPreviewForScene(scene);
+    }
+
+    private static void HandleEditorPlayModeChanged(PlayModeStateChange state)
+    {
+        if (state == PlayModeStateChange.ExitingEditMode)
+            DestroyAllEditorPreviews();
+        else if (state == PlayModeStateChange.EnteredEditMode)
+            EditorApplication.delayCall += EnsureEditorPreviewsForOpenedScenes;
+    }
+
+    [MenuItem("Afterlife/Nature Rooms/Rebuild Scene Preview")]
+    private static void RebuildEditorPreviews()
+    {
+        DestroyAllEditorPreviews();
+        EnsureEditorPreviewsForOpenedScenes();
+        SceneView.RepaintAll();
+    }
+
+    private static void EnsureEditorPreviewsForOpenedScenes()
+    {
+        if (EditorApplication.isPlayingOrWillChangePlaymode)
+            return;
+
+        for (int index = 0; index < SceneManager.sceneCount; index++)
+            EnsureEditorPreviewForScene(SceneManager.GetSceneAt(index));
+    }
+
+    private static void EnsureEditorPreviewForScene(Scene scene)
+    {
+        if (!scene.IsValid() || !scene.isLoaded ||
+            !TryGetProfile(scene.name, out RoomProfile sceneProfile))
+        {
+            return;
+        }
+
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            // Editor previews are deliberately rebuilt after a script reload or
+            // scene reopen. This removes stale dressing from an older profile
+            // instead of carrying paths/decay fragments into another room.
+            if (root.name == EditorPreviewObjectName)
+                DestroyImmediate(root);
+        }
+
+        var previewObject = new GameObject(EditorPreviewObjectName)
+        {
+            hideFlags = HideFlags.DontSaveInEditor | HideFlags.DontSaveInBuild
+        };
+        SceneManager.MoveGameObjectToScene(previewObject, scene);
+        var controller = previewObject.AddComponent<NatureRoomEnvironmentController>();
+        controller.editorPreview = true;
+        controller.profile = sceneProfile;
+        controller.roomScene = scene;
+        controller.BuildEditorPreview();
+    }
+
+    private static void DestroyAllEditorPreviews()
+    {
+        for (int sceneIndex = 0; sceneIndex < SceneManager.sceneCount; sceneIndex++)
+        {
+            Scene scene = SceneManager.GetSceneAt(sceneIndex);
+            if (!scene.IsValid() || !scene.isLoaded)
+                continue;
+
+            foreach (GameObject root in scene.GetRootGameObjects())
+            {
+                if (root.name == EditorPreviewObjectName)
+                    DestroyImmediate(root);
+            }
+        }
+    }
+
+    private void BuildEditorPreview()
+    {
+        if (Application.isPlaying || !editorPreview)
+            return;
+
+        cloudAssets = Resources.Load<NatureCloudAssetLibrary>(
+            "NatureClouds/TrueCloudIslandLibrary");
+        playerRoot = FindPlayerRoot();
+        guideTarget = FindGuideTarget();
+        CalculateBoundary();
+
+        generatedRoot = new GameObject("Generated Nature Room Dressing (Scene Preview)");
+        generatedRoot.transform.SetParent(transform, false);
+        CreateTrueCloudIslandRing();
+        CreateInvisibleBoundary();
+
+        if (profile == RoomProfile.Decay)
+            CreateDecayWorldConcept();
+
+        MarkPreviewHierarchyDontSave(transform);
+        environmentReady = true;
+    }
+
+    private static void MarkPreviewHierarchyDontSave(Transform root)
+    {
+        HideFlags flags = HideFlags.DontSaveInEditor | HideFlags.DontSaveInBuild;
+        foreach (Transform child in root.GetComponentsInChildren<Transform>(true))
+        {
+            child.gameObject.hideFlags = flags;
+
+            MeshFilter meshFilter = child.GetComponent<MeshFilter>();
+            if (meshFilter != null && meshFilter.sharedMesh != null &&
+                !EditorUtility.IsPersistent(meshFilter.sharedMesh))
+            {
+                meshFilter.sharedMesh.hideFlags = flags;
+            }
+
+            Renderer renderer = child.GetComponent<Renderer>();
+            if (renderer == null)
+                continue;
+
+            foreach (Material material in renderer.sharedMaterials)
+            {
+                if (material != null && !EditorUtility.IsPersistent(material))
+                    material.hideFlags = flags;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (!editorPreview || boundaryRadius <= 0f)
+            return;
+
+        Handles.color = new Color(0.28f, 0.92f, 1f, 0.72f);
+        Handles.DrawWireDisc(boundaryCenter, Vector3.up, boundaryRadius);
+        Handles.Label(
+            boundaryCenter + Vector3.up * 2f,
+            $"{profile} – Wolken-/Anti-Drop-Grenze ({boundaryRadius:0} m)");
+
+        if (hasSafePath)
+        {
+            Handles.color = new Color(0.3f, 1f, 0.55f, 0.72f);
+            Handles.DrawLine(safePathStart, safePathEnd, 3f);
+        }
+    }
+#endif
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void InstallForCurrentScene()
@@ -110,6 +271,9 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
     private IEnumerator Start()
     {
+        if (!Application.isPlaying)
+            yield break;
+
         roomScene = gameObject.scene;
 
         // Die großen Szenen initialisieren beim Laden mehrere Prefabs. Zwei Frames
@@ -140,12 +304,7 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         CreateInvisibleBoundary();
 
         if (profile == RoomProfile.Decay)
-        {
-            CreateGuidedPath();
             CreateDecayWorldConcept();
-        }
-        else
-            CreateGuidedPath();
 
         SetupVoiceLines();
 
@@ -175,6 +334,9 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
     private void Update()
     {
+        if (!Application.isPlaying)
+            return;
+
         if (!environmentReady)
             return;
 
@@ -271,6 +433,24 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
 
     private void EnsureDecayAutoHandRig()
     {
+        Transform authoredSpawn = FindDecayPathSpawn();
+        Transform centerIsland = FindRoomTransform("center_island");
+        Vector3 spawnPosition = authoredSpawn != null
+            ? authoredSpawn.position
+            : Vector3.zero;
+        Quaternion spawnRotation = authoredSpawn != null
+            ? Quaternion.Euler(0f, authoredSpawn.eulerAngles.y, 0f)
+            : Quaternion.identity;
+
+        if (centerIsland != null)
+        {
+            Vector3 towardIsland = Vector3.ProjectOnPlane(
+                centerIsland.position - spawnPosition,
+                Vector3.up);
+            if (towardIsland.sqrMagnitude > 0.01f)
+                spawnRotation = Quaternion.LookRotation(towardIsland.normalized, Vector3.up);
+        }
+
         foreach (AutoHandPlayer autoHandPlayer in
                  Object.FindObjectsByType<AutoHandPlayer>(
                      FindObjectsInactive.Include,
@@ -279,6 +459,8 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
             if (autoHandPlayer.gameObject.scene == roomScene &&
                 autoHandPlayer.gameObject.activeInHierarchy)
             {
+                PositionDecayRig(autoHandPlayer.transform.root, spawnPosition, spawnRotation);
+                DisableLegacyDecayPlayer(autoHandPlayer.transform.root);
                 return;
             }
         }
@@ -292,10 +474,11 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         }
 
         Transform previousRig = FindPlayerRoot();
-        Vector3 spawnPosition = previousRig != null ? previousRig.position : Vector3.zero;
-        Quaternion spawnRotation = previousRig != null
-            ? Quaternion.Euler(0f, previousRig.eulerAngles.y, 0f)
-            : Quaternion.identity;
+        if (authoredSpawn == null && previousRig != null)
+        {
+            spawnPosition = previousRig.position;
+            spawnRotation = Quaternion.Euler(0f, previousRig.eulerAngles.y, 0f);
+        }
 
         GameObject autoHandRig = Instantiate(
             cloudAssets.autoHandPlayerPrefab,
@@ -303,13 +486,92 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
             spawnRotation);
         autoHandRig.name = "AutoHandPlayer_Afterlife [Vergänglichkeit]";
         SceneManager.MoveGameObjectToScene(autoHandRig, roomScene);
+        PositionDecayRig(autoHandRig.transform, spawnPosition, spawnRotation);
 
         if (previousRig != null && previousRig.gameObject != autoHandRig)
             previousRig.gameObject.SetActive(false);
 
+        DisableLegacyDecayPlayer(autoHandRig.transform);
+
         Debug.Log(
             "[Nature Room] Vergänglichkeit verwendet jetzt AutoHand samt F1-Noclip.",
             autoHandRig);
+    }
+
+    private Transform FindDecayPathSpawn()
+    {
+        foreach (GameObject root in roomScene.GetRootGameObjects())
+        {
+            if (root.name.Equals("Player", System.StringComparison.OrdinalIgnoreCase))
+                return root.transform;
+        }
+
+        foreach (GameObject root in roomScene.GetRootGameObjects())
+        {
+            foreach (Transform child in root.GetComponentsInChildren<Transform>(true))
+            {
+                string lowerName = child.name.ToLowerInvariant();
+                if (lowerName.Contains("decay spawn") ||
+                    lowerName.Contains("vergänglichkeit spawn") ||
+                    lowerName.Contains("vergaenglichkeit spawn"))
+                {
+                    return child;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private Transform FindRoomTransform(string objectName)
+    {
+        foreach (GameObject root in roomScene.GetRootGameObjects())
+        {
+            foreach (Transform child in root.GetComponentsInChildren<Transform>(true))
+            {
+                if (child.name.Equals(objectName, System.StringComparison.OrdinalIgnoreCase))
+                    return child;
+            }
+        }
+
+        return null;
+    }
+
+    private void PositionDecayRig(
+        Transform rig,
+        Vector3 spawnPosition,
+        Quaternion spawnRotation)
+    {
+        if (rig == null)
+            return;
+
+        CharacterController controller = rig.GetComponent<CharacterController>();
+        if (controller != null)
+            controller.enabled = false;
+
+        rig.SetPositionAndRotation(spawnPosition, spawnRotation);
+
+        Rigidbody body = rig.GetComponent<Rigidbody>();
+        if (body != null)
+        {
+            body.linearVelocity = Vector3.zero;
+            body.angularVelocity = Vector3.zero;
+        }
+
+        if (controller != null)
+            controller.enabled = true;
+    }
+
+    private void DisableLegacyDecayPlayer(Transform activeRig)
+    {
+        foreach (GameObject root in roomScene.GetRootGameObjects())
+        {
+            if (root.transform == activeRig)
+                continue;
+
+            if (root.name.Equals("Player", System.StringComparison.OrdinalIgnoreCase))
+                root.SetActive(false);
+        }
     }
 
     private Transform FindGuideTarget()
@@ -767,11 +1029,16 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
             decayLoopObject.AddComponent<DecayWorldEscapeController>();
         narratedDecayLoop = decayLoop;
         Vector3 startPosition = playerRoot != null ? playerRoot.position : boundaryCenter;
+        Transform centerIsland = FindRoomTransform("center_island");
+        Vector3 anchorAreaCenter = centerIsland != null
+            ? centerIsland.position
+            : boundaryCenter;
         decayLoop.Initialize(
             playerRoot,
             startPosition,
             guideTarget,
             boundaryCenter,
+            anchorAreaCenter,
             boundaryRadius,
             generatedRoot.transform,
             cloudAssets);
@@ -816,7 +1083,10 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
             case RoomProfile.Decay:
                 QueueVoice(cloudAssets.decayArrivalLine);
                 if (narratedDecayLoop != null)
+                {
                     narratedDecayLoop.FirstAnchorStabilized += HandleFirstDecayAnchor;
+                    narratedDecayLoop.AllAnchorsStabilized += HandleAllDecayAnchors;
+                }
                 break;
         }
     }
@@ -838,6 +1108,11 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
     private void HandleFirstDecayAnchor()
     {
         QueueVoice(cloudAssets != null ? cloudAssets.decayFirstAnchorLine : null, 0.2f);
+    }
+
+    private void HandleAllDecayAnchors()
+    {
+        QueueVoice(cloudAssets != null ? cloudAssets.decayCompletionLine : null, 0.35f);
     }
 
     private void QueueVoice(AudioClip clip, float delay = 0f)
@@ -891,7 +1166,10 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
         }
 
         if (narratedDecayLoop != null)
+        {
             narratedDecayLoop.FirstAnchorStabilized -= HandleFirstDecayAnchor;
+            narratedDecayLoop.AllAnchorsStabilized -= HandleAllDecayAnchors;
+        }
     }
 
     private void CreateInvisibleBoundary()
@@ -1214,7 +1492,13 @@ public sealed class NatureRoomEnvironmentController : MonoBehaviour
             0.58f + variation * 0.34f,
             0.22f + variation * 0.12f,
             0.72f + (1f - variation) * 0.3f);
-        Destroy(stone.GetComponent<Collider>());
+        Collider stoneCollider = stone.GetComponent<Collider>();
+        if (Application.isPlaying)
+            Destroy(stoneCollider);
+#if UNITY_EDITOR
+        else
+            DestroyImmediate(stoneCollider);
+#endif
         stone.GetComponent<MeshRenderer>().sharedMaterial = material;
     }
 

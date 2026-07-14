@@ -19,4 +19,5 @@ public sealed class NatureCloudAssetLibrary : ScriptableObject
     public AudioClip chaosRetryLine;
     public AudioClip decayArrivalLine;
     public AudioClip decayFirstAnchorLine;
+    public AudioClip decayCompletionLine;
 }

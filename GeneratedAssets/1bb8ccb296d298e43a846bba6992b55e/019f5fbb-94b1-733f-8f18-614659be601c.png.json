@@ -1,0 +1,31 @@
+{
+    "asset": "1bb8ccb296d298e43a846bba6992b55e",
+    "fileName": "019f5fbb-94b1-733f-8f18-614659be601c.png",
+    "prompt": "A single ornate Buddhist Dharma wheel (Dharmachakra), full object, centered, isolated on a plain pure white background. Carved golden and weathered stone with eight spokes, intricate sacred engravings, spiritual temple artifact, warm gold accents, soft even studio lighting, straight-on front view, entire wheel visible, clean product shot",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

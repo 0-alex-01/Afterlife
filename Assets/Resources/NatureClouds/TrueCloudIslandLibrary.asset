@@ -26,3 +26,4 @@ MonoBehaviour:
   chaosRetryLine: {fileID: 8300000, guid: 49776174202efbb418d9b6085032969d, type: 3}
   decayArrivalLine: {fileID: 8300000, guid: f11d285154c1448fa4a021756f2c4c56, type: 3}
   decayFirstAnchorLine: {fileID: 8300000, guid: 93d3ee57e54f4a9db8f878d33a8be4da, type: 3}
+  decayCompletionLine: {fileID: 8300000, guid: 42002579ad627614aa133f537d0b2eea, type: 3}
