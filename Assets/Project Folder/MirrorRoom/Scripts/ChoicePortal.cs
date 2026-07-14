@@ -376,7 +376,10 @@ public class ChoicePortal : MonoBehaviour
             }
         }
 
-        return _headCamera != null && _trigger.bounds.Contains(_headCamera.transform.position);
+        // Bounds.SqrDistance also accepts the player up to 0.5 m in front of the authored
+        // volume, which is more reliable than requiring the tracked head to cross its plane.
+        return _headCamera != null &&
+               _trigger.bounds.SqrDistance(_headCamera.transform.position) <= 0.25f;
     }
 
     private void EnterPortal()

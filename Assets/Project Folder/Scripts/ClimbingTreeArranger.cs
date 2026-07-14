@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Ordnet alle Kinder dieser GameObject (z.B. ClimbingCubes) spiralförmig
 // um einen Baumstamm an - mit zufälligem Klettermuster nach oben.
@@ -106,6 +107,126 @@ public class ClimbingTreeArranger : MonoBehaviour
             if (!string.IsNullOrEmpty(skipNameContains) && c.name.Contains(skipNameContains))
                 continue;
             into.Add(c);
+        }
+    }
+}
+
+/// <summary>
+/// Keeps Tree_Scene climbing holds grabbable by the AutoHand hands while allowing the player's
+/// body and tracked-head follower to pass through them. AutoHand uses separate layers for hands
+/// (Hand) and the player body (HandPlayer), so only the body collision is disabled.
+/// </summary>
+public static class TreeClimbBodyPassThrough
+{
+    private const string TreeSceneName = "Tree_Scene";
+    private static int _grabbableLayer = -1;
+    private static int _playerBodyLayer = -1;
+    private static bool _originalIgnoreState;
+    private static bool _hasOriginalState;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
+    {
+        _grabbableLayer = LayerMask.NameToLayer("Grabbable");
+        _playerBodyLayer = LayerMask.NameToLayer("HandPlayer");
+
+        if (_grabbableLayer < 0 || _playerBodyLayer < 0)
+        {
+            Debug.LogWarning("[TreeClimbBodyPassThrough] Required AutoHand physics layers are missing.");
+            return;
+        }
+
+        if (!_hasOriginalState)
+        {
+            _originalIgnoreState = Physics.GetIgnoreLayerCollision(_grabbableLayer, _playerBodyLayer);
+            _hasOriginalState = true;
+        }
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (_grabbableLayer < 0 || _playerBodyLayer < 0)
+            return;
+
+        if (scene.name == TreeSceneName)
+        {
+            // Hands stay physical; only the AutoHand body and head follower pass through.
+            Physics.IgnoreLayerCollision(_grabbableLayer, _playerBodyLayer, true);
+
+            TreeClimbCollisionRunner existing =
+                Object.FindFirstObjectByType<TreeClimbCollisionRunner>(FindObjectsInactive.Include);
+            if (existing == null)
+            {
+                var runtimeObject = new GameObject("[Tree Climb Body Pass-Through]");
+                runtimeObject.AddComponent<TreeClimbCollisionRunner>();
+            }
+        }
+        else if (mode == LoadSceneMode.Single)
+        {
+            Physics.IgnoreLayerCollision(
+                _grabbableLayer,
+                _playerBodyLayer,
+                _originalIgnoreState);
+        }
+    }
+}
+
+/// <summary>
+/// Explicitly ignores every Tree_Scene Grabbable collider against every AutoHand HandPlayer
+/// collider. This is a second safeguard for rigs or already-existing physics contacts that do not
+/// immediately respect a changed layer matrix. Hand-layer collisions remain untouched.
+/// </summary>
+public sealed class TreeClimbCollisionRunner : MonoBehaviour
+{
+    private int _grabbableLayer;
+    private int _playerBodyLayer;
+    private float _nextRefresh;
+
+    private void Awake()
+    {
+        _grabbableLayer = LayerMask.NameToLayer("Grabbable");
+        _playerBodyLayer = LayerMask.NameToLayer("HandPlayer");
+        ApplyCollisionIgnores();
+    }
+
+    private void Update()
+    {
+        // AutoHand creates its tracked head follower during startup, so refresh briefly and also
+        // cover any climbing objects enabled later in the scene.
+        if (Time.unscaledTime < _nextRefresh)
+            return;
+
+        _nextRefresh = Time.unscaledTime + 0.5f;
+        ApplyCollisionIgnores();
+    }
+
+    private void ApplyCollisionIgnores()
+    {
+        if (_grabbableLayer < 0 || _playerBodyLayer < 0)
+            return;
+
+        Collider[] colliders = Object.FindObjectsByType<Collider>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Collider hold = colliders[i];
+            if (hold == null || hold.gameObject.layer != _grabbableLayer ||
+                hold.gameObject.scene.name != "Tree_Scene")
+                continue;
+
+            for (int j = 0; j < colliders.Length; j++)
+            {
+                Collider playerPart = colliders[j];
+                if (playerPart == null || playerPart.gameObject.layer != _playerBodyLayer)
+                    continue;
+
+                Physics.IgnoreCollision(hold, playerPart, true);
+            }
         }
     }
 }

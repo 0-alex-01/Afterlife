@@ -153,7 +153,8 @@ public class ScenePortal : MonoBehaviour
             }
         }
 
-        return _headCamera != null && _trigger.bounds.Contains(_headCamera.transform.position);
+        return _headCamera != null &&
+               _trigger.bounds.SqrDistance(_headCamera.transform.position) <= 0.25f;
     }
 
     private void EnterPortal()

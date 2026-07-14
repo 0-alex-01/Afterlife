@@ -224,9 +224,15 @@ public sealed class GlobalSceneSkipController : MonoBehaviour
                 return true;
 
             case "Leere":
+                nextScene = "Wiedergeburt";
+                return true;
+
             case "Wiedergeburt":
+                nextScene = "WaageScene";
+                return true;
+
             case "WaageScene":
-                // Nach einem Ende beginnt die Testschleife wieder beim Intro.
+                // K durchläuft erst alle drei Afterlife-Stränge und beginnt danach von vorn.
                 nextScene = "IntroScene";
                 return true;
 

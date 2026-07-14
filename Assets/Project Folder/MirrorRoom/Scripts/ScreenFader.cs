@@ -52,6 +52,37 @@ public class ScreenFader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+    }
+
+    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // The fader survives scene changes, but its old camera/overlay does not. The previous
+        // implementation left _fading true forever, so every portal after the first transition
+        // was silently ignored. Release the transition immediately for the newly loaded scene.
+        if (_overlayRenderer != null)
+            _overlayRenderer.enabled = false;
+        if (_overlayTransform != null)
+            Destroy(_overlayTransform.gameObject);
+        if (_overlayMaterial != null)
+            Destroy(_overlayMaterial);
+
+        _fading = false;
+        _cachedCamera = null;
+        _overlayTransform = null;
+        _overlayRenderer = null;
+        _overlayMaterial = null;
+        _mpb = null;
+    }
+
     /// <summary>
     /// Fade the view to <paramref name="color"/> over <paramref name="duration"/> seconds, then
     /// load the scene named <paramref name="sceneName"/>. Guards against double-trigger.
@@ -107,8 +138,7 @@ public class ScreenFader : MonoBehaviour
             return;
         }
         SceneManager.LoadScene(sceneName);
-        // The overlay persists across the load (DontDestroyOnLoad) so the new scene starts hidden
-        // under the fade color; _fading stays true to avoid re-triggering during the swap.
+        // HandleSceneLoaded resets the persistent fader for the next portal transition.
     }
 
     /// <summary>
