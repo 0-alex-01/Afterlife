@@ -1,0 +1,31 @@
+{
+    "asset": "fd69e6ea33036974caae8cd9552b75a2",
+    "fileName": "019f5f9c-75fa-7a0f-8b1c-127048b7cc47.png",
+    "prompt": "A single ornate Buddhist stone pillar / column, full body, standing vertical, centered, isolated on a plain white background. Ancient carved sandstone with lotus flower motifs at the base and capital, subtle gold accents, weathered spiritual temple architecture, intricate mandala and dharma wheel engravings, warm sacred aesthetic, soft even studio lighting, straight-on front view, entire pillar visible from base to top, clean product shot",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

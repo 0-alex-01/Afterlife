@@ -1,0 +1,31 @@
+{
+    "asset": "8ec9fb975f135a04bbef63ed6c01c571",
+    "fileName": "019f5f9c-5545-784e-8532-fd6c390b668e.png",
+    "prompt": "Ethereal spiritual sunrise sky for a serene Buddhist rebirth realm. Soft golden and warm peach light glowing at the horizon, gentle wisps of pink and lavender clouds, a calm luminous heavenly atmosphere, subtle god rays, tranquil and sacred mood, dreamy pastel gradient from warm gold near horizon to soft turquoise-blue at zenith, no sun disc harshness, peaceful meditative ambiance",
+    "negativePrompt": "",
+    "model": "skybox-cinematic",
+    "modelName": "Cinematic",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

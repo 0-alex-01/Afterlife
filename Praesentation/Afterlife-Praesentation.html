@@ -817,24 +817,52 @@ h2 .thin { font-weight: 400; color: var(--ink-dim); }
     <div>
       <p class="eyebrow rv">Ebene 3 · Das Danach · Vincent · <b>Welt II</b></p>
       <h2 class="rv"><span style="color:#97d17e">Wiedergeburt</span></h2>
-      <p class="lead rv">Warmes grünes Licht, organische Formen, eine Welt im Werden —
-        Wachstum und Hoffnung statt Abschluss. Der Tod ist hier kein Ende,
-        sondern der <b>Übergang in einen neuen Anfang</b>.</p>
+      <p class="lead rv">Unter dem <b>Ouroboros-Bogen</b> — der Schlange, die sich selbst verschlingt,
+        dem ältesten Zeichen des Kreislaufs — führt ein Säulenpfad über den Wolken
+        zum leuchtenden Baum. Der Tod ist hier kein Ende, sondern der
+        <b>Übergang in einen neuen Anfang</b>.</p>
       <p class="message rv" style="border-color:#97d17e; background:linear-gradient(90deg, rgba(151,209,126,.09), transparent 70%)">„Die
         hoffnungsvollste Antwort: <b>Es beginnt einfach noch einmal.</b> Nichts geht verloren — es verwandelt sich."</p>
     </div>
     <div class="rv d3">
-      <svg width="100%" viewBox="0 0 300 300" style="max-width: 300px; overflow: visible" aria-hidden="true">
-        <circle class="grow-ring" cx="150" cy="170" r="100" fill="none" stroke="#97d17e" stroke-width="1.4"/>
-        <circle class="grow-ring" style="animation-delay: 2.1s" cx="150" cy="170" r="100" fill="none" stroke="#97d17e" stroke-width="1.4"/>
-        <circle class="grow-ring" style="animation-delay: 4.2s" cx="150" cy="170" r="100" fill="none" stroke="#97d17e" stroke-width="1.4"/>
-        <path d="M150,210 V150 M150,178 q-26,-8 -30,-36 q28,2 30,26 M150,164 q26,-10 28,-38 q-28,4 -28,28"
+      <svg width="100%" viewBox="0 0 320 330" style="max-width: 320px; overflow: visible" aria-hidden="true">
+        <!-- Ouroboros-Bogen: Schlangenkörper -->
+        <path d="M62,268 C50,150 100,58 158,54 C216,52 268,128 262,240"
+              fill="none" stroke="#e3a95f" stroke-width="9" stroke-linecap="round" opacity=".85"
+              style="filter: drop-shadow(0 0 8px rgba(227,169,95,.45))"/>
+        <!-- Unterlauf: der Schwanz zieht am Inselrand entlang zurück ins Maul (hinter dem Pfad) -->
+        <path d="M62,268 C58,300 96,314 148,316 C204,318 240,306 246,278"
+              fill="none" stroke="#e3a95f" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+        <path d="M246,278 q4,-12 -2,-20" fill="none" stroke="#e3a95f" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+        <!-- Schuppen-Andeutung -->
+        <path d="M74,220 l10,-3 M68,180 l11,-2 M70,140 l11,0 M82,104 l10,3 M104,76 l8,6 M136,60 l5,8 M186,58 l2,9 M222,78 l-4,9 M246,116 l-8,6 M258,162 l-10,3 M262,204 l-10,1"
+              stroke="#b8853f" stroke-width="1.6" fill="none" opacity=".8"/>
+        <!-- Schlangenkopf am Bogenende (beißt Richtung Schwanz) -->
+        <path d="M262,240 q4,16 -6,26 q-16,14 -34,4 q10,-2 16,-10 q-14,2 -22,-6 q14,-2 22,-10 q8,-8 10,-18 z"
+              fill="#e3a95f" opacity=".9" style="filter: drop-shadow(0 0 6px rgba(227,169,95,.5))"/>
+        <circle cx="252" cy="252" r="2.6" fill="#0d0e1a"/>
+        <!-- Säulenpfad in Perspektive -->
+        <path class="vig-dim" d="M118,326 L146,196 M202,326 L176,196" opacity=".8"/>
+        <ellipse cx="160" cy="308" rx="26" ry="7" fill="none" stroke="#cfcbe0" stroke-width="1.2" opacity=".55"/>
+        <ellipse cx="161" cy="266" rx="20" ry="5.5" fill="none" stroke="#cfcbe0" stroke-width="1.1" opacity=".5"/>
+        <ellipse cx="160" cy="232" rx="15" ry="4.2" fill="none" stroke="#cfcbe0" stroke-width="1" opacity=".45"/>
+        <!-- Säulen links/rechts (nach hinten kleiner) -->
+        <path d="M96,318 V254 M90,254 H102 M96,250 v-6" stroke="#b8853f" stroke-width="2.5" fill="none" opacity=".85"/>
+        <path d="M224,318 V254 M218,254 H230 M224,250 v-6" stroke="#b8853f" stroke-width="2.5" fill="none" opacity=".85"/>
+        <path d="M118,268 V222 M113,222 H123" stroke="#b8853f" stroke-width="2" fill="none" opacity=".65"/>
+        <path d="M202,268 V222 M197,222 H207" stroke="#b8853f" stroke-width="2" fill="none" opacity=".65"/>
+        <!-- Lotusblüten am Pfadrand -->
+        <path d="M128,296 q3,-7 6,0 q4,-6 6,1 q-6,4 -12,-1 M196,282 q3,-6 5,0 q4,-5 5,1 q-5,4 -10,-1"
+              fill="none" stroke="#97d17e" stroke-width="1.3" opacity=".8"/>
+        <!-- Leuchtender Baum am Ende des Pfads -->
+        <ellipse cx="160" cy="160" rx="42" ry="34" fill="rgba(151,209,126,.10)"/>
+        <path d="M160,196 V162 M160,178 q-14,-4 -18,-22 q16,2 18,16 M160,170 q14,-6 16,-24 q-16,3 -16,18 M160,162 q-8,-10 -4,-22 M160,162 q8,-8 6,-20"
               fill="none" stroke="#97d17e" stroke-width="2" stroke-linecap="round"
-              style="filter: drop-shadow(0 0 6px rgba(151,209,126,.7))"/>
-        <path class="vig-dim" d="M92,212 Q150,200 208,212" opacity=".7"/>
-        <circle class="seed" cx="112" cy="200" r="2.2" fill="#97d17e"/>
-        <circle class="seed" style="animation-delay: 3s" cx="176" cy="206" r="1.8" fill="#97d17e"/>
-        <circle class="seed" style="animation-delay: 6s" cx="146" cy="210" r="1.5" fill="#97d17e"/>
+              style="filter: drop-shadow(0 0 8px rgba(151,209,126,.85))"/>
+        <circle class="grow-ring" cx="160" cy="168" r="52" fill="none" stroke="#97d17e" stroke-width="1.2"/>
+        <circle class="grow-ring" style="animation-delay: 3.2s" cx="160" cy="168" r="52" fill="none" stroke="#97d17e" stroke-width="1.2"/>
+        <!-- Wolken am Inselrand -->
+        <path class="vig-dim" d="M40,318 q30,-10 60,0 M220,318 q30,-10 60,0 M12,296 q22,-8 44,0" opacity=".4"/>
       </svg>
     </div>
   </div>

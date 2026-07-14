@@ -1,0 +1,12 @@
+{
+    "asset": "7f7a85777a4fc4742841c7eb71841b82",
+    "fileName": "019f5fad-6774-7eeb-bcb4-021b33ed3671_Preview.jpg",
+    "prompt": "Sacred Buddhist temple floor, polished stone tiles arranged in a path, intricate carved lotus flower and mandala patterns engraved into the stone, subtle warm golden grout lines between tiles, weathered ancient sandstone with soft violet-grey tones, spiritual meditative aesthetic, seamless tileable texture, top-down orthographic view, clean symmetrical geometry",
+    "negativePrompt": "",
+    "model": "realistic-textures-3-0",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": 1329217695,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

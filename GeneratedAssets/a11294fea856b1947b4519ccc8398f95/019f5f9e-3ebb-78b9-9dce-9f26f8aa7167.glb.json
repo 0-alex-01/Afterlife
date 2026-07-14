@@ -1,0 +1,23 @@
+{
+    "asset": "a11294fea856b1947b4519ccc8398f95",
+    "fileName": "019f5f9e-3ebb-78b9-9dce-9f26f8aa7167.glb",
+    "prompt": "An ornate Buddhist stone pillar with lotus base and capital, dharma wheel and mandala carvings, weathered sacred sandstone with gold accents",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "fd69e6ea33036974caae8cd9552b75a2",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}
