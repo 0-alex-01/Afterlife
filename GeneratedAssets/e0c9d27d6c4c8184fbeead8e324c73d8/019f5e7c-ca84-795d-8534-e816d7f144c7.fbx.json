@@ -1,0 +1,23 @@
+{
+    "asset": "e0c9d27d6c4c8184fbeead8e324c73d8",
+    "fileName": "019f5e7c-ca84-795d-8534-e816d7f144c7.fbx",
+    "prompt": "A vibrant magical spirit flower with radiant magenta and violet star-shaped petals, glowing luminous center, on a short green stem, fantasy spirit-realm plant",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "63af407818ecc52439f97f384f0b119a",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

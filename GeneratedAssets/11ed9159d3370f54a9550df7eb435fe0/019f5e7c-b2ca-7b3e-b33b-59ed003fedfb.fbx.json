@@ -1,0 +1,23 @@
+{
+    "asset": "11ed9159d3370f54a9550df7eb435fe0",
+    "fileName": "019f5e7c-b2ca-7b3e-b33b-59ed003fedfb.fbx",
+    "prompt": "A luminous white bell-flower cluster, soft glowing white and pale blue drooping bells on a slender green stem, ethereal fantasy spirit-realm plant",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "ed9f17d160e0ac346ba1463b3d700d11",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

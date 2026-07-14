@@ -1,0 +1,31 @@
+{
+    "asset": "6ecb160609318244eb8705cefbbd04fd",
+    "fileName": "019f5e7a-6c79-7fd7-968e-a9f52ae1a167.png",
+    "prompt": "A single mystical crystalline lotus flower, glowing vibrant teal and cyan petals with soft magical inner light, translucent crystal-like texture, fantasy spirit-realm plant, full flower on a short green stem, centered, upright, front three-quarter view, isolated on a plain flat white background, soft even studio lighting, no shadows, high detail, stylized painterly fantasy art",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

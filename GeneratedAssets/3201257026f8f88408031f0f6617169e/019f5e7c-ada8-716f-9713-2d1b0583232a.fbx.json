@@ -1,0 +1,23 @@
+{
+    "asset": "3201257026f8f88408031f0f6617169e",
+    "fileName": "019f5e7c-ada8-716f-9713-2d1b0583232a.fbx",
+    "prompt": "A mystical crystalline lotus flower, glowing teal and cyan translucent petals, fantasy spirit-realm plant on a short green stem",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "6ecb160609318244eb8705cefbbd04fd",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}
