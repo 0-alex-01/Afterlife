@@ -65,6 +65,7 @@ public class ChoicePortal : MonoBehaviour
     private Coroutine _materializeRoutine;
     private Renderer _innerSurface;
     private Vector3 _innerSurfaceTargetScale = Vector3.one;
+    private Camera _headCamera;
     private readonly List<Renderer> _choiceRenderers = new List<Renderer>();
     private readonly List<Renderer> _frameRenderers = new List<Renderer>();
 
@@ -152,6 +153,14 @@ public class ChoicePortal : MonoBehaviour
 
     private void Update()
     {
+        // In a standalone OpenXR build the tracked head often has no physics collider and the
+        // rig root is not necessarily named AutoHandPlayer. Polling the active head camera
+        // against the portal bounds makes walking into the portal reliable in both cases.
+        if (_materialized && !_entered && IsHeadInsideTrigger())
+        {
+            EnterPortal();
+        }
+
         if (_materialized && pulseLight && portalLight != null && pulsePeriod > 0.01f)
         {
             float s = Mathf.Sin(Time.time * (Mathf.PI * 2f / pulsePeriod));
@@ -340,6 +349,49 @@ public class ChoicePortal : MonoBehaviour
             return;
         }
 
+        EnterPortal();
+    }
+
+    private bool IsHeadInsideTrigger()
+    {
+        if (_trigger == null || !_trigger.enabled)
+        {
+            return false;
+        }
+
+        if (_headCamera == null || !_headCamera.isActiveAndEnabled)
+        {
+            _headCamera = Camera.main;
+            if (_headCamera == null || !_headCamera.isActiveAndEnabled)
+            {
+                Camera[] cameras = FindObjectsByType<Camera>(FindObjectsSortMode.None);
+                for (int i = 0; i < cameras.Length; i++)
+                {
+                    if (cameras[i] != null && cameras[i].isActiveAndEnabled)
+                    {
+                        _headCamera = cameras[i];
+                        break;
+                    }
+                }
+            }
+        }
+
+        return _headCamera != null && _trigger.bounds.Contains(_headCamera.transform.position);
+    }
+
+    private void EnterPortal()
+    {
+        if (_entered)
+        {
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(targetSceneName) ||
+            !Application.CanStreamedLevelBeLoaded(targetSceneName))
+        {
+            Debug.LogError($"[ChoicePortal] Scene '{targetSceneName}' is not enabled in Build Settings.", this);
+            return;
+        }
+
         _entered = true; // debounce: fire only once
         ScreenFader.Instance.FadeOutAndLoad(fadeColor, targetSceneName, fadeDuration);
     }
@@ -357,7 +409,20 @@ public class ChoicePortal : MonoBehaviour
         }
 
         Transform root = other.transform.root;
-        if (root != null && root.name.Contains("AutoHandPlayer"))
+        if (root != null &&
+            (root.name.Contains("AutoHandPlayer") || root.name.Contains("XR Origin") ||
+             root.name.Contains("XR Rig")))
+        {
+            return true;
+        }
+
+        if (other.CompareTag("Player") || other.GetComponentInParent<CharacterController>() != null)
+        {
+            return true;
+        }
+
+        Camera head = Camera.main;
+        if (head != null && other.transform.root == head.transform.root)
         {
             return true;
         }
