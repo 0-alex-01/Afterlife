@@ -36,6 +36,8 @@ public class ScenePortal : MonoBehaviour
     private bool _entered;
     private Vector3 _fillBaseScale = Vector3.one;
     private Coroutine _activateRoutine;
+    private Collider _trigger;
+    private Camera _headCamera;
 
     private void Reset()
     {
@@ -45,8 +47,8 @@ public class ScenePortal : MonoBehaviour
 
     private void Awake()
     {
-        var col = GetComponent<Collider>();
-        if (col != null) col.isTrigger = true;
+        _trigger = GetComponent<Collider>();
+        if (_trigger != null) _trigger.isTrigger = true;
 
         if (portalFillVisual == null)
         {
@@ -58,6 +60,17 @@ public class ScenePortal : MonoBehaviour
             _fillBaseScale = portalFillVisual.transform.localScale;
             // Gesperrt starten => Füllung unsichtbar (leerer Steinbogen).
             portalFillVisual.SetActive(!locked);
+        }
+    }
+
+    private void Update()
+    {
+        // OpenXR's tracked head does not always carry a collider in a player build. Detecting the
+        // active head camera inside the portal volume keeps the transition independent of rig
+        // object names and physics-layer differences.
+        if (!locked && !_entered && IsHeadInsideTrigger())
+        {
+            EnterPortal();
         }
     }
 
@@ -113,6 +126,49 @@ public class ScenePortal : MonoBehaviour
             return;
         }
 
+        EnterPortal();
+    }
+
+    private bool IsHeadInsideTrigger()
+    {
+        if (_trigger == null || !_trigger.enabled)
+        {
+            return false;
+        }
+
+        if (_headCamera == null || !_headCamera.isActiveAndEnabled)
+        {
+            _headCamera = Camera.main;
+            if (_headCamera == null || !_headCamera.isActiveAndEnabled)
+            {
+                Camera[] cameras = FindObjectsByType<Camera>(FindObjectsSortMode.None);
+                for (int i = 0; i < cameras.Length; i++)
+                {
+                    if (cameras[i] != null && cameras[i].isActiveAndEnabled)
+                    {
+                        _headCamera = cameras[i];
+                        break;
+                    }
+                }
+            }
+        }
+
+        return _headCamera != null && _trigger.bounds.Contains(_headCamera.transform.position);
+    }
+
+    private void EnterPortal()
+    {
+        if (locked || _entered)
+        {
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(targetSceneName) ||
+            !Application.CanStreamedLevelBeLoaded(targetSceneName))
+        {
+            Debug.LogError($"[ScenePortal] Scene '{targetSceneName}' is not enabled in Build Settings.", this);
+            return;
+        }
+
         _entered = true;
         ScreenFader.Instance.FadeOutAndLoad(fadeColor, targetSceneName, fadeDuration);
     }
@@ -123,7 +179,15 @@ public class ScenePortal : MonoBehaviour
         if (other == null) return false;
 
         Transform root = other.transform.root;
-        if (root != null && root.name.Contains("AutoHandPlayer")) return true;
+        if (root != null &&
+            (root.name.Contains("AutoHandPlayer") || root.name.Contains("XR Origin") ||
+             root.name.Contains("XR Rig"))) return true;
+
+        if (other.CompareTag("Player") || other.GetComponentInParent<CharacterController>() != null)
+            return true;
+
+        Camera head = Camera.main;
+        if (head != null && other.transform.root == head.transform.root) return true;
 
         Transform t = other.transform;
         while (t != null)
